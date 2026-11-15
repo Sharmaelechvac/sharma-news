@@ -2,159 +2,154 @@
 <html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex">
-<title>Finance Briefing — Sunday, November 15, 2026 — The Sharma News</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&amp;display=swap" rel="stylesheet">
+<title>Finance Briefing — Sunday, November 15, 2026 — Sharma News</title>
 <style>
-:root{--paper:#f7f4ec;--paper2:#faf8f2;--ink:#111;--mut:#555;--accent:#1b365d;--hair:#c9c2b2}
+:root{--navy:#264387;--navy-d:#1a2f61;--gold:#F0A846;--ink:#1d2433;--mute:#5b6478;
+--line:#dfe4ee;--tint:#f4f6fb;--paper:#ffffff}
 *{box-sizing:border-box}html{-webkit-text-size-adjust:100%}
-body{margin:0;background:var(--paper);color:var(--ink);
-font-family:Georgia,'Times New Roman',Times,serif;line-height:1.55}
-a{color:var(--accent);text-decoration:underline;text-underline-offset:2px}
-a:hover{color:#000}
-/* ---------- masthead ---------- */
-.masthead{max-width:1020px;margin:0 auto;padding:16px 18px 0;text-align:center}
-.masthead img.logo{height:58px;width:auto}
-.dbl{border-top:4px solid var(--ink);margin-top:10px}
-.dbl::after{content:"";display:block;border-top:1px solid var(--ink);margin-top:2px}
-.nameplate{font-family:'Playfair Display',Georgia,'Times New Roman',serif;font-weight:900;
-font-size:58px;line-height:1.05;letter-spacing:.5px;margin:10px 0 2px}
-.tagline{font-style:italic;color:#333;font-size:15.5px;margin:0 0 10px}
-.dateline{display:flex;justify-content:space-between;gap:8px 18px;flex-wrap:wrap;
-border-top:1px solid var(--ink);padding:6px 2px 7px;font-size:12.5px;
-text-transform:uppercase;letter-spacing:1.4px}
-nav.main{display:flex;justify-content:center;flex-wrap:wrap;border-top:1px solid var(--ink);
-border-bottom:6px double var(--ink);padding:7px 0}
-nav.main a{color:var(--ink);text-decoration:none;font-size:13px;font-weight:700;
-letter-spacing:1.6px;text-transform:uppercase;padding:10px 15px}
-nav.main a + a{border-left:1px solid var(--hair)}
-nav.main a:hover{text-decoration:underline}
-.wrap{max-width:1020px;margin:0 auto;padding:6px 18px 54px}
-/* ---------- photos (newspaper style) ---------- */
-.photo{margin:12px 0 16px}
-.photo img{width:100%;height:auto;display:block;background:#fff;border:1px solid var(--ink);
-padding:3px;filter:grayscale(92%) contrast(1.06)}
-.photo figcaption{font-style:italic;font-size:13.5px;color:#222;margin-top:6px;line-height:1.45}
-.photo .credit{display:block;font-style:normal;font-variant:small-caps;font-size:11.5px;
-letter-spacing:.8px;color:var(--mut);margin-top:2px}
+body{margin:0;background:#fff;color:var(--ink);
+font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+font-size:16px;line-height:1.5}
+a{color:var(--navy);text-decoration:underline;text-decoration-color:#b9c4dc;text-underline-offset:2px}
+a:hover{color:var(--navy-d);text-decoration-color:var(--navy-d)}
+.num,.kn b,.arch .d,.dateline{font-family:ui-monospace,"SFMono-Regular",Menlo,Consolas,monospace}
+/* ---------- header ---------- */
+.top{border-bottom:3px solid var(--gold)}
+.top .bar{max-width:1040px;margin:0 auto;padding:12px 16px;display:flex;align-items:center;
+justify-content:space-between;gap:12px}
+.top .brand{display:block;line-height:0}
+.top img.logo{height:54px;width:auto}
+.top .ttl{text-align:right;line-height:1.25}
+.top .ttl b{display:block;font-size:17px;color:var(--navy-d);font-weight:700}
+.top .ttl span{display:block;font-size:12.5px;color:var(--mute)}
+nav.main{background:var(--navy-d)}
+nav.main .in{max-width:1040px;margin:0 auto;padding:0 8px;display:flex;overflow-x:auto;
+-webkit-overflow-scrolling:touch;scrollbar-width:none}
+nav.main .in::-webkit-scrollbar{display:none}
+nav.main a{color:#fff;text-decoration:none;font-size:14px;font-weight:600;white-space:nowrap;
+padding:12px 10px}
+nav.main a:hover{color:var(--gold)}
+.wrap{max-width:1040px;margin:0 auto;padding:8px 16px 48px}
+/* ---------- photos ---------- */
+.photo{margin:10px 0 12px}
+.photo img{width:100%;height:auto;display:block;background:var(--tint);border:1px solid var(--line)}
+.photo figcaption{font-size:13px;color:var(--mute);margin-top:5px;line-height:1.4}
+.photo .credit{display:block;font-size:12px;color:var(--mute);margin-top:1px}
 .photo.small{max-width:430px}
-.story .photo img{max-height:290px;object-fit:cover;object-position:top}
+.story .photo img{max-height:260px;object-fit:cover;object-position:top}
 /* ---------- at a glance / key numbers ---------- */
-.glance{background:var(--paper2);border:1px solid var(--ink);border-top:4px solid var(--ink);
-padding:14px 18px 8px;margin:20px 0 18px}
-.glance h2{font-size:15px;text-transform:uppercase;letter-spacing:2px;margin:0 0 8px;
-border:none;padding:0}
-.glance ul{margin:0 0 8px;padding-left:20px}
-.glance li{margin:5px 0;font-size:15.5px}
-.keynums{display:flex;flex-wrap:wrap;border:1px solid var(--ink);background:var(--paper2);margin:0 0 20px}
-.kn{flex:1 1 138px;padding:9px 12px;border-right:1px solid var(--hair)}
-.kn:last-child{border-right:none}
-.kn b{display:block;font-size:19px;line-height:1.2}
-.kn span{font-size:11px;text-transform:uppercase;letter-spacing:1px;color:var(--mut)}
+.glance{background:var(--tint);border-left:3px solid var(--gold);padding:12px 16px 6px;margin:16px 0 14px}
+.glance h2{font-size:12px;text-transform:uppercase;letter-spacing:.12em;color:var(--navy);
+margin:0 0 6px;border:none;padding:0;font-weight:700}
+.glance ul{margin:0 0 8px;padding-left:18px}
+.glance li{margin:4px 0;font-size:15px}
+.keynums{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));border:1px solid var(--line);
+margin:0 0 18px}
+.kn{padding:9px 12px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);margin:0 -1px -1px 0}
+.kn b{display:block;font-size:18px;line-height:1.2;color:var(--navy-d)}
+.kn span{font-size:12px;color:var(--mute)}
 /* ---------- front page ---------- */
-.front{display:grid;grid-template-columns:1fr 1fr;margin-top:24px;
-border-bottom:2px solid var(--ink);padding-bottom:24px}
-.story{padding:0 24px}
+.front{display:grid;grid-template-columns:1fr 1fr;gap:0;margin-top:18px;
+border-bottom:1px solid var(--line);padding-bottom:18px}
+.story{padding:0 20px}
 .story:first-child{padding-left:0}
-.story + .story{border-left:1px solid var(--hair);padding-right:0}
-.kicker{font-size:12px;font-weight:700;letter-spacing:2.2px;text-transform:uppercase;color:var(--accent)}
-.story .headline{font-family:'Playfair Display',Georgia,'Times New Roman',serif;font-weight:700;
-font-size:26px;line-height:1.22;margin:8px 0 10px}
-.byline{font-size:12.5px;text-transform:uppercase;letter-spacing:1px;color:#444;
-border-top:1px solid var(--hair);border-bottom:1px solid var(--hair);padding:5px 0;margin:0 0 12px}
-.cont{font-variant:small-caps;font-size:17px;font-weight:700;color:var(--ink);
-display:inline-block;padding:10px 6px 10px 0}
+.story + .story{border-left:1px solid var(--line);padding-right:0}
+.kicker{display:inline-block;font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
+color:var(--navy);border-bottom:2px solid var(--gold);padding-bottom:2px}
+.story .headline,.techfeature .headline{font-weight:700;color:var(--navy-d);
+font-size:20px;line-height:1.3;margin:6px 0 8px}
+.byline{font-size:13px;color:var(--mute);margin:0 0 6px}
+.cont{font-size:14.5px;font-weight:600;color:var(--navy);display:inline-block;padding:8px 0}
 /* ---------- index / archive ---------- */
-h2.sec{font-size:19px;font-weight:700;text-transform:uppercase;letter-spacing:1.6px;
-border-bottom:2px solid var(--ink);padding-bottom:5px;margin:32px 0 2px}
+h2.sec{font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:var(--navy);
+border-bottom:2px solid var(--navy);padding-bottom:6px;margin:30px 0 0}
 .arch{list-style:none;margin:0;padding:0}
-.arch li{border-bottom:1px solid var(--hair);padding:11px 0;overflow:hidden}
-.arch li a{font-size:18px;font-weight:700;color:var(--ink);text-decoration:none}
+.arch li{border-bottom:1px solid var(--line);padding:10px 0;overflow:hidden}
+.arch li a{font-size:16px;font-weight:700;color:var(--navy-d);text-decoration:none}
 .arch li a:hover{text-decoration:underline}
-.arch .d{color:var(--mut);font-size:12.5px;font-weight:700;text-transform:uppercase;letter-spacing:1px}
-.arch p{margin:3px 0 0;color:#333;font-size:15px}
-.arch img.thumb{width:112px;height:76px;object-fit:cover;float:left;margin:3px 14px 6px 0;
-background:#fff;border:1px solid var(--ink);padding:2px;filter:grayscale(92%) contrast(1.06)}
+.arch .d{color:var(--mute);font-size:12px;letter-spacing:0;text-transform:none}
+.arch p{margin:2px 0 0;color:#3a4255;font-size:14.5px}
+.arch img.thumb{width:96px;height:64px;object-fit:cover;float:left;margin:3px 12px 4px 0;
+background:var(--tint);border:1px solid var(--line)}
 /* ---------- article pages ---------- */
-article{overflow-wrap:break-word;padding-top:6px;max-width:68ch;margin:0 auto}
-article h1{font-family:'Playfair Display',Georgia,'Times New Roman',serif;font-size:30px;line-height:1.2;margin:10px 0 12px}
-article h2{font-size:22px;margin-top:30px;border-bottom:1px solid var(--ink);padding-bottom:5px}
-article h3{font-size:18.5px;margin-top:24px}
+article{overflow-wrap:break-word;padding-top:4px;max-width:72ch}
+article h1{font-size:26px;line-height:1.2;color:var(--navy-d);margin:8px 0 10px}
+article h2{font-size:18px;color:var(--navy-d);margin-top:28px;border-bottom:1px solid var(--line);padding-bottom:5px}
+article h3{font-size:16.5px;color:var(--ink);margin-top:22px}
 article a{word-break:break-word}
-article table{border-collapse:collapse;width:100%;display:block;overflow-x:auto}
-article th,article td{border:1px solid #999;padding:6px 9px;font-size:14px;text-align:left}
-article th{background:#ece7da}
-article code{background:#ece7da;padding:1px 5px;font-family:ui-monospace,Menlo,Consolas,monospace;font-size:.88em}
-article blockquote{border-left:2px solid var(--ink);margin:14px 0;padding:2px 16px;color:#333;font-style:italic}
-.windowline{font-variant:small-caps;font-size:16px;color:#333;border-bottom:1px solid var(--hair);padding-bottom:8px}
-.jump{position:sticky;top:0;z-index:6;background:var(--paper);border-bottom:2px solid var(--ink);
-display:flex;flex-wrap:wrap;gap:2px 16px;padding:8px 0;margin:0 0 6px}
-.jump a{color:var(--ink);text-decoration:none;font-size:12.5px;font-weight:700;
-text-transform:uppercase;letter-spacing:1.1px;padding:9px 2px}
-.jump a:hover{text-decoration:underline}
-.item{border-bottom:1px solid var(--hair);padding:12px 0 14px}
-.item .item-head{font-family:'Playfair Display',Georgia,'Times New Roman',serif;
-font-size:20px;line-height:1.3;margin:2px 0 6px}
-.item .deck{margin:0 0 6px;color:#222;font-size:15.5px}
-.item .impact{margin:0 0 4px;font-size:15.5px}
-.item .impact b{font-variant:small-caps;letter-spacing:.4px}
+article table{border-collapse:collapse;width:100%;display:block;overflow-x:auto;font-size:14px}
+article th,article td{border:1px solid var(--line);padding:6px 9px;text-align:left;vertical-align:top}
+article th{background:var(--tint);color:var(--navy-d)}
+article code{background:var(--tint);padding:1px 5px;font-family:ui-monospace,Menlo,Consolas,monospace;font-size:.88em}
+article blockquote{border-left:3px solid var(--gold);margin:14px 0;padding:2px 14px;color:#3a4255}
+.windowline{font-size:14px;color:var(--mute);border-bottom:1px solid var(--line);padding-bottom:8px}
+.jump{position:sticky;top:0;z-index:6;background:#fff;border-bottom:1px solid var(--line);
+display:flex;gap:0 16px;overflow-x:auto;white-space:nowrap;padding:0;margin:0 0 6px;scrollbar-width:none}
+.jump::-webkit-scrollbar{display:none}
+.jump a{color:var(--navy);text-decoration:none;font-size:13.5px;font-weight:600;padding:11px 0}
+.jump a:hover{color:var(--navy-d);text-decoration:underline}
+.item{border-bottom:1px solid var(--line);padding:12px 0 12px}
+.item .item-head{font-size:17.5px;line-height:1.3;color:var(--navy-d);margin:2px 0 5px}
+.item .deck{margin:0 0 6px;color:#3a4255;font-size:15px}
+.item .impact{margin:0 0 4px;font-size:15px;background:#fff8ec;border-left:3px solid var(--gold);padding:5px 10px}
+.item .impact b{color:var(--navy-d)}
 .item-head a,.spotlight .item-head a,.headline a{color:inherit;text-decoration:none}
 .item-head a:hover,.spotlight .item-head a:hover,.headline a:hover{text-decoration:underline}
 a.photolink{display:block;text-decoration:none}
-.storyhead{font-family:'Playfair Display',Georgia,'Times New Roman',serif;
-font-size:31px;line-height:1.15;margin:6px 0 10px}
+.storyhead{font-size:26px;line-height:1.2;color:var(--navy-d);margin:6px 0 10px}
 details.full{margin-top:6px}
-details.full summary{cursor:pointer;font-variant:small-caps;font-size:16.5px;font-weight:700;
-color:var(--accent);padding:11px 0;min-height:24px}
-details.full summary:hover{color:#000}
-details.full .fullbody{border-top:1px dotted var(--hair);padding-top:4px}
-.sec-intro{color:#222}
-.totop{text-align:right;margin-top:26px}
-.totop a{font-variant:small-caps;font-weight:700;color:var(--ink);padding:10px 0;display:inline-block}
-.secname{font-size:14px;font-weight:700;letter-spacing:2.4px;text-transform:uppercase;color:var(--accent);
-border-top:2px solid var(--ink);border-bottom:1px solid var(--ink);padding:8px 0;text-align:center;margin:14px 0 4px}
-.spotlight{border:2px solid var(--ink);background:var(--paper2);padding:16px 20px 10px;margin:0 0 22px}
-.spotlight .item-head{font-family:'Playfair Display',Georgia,'Times New Roman',serif;font-size:23px;line-height:1.3;margin:2px 0 6px}
-.spotlight .makerline{font-variant:small-caps;font-size:15.5px;color:#333;border-bottom:1px solid var(--hair);padding-bottom:7px;margin:0 0 10px}
-.spotlight .photo{max-width:520px}
-.spotlight .deck{font-size:16px;color:#222;margin:0 0 6px}
-.techfeature{border-bottom:2px solid var(--ink);padding:22px 0 24px}
-.techfeature .photo{max-width:640px}
-.techfeature .headline{font-family:'Playfair Display',Georgia,'Times New Roman',serif;font-weight:700;
-font-size:26px;line-height:1.22;margin:8px 0 10px}
-.spotline{font-size:16.5px;margin:0 0 10px}
-.crumb{color:var(--mut);font-size:12.5px;text-transform:uppercase;letter-spacing:1.2px;margin:16px 0 8px}
-.crumb a{color:var(--ink);padding:6px 0;display:inline-block}
-footer{max-width:1020px;margin:0 auto;padding:0 18px 30px;text-align:center}
-footer .fin{border-top:6px double var(--ink);padding-top:12px;font-size:13px;color:#444}
+details.full summary{cursor:pointer;font-size:14.5px;font-weight:600;color:var(--navy);padding:9px 0}
+details.full .fullbody{border-top:1px solid var(--line);padding-top:4px}
+.sec-intro{color:#3a4255}
+.totop{text-align:right;margin-top:22px}
+.totop a{font-size:14px;font-weight:600;padding:8px 0;display:inline-block}
+.secname{font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--navy);
+border-bottom:2px solid var(--navy);padding:6px 0;margin:12px 0 4px}
+.spotlight{border:1px solid var(--line);border-top:3px solid var(--gold);padding:12px 16px 8px;margin:0 0 20px}
+.spotlight .item-head{font-size:19px;line-height:1.3;color:var(--navy-d);margin:2px 0 6px}
+.spotlight .makerline{font-size:14px;color:var(--mute);border-bottom:1px solid var(--line);padding-bottom:7px;margin:0 0 10px}
+.spotlight .photo{max-width:480px}
+.spotlight .deck{font-size:15px;color:#3a4255;margin:0 0 6px}
+.techfeature{border-bottom:1px solid var(--line);padding:18px 0 18px;display:grid;
+grid-template-columns:300px 1fr;column-gap:20px;align-items:start}
+.techfeature .kicker{grid-column:1/-1;justify-self:start;margin-bottom:6px}
+.techfeature .photolink{grid-row:2/6}
+.techfeature .photo{margin:4px 0 0}
+.techfeature .photo img{max-height:200px;object-fit:cover}
+.techfeature .photo figcaption{display:none}
+.spotline{font-size:15px;margin:0 0 6px}
+.crumb{color:var(--mute);font-size:13px;margin:14px 0 6px}
+.crumb a{padding:6px 0;display:inline-block}
+footer{background:var(--navy-d);color:#cfd8ee;border-top:3px solid var(--gold);font-size:12.5px}
+footer .fin{max-width:1040px;margin:0 auto;padding:14px 16px 18px}
+footer .fin b{color:#fff}
 @media(max-width:760px){
-.nameplate{font-size:38px}
+body{font-size:15.5px}
+.top img.logo{height:44px}
+.top .ttl b{font-size:15px}
+.top .ttl span{font-size:11.5px}
 .front{grid-template-columns:1fr}
 .story{padding:0}
-.story + .story{border-left:none;border-top:1px solid var(--hair);margin-top:22px;padding-top:20px}
-.story .headline{font-size:23px}
-article h1{font-size:25px}
-.dateline{justify-content:center;text-align:center}
-.kn{flex:1 1 45%}
+.story + .story{border-left:none;border-top:1px solid var(--line);margin-top:16px;padding-top:14px}
+.techfeature{grid-template-columns:1fr}
+.techfeature .photolink{grid-row:auto}
+article h1,.storyhead{font-size:22px}
 .photo.small{max-width:none}
+.story .photo img{max-height:200px}
 }
 </style></head>
 <body id="top">
-<header class="masthead">
-<img class="logo" src="../../logo.png" alt="Sharma Electric &amp; HVAC">
-<div class="dbl"></div>
-<div class="nameplate">The Sharma News</div>
-<p class="tagline">The daily news hub for Sharma Electric &amp; HVAC</p>
-<div class="dateline"><span>Orlando, Florida</span><span>Sunday, November 15, 2026</span><span>Updated daily at 5:00 AM ET</span></div>
-<nav class="main">
-<a href="../../index.html">Front Page</a>
-<a href="https://sharmaelechvac.github.io/sharma-legal-briefing/">Legal Briefing</a>
-<a href="../../finance/index.html">Finance Briefing</a>
-<a href="../../finance/archive/index.html">Finance Archive</a>
-<a href="../../tech/index.html">Tech Briefing</a>
-<a href="../../tech/archive/index.html">Tech Archive</a>
-</nav></header>
+<header class="top">
+<div class="bar"><a class="brand" href="../../index.html"><img class="logo" src="../../logo.png" alt="Sharma Electric &amp; HVAC"></a>
+<div class="ttl"><b>Sharma News</b><span>Sunday, November 15, 2026 · Updated 5:00 AM ET</span></div></div>
+<nav class="main"><div class="in">
+<a href="../../index.html">Home</a>
+<a href="https://sharmaelechvac.github.io/sharma-legal-briefing/">Legal</a>
+<a href="../../finance/index.html">Finance</a>
+<a href="../../finance/archive/index.html">Finance archive</a>
+<a href="../../tech/index.html">Tech</a>
+<a href="../../tech/archive/index.html">Tech archive</a>
+</div></nav></header>
 <div class="wrap"><p class="crumb"><a href="../index.html">Finance Briefing</a> · <a href="index.html">Archive</a></p><article><h1>Sharma Electric &amp; HVAC — Daily Finance News Briefing</h1>
 <nav class="jump"><a href="#glance">At a Glance</a><a href="#sec-1">Summary</a><a href="#sec-2">Findings</a><a href="#sec-3">Could not verify</a><a href="#sec-4">Sources</a></nav><div class="glance" id="glance"><h2>At a Glance</h2><ul><li>Copper fell 1.67% to $6.08/lb; LME copper broke toward $13,430/t, its lowest since July.</li>
 <li>US–China talks on a “$30 billion-for-$30 billion” tariff-cut arrangement — no agreement announced.</li>
@@ -170,5 +165,5 @@ article h1{font-size:25px}
 <div class="item"><h3 class="item-head"><a href="../../finance/story/2026-11-15-6-small-business-credit-insurance-or-tax-changes-affecting-contr.html">6. Small-business credit, insurance, or tax changes affecting contractors — incl. Florida OIR / NCCI</a></h3><p class="deck">Florida OIR / NCCI — headline answer: No final order was found by the 7:00 AM ET Nov 15 cutoff. - Source / links (verified live in the research window on the morning of Nov 15, 2026): Florida OIR Newsroom —…</p><p class="impact"><b>Why it matters to Sharma:</b> Budget 2027 workers' comp renewals as unapproved for now — the potential ~7.4% average cut is not yet bookable savings until Commissioner Yaworsky issues the final order. Other small-business items: No material small-business credit, insurance, or tax change…</p><a class="cont" href="../../finance/story/2026-11-15-6-small-business-credit-insurance-or-tax-changes-affecting-contr.html">Read the full story &rarr;</a></div>
 <h2 id="sec-3">Could not verify</h2><div class="item"><p class="deck">Revolution Florida's Florida Building Code 9th Edition / Pinellas explainer ( https://www.revolutionflorida.com/blog/fbc-9th-edition-effective-date-explainer ) circulated in search results, but the page itself carries no…</p><a class="cont" href="../../finance/story/2026-11-15-could-not-verify.html">Read this section in full &rarr;</a></div>
 <h2 id="sec-4">Sources</h2><div class="item"><p class="deck">All sources read the morning of Sunday, November 15, 2026 (ET). "Verified live" = OIR pages opened in the live research browser; all others verified from the source page text via the web index, with publication timestamps taken…</p><a class="cont" href="../../finance/story/2026-11-15-sources.html">Read this section in full &rarr;</a></div><p class="totop"><a href="#top">Back to top ↑</a></p></article></div>
-<footer><div class="fin">Sharma Electric &amp; HVAC — The Sharma News · Updated daily at 5:00 AM ET · General news summaries for the Sharma team — not legal or financial advice.</div></footer>
+<footer><div class="fin"><b>Sharma Electric &amp; HVAC</b> · Sharma News, updated daily at 5:00 AM ET. News summaries for the Sharma team. Not legal or financial advice.</div></footer>
 </body></html>
