@@ -10,56 +10,75 @@ NOTES = pathlib.Path.home() / "workspace" / "research_notes"
 LEGAL_BASE = "https://sharmaelechvac.github.io/sharma-legal-briefing"
 
 CSS = """
-:root{--bg:#050a18;--bg2:#0a1230;--card:rgba(255,255,255,.055);--line:rgba(148,184,255,.18);
---txt:#e8eefc;--mut:#9fb0d8;--blue:#38bdf8;--vio:#a78bfa;--grad:linear-gradient(92deg,#38bdf8,#818cf8,#c084fc)}
+:root{--paper:#f7f4ec;--paper2:#faf8f2;--ink:#111;--mut:#555;--accent:#1b365d;--hair:#c9c2b2}
 *{box-sizing:border-box}html{-webkit-text-size-adjust:100%}
-body{margin:0;font-family:'Segoe UI',system-ui,-apple-system,Roboto,Helvetica,Arial,sans-serif;
-background:radial-gradient(1100px 520px at 85% -10%,rgba(129,140,248,.22),transparent 60%),
-radial-gradient(900px 480px at -10% 0%,rgba(56,189,248,.16),transparent 55%),var(--bg);color:var(--txt);line-height:1.62}
-a{color:var(--blue);text-decoration:none}a:hover{text-decoration:underline}
-header.top{position:sticky;top:0;z-index:20;backdrop-filter:blur(14px);background:rgba(5,10,24,.82);
-border-bottom:1px solid var(--line)}
-.topin{max-width:1080px;margin:0 auto;padding:10px 18px;display:flex;align-items:center;gap:16px;flex-wrap:wrap}
-.topin img.logo{height:54px;width:auto;background:#fff;border-radius:10px;padding:5px 8px;box-shadow:0 0 22px rgba(56,189,248,.35)}
-.brand{font-size:24px;font-weight:800;letter-spacing:.4px;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
-nav.main{margin-left:auto;display:flex;gap:8px;flex-wrap:wrap}
-nav.main a{color:var(--txt);font-size:14px;font-weight:600;padding:7px 13px;border:1px solid var(--line);border-radius:999px;background:var(--card)}
-nav.main a:hover{border-color:var(--blue);text-decoration:none;box-shadow:0 0 14px rgba(56,189,248,.35)}
-.wrap{max-width:1080px;margin:0 auto;padding:26px 18px 60px}
-.hero{text-align:center;padding:30px 10px 8px}
-.hero h1{font-size:42px;margin:0 0 6px;font-weight:900}
-.hero h1 .g{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
-.hero .date{color:var(--mut);font-size:17px}
-.hero .note{display:inline-block;margin-top:14px;padding:8px 18px;border-radius:999px;border:1px solid var(--line);
-background:var(--card);font-weight:700;color:#cfe0ff;box-shadow:0 0 18px rgba(129,140,248,.25)}
-.chip{display:inline-block;font-size:12.5px;font-weight:800;letter-spacing:.6px;text-transform:uppercase;
-padding:4px 12px;border-radius:999px;border:1px solid var(--line);background:rgba(56,189,248,.12);color:#bfe3ff}
-.chip.fin{background:rgba(167,139,250,.14);color:#e2d6ff}
-.grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:26px}
-@media(max-width:760px){.grid{grid-template-columns:1fr}.hero h1{font-size:32px}}
-.card{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:24px;
-box-shadow:0 10px 34px rgba(0,0,0,.35),inset 0 1px 0 rgba(255,255,255,.06)}
-.card h2{margin:10px 0 8px;font-size:24px}
-.card p{color:#d5def5}
-.btn{display:inline-block;margin-top:12px;padding:11px 22px;border-radius:12px;font-weight:800;color:#04122b;
-background:var(--grad);box-shadow:0 0 20px rgba(56,189,248,.45)}
-.btn:hover{text-decoration:none;filter:brightness(1.1)}
-h2.sec{margin:38px 0 6px;font-size:21px}
-.arch{list-style:none;margin:10px 0 0;padding:0}
-.arch li{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:13px 17px;margin:0 0 10px}
-.arch li a{font-weight:700}
-.arch .d{color:var(--mut);font-size:13.5px;font-weight:700;text-transform:uppercase;letter-spacing:.5px}
-.arch p{margin:4px 0 0;color:#d5def5;font-size:15px}
-article{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:28px 30px;
-box-shadow:0 10px 34px rgba(0,0,0,.35);overflow-wrap:break-word}
-article h1{font-size:29px;line-height:1.25}article h2{font-size:23px;margin-top:30px;border-bottom:1px solid var(--line);padding-bottom:6px}
-article h3{font-size:19px;margin-top:24px}article a{word-break:break-word}
+body{margin:0;background:var(--paper);color:var(--ink);
+font-family:Georgia,'Times New Roman',Times,serif;line-height:1.55}
+a{color:var(--accent);text-decoration:underline;text-underline-offset:2px}
+a:hover{color:#000}
+/* ---------- masthead ---------- */
+.masthead{max-width:1020px;margin:0 auto;padding:16px 18px 0;text-align:center}
+.masthead img.logo{height:58px;width:auto}
+.dbl{border-top:4px solid var(--ink);margin-top:10px}
+.dbl::after{content:"";display:block;border-top:1px solid var(--ink);margin-top:2px}
+.nameplate{font-family:'Playfair Display',Georgia,'Times New Roman',serif;font-weight:900;
+font-size:58px;line-height:1.05;letter-spacing:.5px;margin:10px 0 2px}
+.tagline{font-style:italic;color:#333;font-size:15.5px;margin:0 0 10px}
+.dateline{display:flex;justify-content:space-between;gap:8px 18px;flex-wrap:wrap;
+border-top:1px solid var(--ink);padding:6px 2px 7px;font-size:12.5px;
+text-transform:uppercase;letter-spacing:1.4px}
+nav.main{display:flex;justify-content:center;flex-wrap:wrap;border-top:1px solid var(--ink);
+border-bottom:6px double var(--ink);padding:7px 0}
+nav.main a{color:var(--ink);text-decoration:none;font-size:13px;font-weight:700;
+letter-spacing:1.6px;text-transform:uppercase;padding:0 15px}
+nav.main a + a{border-left:1px solid var(--hair)}
+nav.main a:hover{text-decoration:underline}
+.wrap{max-width:1020px;margin:0 auto;padding:6px 18px 54px}
+/* ---------- front page ---------- */
+.front{display:grid;grid-template-columns:1fr 1fr;margin-top:24px;
+border-bottom:2px solid var(--ink);padding-bottom:24px}
+.story{padding:0 24px}
+.story:first-child{padding-left:0}
+.story + .story{border-left:1px solid var(--hair);padding-right:0}
+.kicker{font-size:12px;font-weight:700;letter-spacing:2.2px;text-transform:uppercase;color:var(--accent)}
+.story .headline{font-family:'Playfair Display',Georgia,'Times New Roman',serif;font-weight:700;
+font-size:26px;line-height:1.22;margin:8px 0 10px}
+.byline{font-size:12.5px;text-transform:uppercase;letter-spacing:1px;color:#444;
+border-top:1px solid var(--hair);border-bottom:1px solid var(--hair);padding:5px 0;margin:0 0 12px}
+.cont{font-variant:small-caps;font-size:17px;font-weight:700;color:var(--ink)}
+/* ---------- index / archive ---------- */
+h2.sec{font-size:19px;font-weight:700;text-transform:uppercase;letter-spacing:1.6px;
+border-bottom:2px solid var(--ink);padding-bottom:5px;margin:32px 0 2px}
+.arch{list-style:none;margin:0;padding:0}
+.arch li{border-bottom:1px solid var(--hair);padding:11px 0}
+.arch li a{font-size:18px;font-weight:700;color:var(--ink);text-decoration:none}
+.arch li a:hover{text-decoration:underline}
+.arch .d{color:var(--mut);font-size:12.5px;font-weight:700;text-transform:uppercase;letter-spacing:1px}
+.arch p{margin:3px 0 0;color:#333;font-size:15px}
+/* ---------- article pages ---------- */
+article{overflow-wrap:break-word;padding-top:6px}
+article h1{font-family:'Playfair Display',Georgia,'Times New Roman',serif;font-size:30px;line-height:1.2;margin:10px 0 12px}
+article h2{font-size:22px;margin-top:30px;border-bottom:1px solid var(--ink);padding-bottom:5px}
+article h3{font-size:18.5px;margin-top:24px}
+article a{word-break:break-word}
 article table{border-collapse:collapse;width:100%;display:block;overflow-x:auto}
-article th,article td{border:1px solid var(--line);padding:7px 10px;font-size:14.5px;text-align:left}
-article code{background:rgba(56,189,248,.13);padding:1px 6px;border-radius:6px}
-article blockquote{border-left:3px solid var(--vio);margin:14px 0;padding:4px 16px;color:#d5def5}
-.crumb{color:var(--mut);font-size:14px;margin-bottom:14px}
-footer{border-top:1px solid var(--line);color:var(--mut);text-align:center;padding:22px 16px 30px;font-size:14px}
+article th,article td{border:1px solid #999;padding:6px 9px;font-size:14px;text-align:left}
+article th{background:#ece7da}
+article code{background:#ece7da;padding:1px 5px;font-family:ui-monospace,Menlo,Consolas,monospace;font-size:.88em}
+article blockquote{border-left:2px solid var(--ink);margin:14px 0;padding:2px 16px;color:#333;font-style:italic}
+.crumb{color:var(--mut);font-size:12.5px;text-transform:uppercase;letter-spacing:1.2px;margin:16px 0 8px}
+.crumb a{color:var(--ink)}
+footer{max-width:1020px;margin:0 auto;padding:0 18px 30px;text-align:center}
+footer .fin{border-top:6px double var(--ink);padding-top:12px;font-size:13px;color:#444}
+@media(max-width:760px){
+.nameplate{font-size:38px}
+.front{grid-template-columns:1fr}
+.story{padding:0}
+.story + .story{border-left:none;border-top:1px solid var(--hair);margin-top:22px;padding-top:20px}
+.story .headline{font-size:23px}
+article h1{font-size:25px}
+.dateline{justify-content:center;text-align:center}
+}
 """
 
 def shell(prefix, title, body, chip=""):
@@ -67,19 +86,26 @@ def shell(prefix, title, body, chip=""):
 <html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex">
-<title>{title} — Sharma News</title><style>{CSS}</style></head>
+<title>{title} — The Sharma News</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&amp;display=swap" rel="stylesheet">
+<style>{CSS}</style></head>
 <body>
-<header class="top"><div class="topin">
+<header class="masthead">
 <img class="logo" src="{prefix}logo.png" alt="Sharma Electric &amp; HVAC">
-<span class="brand">SHARMA NEWS</span>
+<div class="dbl"></div>
+<div class="nameplate">The Sharma News</div>
+<p class="tagline">The daily news hub for Sharma Electric &amp; HVAC</p>
+<div class="dateline"><span>Orlando, Florida</span><span>Sunday, November 15, 2026</span><span>Updated daily at 5:00 AM ET</span></div>
 <nav class="main">
-<a href="{prefix}index.html">Home</a>
-<a href="{LEGAL_BASE}/">⚖️ Legal Briefing</a>
-<a href="{prefix}finance/index.html">📈 Finance Briefing</a>
+<a href="{prefix}index.html">Front Page</a>
+<a href="{LEGAL_BASE}/">Legal Briefing</a>
+<a href="{prefix}finance/index.html">Finance Briefing</a>
 <a href="{prefix}finance/archive/index.html">Finance Archive</a>
-</nav></div></header>
+</nav></header>
 <div class="wrap">{body}</div>
-<footer>Sharma Electric &amp; HVAC — Sharma News · Updated daily at 5:00 AM ET · General news summaries for the Sharma team — not legal or financial advice.</footer>
+<footer><div class="fin">Sharma Electric &amp; HVAC — The Sharma News · Updated daily at 5:00 AM ET · General news summaries for the Sharma team — not legal or financial advice.</div></footer>
 </body></html>"""
 
 def md_to_html(md_text):
@@ -121,19 +147,19 @@ def fin_report(date):
 
 # ---- finance archive pages + latest ----
 for date,(pat,label,one) in FIN.items():
-    body = f'<p class="crumb"><a href="../index.html">📈 Finance Briefing</a> · <a href="index.html">Archive</a></p><article>{md_to_html(fin_report(date))}</article>'
+    body = f'<p class="crumb"><a href="../index.html">Finance Briefing</a> · <a href="index.html">Archive</a></p><article>{md_to_html(fin_report(date))}</article>'
     (DOCS/"finance"/"archive"/f"{date}.html").write_text(
         shell("../../", f"Finance Briefing — {label}", body), encoding="utf-8")
 
 latest = "2026-11-15"
-body = f'<p class="crumb"><span class="chip fin">📈 Finance · Latest edition</span></p><article>{md_to_html(fin_report(latest))}</article>'
+body = f'<p class="crumb"><span class="kicker">Finance Briefing · Latest Edition</span></p><article>{md_to_html(fin_report(latest))}</article>'
 (DOCS/"finance"/"index.html").write_text(
     shell("../", f"Finance Briefing — {FIN[latest][1]}", body), encoding="utf-8")
 
 items = "\n".join(
     f'<li><span class="d">{FIN[d][1]}</span><br><a href="{d}.html">Finance Briefing — {d}</a><p>{FIN[d][2]}</p></li>'
     for d in sorted(FIN, reverse=True))
-body = f'<span class="chip fin">📈 Finance</span><h2 class="sec" style="margin-top:14px">Finance Briefing Archive</h2><ul class="arch">{items}</ul>'
+body = f'<span class="kicker">Finance</span><h2 class="sec" style="margin-top:8px">Finance Briefing — Back Issues</h2><ul class="arch">{items}</ul>'
 (DOCS/"finance"/"archive"/"index.html").write_text(
     shell("../../", "Finance Briefing Archive", body), encoding="utf-8")
 
@@ -145,19 +171,18 @@ fin_arch = "\n".join(
     f'<li><span class="d">{FIN[d][1]}</span><br><a href="finance/archive/{d}.html">Finance Briefing — {d}</a><p>{FIN[d][2]}</p></li>'
     for d in sorted(FIN, reverse=True))
 body = f"""
-<div class="hero"><h1>Sharma <span class="g">News</span></h1>
-<div class="date">Sunday, November 15, 2026 · The daily news hub for Sharma Electric &amp; HVAC</div><br>
-<span class="note">Updated daily at 5:00 AM ET.</span></div>
-<div class="grid">
-<div class="card"><span class="chip">⚖️ Legal</span>
-<h2>Legal Briefing — Nov 15, 2026</h2><p>{LEGAL['2026-11-15'][1]}</p>
-<a class="btn" href="{LEGAL_BASE}/">Read today's legal briefing →</a></div>
-<div class="card"><span class="chip fin">📈 Finance</span>
-<h2>Finance Briefing — Nov 15, 2026</h2><p>{FIN['2026-11-15'][2]}</p>
-<a class="btn" href="finance/index.html">Read today's finance briefing →</a></div>
+<div class="front">
+<div class="story"><span class="kicker">Legal Briefing</span>
+<h2 class="headline">{LEGAL['2026-11-15'][1]}</h2>
+<p class="byline">Legal Briefing — Harvey, Legal Advisor · Edition of Nov 15, 2026</p>
+<a class="cont" href="{LEGAL_BASE}/">Read today's legal briefing →</a></div>
+<div class="story"><span class="kicker">Finance Briefing</span>
+<h2 class="headline">{FIN['2026-11-15'][2]}</h2>
+<p class="byline">Finance Briefing — Warren Buffett, CFO · Edition of Nov 15, 2026</p>
+<a class="cont" href="finance/index.html">Read today's finance briefing →</a></div>
 </div>
-<h2 class="sec">⚖️ Legal archive</h2><ul class="arch">{legal_arch}</ul>
-<h2 class="sec">📈 Finance archive</h2><ul class="arch">{fin_arch}</ul>
+<h2 class="sec">Legal — Back Issues</h2><ul class="arch">{legal_arch}</ul>
+<h2 class="sec">Finance — Back Issues</h2><ul class="arch">{fin_arch}</ul>
 """
 (DOCS/"index.html").write_text(shell("", "Home — Sunday, November 15, 2026", body), encoding="utf-8")
 print("built:", [str(p.relative_to(DOCS)) for p in sorted(DOCS.rglob('*.html'))])

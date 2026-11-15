@@ -2,69 +2,95 @@
 <html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex">
-<title>Finance Briefing — Wednesday, November 11, 2026 — Sharma News</title><style>
-:root{--bg:#050a18;--bg2:#0a1230;--card:rgba(255,255,255,.055);--line:rgba(148,184,255,.18);
---txt:#e8eefc;--mut:#9fb0d8;--blue:#38bdf8;--vio:#a78bfa;--grad:linear-gradient(92deg,#38bdf8,#818cf8,#c084fc)}
+<title>Finance Briefing — Wednesday, November 11, 2026 — The Sharma News</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&amp;display=swap" rel="stylesheet">
+<style>
+:root{--paper:#f7f4ec;--paper2:#faf8f2;--ink:#111;--mut:#555;--accent:#1b365d;--hair:#c9c2b2}
 *{box-sizing:border-box}html{-webkit-text-size-adjust:100%}
-body{margin:0;font-family:'Segoe UI',system-ui,-apple-system,Roboto,Helvetica,Arial,sans-serif;
-background:radial-gradient(1100px 520px at 85% -10%,rgba(129,140,248,.22),transparent 60%),
-radial-gradient(900px 480px at -10% 0%,rgba(56,189,248,.16),transparent 55%),var(--bg);color:var(--txt);line-height:1.62}
-a{color:var(--blue);text-decoration:none}a:hover{text-decoration:underline}
-header.top{position:sticky;top:0;z-index:20;backdrop-filter:blur(14px);background:rgba(5,10,24,.82);
-border-bottom:1px solid var(--line)}
-.topin{max-width:1080px;margin:0 auto;padding:10px 18px;display:flex;align-items:center;gap:16px;flex-wrap:wrap}
-.topin img.logo{height:54px;width:auto;background:#fff;border-radius:10px;padding:5px 8px;box-shadow:0 0 22px rgba(56,189,248,.35)}
-.brand{font-size:24px;font-weight:800;letter-spacing:.4px;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
-nav.main{margin-left:auto;display:flex;gap:8px;flex-wrap:wrap}
-nav.main a{color:var(--txt);font-size:14px;font-weight:600;padding:7px 13px;border:1px solid var(--line);border-radius:999px;background:var(--card)}
-nav.main a:hover{border-color:var(--blue);text-decoration:none;box-shadow:0 0 14px rgba(56,189,248,.35)}
-.wrap{max-width:1080px;margin:0 auto;padding:26px 18px 60px}
-.hero{text-align:center;padding:30px 10px 8px}
-.hero h1{font-size:42px;margin:0 0 6px;font-weight:900}
-.hero h1 .g{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
-.hero .date{color:var(--mut);font-size:17px}
-.hero .note{display:inline-block;margin-top:14px;padding:8px 18px;border-radius:999px;border:1px solid var(--line);
-background:var(--card);font-weight:700;color:#cfe0ff;box-shadow:0 0 18px rgba(129,140,248,.25)}
-.chip{display:inline-block;font-size:12.5px;font-weight:800;letter-spacing:.6px;text-transform:uppercase;
-padding:4px 12px;border-radius:999px;border:1px solid var(--line);background:rgba(56,189,248,.12);color:#bfe3ff}
-.chip.fin{background:rgba(167,139,250,.14);color:#e2d6ff}
-.grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:26px}
-@media(max-width:760px){.grid{grid-template-columns:1fr}.hero h1{font-size:32px}}
-.card{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:24px;
-box-shadow:0 10px 34px rgba(0,0,0,.35),inset 0 1px 0 rgba(255,255,255,.06)}
-.card h2{margin:10px 0 8px;font-size:24px}
-.card p{color:#d5def5}
-.btn{display:inline-block;margin-top:12px;padding:11px 22px;border-radius:12px;font-weight:800;color:#04122b;
-background:var(--grad);box-shadow:0 0 20px rgba(56,189,248,.45)}
-.btn:hover{text-decoration:none;filter:brightness(1.1)}
-h2.sec{margin:38px 0 6px;font-size:21px}
-.arch{list-style:none;margin:10px 0 0;padding:0}
-.arch li{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:13px 17px;margin:0 0 10px}
-.arch li a{font-weight:700}
-.arch .d{color:var(--mut);font-size:13.5px;font-weight:700;text-transform:uppercase;letter-spacing:.5px}
-.arch p{margin:4px 0 0;color:#d5def5;font-size:15px}
-article{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:28px 30px;
-box-shadow:0 10px 34px rgba(0,0,0,.35);overflow-wrap:break-word}
-article h1{font-size:29px;line-height:1.25}article h2{font-size:23px;margin-top:30px;border-bottom:1px solid var(--line);padding-bottom:6px}
-article h3{font-size:19px;margin-top:24px}article a{word-break:break-word}
+body{margin:0;background:var(--paper);color:var(--ink);
+font-family:Georgia,'Times New Roman',Times,serif;line-height:1.55}
+a{color:var(--accent);text-decoration:underline;text-underline-offset:2px}
+a:hover{color:#000}
+/* ---------- masthead ---------- */
+.masthead{max-width:1020px;margin:0 auto;padding:16px 18px 0;text-align:center}
+.masthead img.logo{height:58px;width:auto}
+.dbl{border-top:4px solid var(--ink);margin-top:10px}
+.dbl::after{content:"";display:block;border-top:1px solid var(--ink);margin-top:2px}
+.nameplate{font-family:'Playfair Display',Georgia,'Times New Roman',serif;font-weight:900;
+font-size:58px;line-height:1.05;letter-spacing:.5px;margin:10px 0 2px}
+.tagline{font-style:italic;color:#333;font-size:15.5px;margin:0 0 10px}
+.dateline{display:flex;justify-content:space-between;gap:8px 18px;flex-wrap:wrap;
+border-top:1px solid var(--ink);padding:6px 2px 7px;font-size:12.5px;
+text-transform:uppercase;letter-spacing:1.4px}
+nav.main{display:flex;justify-content:center;flex-wrap:wrap;border-top:1px solid var(--ink);
+border-bottom:6px double var(--ink);padding:7px 0}
+nav.main a{color:var(--ink);text-decoration:none;font-size:13px;font-weight:700;
+letter-spacing:1.6px;text-transform:uppercase;padding:0 15px}
+nav.main a + a{border-left:1px solid var(--hair)}
+nav.main a:hover{text-decoration:underline}
+.wrap{max-width:1020px;margin:0 auto;padding:6px 18px 54px}
+/* ---------- front page ---------- */
+.front{display:grid;grid-template-columns:1fr 1fr;margin-top:24px;
+border-bottom:2px solid var(--ink);padding-bottom:24px}
+.story{padding:0 24px}
+.story:first-child{padding-left:0}
+.story + .story{border-left:1px solid var(--hair);padding-right:0}
+.kicker{font-size:12px;font-weight:700;letter-spacing:2.2px;text-transform:uppercase;color:var(--accent)}
+.story .headline{font-family:'Playfair Display',Georgia,'Times New Roman',serif;font-weight:700;
+font-size:26px;line-height:1.22;margin:8px 0 10px}
+.byline{font-size:12.5px;text-transform:uppercase;letter-spacing:1px;color:#444;
+border-top:1px solid var(--hair);border-bottom:1px solid var(--hair);padding:5px 0;margin:0 0 12px}
+.cont{font-variant:small-caps;font-size:17px;font-weight:700;color:var(--ink)}
+/* ---------- index / archive ---------- */
+h2.sec{font-size:19px;font-weight:700;text-transform:uppercase;letter-spacing:1.6px;
+border-bottom:2px solid var(--ink);padding-bottom:5px;margin:32px 0 2px}
+.arch{list-style:none;margin:0;padding:0}
+.arch li{border-bottom:1px solid var(--hair);padding:11px 0}
+.arch li a{font-size:18px;font-weight:700;color:var(--ink);text-decoration:none}
+.arch li a:hover{text-decoration:underline}
+.arch .d{color:var(--mut);font-size:12.5px;font-weight:700;text-transform:uppercase;letter-spacing:1px}
+.arch p{margin:3px 0 0;color:#333;font-size:15px}
+/* ---------- article pages ---------- */
+article{overflow-wrap:break-word;padding-top:6px}
+article h1{font-family:'Playfair Display',Georgia,'Times New Roman',serif;font-size:30px;line-height:1.2;margin:10px 0 12px}
+article h2{font-size:22px;margin-top:30px;border-bottom:1px solid var(--ink);padding-bottom:5px}
+article h3{font-size:18.5px;margin-top:24px}
+article a{word-break:break-word}
 article table{border-collapse:collapse;width:100%;display:block;overflow-x:auto}
-article th,article td{border:1px solid var(--line);padding:7px 10px;font-size:14.5px;text-align:left}
-article code{background:rgba(56,189,248,.13);padding:1px 6px;border-radius:6px}
-article blockquote{border-left:3px solid var(--vio);margin:14px 0;padding:4px 16px;color:#d5def5}
-.crumb{color:var(--mut);font-size:14px;margin-bottom:14px}
-footer{border-top:1px solid var(--line);color:var(--mut);text-align:center;padding:22px 16px 30px;font-size:14px}
+article th,article td{border:1px solid #999;padding:6px 9px;font-size:14px;text-align:left}
+article th{background:#ece7da}
+article code{background:#ece7da;padding:1px 5px;font-family:ui-monospace,Menlo,Consolas,monospace;font-size:.88em}
+article blockquote{border-left:2px solid var(--ink);margin:14px 0;padding:2px 16px;color:#333;font-style:italic}
+.crumb{color:var(--mut);font-size:12.5px;text-transform:uppercase;letter-spacing:1.2px;margin:16px 0 8px}
+.crumb a{color:var(--ink)}
+footer{max-width:1020px;margin:0 auto;padding:0 18px 30px;text-align:center}
+footer .fin{border-top:6px double var(--ink);padding-top:12px;font-size:13px;color:#444}
+@media(max-width:760px){
+.nameplate{font-size:38px}
+.front{grid-template-columns:1fr}
+.story{padding:0}
+.story + .story{border-left:none;border-top:1px solid var(--hair);margin-top:22px;padding-top:20px}
+.story .headline{font-size:23px}
+article h1{font-size:25px}
+.dateline{justify-content:center;text-align:center}
+}
 </style></head>
 <body>
-<header class="top"><div class="topin">
+<header class="masthead">
 <img class="logo" src="../../logo.png" alt="Sharma Electric &amp; HVAC">
-<span class="brand">SHARMA NEWS</span>
+<div class="dbl"></div>
+<div class="nameplate">The Sharma News</div>
+<p class="tagline">The daily news hub for Sharma Electric &amp; HVAC</p>
+<div class="dateline"><span>Orlando, Florida</span><span>Sunday, November 15, 2026</span><span>Updated daily at 5:00 AM ET</span></div>
 <nav class="main">
-<a href="../../index.html">Home</a>
-<a href="https://sharmaelechvac.github.io/sharma-legal-briefing/">⚖️ Legal Briefing</a>
-<a href="../../finance/index.html">📈 Finance Briefing</a>
+<a href="../../index.html">Front Page</a>
+<a href="https://sharmaelechvac.github.io/sharma-legal-briefing/">Legal Briefing</a>
+<a href="../../finance/index.html">Finance Briefing</a>
 <a href="../../finance/archive/index.html">Finance Archive</a>
-</nav></div></header>
-<div class="wrap"><p class="crumb"><a href="../index.html">📈 Finance Briefing</a> · <a href="index.html">Archive</a></p><article><h1>Sharma Electric &amp; HVAC — Daily Finance News, Nov 10–11, 2026</h1>
+</nav></header>
+<div class="wrap"><p class="crumb"><a href="../index.html">Finance Briefing</a> · <a href="index.html">Archive</a></p><article><h1>Sharma Electric &amp; HVAC — Daily Finance News, Nov 10–11, 2026</h1>
 <p><strong>Window:</strong> Roughly 24 hours before Wed Nov 11, 2026, 4:41 PM ET (Nov 10 ~4:41 PM ET – Nov 11 4:41 PM ET). All dates below were verified on the source pages themselves (datelines, embargo lines, publication stamps, or computed-at times shown on the page). Items outside the window were excluded, not padded in.</p>
 <h2>Summary</h2>
 <p>One story dominated the 24 hours: a hotter-than-expected October CPI on Tuesday Nov 10 killed the four-week slide in mortgage rates, put a December Fed rate <em>hike</em> — possibly 50 bp — on the table, and pushed the 10-year Treasury to ~5%. That is bearish for Florida new-home demand heading into winter. Copper stayed historically high and physically tight. There was <strong>no</strong> material 24-hour news on HVAC equipment / R-454B / tariffs, on CES or World Electric, on Census housing starts/permits/new-home sales, or on slowdowns, layoffs, defaults or slow pay at DR Horton, Lennar, Pulte, Meritage or Strada Services — those categories are flagged explicitly below.</p>
@@ -177,5 +203,5 @@ footer{border-top:1px solid var(--line);color:var(--mut);text-align:center;paddi
 <li>tEDmag distributor listings (CES Nov 5 / World Electric Sep 18 items) — <em>index</em> only, used solely to establish no in-window CES/World Electric news</li>
 <li>The Refrigerant Index, week of Nov 9, 2026 (R-454B $23.75/lb) and ACHR News Carrier item, Nov 2, 2026 — <em>index</em> only, used solely to establish no in-window HVAC/R-454B news</li>
 </ul></article></div>
-<footer>Sharma Electric &amp; HVAC — Sharma News · Updated daily at 5:00 AM ET · General news summaries for the Sharma team — not legal or financial advice.</footer>
+<footer><div class="fin">Sharma Electric &amp; HVAC — The Sharma News · Updated daily at 5:00 AM ET · General news summaries for the Sharma team — not legal or financial advice.</div></footer>
 </body></html>
