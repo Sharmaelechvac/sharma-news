@@ -27,10 +27,31 @@ text-transform:uppercase;letter-spacing:1.4px}
 nav.main{display:flex;justify-content:center;flex-wrap:wrap;border-top:1px solid var(--ink);
 border-bottom:6px double var(--ink);padding:7px 0}
 nav.main a{color:var(--ink);text-decoration:none;font-size:13px;font-weight:700;
-letter-spacing:1.6px;text-transform:uppercase;padding:0 15px}
+letter-spacing:1.6px;text-transform:uppercase;padding:10px 15px}
 nav.main a + a{border-left:1px solid var(--hair)}
 nav.main a:hover{text-decoration:underline}
 .wrap{max-width:1020px;margin:0 auto;padding:6px 18px 54px}
+/* ---------- photos (newspaper style) ---------- */
+.photo{margin:12px 0 16px}
+.photo img{width:100%;height:auto;display:block;background:#fff;border:1px solid var(--ink);
+padding:3px;filter:grayscale(92%) contrast(1.06)}
+.photo figcaption{font-style:italic;font-size:13.5px;color:#222;margin-top:6px;line-height:1.45}
+.photo .credit{display:block;font-style:normal;font-variant:small-caps;font-size:11.5px;
+letter-spacing:.8px;color:var(--mut);margin-top:2px}
+.photo.small{max-width:430px}
+.story .photo img{max-height:290px;object-fit:cover;object-position:top}
+/* ---------- at a glance / key numbers ---------- */
+.glance{background:var(--paper2);border:1px solid var(--ink);border-top:4px solid var(--ink);
+padding:14px 18px 8px;margin:20px 0 18px}
+.glance h2{font-size:15px;text-transform:uppercase;letter-spacing:2px;margin:0 0 8px;
+border:none;padding:0}
+.glance ul{margin:0 0 8px;padding-left:20px}
+.glance li{margin:5px 0;font-size:15.5px}
+.keynums{display:flex;flex-wrap:wrap;border:1px solid var(--ink);background:var(--paper2);margin:0 0 20px}
+.kn{flex:1 1 138px;padding:9px 12px;border-right:1px solid var(--hair)}
+.kn:last-child{border-right:none}
+.kn b{display:block;font-size:19px;line-height:1.2}
+.kn span{font-size:11px;text-transform:uppercase;letter-spacing:1px;color:var(--mut)}
 /* ---------- front page ---------- */
 .front{display:grid;grid-template-columns:1fr 1fr;margin-top:24px;
 border-bottom:2px solid var(--ink);padding-bottom:24px}
@@ -42,18 +63,21 @@ border-bottom:2px solid var(--ink);padding-bottom:24px}
 font-size:26px;line-height:1.22;margin:8px 0 10px}
 .byline{font-size:12.5px;text-transform:uppercase;letter-spacing:1px;color:#444;
 border-top:1px solid var(--hair);border-bottom:1px solid var(--hair);padding:5px 0;margin:0 0 12px}
-.cont{font-variant:small-caps;font-size:17px;font-weight:700;color:var(--ink)}
+.cont{font-variant:small-caps;font-size:17px;font-weight:700;color:var(--ink);
+display:inline-block;padding:10px 6px 10px 0}
 /* ---------- index / archive ---------- */
 h2.sec{font-size:19px;font-weight:700;text-transform:uppercase;letter-spacing:1.6px;
 border-bottom:2px solid var(--ink);padding-bottom:5px;margin:32px 0 2px}
 .arch{list-style:none;margin:0;padding:0}
-.arch li{border-bottom:1px solid var(--hair);padding:11px 0}
+.arch li{border-bottom:1px solid var(--hair);padding:11px 0;overflow:hidden}
 .arch li a{font-size:18px;font-weight:700;color:var(--ink);text-decoration:none}
 .arch li a:hover{text-decoration:underline}
 .arch .d{color:var(--mut);font-size:12.5px;font-weight:700;text-transform:uppercase;letter-spacing:1px}
 .arch p{margin:3px 0 0;color:#333;font-size:15px}
+.arch img.thumb{width:112px;height:76px;object-fit:cover;float:left;margin:3px 14px 6px 0;
+background:#fff;border:1px solid var(--ink);padding:2px;filter:grayscale(92%) contrast(1.06)}
 /* ---------- article pages ---------- */
-article{overflow-wrap:break-word;padding-top:6px}
+article{overflow-wrap:break-word;padding-top:6px;max-width:68ch;margin:0 auto}
 article h1{font-family:'Playfair Display',Georgia,'Times New Roman',serif;font-size:30px;line-height:1.2;margin:10px 0 12px}
 article h2{font-size:22px;margin-top:30px;border-bottom:1px solid var(--ink);padding-bottom:5px}
 article h3{font-size:18.5px;margin-top:24px}
@@ -63,8 +87,28 @@ article th,article td{border:1px solid #999;padding:6px 9px;font-size:14px;text-
 article th{background:#ece7da}
 article code{background:#ece7da;padding:1px 5px;font-family:ui-monospace,Menlo,Consolas,monospace;font-size:.88em}
 article blockquote{border-left:2px solid var(--ink);margin:14px 0;padding:2px 16px;color:#333;font-style:italic}
+.windowline{font-variant:small-caps;font-size:16px;color:#333;border-bottom:1px solid var(--hair);padding-bottom:8px}
+.jump{position:sticky;top:0;z-index:6;background:var(--paper);border-bottom:2px solid var(--ink);
+display:flex;flex-wrap:wrap;gap:2px 16px;padding:8px 0;margin:0 0 6px}
+.jump a{color:var(--ink);text-decoration:none;font-size:12.5px;font-weight:700;
+text-transform:uppercase;letter-spacing:1.1px;padding:9px 2px}
+.jump a:hover{text-decoration:underline}
+.item{border-bottom:1px solid var(--hair);padding:12px 0 14px}
+.item .item-head{font-family:'Playfair Display',Georgia,'Times New Roman',serif;
+font-size:20px;line-height:1.3;margin:2px 0 6px}
+.item .deck{margin:0 0 6px;color:#222;font-size:15.5px}
+.item .impact{margin:0 0 4px;font-size:15.5px}
+.item .impact b{font-variant:small-caps;letter-spacing:.4px}
+details.full{margin-top:6px}
+details.full summary{cursor:pointer;font-variant:small-caps;font-size:16.5px;font-weight:700;
+color:var(--accent);padding:11px 0;min-height:24px}
+details.full summary:hover{color:#000}
+details.full .fullbody{border-top:1px dotted var(--hair);padding-top:4px}
+.sec-intro{color:#222}
+.totop{text-align:right;margin-top:26px}
+.totop a{font-variant:small-caps;font-weight:700;color:var(--ink);padding:10px 0;display:inline-block}
 .crumb{color:var(--mut);font-size:12.5px;text-transform:uppercase;letter-spacing:1.2px;margin:16px 0 8px}
-.crumb a{color:var(--ink)}
+.crumb a{color:var(--ink);padding:6px 0;display:inline-block}
 footer{max-width:1020px;margin:0 auto;padding:0 18px 30px;text-align:center}
 footer .fin{border-top:6px double var(--ink);padding-top:12px;font-size:13px;color:#444}
 @media(max-width:760px){
@@ -75,9 +119,11 @@ footer .fin{border-top:6px double var(--ink);padding-top:12px;font-size:13px;col
 .story .headline{font-size:23px}
 article h1{font-size:25px}
 .dateline{justify-content:center;text-align:center}
+.kn{flex:1 1 45%}
+.photo.small{max-width:none}
 }
 </style></head>
-<body>
+<body id="top">
 <header class="masthead">
 <img class="logo" src="../../logo.png" alt="Sharma Electric &amp; HVAC">
 <div class="dbl"></div>
@@ -93,7 +139,11 @@ article h1{font-size:25px}
 <div class="wrap"><p class="crumb"><a href="../index.html">Finance Briefing</a> · <a href="index.html">Archive</a></p><article><h1>Sharma Electric &amp; HVAC — Daily Finance News Brief</h1>
 <p><strong>Window:</strong> 7:00 AM ET Thursday, November 12, 2026 – 7:00 AM ET Friday, November 13, 2026
 <strong>Researched:</strong> Friday, November 13, 2026, from ~7:02 AM ET. Only items published/updated inside the window are reported as news; near-window items are listed separately at the end so nothing older is padded in.</p>
-<h2>Summary — ranked by importance to Sharma</h2>
+<nav class="jump"><a href="#glance">At a Glance</a><a href="#sec-1">Summary — ranked by importance to Sharma</a><a href="#sec-2">Findings</a><a href="#sec-3">Ranked comparison table (builder exposure, Nov 12)</a><a href="#sec-4">Could not verify / conflicting figures / excluded near-window items</a><a href="#sec-5">Sources</a></nav><div class="glance" id="glance"><h2>At a Glance</h2><ul><li>A December Fed hike became a near-certainty (CME FedWatch 100%); the daily 30-year rate rose to 7.42% while Freddie Mac's weekly average fell to 7.11%.</li>
+<li>NAR October existing-home sales hit a 16-year low: 3.75M SAAR, −5.5% month-over-month.</li>
+<li>Every major builder Sharma works with fell on Nov 12, led by Dream Finders (−8.17%).</li>
+<li>Copper settled −1.47% at $6.1825/lb — lowest since July 8, still +21.5% vs a year ago.</li>
+<li>No HVAC / R-454B, small-business credit, insurance or tax news inside the window.</li></ul></div><div class="keynums"><div class="kn"><b>7.42%</b><span>Daily 30-yr fixed</span></div><div class="kn"><b>7.11%</b><span>Freddie Mac weekly</span></div><div class="kn"><b>3.75M SAAR</b><span>Existing-home sales</span></div><div class="kn"><b>$416,700</b><span>Median price</span></div><div class="kn"><b>$6.1825/lb</b><span>COMEX copper</span></div><div class="kn"><b>100%</b><span>Dec hike odds</span></div></div><figure class="photo "><img src="../../img/2026-11-13-lead.jpg" alt="A home for sale" loading="lazy"><figcaption>Existing-home sales fell 5.5% in October to 3.75 million a year — a 16-year low.<span class="credit">Photo: Real Estate News</span></figcaption></figure><h2 id="sec-1">Summary — ranked by importance to Sharma</h2><div class="item"><p class="deck">A December Fed hike became a near-certainty on Nov 12, and daily mortgage rates jumped even as Freddie Mac's weekly survey fell. CME FedWatch went to 100% odds of a hike (mostly 25bp, with 50bp odds rising to 14.5% by late in the…</p><details class="full"><summary>Read this section in full</summary><div class="fullbody">
 <ol>
 <li><strong>A December Fed hike became a near-certainty on Nov 12, and daily mortgage rates jumped even as Freddie Mac's weekly survey fell.</strong> CME FedWatch went to 100% odds of a hike (mostly 25bp, with 50bp odds rising to 14.5% by late in the day); Mortgage News Daily's daily 30-year index rose 12bp to <strong>7.42%</strong> on Nov 12 while Freddie Mac's weekly average fell to <strong>7.11%</strong>. Three Fed officials (Hammack, Williams, Daly) backed further tightening on Nov 12.</li>
 <li><strong>NAR October existing-home sales hit a 16-year low:</strong> 3.75M SAAR, −5.5% MoM, −8.8% YoY; the South fell 6.5% to 1.73M. (Reuters syndication misprints the median price — see conflict note; NAR's actual all-housing median is $416,700.)</li>
@@ -104,8 +154,9 @@ article h1{font-size:25px}
 <li><strong>Small-business credit, insurance, or tax: no material change inside the window</strong> (explicit finding — see §6).</li>
 </ol>
 <hr />
-<h2>Findings</h2>
-<h3>1. Copper, wire, and electrical material prices and supply</h3>
+</div></details></div>
+<figure class="photo small"><img src="../../img/2026-11-13-inline.jpg" alt="Copper" loading="lazy"><figcaption>Copper hit a four-month low on Nov 12, settling at $6.1825/lb on COMEX.<span class="credit">Photo: Mining.com</span></figcaption></figure>
+<h2 id="sec-2">Findings</h2><div class="item"><h3 class="item-head">1. Copper, wire, and electrical material prices and supply</h3><p class="deck">Front-month COMEX copper (November delivery) settled $6.1825/lb, down 9.20 cents (−1.47%) for the Thursday, Nov 12 trading day — this is the latest COMEX settlement available inside the window. Lowest settlement since July 8,…</p><p class="impact"><b>Why it matters to Sharma:</b> A one-day dip does not reset wire quotes — copper is still ~22% above year-ago levels, so keep short validity windows on rough-in bids. Item 1B — "Copper price hits four-month low; focus on demand, AI and US rates" - Source: Mining.com (Reuters, by Pratima…</p><details class="full"><summary>Read the full story</summary><div class="fullbody"><h3>1. Copper, wire, and electrical material prices and supply</h3>
 <p><strong>Item 1A — "Comex Copper Settles 1.47% Lower at $6.1825 — Data Talk"</strong>
 - Source: Morningstar (Dow Jones Newswires / Dow Jones Market Data, FactSet) — <a href="https://www.morningstar.com/news/dow-jones/2026111212488/comex-copper-settles-147-lower-at-61825-data-talk" target="_blank" rel="noopener">https://www.morningstar.com/news/dow-jones/2026111212488/comex-copper-settles-147-lower-at-61825-data-talk</a>
 - Published: November 12, 2026, 1:56 PM ET — <em>verified on the source page</em>
@@ -123,9 +174,11 @@ article h1{font-size:25px}
 - Why it matters to Sharma: Sharma's Florida supply chain through World Electric now rolls up to new regional leadership, so confirm account contacts, pricing agreements, and branch service contacts are unchanged.</p>
 <p><strong>CES:</strong> No material City Electric Supply news was published inside the window (searches returned only a Nov 12 recruiting video and the Nov 4–6 Travelers Rest, SC branch item, which predates the window).
 <strong>Other wire/material prices:</strong> No Southwire/Encore or distributor wire-price-change announcement dated inside the window was found; the COMEX/LME moves above are the window's material price news.</p>
-<h3>2. HVAC equipment prices, refrigerant (R-454B), and tariffs</h3>
+</div></details></div>
+<div class="item"><h3 class="item-head">2. HVAC equipment prices, refrigerant (R-454B), and tariffs</h3><p class="deck">No material item was published or updated inside this window for this topic — stated explicitly. Checks made: ACHR News' residential-market page shows its only Nov 12, 2026 item is a history feature on DOE's first regional…</p><details class="full"><summary>Read the full story</summary><div class="fullbody"><h3>2. HVAC equipment prices, refrigerant (R-454B), and tariffs</h3>
 <p><strong>No material item was published or updated inside this window for this topic — stated explicitly.</strong> Checks made: ACHR News' residential-market page shows its only Nov 12, 2026 item is a history feature on DOE's first regional efficiency standards, not price news; its HVAC price-increase roundup is dated Nov 4 and its Carrier 8% residential price-increase story is dated Nov 2 (both outside the window). The Refrigerant Index's latest R-454B snapshot is the week of Nov 9 (outside the window). No new tariff rate change affecting HVAC equipment was published inside the window (see the excluded near-window tariff-refund item in "Could not verify / excluded" below).</p>
-<h3>3. Florida and US housing starts, permits, and new-home sales</h3>
+</div></details></div>
+<div class="item"><h3 class="item-head">3. Florida and US housing starts, permits, and new-home sales</h3><p class="deck">Census October housing starts and building permits are scheduled for Wednesday, Nov 18, 8:30 AM ET (with NAHB builder sentiment Nov 17 and NAR pending home sales Nov 18) — i.e., after this window closes. No Florida-specific…</p><p class="impact"><b>Why it matters to Sharma:</b> The South is weakening faster than the nation, which points to slower resale-driven work and more buyer competition for the new homes Sharma's builders must sell. Item 3B — Housing starts, permits, and new-home sales: no release inside the window - Source…</p><details class="full"><summary>Read the full story</summary><div class="fullbody"><h3>3. Florida and US housing starts, permits, and new-home sales</h3>
 <p><strong>Item 3A — "Existing-Home Sales Decreased 5.5% in October, According to NAR Report" (the scheduled 10:00 AM ET, Nov 12 release — ACTUAL results)</strong>
 - Source: National Association of REALTORS® (primary release) — <a href="https://www.nar.realtor/newsroom/existing-home-sales-decreased-5-5-percent-october-nar-report" target="_blank" rel="noopener">https://www.nar.realtor/newsroom/existing-home-sales-decreased-5-5-percent-october-nar-report</a> (GlobeNewswire mirror timestamped Nov 12, 2026, 10:00 AM ET)
 - Published: November 12, 2026, 10:00 AM ET — <em>verified on the NAR page itself</em>
@@ -139,7 +192,8 @@ article h1{font-size:25px}
 - Source: Groundbreak (commercial permit tracker; computed Nov 12, 2026, 10:31 AM ET) — <a href="https://pro.groundbreak.city/miami/stats/most-active-contractors" target="_blank" rel="noopener">https://pro.groundbreak.city/miami/stats/most-active-contractors</a>
 - Key numbers: Lennar Homes LLC is named as general contractor on <strong>91 Miami building permits over the last 90 days</strong> (most of any firm) and DR Horton Homes on <strong>61</strong>; the top 25 contractors account for 638 permits. This is a rolling commercial tracker, not an official release.
 - Why it matters to Sharma: Miami-area permit flow from Sharma's two biggest builder names is still running, even as national resale demand deteriorates.</p>
-<h3>4. Mortgage rates and Fed moves</h3>
+</div></details></div>
+<div class="item"><h3 class="item-head">4. Mortgage rates and Fed moves</h3><p class="deck">30-year FRM averaged 7.11% as of Nov 12, down from 7.18% the prior week (6.24% a year ago); 15-year FRM averaged 6.45% , down from 6.57% (5.49% a year ago). Fourth consecutive weekly decline; lowest 30-year level in seven weeks…</p><p class="impact"><b>Why it matters to Sharma:</b> The weekly survey looks backward over Thu–Wed quotes, so it overstates the relief actually available to builders' buyers right now (see Item 4B). Item 4B — "Mortgage Rates Definitely Aren't Lower This Week!" (Mortgage News Daily daily index, Nov 12) - Source:…</p><details class="full"><summary>Read the full story</summary><div class="fullbody"><h3>4. Mortgage rates and Fed moves</h3>
 <p><strong>Item 4A — "Mortgage Rates Decline for Fourth Consecutive Week to 7.11%" (Freddie Mac PMMS, Nov 12)</strong>
 - Source: Freddie Mac via GlobeNewswire (primary release) — <a href="https://www.globenewswire.com/news-release/2026/11/12/3402013/0/en/mortgage-rates-decline-for-fourth-consecutive-week-to-7-11.html" target="_blank" rel="noopener">https://www.globenewswire.com/news-release/2026/11/12/3402013/0/en/mortgage-rates-decline-for-fourth-consecutive-week-to-7-11.html</a> — archive row confirmed at <a href="https://www.freddiemac.com/pmms/pmms_archives" target="_blank" rel="noopener">https://www.freddiemac.com/pmms/pmms_archives</a>
 - Published: November 12, 2026 — <em>verified on the source page.</em> <strong>Yes, the Nov 12 PMMS was released inside the window.</strong>
@@ -164,7 +218,8 @@ article h1{font-size:25px}
 - Key numbers: Initial claims <strong>rose 9,000 to 200,000</strong> for the week ended Nov 7 (forecast 195,000); continuing claims <strong>fell 20,000 to 1.697 million</strong> (week ended Oct 31); claims have held at or below 200,000 since mid-September.
 - Why it matters to Sharma: A labor market this firm gives the Fed no reason to pause, reinforcing the higher-for-longer rate path that is pressuring Sharma's builders.</p>
 <p><strong>Also reported Nov 12 (lower confidence on release timing):</strong> Real Estate News (Nov 12) reported MBA mortgage applications <strong>rose 6.2%</strong> in the week ending Nov 6, with purchase applications up 8% on a seasonally adjusted basis (4% unadjusted in the same article) and refinances +5% week-over-week but −57% year-over-year — a small demand response to the prior week's lower rates. See "Could not verify" for the MBA release-date caveat.</p>
-<h3>5. Florida production builders</h3>
+</div></details></div>
+<div class="item"><h3 class="item-head">5. Florida production builders</h3><p class="deck">Item 5A — Builder share prices, Thursday, Nov 12, 2026 close (no company announcements in the window) - Sources: Finance data, data/dhi.json, data/len.json, data/phm.json, data/mth.json (fetched Nov 13, 2026, 12:02 UTC, in this…</p><p class="impact"><b>Why it matters to Sharma:</b> A broad, rate-driven builder selloff — steepest at a Florida-headquartered builder — signals order and starts caution ahead, so watch for slower releases and tighter bid pricing from builder purchasing teams. No other builder developments inside the window:…</p><details class="full"><summary>Read the full story</summary><div class="fullbody"><h3>5. Florida production builders</h3>
 <p><strong>Item 5A — Builder share prices, Thursday, Nov 12, 2026 close (no company announcements in the window)</strong>
 - Sources: Finance data, data/dhi.json, data/len.json, data/phm.json, data/mth.json (fetched Nov 13, 2026, 12:02 UTC, in this research directory); Dream Finders via StockAnalysis — <a href="https://Stockanalysis.com/stocks/dfh/" target="_blank" rel="noopener">https://Stockanalysis.com/stocks/dfh/</a>
 - Key numbers (Nov 12 close vs. Nov 11 close):</p>
@@ -214,10 +269,12 @@ article h1{font-size:25px}
 <li>Why it matters to Sharma: A broad, rate-driven builder selloff — steepest at a Florida-headquartered builder — signals order and starts caution ahead, so watch for slower releases and tighter bid pricing from builder purchasing teams.</li>
 </ul>
 <p><strong>No other builder developments inside the window:</strong> Searches found <strong>no</strong> earnings, guidance, layoff, default, or slow-payment announcements from D.R. Horton, Lennar, PulteGroup, Meritage, or Strada Services published inside the window. (D.R. Horton's fiscal Q4 results were Oct 29; Strada Services itself had no company news — its founder's congressional win was Nov 3–4, outside the window.)</p>
-<h3>6. Small-business credit, insurance, or tax changes affecting contractors</h3>
+</div></details></div>
+<div class="item"><h3 class="item-head">6. Small-business credit, insurance, or tax changes affecting contractors</h3><p class="deck">No material change was published inside this window for this topic — stated explicitly. No SBA lending change, IRS/tax change, or Florida contractor-insurance change dated Nov 12, 2026 (7:00 AM) – Nov 13, 2026 (7:00 AM) was…</p><details class="full"><summary>Read the full story</summary><div class="fullbody"><h3>6. Small-business credit, insurance, or tax changes affecting contractors</h3>
 <p><strong>No material change was published inside this window for this topic — stated explicitly.</strong> No SBA lending change, IRS/tax change, or Florida contractor-insurance change dated Nov 12, 2026 (7:00 AM) – Nov 13, 2026 (7:00 AM) was found. The nearest items all fall just before the window and are listed under "Could not verify / excluded" so they are not mistaken for in-window news.</p>
 <hr />
-<h2>Ranked comparison table (builder exposure, Nov 12)</h2>
+</div></details></div>
+<h2 id="sec-3">Ranked comparison table (builder exposure, Nov 12)</h2><div class="item"><p class="deck">Rank Item Window timestamp (ET) Headline number Risk direction for Sharma 1 FedWatch December hike odds Nov 12, morning → late day 100% hike; 50bp odds 9.2% → 14.5% Negative — rates stay high 2 MND daily 30-yr rate Nov 12 7.42%,…</p><details class="full"><summary>Read this section in full</summary><div class="fullbody">
 <table>
 <thead>
 <tr>
@@ -280,7 +337,8 @@ article h1{font-size:25px}
 </tr>
 </tbody>
 </table>
-<h2>Could not verify / conflicting figures / excluded near-window items</h2>
+</div></details></div>
+<h2 id="sec-4">Could not verify / conflicting figures / excluded near-window items</h2><div class="item"><p class="deck">CONFLICT — NAR median price: Reuters' syndicated story (Nov 12) reports the October median as $421,900 . NAR's own release (verified on nar.realtor) puts the all-housing median at $416,700 ; $421,900 is NAR's single-family-only…</p><details class="full"><summary>Read this section in full</summary><div class="fullbody">
 <ul>
 <li><strong>CONFLICT — NAR median price:</strong> Reuters' syndicated story (Nov 12) reports the October median as <strong>$421,900</strong>. NAR's own release (verified on nar.realtor) puts the <strong>all-housing median at $416,700</strong>; $421,900 is NAR's <strong>single-family-only</strong> median. This report uses NAR's $416,700 and flags Reuters' figure as a mislabel, not a competing estimate.</li>
 <li><strong>CONFLICT — MND daily rate:</strong> One secondary site (alejandroespitia.com) claims Mortgage News Daily's rate was 7.30% and flat on Nov 11–12. MND's own Nov 12 index graphic and multiple Nov 12 reports put the Daily Index at <strong>7.42% (+0.12)</strong>; 7.30% appears to be the prior day's index level. The 7.42% figure is used.</li>
@@ -290,7 +348,8 @@ article h1{font-size:25px}
 <li><strong>Could not verify — Beazer Homes earnings:</strong> MarketBeat listed Nov 12 as an <em>estimated</em> Q4 earnings date for Beazer; no actual Beazer release inside the window was found, so no Beazer earnings are reported.</li>
 <li><strong>Excluded as just outside the window (developments dated before 7:00 AM ET Nov 12):</strong> (i) Lennar/Millrose securities class action filed <strong>Nov 11</strong> (Grant &amp; Eisenhofer, S.D. Fla., No. 26-cv-28015, alleging undisclosed Millrose purchases of ~$200M of finished Lennar homes) — no new Nov 12 development verified; (ii) NFIB October Small Business Optimism Index, 97.8, released <strong>Nov 10</strong>; (iii) SBA veteran 7(a) equity flexibility (SBA News Release 26-117), effective <strong>Nov 11</strong>, letting eligible veteran buyers meet the full 10% equity requirement from permitted outside sources through Sep 30, 2027; (iv) SBA 504 November debenture rates, priced <strong>Nov 5</strong> (25-year ≈6.57%, with CDC prints ranging 6.57%–6.59% depending on fees); (v) the IEEPA tariff-refund class-action motion ($166B, 330,000+ importers) reported Nov 12 by Zot News but <strong>filed Tuesday, Nov 10</strong>; (vi) Chicago Fed President Goolsbee's "borderline disturbing" CPI remark, first published <strong>Nov 11</strong> by CNBC; (vii) The Refrigerant Index R-454B snapshot for the week of <strong>Nov 9</strong> (median online list $23.75/lb; 20-lb cylinders $409–$500) — the most recent refrigerant data point, but pre-window.</li>
 </ul>
-<h2>Sources</h2>
+</div></details></div>
+<h2 id="sec-5">Sources</h2><div class="item"><p class="deck">All sources read Nov 13, 2026, ~7:02–7:15 AM ET. "Verified live" = full page opened and read in this session; "index" = search-index result text read, page not opened in full. NAR, "Existing-Home Sales Decreased 5.5% in October"…</p><details class="full"><summary>Read this section in full</summary><div class="fullbody">
 <p>All sources read Nov 13, 2026, ~7:02–7:15 AM ET. "Verified live" = full page opened and read in this session; "index" = search-index result text read, page not opened in full.</p>
 <ul>
 <li>NAR, "Existing-Home Sales Decreased 5.5% in October" (Nov 12, 2026) — <a href="https://www.nar.realtor/newsroom/existing-home-sales-decreased-5-5-percent-october-nar-report" target="_blank" rel="noopener">https://www.nar.realtor/newsroom/existing-home-sales-decreased-5-5-percent-october-nar-report</a> — verified live</li>
@@ -311,6 +370,6 @@ article h1{font-size:25px}
 <li>Real Estate News, "Existing home sales haven't been this slow since 2010" (Nov 12, 2026) — <a href="https://www.realestatenews.com/2026/11/12/existing-home-sales-havent-been-this-slow-since-2010" target="_blank" rel="noopener">https://www.realestatenews.com/2026/11/12/existing-home-sales-havent-been-this-slow-since-2010</a> — index</li>
 <li>Finance data: data/dhi.json, data/len.json, data/phm.json, data/mth.json (DHI, LEN, PHM, MTH quotes and daily history, fetched Nov 13, 2026, 12:02 UTC via research_data) — Nov 12 closes as tabled above</li>
 <li>StockAnalysis, Dream Finders Homes (DFH) Nov 12, 2026 close — <a href="https://Stockanalysis.com/stocks/dfh/" target="_blank" rel="noopener">https://Stockanalysis.com/stocks/dfh/</a> — index</li>
-</ul></article></div>
+</ul></div></details></div><p class="totop"><a href="#top">Back to top ↑</a></p></article></div>
 <footer><div class="fin">Sharma Electric &amp; HVAC — The Sharma News · Updated daily at 5:00 AM ET · General news summaries for the Sharma team — not legal or financial advice.</div></footer>
 </body></html>

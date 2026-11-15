@@ -27,10 +27,31 @@ text-transform:uppercase;letter-spacing:1.4px}
 nav.main{display:flex;justify-content:center;flex-wrap:wrap;border-top:1px solid var(--ink);
 border-bottom:6px double var(--ink);padding:7px 0}
 nav.main a{color:var(--ink);text-decoration:none;font-size:13px;font-weight:700;
-letter-spacing:1.6px;text-transform:uppercase;padding:0 15px}
+letter-spacing:1.6px;text-transform:uppercase;padding:10px 15px}
 nav.main a + a{border-left:1px solid var(--hair)}
 nav.main a:hover{text-decoration:underline}
 .wrap{max-width:1020px;margin:0 auto;padding:6px 18px 54px}
+/* ---------- photos (newspaper style) ---------- */
+.photo{margin:12px 0 16px}
+.photo img{width:100%;height:auto;display:block;background:#fff;border:1px solid var(--ink);
+padding:3px;filter:grayscale(92%) contrast(1.06)}
+.photo figcaption{font-style:italic;font-size:13.5px;color:#222;margin-top:6px;line-height:1.45}
+.photo .credit{display:block;font-style:normal;font-variant:small-caps;font-size:11.5px;
+letter-spacing:.8px;color:var(--mut);margin-top:2px}
+.photo.small{max-width:430px}
+.story .photo img{max-height:290px;object-fit:cover;object-position:top}
+/* ---------- at a glance / key numbers ---------- */
+.glance{background:var(--paper2);border:1px solid var(--ink);border-top:4px solid var(--ink);
+padding:14px 18px 8px;margin:20px 0 18px}
+.glance h2{font-size:15px;text-transform:uppercase;letter-spacing:2px;margin:0 0 8px;
+border:none;padding:0}
+.glance ul{margin:0 0 8px;padding-left:20px}
+.glance li{margin:5px 0;font-size:15.5px}
+.keynums{display:flex;flex-wrap:wrap;border:1px solid var(--ink);background:var(--paper2);margin:0 0 20px}
+.kn{flex:1 1 138px;padding:9px 12px;border-right:1px solid var(--hair)}
+.kn:last-child{border-right:none}
+.kn b{display:block;font-size:19px;line-height:1.2}
+.kn span{font-size:11px;text-transform:uppercase;letter-spacing:1px;color:var(--mut)}
 /* ---------- front page ---------- */
 .front{display:grid;grid-template-columns:1fr 1fr;margin-top:24px;
 border-bottom:2px solid var(--ink);padding-bottom:24px}
@@ -42,18 +63,21 @@ border-bottom:2px solid var(--ink);padding-bottom:24px}
 font-size:26px;line-height:1.22;margin:8px 0 10px}
 .byline{font-size:12.5px;text-transform:uppercase;letter-spacing:1px;color:#444;
 border-top:1px solid var(--hair);border-bottom:1px solid var(--hair);padding:5px 0;margin:0 0 12px}
-.cont{font-variant:small-caps;font-size:17px;font-weight:700;color:var(--ink)}
+.cont{font-variant:small-caps;font-size:17px;font-weight:700;color:var(--ink);
+display:inline-block;padding:10px 6px 10px 0}
 /* ---------- index / archive ---------- */
 h2.sec{font-size:19px;font-weight:700;text-transform:uppercase;letter-spacing:1.6px;
 border-bottom:2px solid var(--ink);padding-bottom:5px;margin:32px 0 2px}
 .arch{list-style:none;margin:0;padding:0}
-.arch li{border-bottom:1px solid var(--hair);padding:11px 0}
+.arch li{border-bottom:1px solid var(--hair);padding:11px 0;overflow:hidden}
 .arch li a{font-size:18px;font-weight:700;color:var(--ink);text-decoration:none}
 .arch li a:hover{text-decoration:underline}
 .arch .d{color:var(--mut);font-size:12.5px;font-weight:700;text-transform:uppercase;letter-spacing:1px}
 .arch p{margin:3px 0 0;color:#333;font-size:15px}
+.arch img.thumb{width:112px;height:76px;object-fit:cover;float:left;margin:3px 14px 6px 0;
+background:#fff;border:1px solid var(--ink);padding:2px;filter:grayscale(92%) contrast(1.06)}
 /* ---------- article pages ---------- */
-article{overflow-wrap:break-word;padding-top:6px}
+article{overflow-wrap:break-word;padding-top:6px;max-width:68ch;margin:0 auto}
 article h1{font-family:'Playfair Display',Georgia,'Times New Roman',serif;font-size:30px;line-height:1.2;margin:10px 0 12px}
 article h2{font-size:22px;margin-top:30px;border-bottom:1px solid var(--ink);padding-bottom:5px}
 article h3{font-size:18.5px;margin-top:24px}
@@ -63,8 +87,28 @@ article th,article td{border:1px solid #999;padding:6px 9px;font-size:14px;text-
 article th{background:#ece7da}
 article code{background:#ece7da;padding:1px 5px;font-family:ui-monospace,Menlo,Consolas,monospace;font-size:.88em}
 article blockquote{border-left:2px solid var(--ink);margin:14px 0;padding:2px 16px;color:#333;font-style:italic}
+.windowline{font-variant:small-caps;font-size:16px;color:#333;border-bottom:1px solid var(--hair);padding-bottom:8px}
+.jump{position:sticky;top:0;z-index:6;background:var(--paper);border-bottom:2px solid var(--ink);
+display:flex;flex-wrap:wrap;gap:2px 16px;padding:8px 0;margin:0 0 6px}
+.jump a{color:var(--ink);text-decoration:none;font-size:12.5px;font-weight:700;
+text-transform:uppercase;letter-spacing:1.1px;padding:9px 2px}
+.jump a:hover{text-decoration:underline}
+.item{border-bottom:1px solid var(--hair);padding:12px 0 14px}
+.item .item-head{font-family:'Playfair Display',Georgia,'Times New Roman',serif;
+font-size:20px;line-height:1.3;margin:2px 0 6px}
+.item .deck{margin:0 0 6px;color:#222;font-size:15.5px}
+.item .impact{margin:0 0 4px;font-size:15.5px}
+.item .impact b{font-variant:small-caps;letter-spacing:.4px}
+details.full{margin-top:6px}
+details.full summary{cursor:pointer;font-variant:small-caps;font-size:16.5px;font-weight:700;
+color:var(--accent);padding:11px 0;min-height:24px}
+details.full summary:hover{color:#000}
+details.full .fullbody{border-top:1px dotted var(--hair);padding-top:4px}
+.sec-intro{color:#222}
+.totop{text-align:right;margin-top:26px}
+.totop a{font-variant:small-caps;font-weight:700;color:var(--ink);padding:10px 0;display:inline-block}
 .crumb{color:var(--mut);font-size:12.5px;text-transform:uppercase;letter-spacing:1.2px;margin:16px 0 8px}
-.crumb a{color:var(--ink)}
+.crumb a{color:var(--ink);padding:6px 0;display:inline-block}
 footer{max-width:1020px;margin:0 auto;padding:0 18px 30px;text-align:center}
 footer .fin{border-top:6px double var(--ink);padding-top:12px;font-size:13px;color:#444}
 @media(max-width:760px){
@@ -75,9 +119,11 @@ footer .fin{border-top:6px double var(--ink);padding-top:12px;font-size:13px;col
 .story .headline{font-size:23px}
 article h1{font-size:25px}
 .dateline{justify-content:center;text-align:center}
+.kn{flex:1 1 45%}
+.photo.small{max-width:none}
 }
 </style></head>
-<body>
+<body id="top">
 <header class="masthead">
 <img class="logo" src="logo.png" alt="Sharma Electric &amp; HVAC">
 <div class="dbl"></div>
@@ -91,12 +137,19 @@ article h1{font-size:25px}
 <a href="finance/archive/index.html">Finance Archive</a>
 </nav></header>
 <div class="wrap">
+<div class="glance" id="glance"><h2>At a Glance</h2><ul><li>Legal — biggest story: Judge Ana Reyes's Saturday, Nov 14 TRO halting the East Potomac Park / golf-course closure and redevelopment in Washington, D.C.</li>
+<li>Legal — most useful Florida item: Koppert v. Homeowners Choice (2d DCA, Nov 13) — an arbitration decision emailed as a QuickBooks invoice attachment was not “served,” so the 20-day trial clock never ran.</li>
+<li>Finance — copper at $6.08/lb, with LME copper breaking toward $13,430/t, its lowest since July.</li>
+<li>Finance — US–China talks on a “$30 billion-for-$30 billion” tariff-cut arrangement; no agreement announced.</li>
+<li>Finance — Boston Fed President Collins backed a “steady, gradual path” of rate hikes, with a December 8–9 quarter-point hike widely expected.</li></ul></div>
 <div class="front">
 <div class="story"><span class="kicker">Legal Briefing</span>
+<figure class="photo "><img src="img/home-legal.jpg" alt="Fencing at East Potomac Park, Washington, D.C." loading="lazy"><figcaption>Fencing at East Potomac Park in Washington, D.C. — the public golf course whose closure for redevelopment a federal judge halted on Saturday.<span class="credit">Photo: Reuters</span></figcaption></figure>
 <h2 class="headline">Biggest story: Judge Ana Reyes's Saturday, Nov 14 TRO halting the East Potomac Park / golf-course closure and redevelopment in Washington, D.C. — the only major ruling actually issued in the core weekend window, with a same-weekend presidential promise to appeal.</h2>
 <p class="byline">Legal Briefing — Harvey, Legal Advisor · Edition of Nov 15, 2026</p>
 <a class="cont" href="https://sharmaelechvac.github.io/sharma-legal-briefing/">Read today's legal briefing →</a></div>
 <div class="story"><span class="kicker">Finance Briefing</span>
+<figure class="photo "><img src="img/2026-11-15-lead.jpg" alt="Copper market update graphic, November 14, 2026" loading="lazy"><figcaption>Copper eased to $6.05–6.08/lb at Friday's close, in the copper-market update the finance briefing cites.<span class="credit">Photo: So OK Trading</span></figcaption></figure>
 <h2 class="headline">A genuinely quiet weekend: copper at $6.08/lb with LME copper breaking toward $13,430/t, its lowest since July; US–China talks on a “$30 billion-for-$30 billion” tariff-cut arrangement — no agreement announced; Boston Fed President Collins backed a “steady, gradual path” of rate hikes, with a December 8–9 quarter-point hike widely expected.</h2>
 <p class="byline">Finance Briefing — Warren Buffett, CFO · Edition of Nov 15, 2026</p>
 <a class="cont" href="finance/index.html">Read today's finance briefing →</a></div>
@@ -105,11 +158,11 @@ article h1{font-size:25px}
 <li><span class="d">Saturday, November 14, 2026</span><br><a href="https://sharmaelechvac.github.io/sharma-legal-briefing/archive/2026-11-14.html">Legal Briefing — 2026-11-14</a><p>Biggest: the FAA nationwide ground stop (Fri Nov 13); the 11th Circuit upholds the CFPB PACE-loan rule; Johnson Controls pays $5M in an FCA cyber-compliance settlement.</p></li>
 <li><span class="d">Friday, November 13, 2026</span><br><a href="https://sharmaelechvac.github.io/sharma-legal-briefing/archive/2026-11-13.html">Legal Briefing — 2026-11-13</a><p>Biggest: SCOTUS grants review in Mullin v. RAICES on the asylum-shutdown proclamation; also the $183.5M Acima settlement (Florida a party) and the FTC suit to block the $3.5B Covetrus–MWI merger.</p></li>
 <li><span class="d">Thursday, November 12, 2026</span><br><a href="https://sharmaelechvac.github.io/sharma-legal-briefing/archive/2026-11-12.html">Legal Briefing — 2026-11-12</a><p>Biggest: the Bankruptcy Threshold Adjustment Act (signed Tue Nov 10) permanently raises the Subchapter V debt limit to $7.5M — plus a time-sensitive OSHA HazCom deadline Fri Nov 20, 2026.</p></li></ul>
-<h2 class="sec">Finance — Back Issues</h2><ul class="arch"><li><span class="d">Sunday, November 15, 2026</span><br><a href="finance/archive/2026-11-15.html">Finance Briefing — 2026-11-15</a><p>A genuinely quiet weekend: copper at $6.08/lb with LME copper breaking toward $13,430/t, its lowest since July; US–China talks on a “$30 billion-for-$30 billion” tariff-cut arrangement — no agreement announced; Boston Fed President Collins backed a “steady, gradual path” of rate hikes, with a December 8–9 quarter-point hike widely expected.</p></li>
-<li><span class="d">Saturday, November 14, 2026</span><br><a href="finance/archive/2026-11-14.html">Finance Briefing — 2026-11-14</a><p>A rates-and-inflation day: the 30-year fixed jumped to 7.50%, October PPI rose 6.5% year-over-year, three Fed presidents spoke hawkishly, and copper fell to $6.0795/lb — a fifth straight down week.</p></li>
-<li><span class="d">Friday, November 13, 2026</span><br><a href="finance/archive/2026-11-13.html">Finance Briefing — 2026-11-13</a><p>A December Fed hike became a near-certainty and the daily 30-year rate rose to 7.42% while Freddie Mac's weekly average fell to 7.11%; NAR October existing-home sales hit a 16-year low at 3.75M SAAR; every major builder Sharma works with fell.</p></li>
-<li><span class="d">Thursday, November 12, 2026</span><br><a href="finance/archive/2026-11-12.html">Finance Briefing — 2026-11-12</a><p>The hot CPI drove an in-window repricing: a December Fed hike became fully priced, the daily 30-year mortgage rate jumped 12 bp to 7.30%, and homebuilder shares fell. Copper settled modestly higher after a sharp fortnight's fall.</p></li>
-<li><span class="d">Wednesday, November 11, 2026</span><br><a href="finance/archive/2026-11-11.html">Finance Briefing — 2026-11-11</a><p>Hot October CPI (+0.4% headline, +0.3% core) killed the four-week mortgage-rate slide, put a December Fed hike — possibly 50 bp — on the table, and pushed the 10-year Treasury to ~5%. Copper stayed historically high and physically tight.</p></li></ul>
+<h2 class="sec">Finance — Back Issues</h2><ul class="arch"><li><img class="thumb" src="img/2026-11-15-lead.jpg" alt="" loading="lazy"><span class="d">Sunday, November 15, 2026</span><br><a href="finance/archive/2026-11-15.html">Finance Briefing — 2026-11-15</a><p>A genuinely quiet weekend: copper at $6.08/lb with LME copper breaking toward $13,430/t, its lowest since July; US–China talks on a “$30 billion-for-$30 billion” tariff-cut arrangement — no agreement announced; Boston Fed President Collins backed a “steady, gradual path” of rate hikes, with a December 8–9 quarter-point hike widely expected.</p></li>
+<li><img class="thumb" src="img/2026-11-14-lead.jpg" alt="" loading="lazy"><span class="d">Saturday, November 14, 2026</span><br><a href="finance/archive/2026-11-14.html">Finance Briefing — 2026-11-14</a><p>A rates-and-inflation day: the 30-year fixed jumped to 7.50%, October PPI rose 6.5% year-over-year, three Fed presidents spoke hawkishly, and copper fell to $6.0795/lb — a fifth straight down week.</p></li>
+<li><img class="thumb" src="img/2026-11-13-lead.jpg" alt="" loading="lazy"><span class="d">Friday, November 13, 2026</span><br><a href="finance/archive/2026-11-13.html">Finance Briefing — 2026-11-13</a><p>A December Fed hike became a near-certainty and the daily 30-year rate rose to 7.42% while Freddie Mac's weekly average fell to 7.11%; NAR October existing-home sales hit a 16-year low at 3.75M SAAR; every major builder Sharma works with fell.</p></li>
+<li><img class="thumb" src="img/2026-11-12-lead.png" alt="" loading="lazy"><span class="d">Thursday, November 12, 2026</span><br><a href="finance/archive/2026-11-12.html">Finance Briefing — 2026-11-12</a><p>The hot CPI drove an in-window repricing: a December Fed hike became fully priced, the daily 30-year mortgage rate jumped 12 bp to 7.30%, and homebuilder shares fell. Copper settled modestly higher after a sharp fortnight's fall.</p></li>
+<li><img class="thumb" src="img/2026-11-11-lead.jpg" alt="" loading="lazy"><span class="d">Wednesday, November 11, 2026</span><br><a href="finance/archive/2026-11-11.html">Finance Briefing — 2026-11-11</a><p>Hot October CPI (+0.4% headline, +0.3% core) killed the four-week mortgage-rate slide, put a December Fed hike — possibly 50 bp — on the table, and pushed the 10-year Treasury to ~5%. Copper stayed historically high and physically tight.</p></li></ul>
 </div>
 <footer><div class="fin">Sharma Electric &amp; HVAC — The Sharma News · Updated daily at 5:00 AM ET · General news summaries for the Sharma team — not legal or financial advice.</div></footer>
 </body></html>

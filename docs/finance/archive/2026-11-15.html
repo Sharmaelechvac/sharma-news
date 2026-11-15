@@ -27,10 +27,31 @@ text-transform:uppercase;letter-spacing:1.4px}
 nav.main{display:flex;justify-content:center;flex-wrap:wrap;border-top:1px solid var(--ink);
 border-bottom:6px double var(--ink);padding:7px 0}
 nav.main a{color:var(--ink);text-decoration:none;font-size:13px;font-weight:700;
-letter-spacing:1.6px;text-transform:uppercase;padding:0 15px}
+letter-spacing:1.6px;text-transform:uppercase;padding:10px 15px}
 nav.main a + a{border-left:1px solid var(--hair)}
 nav.main a:hover{text-decoration:underline}
 .wrap{max-width:1020px;margin:0 auto;padding:6px 18px 54px}
+/* ---------- photos (newspaper style) ---------- */
+.photo{margin:12px 0 16px}
+.photo img{width:100%;height:auto;display:block;background:#fff;border:1px solid var(--ink);
+padding:3px;filter:grayscale(92%) contrast(1.06)}
+.photo figcaption{font-style:italic;font-size:13.5px;color:#222;margin-top:6px;line-height:1.45}
+.photo .credit{display:block;font-style:normal;font-variant:small-caps;font-size:11.5px;
+letter-spacing:.8px;color:var(--mut);margin-top:2px}
+.photo.small{max-width:430px}
+.story .photo img{max-height:290px;object-fit:cover;object-position:top}
+/* ---------- at a glance / key numbers ---------- */
+.glance{background:var(--paper2);border:1px solid var(--ink);border-top:4px solid var(--ink);
+padding:14px 18px 8px;margin:20px 0 18px}
+.glance h2{font-size:15px;text-transform:uppercase;letter-spacing:2px;margin:0 0 8px;
+border:none;padding:0}
+.glance ul{margin:0 0 8px;padding-left:20px}
+.glance li{margin:5px 0;font-size:15.5px}
+.keynums{display:flex;flex-wrap:wrap;border:1px solid var(--ink);background:var(--paper2);margin:0 0 20px}
+.kn{flex:1 1 138px;padding:9px 12px;border-right:1px solid var(--hair)}
+.kn:last-child{border-right:none}
+.kn b{display:block;font-size:19px;line-height:1.2}
+.kn span{font-size:11px;text-transform:uppercase;letter-spacing:1px;color:var(--mut)}
 /* ---------- front page ---------- */
 .front{display:grid;grid-template-columns:1fr 1fr;margin-top:24px;
 border-bottom:2px solid var(--ink);padding-bottom:24px}
@@ -42,18 +63,21 @@ border-bottom:2px solid var(--ink);padding-bottom:24px}
 font-size:26px;line-height:1.22;margin:8px 0 10px}
 .byline{font-size:12.5px;text-transform:uppercase;letter-spacing:1px;color:#444;
 border-top:1px solid var(--hair);border-bottom:1px solid var(--hair);padding:5px 0;margin:0 0 12px}
-.cont{font-variant:small-caps;font-size:17px;font-weight:700;color:var(--ink)}
+.cont{font-variant:small-caps;font-size:17px;font-weight:700;color:var(--ink);
+display:inline-block;padding:10px 6px 10px 0}
 /* ---------- index / archive ---------- */
 h2.sec{font-size:19px;font-weight:700;text-transform:uppercase;letter-spacing:1.6px;
 border-bottom:2px solid var(--ink);padding-bottom:5px;margin:32px 0 2px}
 .arch{list-style:none;margin:0;padding:0}
-.arch li{border-bottom:1px solid var(--hair);padding:11px 0}
+.arch li{border-bottom:1px solid var(--hair);padding:11px 0;overflow:hidden}
 .arch li a{font-size:18px;font-weight:700;color:var(--ink);text-decoration:none}
 .arch li a:hover{text-decoration:underline}
 .arch .d{color:var(--mut);font-size:12.5px;font-weight:700;text-transform:uppercase;letter-spacing:1px}
 .arch p{margin:3px 0 0;color:#333;font-size:15px}
+.arch img.thumb{width:112px;height:76px;object-fit:cover;float:left;margin:3px 14px 6px 0;
+background:#fff;border:1px solid var(--ink);padding:2px;filter:grayscale(92%) contrast(1.06)}
 /* ---------- article pages ---------- */
-article{overflow-wrap:break-word;padding-top:6px}
+article{overflow-wrap:break-word;padding-top:6px;max-width:68ch;margin:0 auto}
 article h1{font-family:'Playfair Display',Georgia,'Times New Roman',serif;font-size:30px;line-height:1.2;margin:10px 0 12px}
 article h2{font-size:22px;margin-top:30px;border-bottom:1px solid var(--ink);padding-bottom:5px}
 article h3{font-size:18.5px;margin-top:24px}
@@ -63,8 +87,28 @@ article th,article td{border:1px solid #999;padding:6px 9px;font-size:14px;text-
 article th{background:#ece7da}
 article code{background:#ece7da;padding:1px 5px;font-family:ui-monospace,Menlo,Consolas,monospace;font-size:.88em}
 article blockquote{border-left:2px solid var(--ink);margin:14px 0;padding:2px 16px;color:#333;font-style:italic}
+.windowline{font-variant:small-caps;font-size:16px;color:#333;border-bottom:1px solid var(--hair);padding-bottom:8px}
+.jump{position:sticky;top:0;z-index:6;background:var(--paper);border-bottom:2px solid var(--ink);
+display:flex;flex-wrap:wrap;gap:2px 16px;padding:8px 0;margin:0 0 6px}
+.jump a{color:var(--ink);text-decoration:none;font-size:12.5px;font-weight:700;
+text-transform:uppercase;letter-spacing:1.1px;padding:9px 2px}
+.jump a:hover{text-decoration:underline}
+.item{border-bottom:1px solid var(--hair);padding:12px 0 14px}
+.item .item-head{font-family:'Playfair Display',Georgia,'Times New Roman',serif;
+font-size:20px;line-height:1.3;margin:2px 0 6px}
+.item .deck{margin:0 0 6px;color:#222;font-size:15.5px}
+.item .impact{margin:0 0 4px;font-size:15.5px}
+.item .impact b{font-variant:small-caps;letter-spacing:.4px}
+details.full{margin-top:6px}
+details.full summary{cursor:pointer;font-variant:small-caps;font-size:16.5px;font-weight:700;
+color:var(--accent);padding:11px 0;min-height:24px}
+details.full summary:hover{color:#000}
+details.full .fullbody{border-top:1px dotted var(--hair);padding-top:4px}
+.sec-intro{color:#222}
+.totop{text-align:right;margin-top:26px}
+.totop a{font-variant:small-caps;font-weight:700;color:var(--ink);padding:10px 0;display:inline-block}
 .crumb{color:var(--mut);font-size:12.5px;text-transform:uppercase;letter-spacing:1.2px;margin:16px 0 8px}
-.crumb a{color:var(--ink)}
+.crumb a{color:var(--ink);padding:6px 0;display:inline-block}
 footer{max-width:1020px;margin:0 auto;padding:0 18px 30px;text-align:center}
 footer .fin{border-top:6px double var(--ink);padding-top:12px;font-size:13px;color:#444}
 @media(max-width:760px){
@@ -75,9 +119,11 @@ footer .fin{border-top:6px double var(--ink);padding-top:12px;font-size:13px;col
 .story .headline{font-size:23px}
 article h1{font-size:25px}
 .dateline{justify-content:center;text-align:center}
+.kn{flex:1 1 45%}
+.photo.small{max-width:none}
 }
 </style></head>
-<body>
+<body id="top">
 <header class="masthead">
 <img class="logo" src="../../logo.png" alt="Sharma Electric &amp; HVAC">
 <div class="dbl"></div>
@@ -91,12 +137,16 @@ article h1{font-size:25px}
 <a href="../../finance/archive/index.html">Finance Archive</a>
 </nav></header>
 <div class="wrap"><p class="crumb"><a href="../index.html">Finance Briefing</a> · <a href="index.html">Archive</a></p><article><h1>Sharma Electric &amp; HVAC — Daily Finance News Briefing</h1>
-<h2>Window: 7:00 AM ET Saturday, November 14, 2026 – 7:00 AM ET Sunday, November 15, 2026</h2>
-<h2>Summary</h2>
+<nav class="jump"><a href="#glance">At a Glance</a><a href="#sec-1">Summary</a><a href="#sec-2">Findings</a><a href="#sec-3">Could not verify</a><a href="#sec-4">Sources</a></nav><div class="glance" id="glance"><h2>At a Glance</h2><ul><li>Copper fell 1.67% to $6.08/lb; LME copper broke toward $13,430/t, its lowest since July.</li>
+<li>US–China talks on a “$30 billion-for-$30 billion” tariff-cut arrangement — no agreement announced.</li>
+<li>Boston Fed President Collins backed a “steady, gradual path” of rate hikes; a Dec 8–9 quarter-point hike is widely expected.</li>
+<li>No new housing-starts/permits/sales data, no builder operating announcements, and no HVAC or R-454B news in the window.</li></ul></div><div class="keynums"><div class="kn"><b>$6.08/lb</b><span>Copper</span></div><div class="kn"><b>~$13,430/t</b><span>LME copper</span></div><div class="kn"><b>$30B-for-$30B</b><span>Tariff talks</span></div><div class="kn"><b>Dec 8–9</b><span>Next Fed meeting</span></div></div><figure class="photo "><img src="../../img/2026-11-15-lead.jpg" alt="Copper market update graphic, November 14, 2026" loading="lazy"><figcaption>Copper market update, Nov 14: COMEX at $6.05–6.08/lb and LME copper at its lowest since July.<span class="credit">Photo: So OK Trading</span></figcaption></figure><p class="windowline">Window: 7:00 AM ET Saturday, November 14, 2026 – 7:00 AM ET Sunday, November 15, 2026</p>
+<h2 id="sec-1">Summary</h2><div class="item"><p class="deck">This was a genuinely quiet weekend, as expected with U.S. markets closed Saturday. Only three developments were genuinely published or updated inside the window and are material: (1) Saturday-dated copper market reports…</p><details class="full"><summary>Read this section in full</summary><div class="fullbody">
 <p>This was a genuinely quiet weekend, as expected with U.S. markets closed Saturday. Only three developments were genuinely published or updated inside the window and are material: (1) Saturday-dated copper market reports confirming Friday Nov 13's fall — copper at $6.08/lb, with LME copper breaking toward $13,430/t, its lowest since July; (2) a Saturday US–China trade-council report ahead of the Thu Nov 19 Trump–Xi meeting in Shenzhen — talks on a "$30 billion-for-$30 billion" tariff-cut arrangement, <strong>no agreement and no new tariff rates announced</strong>; and (3) Boston Fed President Susan Collins's Saturday comments backing a "steady, gradual path" of rate hikes, with a December 8–9 quarter-point hike widely expected. There was <strong>no</strong> new housing-starts/permits/sales data, <strong>no</strong> builder operating announcement for any named Florida builder, <strong>no</strong> HVAC price or R-454B news, and <strong>no Florida OIR final order</strong> on the NCCI workers' comp filing by the 7:00 AM ET Nov 15 cutoff — all verified below. Friday Nov 13 items (PPI, mortgage-rate prints, the copper settlement itself, Jefferson's speech, the Goldman copper note) are labeled "prior-day context" wherever mentioned and are never presented as news.</p>
 <p><strong>Timestamp caution that affects two items:</strong> the Reuters wire on the China trade council is timestamped 07:12 UTC Nov 14 (02:12 AM ET, before the 7:00 AM ET window start), and the BFC builder-options piece was first published 11:55 UTC Nov 14 (06:55 AM ET, just before the window). Both were, however, republished/updated inside the window — MLQ's version at 09:31 AM ET Nov 14, and BFC's update at 9:49 PM ET Nov 14 — so both are included with their full timestamps disclosed.</p>
-<h2>Findings</h2>
-<h3>1. Copper, wire, and electrical material prices and supply (incl. CES / World Electric)</h3>
+</div></details></div>
+<figure class="photo small"><img src="../../img/2026-11-15-inline.jpg" alt="U.S.–China trade" loading="lazy"><figcaption>The U.S. and China held their first trade-council meeting ahead of the Trump–Xi talks, discussing a “$30 billion-for-$30 billion” tariff-cut arrangement.<span class="credit">Photo: Reuters</span></figcaption></figure>
+<h2 id="sec-2">Findings</h2><div class="item"><h3 class="item-head">1. Copper, wire, and electrical material prices and supply (incl. CES / World Electric)</h3><p class="deck">Copper fell 1.67% to $6.08/lb ; copper miners fell 2.51%, the steepest drop among miner groups, a second consecutive down session. -</p><p class="impact"><b>Why it matters to Sharma:</b> Friday's copper close softened, so do not let a supplier price Saturday/Monday wire quotes off the September highs — the spot direction this weekend was down, not up. Item 1B — "Base Metals News Headlines & Prices — 14th November 2026" — Sucden Financial -…</p><details class="full"><summary>Read the full story</summary><div class="fullbody"><h3>1. Copper, wire, and electrical material prices and supply (incl. CES / World Electric)</h3>
 <p><strong>Item 1A — "Copper miners lead a second day of miner falls" — Kilambi News</strong>
 - Source / link: Kilambi News — <a href="https://news.kilambi.com/stories/2026-11-14-copper-miners-lead-second-day-miner-falls/" target="_blank" rel="noopener">https://news.kilambi.com/stories/2026-11-14-copper-miners-lead-second-day-miner-falls/</a>
 - Published / updated: Saturday, November 14, 2026 — Updated Nov 14, 2026 07:08 (page as read); data as of market tables updated 2026-11-14T06:00:23-05:00, <strong>November 13, 2026 closes</strong> — i.e., no Saturday trading, this is Friday's settlement reported Saturday.
@@ -119,17 +169,20 @@ article h1{font-size:25px}
 - Why it matters to Sharma: Bank views for 2027 are split between scarcity and surplus, so there is no consensus basis for pre-buying a year of copper at current prices.</p>
 <p><strong>CES / World Electric:</strong> No material news about City Electric Supply (CES) or World Electric was published inside the window — the latest CES items found were a Nov 5 Travelers Rest opening and a Nov 13 Trinity, FL grand-opening social post, and the latest World Electric item was its Port St. Lucie branch story (Sep 19 / Oct 27), all outside the window.</p>
 <p><strong>Conflicting figures — copper (not silently resolved):</strong> LME levels differ by measure and source: Sucden reports an intraday move toward $13,430/t (Nov 13 data); SO OK Trading reports a three-month closing range of $13,371–13,712/t; the Nov 13 Goldman report (via Kilambi) put three-month copper at $13,612/t. COMEX figures agree at $6.05–6.08/lb.</p>
-<h3>2. HVAC equipment prices, refrigerant (R-454B), and tariff changes</h3>
+</div></details></div>
+<div class="item"><h3 class="item-head">2. HVAC equipment prices, refrigerant (R-454B), and tariff changes</h3><p class="deck">Talks covered tariffs, a reciprocal "$30 billion-for-$30 billion" tariff-cut arrangement (the $30B is the value of goods on each side, not tariffs removed — Bulletin Observer,…</p><p class="impact"><b>Why it matters to Sharma:</b> Nothing changed on tariffs this weekend, so HVAC equipment pricing assumptions stay as they were until at least the Nov 19 meeting — do not re-price bids on tariff headlines yet.</p><details class="full"><summary>Read the full story</summary><div class="fullbody"><h3>2. HVAC equipment prices, refrigerant (R-454B), and tariff changes</h3>
 <p><strong>HVAC / refrigerant:</strong> No material news on HVAC equipment prices, refrigerant, or R-454B was published inside the window — ACHR News's only Nov 14 items were a Carrier i-Vu building-automation product piece and an AI refrigeration-troubleshooting column (<a href="https://www.achrnews.com/articles/topic/2721" target="_blank" rel="noopener">https://www.achrnews.com/articles/topic/2721</a>, dated November 14, 2026), neither of which concerns prices, and The Refrigerant Index's latest R-454B pricing remains its week-of-Nov 9 edition (prior-day/out-of-window). Prior-day context only, not news: Carrier's planned ~8% residential equipment increase was announced on its Oct 29 earnings call and reported Nov 2.</p>
 <p><strong>Item 2A — "China, US discuss tariffs, farm trade ahead of Xi-Trump meeting" — Reuters</strong>
 - Source / link: Reuters, via Froggy 99.9 KVOX republication — <a href="https://froggyweb.com/2026/11/14/china-us-discuss-tariffs-farm-trade-at-first-trade-council-meeting/" target="_blank" rel="noopener">https://froggyweb.com/2026/11/14/china-us-discuss-tariffs-farm-trade-at-first-trade-council-meeting/</a> ; in-window summary: MLQ.ai — <a href="https://mlq.ai/news/us-and-china-discuss-tariff-cuts-and-farm-purchases-before-the-trump-xi-meeting/" target="_blank" rel="noopener">https://mlq.ai/news/us-and-china-discuss-tariff-cuts-and-farm-purchases-before-the-trump-xi-meeting/</a>
 - Published: Reuters wire Published 2026-11-14T07:12:55+00:00 (02:12 AM ET — before the 7:00 AM ET window start, disclosed here), Updated 2026-11-14T08:21:56+00:00; MLQ version Published 2026-11-14T09:31:32-05:00 (inside the window). China's Commerce Ministry made its announcement on Saturday about the council's Friday Nov 13 videoconference meeting.
 - Key figures: Talks covered tariffs, a reciprocal <strong>"$30 billion-for-$30 billion"</strong> tariff-cut arrangement (the $30B is the value of goods on each side, not tariffs removed — Bulletin Observer, <a href="https://bulletin.observer/news/china-and-us-hold-first-trade-council-meeting-ahead-of-trump-xi-talks" target="_blank" rel="noopener">https://bulletin.observer/news/china-and-us-hold-first-trade-council-meeting-ahead-of-trump-xi-talks</a>, Nov 14, 2026), agricultural trade, and a previously proposed <strong>$60 billion</strong> reciprocal package including roughly <strong>$17 billion</strong> of US farm goods; <strong>the ministry did not say whether any agreement was reached, and no specific tariff rates or effective dates were announced</strong>; Trump meets Xi on <strong>Thursday, Nov 19</strong>, on the sidelines of the APEC forum in Shenzhen, per the White House.
 - Why it matters to Sharma: Nothing changed on tariffs this weekend, so HVAC equipment pricing assumptions stay as they were until at least the Nov 19 meeting — do not re-price bids on tariff headlines yet.</p>
-<h3>3. Florida and US housing starts, permits, and new-home sales</h3>
+</div></details></div>
+<div class="item"><h3 class="item-head">3. Florida and US housing starts, permits, and new-home sales</h3><p class="deck">No material news on housing starts, permits, or new-home sales was published inside the window — there was no Census release this weekend, and no weekend preview or Florida-specific housing item published Nov 14–15 was found; the…</p><details class="full"><summary>Read the full story</summary><div class="fullbody"><h3>3. Florida and US housing starts, permits, and new-home sales</h3>
 <p>No material news on housing starts, permits, or new-home sales was published inside the window — there was no Census release this weekend, and no weekend preview or Florida-specific housing item published Nov 14–15 was found; the October Census release is confirmed for <strong>Wednesday, Nov 18 at 8:30 AM ET</strong> (FinanceCalendar schedule summary; also RealtyWire, Nov 8). The only Florida-specific pages updating in-window were Groundbreak's hourly-recomputed permit tallies (e.g., Miami and Tampa Bay, recomputed Nov 15 at 2:53 AM / 3:26 AM ET) — rolling data pages listing permits issued earlier in November, not a news release or new data.</p>
 <p><strong>Prior-day context only — Nov 13 previews, NOT in-window news, and they conflict:</strong> Dow Jones/WSJ survey via Morningstar (Nov 13, 2026 14:15 ET — <a href="https://www.morningstar.com/news/dow-jones/202611139178/retail-sales-and-housing-starts-on-tap-data-week-ahead" target="_blank" rel="noopener">https://www.morningstar.com/news/dow-jones/202611139178/retail-sales-and-housing-starts-on-tap-data-week-ahead</a>) puts consensus for Oct starts at <strong>1.27M (+4.0%)</strong> and permits at <strong>1.38M (−1.4%)</strong>, vs. September's 1.221M / 1.40M; Calculated Risk / Economic Weekly (Nov 13, 2026 — <a href="https://economicweekly.substack.com/p/economic-weekly-november-13-2026" target="_blank" rel="noopener">https://economicweekly.substack.com/p/economic-weekly-november-13-2026</a>) puts the starts consensus at <strong>1.240M SAAR</strong>. Both agree the NAHB builder-sentiment consensus for Tue Nov 17 is 29. These are forecasts for Nov 18, not data — do not present them as results.</p>
-<h3>4. Mortgage rates and Fed moves</h3>
+</div></details></div>
+<div class="item"><h3 class="item-head">4. Mortgage rates and Fed moves</h3><p class="deck">Collins: "a steady, gradual path seems appropriate to me at the moment. But I'm open-minded"; she argued against a more aggressive pace, while saying the policy path over the next year "might be a bit higher than I had thought a…</p><p class="impact"><b>Why it matters to Sharma:</b> A gradual-but-still-rising Fed path means no near-term mortgage relief for builder buyers, so expect rate-buydown pressure on new-home contracts to continue into December. Item 4B — "Today's Market Pulse — November 15, 2026" — Pulsafi - Source / link: Pulsafi…</p><details class="full"><summary>Read the full story</summary><div class="fullbody"><h3>4. Mortgage rates and Fed moves</h3>
 <p><strong>Explicit note:</strong> There is no new daily mortgage-rate print on a Saturday — Freddie Mac's survey is weekly, and the latest print inside this briefing remains the week ending <strong>Thursday, Nov 12, 2026</strong>; the next survey is due the following week. Weekend items below are Fed commentary and a Sunday-morning market summary of Friday's close, not new rate data.</p>
 <p><strong>Item 4A — "Fed's Collins says gradual rate hikes best to manage economic risks" — Reuters</strong>
 - Source / link: Reuters — <a href="https://www.reuters.com/business/feds-collins-says-gradual-rate-hikes-best-manage-economic-risks-2026-11-14/" target="_blank" rel="noopener">https://www.reuters.com/business/feds-collins-says-gradual-rate-hikes-best-manage-economic-risks-2026-11-14/</a> ; syndication with full timestamp: <a href="https://941theduke.com/2026/11/14/feds-collins-says-gradual-rate-hikes-best-to-manage-economic-risks/" target="_blank" rel="noopener">https://941theduke.com/2026/11/14/feds-collins-says-gradual-rate-hikes-best-to-manage-economic-risks/</a>
@@ -143,7 +196,8 @@ article h1{font-size:25px}
 - Why it matters to Sharma: With the 10-year at 5.15% after the last Freddie survey, the next weekly mortgage print is more likely up than down — a headwind for closings on homes Sharma is roughing in now.</p>
 <p><strong>Prior-day context only — NOT weekend news:</strong> Fed Vice Chair Philip Jefferson's San Diego speech ("taking his policy cues from inflation") was delivered <strong>Friday Nov 13</strong>; the Reuters report is timestamped 2026-11-14T00:03:19+00:00 (Nov 13, 7:03 PM ET), before this window. Governor Waller's December-hike remarks (25 bp base case, 50 bp if core CPI ≥0.3%) date to <strong>Nov 10</strong>. Friday Nov 13 PPI and mortgage-rate stories are likewise out of window, per the mission.</p>
 <p><strong>Minor conflicting figure:</strong> Pulsafi/FRED puts the year-ago 30-year rate at 6.22% (+$236/mo on $400k); some Nov 14 social-media briefs put it at 6.24% (+$231/mo). The FRED-based figure is used above; the discrepancy is flagged, not hidden.</p>
-<h3>5. Florida production builders (D.R. Horton, Lennar, PulteGroup, Meritage, Strada Services, Dream Finders Homes)</h3>
+</div></details></div>
+<div class="item"><h3 class="item-head">5. Florida production builders (D.R. Horton, Lennar, PulteGroup, Meritage, Strada Services, Dream Finders Homes)</h3><p class="deck">D.R. Horton (DHI) closed at $145.55, down 4.4% on the week, with options pricing a ±4.0% move by Nov 20 and 69% of this week's contracts in calls; PulteGroup (PHM) closed at $127.01 , above its 20-day average ($125.12) and 50-day…</p><p class="impact"><b>Why it matters to Sharma:</b> Options traders lean mildly positive on Horton into a data-heavy week, but with no builder announcement behind it, this changes nothing about Sharma's order book or payment expectations. Out-of-window items found and excluded: D.R. Horton's Las Vegas…</p><details class="full"><summary>Read the full story</summary><div class="fullbody"><h3>5. Florida production builders (D.R. Horton, Lennar, PulteGroup, Meritage, Strada Services, Dream Finders Homes)</h3>
 <p>No material operating news — no slowdown, layoff, default, slow-payment, guidance, or company announcement — for D.R. Horton, Lennar, PulteGroup, Meritage, Strada Services, or Dream Finders Homes was published inside the window. The only in-window-updated item mentioning named builders is a market-signal piece, not operating news:</p>
 <p><strong>Item 5A — "D.R. Horton Draws 69% Calls With a 4.0% Weekly Move Priced In, Toll Brothers 72% Calls, PulteGroup Mixed" — BFC Finance / GTA Terminal</strong>
 - Source / link: BFC Finance — <a href="https://www.bfcfinance.us/post/dr-horton-69-percent-calls-4-percent-move-toll-72-percent-pulte-mixed-builders-week-of-nov-16-2026" target="_blank" rel="noopener">https://www.bfcfinance.us/post/dr-horton-69-percent-calls-4-percent-move-toll-72-percent-pulte-mixed-builders-week-of-nov-16-2026</a>
@@ -151,21 +205,24 @@ article h1{font-size:25px}
 - Key figures: D.R. Horton (DHI) closed at <strong>$145.55, down 4.4%</strong> on the week, with options pricing a <strong>±4.0%</strong> move by Nov 20 and 69% of this week's contracts in calls; PulteGroup (PHM) closed at <strong>$127.01</strong>, above its 20-day average ($125.12) and 50-day average ($120.06), with options mixed (55% calls, $63K premium).
 - Why it matters to Sharma: Options traders lean mildly positive on Horton into a data-heavy week, but with no builder announcement behind it, this changes nothing about Sharma's order book or payment expectations.</p>
 <p>Out-of-window items found and excluded: D.R. Horton's Las Vegas sales-ranking story (published Nov 13, 2026 15:05 −07:00), Dream Finders' Beazer note-exchange results (Nov 5), and the Strada Services class-action site (suit filed July 22, 2026; no in-window update).</p>
-<h3>6. Small-business credit, insurance, or tax changes affecting contractors — incl. Florida OIR / NCCI</h3>
+</div></details></div>
+<div class="item"><h3 class="item-head">6. Small-business credit, insurance, or tax changes affecting contractors — incl. Florida OIR / NCCI</h3><p class="deck">Florida OIR / NCCI — headline answer: No final order was found by the 7:00 AM ET Nov 15 cutoff. - Source / links (verified live in the research window on the morning of Nov 15, 2026): Florida OIR Newsroom —…</p><p class="impact"><b>Why it matters to Sharma:</b> Budget 2027 workers' comp renewals as unapproved for now — the potential ~7.4% average cut is not yet bookable savings until Commissioner Yaworsky issues the final order. Other small-business items: No material small-business credit, insurance, or tax change…</p><details class="full"><summary>Read the full story</summary><div class="fullbody"><h3>6. Small-business credit, insurance, or tax changes affecting contractors — incl. Florida OIR / NCCI</h3>
 <p><strong>Florida OIR / NCCI — headline answer: No final order was found by the 7:00 AM ET Nov 15 cutoff.</strong>
 - Source / links (verified live in the research window on the morning of Nov 15, 2026): Florida OIR Newsroom — <a href="https://www.floir.gov/newsroom" target="_blank" rel="noopener">https://www.floir.gov/newsroom</a> and homepage — <a href="https://www.floir.gov/" target="_blank" rel="noopener">https://www.floir.gov/</a> ; NCCI hearing page — <a href="https://www.floir.gov/events/national-council-on-compensation-insurance-public-rate-hearing-2026" target="_blank" rel="noopener">https://www.floir.gov/events/national-council-on-compensation-insurance-public-rate-hearing-2026</a>
 - What the pages show: OIR's most recent press release is <strong>Nov 9, 2026</strong> (pharmacy-benefit-manager penalties), followed by Nov 3 and Nov 2 items — there is no Nov 14–15 release and no workers' compensation final order listed. The hearing page still describes the filing in proposal terms: NCCI requests an <strong>overall average decrease of 7.4%</strong> for the voluntary market for new and renewal policies effective <strong>January 1, 2027</strong>; the hearing was held Oct 27, 2026, and "the record will be open for public comment until November 10, 2026 at 5:00 p.m. ET" — i.e., as of the cutoff the −7.4% remained a <strong>proposal awaiting a final order</strong>, not an approved rate.
 - Why it matters to Sharma: Budget 2027 workers' comp renewals as unapproved for now — the potential ~7.4% average cut is not yet bookable savings until Commissioner Yaworsky issues the final order.</p>
 <p><strong>Other small-business items:</strong> No material small-business credit, insurance, or tax change affecting Florida contractors was published inside the window.</p>
 <p><strong>False lead flagged and excluded:</strong> A search snippet for AM Best's "Florida Set to Cut Workers' Compensation Rates" names former Commissioner David Altmaier and an 8.4% decrease — that is old content (the Nov 13, 2026 timestamp attached to it is a sidebar "latest news" item on the page), not a 2026/2027 NCCI final order, and it was not used.</p>
-<h2>Could not verify</h2>
+</div></details></div>
+<h2 id="sec-3">Could not verify</h2><div class="item"><p class="deck">Revolution Florida's Florida Building Code 9th Edition / Pinellas explainer ( https://www.revolutionflorida.com/blog/fbc-9th-edition-effective-date-explainer ) circulated in search results, but the page itself carries no…</p><details class="full"><summary>Read this section in full</summary><div class="fullbody">
 <ul>
 <li><strong>Revolution Florida's Florida Building Code 9th Edition / Pinellas explainer</strong> (<a href="https://www.revolutionflorida.com/blog/fbc-9th-edition-effective-date-explainer" target="_blank" rel="noopener">https://www.revolutionflorida.com/blog/fbc-9th-edition-effective-date-explainer</a>) circulated in search results, but the page itself carries no publication date, so in-window publication could not be verified from the source page and it is not counted as news. Its substance (9th Edition effective Dec 31, 2026; Pinellas practical submittal targets of Nov 15 for flood-zone and Dec 1 for non-flood-zone projects to stay under the 8th Edition) is a contractor blog's advice, not an official announcement.</li>
 <li><strong>Exact intraday timing</strong> for the Sucden Nov 14 report (page gives a date only, 2026-11-14T00:00:00) and for the Kilambi update (07:08, timezone not stated on the page, though its data timestamp is −05:00). Both are dated Nov 14 and are treated as Saturday reports of Friday data, as their own pages state.</li>
 <li><strong>Consensus for Oct housing starts conflicts</strong> between prior-day (Nov 13) surveys — 1.27M (WSJ/Dow Jones) vs. 1.240M (Calculated Risk) — with no in-window source to resolve it; both are forecasts, and the actual figure arrives Nov 18.</li>
 <li>No source in the window could confirm any CES or World Electric development, any R-454B price move, or any named-builder announcement — the absence is reported as searched-for and not found, not as proof nothing occurred after the 7:00 AM ET cutoff.</li>
 </ul>
-<h2>Sources</h2>
+</div></details></div>
+<h2 id="sec-4">Sources</h2><div class="item"><p class="deck">All sources read the morning of Sunday, November 15, 2026 (ET). "Verified live" = OIR pages opened in the live research browser; all others verified from the source page text via the web index, with publication timestamps taken…</p><details class="full"><summary>Read this section in full</summary><div class="fullbody">
 <p>All sources read the morning of Sunday, November 15, 2026 (ET). "Verified live" = OIR pages opened in the live research browser; all others verified from the source page text via the web index, with publication timestamps taken from the pages themselves.</p>
 <ol>
 <li>Kilambi News, copper miners, Nov 14, 2026 — <a href="https://news.kilambi.com/stories/2026-11-14-copper-miners-lead-second-day-miner-falls/" target="_blank" rel="noopener">https://news.kilambi.com/stories/2026-11-14-copper-miners-lead-second-day-miner-falls/</a> — index</li>
@@ -184,6 +241,6 @@ article h1{font-size:25px}
 <li>ACHR News, News index (Nov 14 items) — <a href="https://www.achrnews.com/articles/topic/2721" target="_blank" rel="noopener">https://www.achrnews.com/articles/topic/2721</a> — index</li>
 <li>Morningstar / Dow Jones, Data Week Ahead, Nov 13, 2026 (prior-day context) — <a href="https://www.morningstar.com/news/dow-jones/202611139178/retail-sales-and-housing-starts-on-tap-data-week-ahead" target="_blank" rel="noopener">https://www.morningstar.com/news/dow-jones/202611139178/retail-sales-and-housing-starts-on-tap-data-week-ahead</a> — index</li>
 <li>Economic Weekly / Calculated Risk, Nov 13, 2026 (prior-day context) — <a href="https://economicweekly.substack.com/p/economic-weekly-november-13-2026" target="_blank" rel="noopener">https://economicweekly.substack.com/p/economic-weekly-november-13-2026</a> — index</li>
-</ol></article></div>
+</ol></div></details></div><p class="totop"><a href="#top">Back to top ↑</a></p></article></div>
 <footer><div class="fin">Sharma Electric &amp; HVAC — The Sharma News · Updated daily at 5:00 AM ET · General news summaries for the Sharma team — not legal or financial advice.</div></footer>
 </body></html>

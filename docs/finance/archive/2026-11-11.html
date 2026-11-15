@@ -27,10 +27,31 @@ text-transform:uppercase;letter-spacing:1.4px}
 nav.main{display:flex;justify-content:center;flex-wrap:wrap;border-top:1px solid var(--ink);
 border-bottom:6px double var(--ink);padding:7px 0}
 nav.main a{color:var(--ink);text-decoration:none;font-size:13px;font-weight:700;
-letter-spacing:1.6px;text-transform:uppercase;padding:0 15px}
+letter-spacing:1.6px;text-transform:uppercase;padding:10px 15px}
 nav.main a + a{border-left:1px solid var(--hair)}
 nav.main a:hover{text-decoration:underline}
 .wrap{max-width:1020px;margin:0 auto;padding:6px 18px 54px}
+/* ---------- photos (newspaper style) ---------- */
+.photo{margin:12px 0 16px}
+.photo img{width:100%;height:auto;display:block;background:#fff;border:1px solid var(--ink);
+padding:3px;filter:grayscale(92%) contrast(1.06)}
+.photo figcaption{font-style:italic;font-size:13.5px;color:#222;margin-top:6px;line-height:1.45}
+.photo .credit{display:block;font-style:normal;font-variant:small-caps;font-size:11.5px;
+letter-spacing:.8px;color:var(--mut);margin-top:2px}
+.photo.small{max-width:430px}
+.story .photo img{max-height:290px;object-fit:cover;object-position:top}
+/* ---------- at a glance / key numbers ---------- */
+.glance{background:var(--paper2);border:1px solid var(--ink);border-top:4px solid var(--ink);
+padding:14px 18px 8px;margin:20px 0 18px}
+.glance h2{font-size:15px;text-transform:uppercase;letter-spacing:2px;margin:0 0 8px;
+border:none;padding:0}
+.glance ul{margin:0 0 8px;padding-left:20px}
+.glance li{margin:5px 0;font-size:15.5px}
+.keynums{display:flex;flex-wrap:wrap;border:1px solid var(--ink);background:var(--paper2);margin:0 0 20px}
+.kn{flex:1 1 138px;padding:9px 12px;border-right:1px solid var(--hair)}
+.kn:last-child{border-right:none}
+.kn b{display:block;font-size:19px;line-height:1.2}
+.kn span{font-size:11px;text-transform:uppercase;letter-spacing:1px;color:var(--mut)}
 /* ---------- front page ---------- */
 .front{display:grid;grid-template-columns:1fr 1fr;margin-top:24px;
 border-bottom:2px solid var(--ink);padding-bottom:24px}
@@ -42,18 +63,21 @@ border-bottom:2px solid var(--ink);padding-bottom:24px}
 font-size:26px;line-height:1.22;margin:8px 0 10px}
 .byline{font-size:12.5px;text-transform:uppercase;letter-spacing:1px;color:#444;
 border-top:1px solid var(--hair);border-bottom:1px solid var(--hair);padding:5px 0;margin:0 0 12px}
-.cont{font-variant:small-caps;font-size:17px;font-weight:700;color:var(--ink)}
+.cont{font-variant:small-caps;font-size:17px;font-weight:700;color:var(--ink);
+display:inline-block;padding:10px 6px 10px 0}
 /* ---------- index / archive ---------- */
 h2.sec{font-size:19px;font-weight:700;text-transform:uppercase;letter-spacing:1.6px;
 border-bottom:2px solid var(--ink);padding-bottom:5px;margin:32px 0 2px}
 .arch{list-style:none;margin:0;padding:0}
-.arch li{border-bottom:1px solid var(--hair);padding:11px 0}
+.arch li{border-bottom:1px solid var(--hair);padding:11px 0;overflow:hidden}
 .arch li a{font-size:18px;font-weight:700;color:var(--ink);text-decoration:none}
 .arch li a:hover{text-decoration:underline}
 .arch .d{color:var(--mut);font-size:12.5px;font-weight:700;text-transform:uppercase;letter-spacing:1px}
 .arch p{margin:3px 0 0;color:#333;font-size:15px}
+.arch img.thumb{width:112px;height:76px;object-fit:cover;float:left;margin:3px 14px 6px 0;
+background:#fff;border:1px solid var(--ink);padding:2px;filter:grayscale(92%) contrast(1.06)}
 /* ---------- article pages ---------- */
-article{overflow-wrap:break-word;padding-top:6px}
+article{overflow-wrap:break-word;padding-top:6px;max-width:68ch;margin:0 auto}
 article h1{font-family:'Playfair Display',Georgia,'Times New Roman',serif;font-size:30px;line-height:1.2;margin:10px 0 12px}
 article h2{font-size:22px;margin-top:30px;border-bottom:1px solid var(--ink);padding-bottom:5px}
 article h3{font-size:18.5px;margin-top:24px}
@@ -63,8 +87,28 @@ article th,article td{border:1px solid #999;padding:6px 9px;font-size:14px;text-
 article th{background:#ece7da}
 article code{background:#ece7da;padding:1px 5px;font-family:ui-monospace,Menlo,Consolas,monospace;font-size:.88em}
 article blockquote{border-left:2px solid var(--ink);margin:14px 0;padding:2px 16px;color:#333;font-style:italic}
+.windowline{font-variant:small-caps;font-size:16px;color:#333;border-bottom:1px solid var(--hair);padding-bottom:8px}
+.jump{position:sticky;top:0;z-index:6;background:var(--paper);border-bottom:2px solid var(--ink);
+display:flex;flex-wrap:wrap;gap:2px 16px;padding:8px 0;margin:0 0 6px}
+.jump a{color:var(--ink);text-decoration:none;font-size:12.5px;font-weight:700;
+text-transform:uppercase;letter-spacing:1.1px;padding:9px 2px}
+.jump a:hover{text-decoration:underline}
+.item{border-bottom:1px solid var(--hair);padding:12px 0 14px}
+.item .item-head{font-family:'Playfair Display',Georgia,'Times New Roman',serif;
+font-size:20px;line-height:1.3;margin:2px 0 6px}
+.item .deck{margin:0 0 6px;color:#222;font-size:15.5px}
+.item .impact{margin:0 0 4px;font-size:15.5px}
+.item .impact b{font-variant:small-caps;letter-spacing:.4px}
+details.full{margin-top:6px}
+details.full summary{cursor:pointer;font-variant:small-caps;font-size:16.5px;font-weight:700;
+color:var(--accent);padding:11px 0;min-height:24px}
+details.full summary:hover{color:#000}
+details.full .fullbody{border-top:1px dotted var(--hair);padding-top:4px}
+.sec-intro{color:#222}
+.totop{text-align:right;margin-top:26px}
+.totop a{font-variant:small-caps;font-weight:700;color:var(--ink);padding:10px 0;display:inline-block}
 .crumb{color:var(--mut);font-size:12.5px;text-transform:uppercase;letter-spacing:1.2px;margin:16px 0 8px}
-.crumb a{color:var(--ink)}
+.crumb a{color:var(--ink);padding:6px 0;display:inline-block}
 footer{max-width:1020px;margin:0 auto;padding:0 18px 30px;text-align:center}
 footer .fin{border-top:6px double var(--ink);padding-top:12px;font-size:13px;color:#444}
 @media(max-width:760px){
@@ -75,9 +119,11 @@ footer .fin{border-top:6px double var(--ink);padding-top:12px;font-size:13px;col
 .story .headline{font-size:23px}
 article h1{font-size:25px}
 .dateline{justify-content:center;text-align:center}
+.kn{flex:1 1 45%}
+.photo.small{max-width:none}
 }
 </style></head>
-<body>
+<body id="top">
 <header class="masthead">
 <img class="logo" src="../../logo.png" alt="Sharma Electric &amp; HVAC">
 <div class="dbl"></div>
@@ -92,10 +138,15 @@ article h1{font-size:25px}
 </nav></header>
 <div class="wrap"><p class="crumb"><a href="../index.html">Finance Briefing</a> · <a href="index.html">Archive</a></p><article><h1>Sharma Electric &amp; HVAC — Daily Finance News, Nov 10–11, 2026</h1>
 <p><strong>Window:</strong> Roughly 24 hours before Wed Nov 11, 2026, 4:41 PM ET (Nov 10 ~4:41 PM ET – Nov 11 4:41 PM ET). All dates below were verified on the source pages themselves (datelines, embargo lines, publication stamps, or computed-at times shown on the page). Items outside the window were excluded, not padded in.</p>
-<h2>Summary</h2>
+<nav class="jump"><a href="#glance">At a Glance</a><a href="#sec-1">Summary</a><a href="#sec-2">Top 8 — ranked by importance to Sharma Electric & HVAC</a><a href="#sec-3">Findings by category — including explicit no-news flags</a><a href="#sec-4">Could not verify / open questions</a><a href="#sec-5">Sources</a></nav><div class="glance" id="glance"><h2>At a Glance</h2><ul><li>October CPI came in hot: +0.4% headline, +0.3% core — a third straight +0.3% core print.</li>
+<li>A December Fed hike — possibly 50 bp — is on the table; the 10-year Treasury pushed to ~5%.</li>
+<li>Mortgage rates jumped 12 bp in one day to 7.30%, ending four weeks of easing.</li>
+<li>Copper stayed historically high and physically tight; Comex settled +0.88% at $6.2745/lb.</li>
+<li>No material news on HVAC / R-454B / tariffs, CES or World Electric, or builder slowdowns, layoffs or defaults.</li></ul></div><div class="keynums"><div class="kn"><b>+0.4%</b><span>CPI (Oct, m/m)</span></div><div class="kn"><b>+0.3%</b><span>Core CPI (m/m)</span></div><div class="kn"><b>3.75%–4.00%</b><span>Policy rate</span></div><div class="kn"><b>7.30%</b><span>30-yr fixed</span></div><div class="kn"><b>4.99%</b><span>10-yr Treasury</span></div><div class="kn"><b>$6.2745/lb</b><span>COMEX copper</span></div></div><figure class="photo "><img src="../../img/2026-11-11-lead.jpg" alt="Federal Reserve Governor Christopher Waller" loading="lazy"><figcaption>Fed Governor Christopher Waller, whose October-CPI trigger for a bigger December hike was met by the print.<span class="credit">Photo: Reuters</span></figcaption></figure><h2 id="sec-1">Summary</h2>
 <p>One story dominated the 24 hours: a hotter-than-expected October CPI on Tuesday Nov 10 killed the four-week slide in mortgage rates, put a December Fed rate <em>hike</em> — possibly 50 bp — on the table, and pushed the 10-year Treasury to ~5%. That is bearish for Florida new-home demand heading into winter. Copper stayed historically high and physically tight. There was <strong>no</strong> material 24-hour news on HVAC equipment / R-454B / tariffs, on CES or World Electric, on Census housing starts/permits/new-home sales, or on slowdowns, layoffs, defaults or slow pay at DR Horton, Lennar, Pulte, Meritage or Strada Services — those categories are flagged explicitly below.</p>
-<h2>Top 8 — ranked by importance to Sharma Electric &amp; HVAC</h2>
-<h3>1. October CPI comes in hot: +0.4% headline, +0.3% core for a third straight month</h3>
+
+<figure class="photo small"><img src="../../img/2026-11-11-inline.jpg" alt="Copper market" loading="lazy"><figcaption>Copper stayed near record levels, with China's import premium at record highs and nearby supply tight.<span class="credit">Photo: Devdiscourse</span></figcaption></figure>
+<h2 id="sec-2">Top 8 — ranked by importance to Sharma Electric & HVAC</h2><div class="item"><h3 class="item-head">1. October CPI comes in hot: +0.4% headline, +0.3% core for a third straight month</h3><p class="deck">CPI-U +0.4% m/m seasonally adjusted (forecast +0.3%; September +0.6%); core (less food & energy) +0.3% (forecast +0.2%; third straight +0.3%); shelter +0.3%, accounting for over 30% of the monthly increase; food +0.5%; energy…</p><p class="impact"><b>Why it matters to Sharma:</b> This single print reversed the rate relief builders and buyers had just gotten, so expect softer buyer traffic and tougher builder pricing pressure on winter starts.</p><details class="full"><summary>Read the full story</summary><div class="fullbody"><h3>1. October CPI comes in hot: +0.4% headline, +0.3% core for a third straight month</h3>
 <ul>
 <li><strong>Headline:</strong> Consumer Price Index — October 2026 (USDL-26-1685)</li>
 <li><strong>Key numbers:</strong> CPI-U +0.4% m/m seasonally adjusted (forecast +0.3%; September +0.6%); core (less food &amp; energy) +0.3% (forecast +0.2%; third straight +0.3%); shelter +0.3%, accounting for over 30% of the monthly increase; food +0.5%; energy +0.7%; electricity +0.9%. No 12-month rate was published — BLS did not collect October 2025 data during the lapse in appropriations.</li>
@@ -103,7 +154,8 @@ article h1{font-size:25px}
 <li><strong>Source:</strong> U.S. Bureau of Labor Statistics — <a href="https://www.bls.gov/news.release/cpi.nr0.htm" target="_blank" rel="noopener">https://www.bls.gov/news.release/cpi.nr0.htm</a></li>
 <li><strong>Why it matters to Sharma:</strong> This single print reversed the rate relief builders and buyers had just gotten, so expect softer buyer traffic and tougher builder pricing pressure on winter starts.</li>
 </ul>
-<h3>2. Fed officials open the door to a 50 bp December hike after Waller's CPI trigger is met</h3>
+</div></details></div>
+<div class="item"><h3 class="item-head">2. Fed officials open the door to a 50 bp December hike after Waller's CPI trigger is met</h3><p class="deck">Current policy rate 3.75%–4.00%; Gov. Christopher Waller said hours before the data he would back +25 bp at the Dec 8–9 meeting unless core CPI hit 0.3% or more — it did — in which case "a 50-basis-point hike… should be…</p><p class="impact"><b>Why it matters to Sharma:</b> A December hike — especially 50 bp — raises Sharma's own borrowing costs and builders' construction-loan costs at the same time it cools end-buyer demand.</p><details class="full"><summary>Read the full story</summary><div class="fullbody"><h3>2. Fed officials open the door to a 50 bp December hike after Waller's CPI trigger is met</h3>
 <ul>
 <li><strong>Headline:</strong> Fed officials open door to a quicker round of rate hikes as inflation worsens</li>
 <li><strong>Key numbers:</strong> Current policy rate 3.75%–4.00%; Gov. Christopher Waller said hours before the data he would back +25 bp at the Dec 8–9 meeting unless core CPI hit 0.3% or more — it did — in which case "a 50-basis-point hike… should be considered"; 50 bp odds jumped to ~15% mid-morning, ~10% by late afternoon (from near zero); traders priced three 25 bp hikes by mid-2027 vs two before; Dallas Fed President Lorie Logan said the Fed needs at least +50 bp more in total before pausing. CME FedWatch via MarketWatch put a 25 bp hike above 85%.</li>
@@ -111,7 +163,8 @@ article h1{font-size:25px}
 <li><strong>Source:</strong> Reuters via WABX — <a href="https://wabx.net/2026/11/10/investors-boost-odds-of-half-point-fed-hike-as-core-cpi-rise-meets-wallers-bar/" target="_blank" rel="noopener">https://wabx.net/2026/11/10/investors-boost-odds-of-half-point-fed-hike-as-core-cpi-rise-meets-wallers-bar/</a></li>
 <li><strong>Why it matters to Sharma:</strong> A December hike — especially 50 bp — raises Sharma's own borrowing costs and builders' construction-loan costs at the same time it cools end-buyer demand.</li>
 </ul>
-<h3>3. Mortgage rates jump 12 bp in one day to 7.30%, ending four weeks of easing</h3>
+</div></details></div>
+<div class="item"><h3 class="item-head">3. Mortgage rates jump 12 bp in one day to 7.30%, ending four weeks of easing</h3><p class="deck">Mortgage News Daily 30-year fixed +12 bp Monday→Tuesday to 7.30%, the largest one-day jump in more than a month. The prior week's MBA data (week ending Nov 6, released Nov 11): applications +6.2%, purchase applications +8% on the…</p><p class="impact"><b>Why it matters to Sharma:</b> At 7.30% daily rates, production builders' entry-level buyers in Florida are payment-capped again, which is the fastest channel from rates to fewer rough-in and trim starts for Sharma.</p><details class="full"><summary>Read the full story</summary><div class="fullbody"><h3>3. Mortgage rates jump 12 bp in one day to 7.30%, ending four weeks of easing</h3>
 <ul>
 <li><strong>Headline:</strong> Mortgage rates jump sharply higher, after easing for four straight weeks. Here's why</li>
 <li><strong>Key numbers:</strong> Mortgage News Daily 30-year fixed +12 bp Monday→Tuesday to 7.30%, the largest one-day jump in more than a month. The prior week's MBA data (week ending Nov 6, released Nov 11): applications +6.2%, purchase applications +8% on the week but −18% year over year, refinances +5% on the week but −57% year over year, MBA weekly average rate 7.21% (from 7.30%), Freddie Mac weekly average 7.18%.</li>
@@ -119,7 +172,8 @@ article h1{font-size:25px}
 <li><strong>Source:</strong> CNBC (Diana Olick), as syndicated — <a href="https://review.tokyo-wire.com/2026/11/11/mortgage-rates-jump-sharply-higher-after-easing-for-four-straight-weeks-heres-why/" target="_blank" rel="noopener">https://review.tokyo-wire.com/2026/11/11/mortgage-rates-jump-sharply-higher-after-easing-for-four-straight-weeks-heres-why/</a> ; corroborating MBA release coverage: Realtor.com, Nov 11, 2026 — <a href="https://www.realtor.com/news/trends/mortgage-applications-rates-mba-survey-november-11-2026/" target="_blank" rel="noopener">https://www.realtor.com/news/trends/mortgage-applications-rates-mba-survey-november-11-2026/</a></li>
 <li><strong>Why it matters to Sharma:</strong> At 7.30% daily rates, production builders' entry-level buyers in Florida are payment-capped again, which is the fastest channel from rates to fewer rough-in and trim starts for Sharma.</li>
 </ul>
-<h3>4. Treasury yields surge: 10-year to 4.99%, 2-year +19 bp in its biggest one-day rise in two years</h3>
+</div></details></div>
+<div class="item"><h3 class="item-head">4. Treasury yields surge: 10-year to 4.99%, 2-year +19 bp in its biggest one-day rise in two years</h3><p class="deck">10-year Treasury +12 bp to 4.99% on Nov 10 (intraday prints above 5.00% reported elsewhere the same day); 2-year +19 bp to 4.75%, on track for its biggest one-day rise in two years (FactSet); S&P 500 −0.2%, Dow −0.7%, Nasdaq…</p><p class="impact"><b>Why it matters to Sharma:</b> The 10-year at ~5% is what prices mortgages and builder debt, so this move — not the Fed's current rate — is what will show up first in builder incentives, cancellations and start pacing.</p><details class="full"><summary>Read the full story</summary><div class="fullbody"><h3>4. Treasury yields surge: 10-year to 4.99%, 2-year +19 bp in its biggest one-day rise in two years</h3>
 <ul>
 <li><strong>Headline:</strong> Why stocks are falling and 10-year yields are back near 5% after Tuesday's inflation report</li>
 <li><strong>Key numbers:</strong> 10-year Treasury +12 bp to 4.99% on Nov 10 (intraday prints above 5.00% reported elsewhere the same day); 2-year +19 bp to 4.75%, on track for its biggest one-day rise in two years (FactSet); S&amp;P 500 −0.2%, Dow −0.7%, Nasdaq −0.9% that day.</li>
@@ -127,7 +181,8 @@ article h1{font-size:25px}
 <li><strong>Source:</strong> MarketWatch via Morningstar — <a href="https://www.morningstar.com/news/marketwatch/2026111071/why-stocks-are-falling-and-10-year-yields-are-back-near-5-after-tuesdays-inflation-report" target="_blank" rel="noopener">https://www.morningstar.com/news/marketwatch/2026111071/why-stocks-are-falling-and-10-year-yields-are-back-near-5-after-tuesdays-inflation-report</a></li>
 <li><strong>Why it matters to Sharma:</strong> The 10-year at ~5% is what prices mortgages and builder debt, so this move — not the Fed's current rate — is what will show up first in builder incentives, cancellations and start pacing.</li>
 </ul>
-<h3>5. Copper stays near record levels and physically tight; Comex settles +0.88% at $6.2745/lb</h3>
+</div></details></div>
+<div class="item"><h3 class="item-head">5. Copper stays near record levels and physically tight; Comex settles +0.88% at $6.2745/lb</h3><p class="deck">Comex front-month copper +5.50¢ (+0.88%) to $6.2745/lb on Nov 11; −2.85% month-to-date but +11.45% year-to-date and +23.28% vs a year ago; 52-week/record high $6.8035 (Sep 9, 2026). LME 3-month copper recovered toward $13,900/t;…</p><p class="impact"><b>Why it matters to Sharma:</b> Wire and copper-bearing material remain priced near all-time highs with tight nearby supply, so quotes should stay short-dated and Sharma should not absorb copper moves on fixed-price builder contracts.</p><details class="full"><summary>Read the full story</summary><div class="fullbody"><h3>5. Copper stays near record levels and physically tight; Comex settles +0.88% at $6.2745/lb</h3>
 <ul>
 <li><strong>Headline:</strong> Copper Rebounds as China Supply Tightness Keeps Physical Market in Focus / Comex Copper Settles 0.88% Higher at $6.2745 — Data Talk</li>
 <li><strong>Key numbers:</strong> Comex front-month copper +5.50¢ (+0.88%) to $6.2745/lb on Nov 11; −2.85% month-to-date but +11.45% year-to-date and +23.28% vs a year ago; 52-week/record high $6.8035 (Sep 9, 2026). LME 3-month copper recovered toward $13,900/t; China's Yangshan import premium at record levels (Reuters/Andy Home, Nov 10: record $230/t, LME cash premium $195/t over 3-month, Shanghai exchange stocks 33,848 t — a three-year low — with ~85% of global exchange stocks held in the US on the tariff trade); North American clean-copper scrap benchmarks fell 9¢/lb on Nov 10 after rising 8¢ the prior session.</li>
@@ -135,7 +190,8 @@ article h1{font-size:25px}
 <li><strong>Source:</strong> ScrapMonster — <a href="https://www.scrapmonster.com/news/copper/copper-rebounds-as-china-supply-tightness-keeps-lme-prices-under-pressure-2026-11-11/100452" target="_blank" rel="noopener">https://www.scrapmonster.com/news/copper/copper-rebounds-as-china-supply-tightness-keeps-lme-prices-under-pressure-2026-11-11/100452</a> ; Morningstar / Dow Jones — <a href="https://www.morningstar.com/news/dow-jones/202611116999/comex-copper-settles-088-higher-at-62745-data-talk" target="_blank" rel="noopener">https://www.morningstar.com/news/dow-jones/202611116999/comex-copper-settles-088-higher-at-62745-data-talk</a> ; Reuters column via Devdiscourse (published Nov 10, 2026) — <a href="https://www.devdiscourse.com/article/international/4004161-roi-fund-sellers-china-buyers-squeeze-coppers-tariff-trade-andy-home" target="_blank" rel="noopener">https://www.devdiscourse.com/article/international/4004161-roi-fund-sellers-china-buyers-squeeze-coppers-tariff-trade-andy-home</a></li>
 <li><strong>Why it matters to Sharma:</strong> Wire and copper-bearing material remain priced near all-time highs with tight nearby supply, so quotes should stay short-dated and Sharma should not absorb copper moves on fixed-price builder contracts.</li>
 </ul>
-<h3>6. Early October existing-home sales fell 13.7% YoY; NAR consensus sits near a new cycle low</h3>
+</div></details></div>
+<div class="item"><h3 class="item-head">6. Early October existing-home sales fell 13.7% YoY; NAR consensus sits near a new cycle low</h3><p class="deck">Closed sales in Calculated Risk's early-reporting local markets −13.7% YoY in October (not seasonally adjusted; September was −5.2%); new listings −4.9% YoY; inventory +4.3% YoY. Consensus for the NAR report due Thu Nov 12: 3.87…</p><p class="impact"><b>Why it matters to Sharma:</b> A near-cycle-low resale market means fewer move-up buyers freeing up demand for new builds and more resale competition against builders' Florida inventory homes.</p><details class="full"><summary>Read the full story</summary><div class="fullbody"><h3>6. Early October existing-home sales fell 13.7% YoY; NAR consensus sits near a new cycle low</h3>
 <ul>
 <li><strong>Headline:</strong> October Existing Sales Preview: Early Markets Down 13.7% | NAR Report</li>
 <li><strong>Key numbers:</strong> Closed sales in Calculated Risk's early-reporting local markets −13.7% YoY in October (not seasonally adjusted; September was −5.2%); new listings −4.9% YoY; inventory +4.3% YoY. Consensus for the NAR report due Thu Nov 12: 3.87 million SAAR, down from 3.99 million in September and only 20,000 above the cycle low of 3.85 million (Oct 2023).</li>
@@ -143,7 +199,8 @@ article h1{font-size:25px}
 <li><strong>Source:</strong> United States Real Estate Investor, reporting Calculated Risk's Nov 11 second look — <a href="https://www.unitedstatesrealestateinvestor.com/calculated-risk-october-2026-existing-sales-preview-cycle-low/" target="_blank" rel="noopener">https://www.unitedstatesrealestateinvestor.com/calculated-risk-october-2026-existing-sales-preview-cycle-low/</a></li>
 <li><strong>Why it matters to Sharma:</strong> A near-cycle-low resale market means fewer move-up buyers freeing up demand for new builds and more resale competition against builders' Florida inventory homes.</li>
 </ul>
-<h3>7. Housing inventory keeps building as demand stays down YoY</h3>
+</div></details></div>
+<div class="item"><h3 class="item-head">7. Housing inventory keeps building as demand stays down YoY</h3><p class="deck">Altos Research active single-family inventory +7.2% YoY for the week through Nov 6 (previous week +6.8%) and +1.1% vs the same week in 2019; Realtor.com inventory +8.8% YoY, its highest weekly growth since late January, driven by…</p><p class="impact"><b>Why it matters to Sharma:</b> Rising unsold inventory is what triggers builder incentive spending, spec-home slowdowns and price squeezes on subcontractors — watch Florida spec counts, not just starts.</p><details class="full"><summary>Read the full story</summary><div class="fullbody"><h3>7. Housing inventory keeps building as demand stays down YoY</h3>
 <ul>
 <li><strong>Headline:</strong> High Frequency Data: Inventory Up, Demand Down Year-over-year</li>
 <li><strong>Key numbers:</strong> Altos Research active single-family inventory +7.2% YoY for the week through Nov 6 (previous week +6.8%) and +1.1% vs the same week in 2019; Realtor.com inventory +8.8% YoY, its highest weekly growth since late January, driven by listings accumulating rather than a flood of new sellers; MBA purchase activity −18% YoY (same release as item 3).</li>
@@ -151,7 +208,8 @@ article h1{font-size:25px}
 <li><strong>Source:</strong> Calculated Risk — <a href="https://calculatedrisk.substack.com/p/high-frequency-data-inventory-up-2f9" target="_blank" rel="noopener">https://calculatedrisk.substack.com/p/high-frequency-data-inventory-up-2f9</a></li>
 <li><strong>Why it matters to Sharma:</strong> Rising unsold inventory is what triggers builder incentive spending, spec-home slowdowns and price squeezes on subcontractors — watch Florida spec counts, not just starts.</li>
 </ul>
-<h3>8. Tampa Bay permits: Lennar and DR Horton still the most active builders — no local pullback in the count</h3>
+</div></details></div>
+<div class="item"><h3 class="item-head">8. Tampa Bay permits: Lennar and DR Horton still the most active builders — no local pullback in the count</h3><p class="deck">Building permits naming the firm as general contractor over the last 90 days: Lennar Homes LLC 56 (#1), DR Horton Inc 22 (#3); the top 25 contractors account for 354 permits combined. Trade sub-permits are excluded from the…</p><p class="impact"><b>Why it matters to Sharma:</b> In Sharma's core Tampa Bay market the two biggest production builders are still pulling permits at the top of the table, so the near-term local pipeline has not cracked — the risk in items 1–4 is forward-looking, not yet in the permit data.</p><details class="full"><summary>Read the full story</summary><div class="fullbody"><h3>8. Tampa Bay permits: Lennar and DR Horton still the most active builders — no local pullback in the count</h3>
 <ul>
 <li><strong>Headline:</strong> Most active general contractors in Tampa Bay, last 90 days</li>
 <li><strong>Key numbers:</strong> Building permits naming the firm as general contractor over the last 90 days: Lennar Homes LLC 56 (#1), DR Horton Inc 22 (#3); the top 25 contractors account for 354 permits combined. Trade sub-permits are excluded from the count, per the page's method note.</li>
@@ -159,22 +217,28 @@ article h1{font-size:25px}
 <li><strong>Source:</strong> Groundbreak — <a href="https://pro.groundbreak.city/tampa/stats/most-active-contractors" target="_blank" rel="noopener">https://pro.groundbreak.city/tampa/stats/most-active-contractors</a></li>
 <li><strong>Why it matters to Sharma:</strong> In Sharma's core Tampa Bay market the two biggest production builders are still pulling permits at the top of the table, so the near-term local pipeline has not cracked — the risk in items 1–4 is forward-looking, not yet in the permit data.</li>
 </ul>
-<h2>Findings by category — including explicit no-news flags</h2>
-<h3>1. Copper, wire and electrical material prices and supply (CES / World Electric)</h3>
+</div></details></div>
+<h2 id="sec-3">Findings by category — including explicit no-news flags</h2><div class="item"><h3 class="item-head">1. Copper, wire and electrical material prices and supply (CES / World Electric)</h3><p class="deck">Covered in Top 8 item 5. CES / World Electric: NO material news in the 24-hour window. The most recent items found were a City Electric Supply branch opening dated Nov 5, 2026 and a World Electric (Sonepar) Port St. Lucie, Fla.…</p><details class="full"><summary>Read the full story</summary><div class="fullbody"><h3>1. Copper, wire and electrical material prices and supply (CES / World Electric)</h3>
 <p>Covered in Top 8 item 5. <strong>CES / World Electric: NO material news in the 24-hour window.</strong> The most recent items found were a City Electric Supply branch opening dated Nov 5, 2026 and a World Electric (Sonepar) Port St. Lucie, Fla. branch item dated Sep 18, 2026, both on tEDmag and both outside the window — not used.</p>
-<h3>2. HVAC equipment prices, refrigerant (R-454B) and tariff changes</h3>
+</div></details></div>
+<div class="item"><h3 class="item-head">2. HVAC equipment prices, refrigerant (R-454B) and tariff changes</h3><p class="deck">NO material news in the 24-hour window — flagged, not padded. No HVAC manufacturer price announcement, R-454B development, or tariff change dated Nov 10–11, 2026 was found. The nearest items are outside the window: The…</p><details class="full"><summary>Read the full story</summary><div class="fullbody"><h3>2. HVAC equipment prices, refrigerant (R-454B) and tariff changes</h3>
 <p><strong>NO material news in the 24-hour window — flagged, not padded.</strong> No HVAC manufacturer price announcement, R-454B development, or tariff change dated Nov 10–11, 2026 was found. The nearest items are outside the window: The Refrigerant Index's week-of-Nov 9, 2026 snapshot (R-454B median $23.75/lb online, checked Nov 9) and ACHR News' Nov 2, 2026 report of Carrier's planned ~8% residential price increase (from its Oct 29 earnings call). Neither is counted in the Top 8.</p>
-<h3>3. Florida and US housing starts, permits and new-home sales</h3>
+</div></details></div>
+<div class="item"><h3 class="item-head">3. Florida and US housing starts, permits and new-home sales</h3><p class="deck">No Census housing starts, building permits, or new-home sales release occurred in the 24-hour window. The category is covered instead by in-window demand data: MBA applications (item 3), the October existing-sales preview (item…</p><details class="full"><summary>Read the full story</summary><div class="fullbody"><h3>3. Florida and US housing starts, permits and new-home sales</h3>
 <p><strong>No Census housing starts, building permits, or new-home sales release occurred in the 24-hour window.</strong> The category is covered instead by in-window demand data: MBA applications (item 3), the October existing-sales preview (item 6), weekly inventory (item 7), and Tampa Bay permit counts computed Nov 11 (item 8). Context also published Nov 11 but not in the Top 8: Realtor.com's lock-in study (PR Newswire, Nov 11, 2026, 11:00 UTC) estimating a typical mortgage holder would pay +85.3% more per month ($1,332 → $2,468 at 7.32%) to buy a median-priced home, with Florida gaps of Tampa +79.1% ($1,286 → $2,303), Orlando +84.0%, Miami–Fort Lauderdale–West Palm Beach +92.6% and Jacksonville +69.8% — <a href="https://www.prnewswire.com/news-releases/buying-a-median-priced-home-would-cost-typical-mortgage-holders-about-1-100-more-a-month-302935597.html" target="_blank" rel="noopener">https://www.prnewswire.com/news-releases/buying-a-median-priced-home-would-cost-typical-mortgage-holders-about-1-100-more-a-month-302935597.html</a></p>
-<h3>4. Mortgage rates and the Federal Reserve</h3>
+</div></details></div>
+<div class="item"><h3 class="item-head">4. Mortgage rates and the Federal Reserve</h3><p class="deck">Covered in Top 8 items 1–4. Note on odds: December hike probabilities moved intraday and differ slightly by source/time — Reuters reported ~10% for 50 bp by late afternoon Nov 10 after ~15% mid-morning; MarketWatch/CME put 25 bp…</p><details class="full"><summary>Read the full story</summary><div class="fullbody"><h3>4. Mortgage rates and the Federal Reserve</h3>
 <p>Covered in Top 8 items 1–4. Note on odds: December hike probabilities moved intraday and differ slightly by source/time — Reuters reported ~10% for 50 bp by late afternoon Nov 10 after ~15% mid-morning; MarketWatch/CME put 25 bp above 85% on Nov 10; Realtor.com's Nov 11 MBA story cited ~77% for a hike in its (jobs-report) context. Direction is unanimous: a 25 bp hike is the base case, 50 bp is newly live, a hold/cut is effectively off the table.</p>
-<h3>5. Florida production builders — DR Horton, Lennar, Pulte, Meritage, Strada Services</h3>
+</div></details></div>
+<div class="item"><h3 class="item-head">5. Florida production builders — DR Horton, Lennar, Pulte, Meritage, Strada Services</h3><p class="deck">NO slowdown, layoff, default or slow-pay news for any named builder in the 24-hour window — flagged, not padded. No earnings releases fell in the window (DR Horton's Q4 was Oct 29; Lennar's next report is estimated Dec 15). The…</p><details class="full"><summary>Read the full story</summary><div class="fullbody"><h3>5. Florida production builders — DR Horton, Lennar, Pulte, Meritage, Strada Services</h3>
 <p><strong>NO slowdown, layoff, default or slow-pay news for any named builder in the 24-hour window — flagged, not padded.</strong> No earnings releases fell in the window (DR Horton's Q4 was Oct 29; Lennar's next report is estimated Dec 15). The only builder-specific in-window evidence is positive/neutral: Tampa Bay permits still led by Lennar (56) and DR Horton (22) (item 8), and modest Nov 11 stock declines — DR Horton $147.48 (−1.48%), Lennar $86.33 (−0.38%), PulteGroup $129.50 (−0.84%) as of 4:41 PM ET Nov 11 (finance data, data/dhi.json, data/len.json, data/phm.json, fetched 2026-11-11T21:44Z) — a rates-driven down day, not distress. Employee-review posts about Strada Services from Sep–Oct 2026 alleging layoffs/pay problems are not news reports and are outside the window; they were excluded.</p>
-<h3>6. Small-business credit, insurance or tax changes for contractors</h3>
+</div></details></div>
+<div class="item"><h3 class="item-head">6. Small-business credit, insurance or tax changes for contractors</h3><p class="deck">Covered by the NFIB release below, which just missed the Top 8 cut on direct dollar impact but is the category's material in-window item. No Florida-specific insurance change, tax-law change, or contractor-credit program change…</p><p class="impact"><b>Why it matters to Sharma:</b> With loan-rate pain and planned price hikes at multi-year highs among small firms, Sharma should expect both its own credit costs and supplier price pass-throughs to keep rising into the December Fed meeting. (This is a 9th, category-completeness item,…</p><details class="full"><summary>Read the full story</summary><div class="fullbody"><h3>6. Small-business credit, insurance or tax changes for contractors</h3>
 <p>Covered by the NFIB release below, which just missed the Top 8 cut on direct dollar impact but is the category's material in-window item. <strong>No Florida-specific insurance change, tax-law change, or contractor-credit program change dated Nov 10–11, 2026 was found.</strong>
 - <strong>NFIB Small Business Optimism — October (released Nov 10, 2026):</strong> Index 97.8 (−0.1; 53-year average 98.0); Uncertainty Index 84 (−6, lowest since Dec 2025); labor quality/availability the top problem for 25% of owners (4th straight month); taxes jumped to the #2 problem at 21% (+10 points, highest since May 2021) — a sentiment shift, not a tax-law change; 36% reported unfilled job openings (+4 points); net 37% plan price increases (highest since Jul 2022); net 13% reported paying a higher rate on their most recent loan (highest since Aug 2024); 56% hiring or trying to hire, of whom 86% reported few or no qualified applicants. Source: NFIB, dateline Washington, D.C. (Nov. 10, 2026), published 2026-11-10T05:00:00-06:00 — <a href="https://www.nfib.com/news/press-release/new-nfib-survey-main-street-optimism-remains-steady-uncertainty-declines-in-october/" target="_blank" rel="noopener">https://www.nfib.com/news/press-release/new-nfib-survey-main-street-optimism-remains-steady-uncertainty-declines-in-october/</a>
 - Why it matters to Sharma: With loan-rate pain and planned price hikes at multi-year highs among small firms, Sharma should expect both its own credit costs and supplier price pass-throughs to keep rising into the December Fed meeting. <em>(This is a 9th, category-completeness item, deliberately outside the ranked Top 8 above.)</em></p>
-<h2>Could not verify / open questions</h2>
+</div></details></div>
+<h2 id="sec-4">Could not verify / open questions</h2><div class="item"><p class="deck">No primary CNBC.com page was opened; the CNBC mortgage-rate story was read via its syndicated mirror (Source: CNBC stated on the page, byline Diana Olick, Nov 11, 2026) and its numbers match Realtor.com's and Calculated Risk's…</p><details class="full"><summary>Read this section in full</summary><div class="fullbody">
 <ul>
 <li>No primary CNBC.com page was opened; the CNBC mortgage-rate story was read via its syndicated mirror (Source: CNBC stated on the page, byline Diana Olick, Nov 11, 2026) and its numbers match Realtor.com's and Calculated Risk's independent Nov 11 MBA coverage.</li>
 <li>Fed-hike probabilities are intraday market prices, not facts: figures ranged ~77%–91% for a December hike across sources and times of day on Nov 10–11. The report quotes each source's figure with its timing rather than picking one.</li>
@@ -182,7 +246,8 @@ article h1{font-size:25px}
 <li>Groundbreak's Tampa permit ranking is a rolling 90-day count computed Nov 11, not a 24-hour permit total; it is presented as such.</li>
 <li>Whether any Florida builder privately slowed starts, stretched pay, or cut crews on Nov 10–11 cannot be verified from public news in the window — no such reporting was found.</li>
 </ul>
-<h2>Sources</h2>
+</div></details></div>
+<h2 id="sec-5">Sources</h2><div class="item"><p class="deck">All sources below were read Nov 11, 2026, ~4:43–4:44 PM ET, and are flagged verified live (page opened and date checked on the page) unless marked index (search-result text only). BLS, Consumer Price Index — October 2026,…</p><details class="full"><summary>Read this section in full</summary><div class="fullbody">
 <p>All sources below were read Nov 11, 2026, ~4:43–4:44 PM ET, and are flagged <strong>verified live</strong> (page opened and date checked on the page) unless marked <em>index</em> (search-result text only).</p>
 <ul>
 <li>BLS, Consumer Price Index — October 2026, USDL-26-1685, embargoed Nov 10, 2026, 8:30 AM ET — <a href="https://www.bls.gov/news.release/cpi.nr0.htm" target="_blank" rel="noopener">https://www.bls.gov/news.release/cpi.nr0.htm</a> — verified live</li>
@@ -202,6 +267,6 @@ article h1{font-size:25px}
 <li>Finance data: data/dhi.json (D.R. Horton, daily/intraday OHLCV, fetched 2026-11-11T21:44:39Z); data/len.json (Lennar, fetched 2026-11-11T21:44:40Z); data/phm.json (PulteGroup, fetched 2026-11-11T21:44:41Z)</li>
 <li>tEDmag distributor listings (CES Nov 5 / World Electric Sep 18 items) — <em>index</em> only, used solely to establish no in-window CES/World Electric news</li>
 <li>The Refrigerant Index, week of Nov 9, 2026 (R-454B $23.75/lb) and ACHR News Carrier item, Nov 2, 2026 — <em>index</em> only, used solely to establish no in-window HVAC/R-454B news</li>
-</ul></article></div>
+</ul></div></details></div><p class="totop"><a href="#top">Back to top ↑</a></p></article></div>
 <footer><div class="fin">Sharma Electric &amp; HVAC — The Sharma News · Updated daily at 5:00 AM ET · General news summaries for the Sharma team — not legal or financial advice.</div></footer>
 </body></html>
