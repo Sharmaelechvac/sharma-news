@@ -459,13 +459,13 @@ body = f'<span class="kicker">Finance</span><h2 class="sec" style="margin-top:8p
     shell("../../", "Finance Briefing Archive", body), encoding="utf-8")
 
 # ---------- TECH: construction / engineering / tech news ----------
-# Parallel structure to FIN. The Product Spotlight is a WEEKLY feature
-# ("⭐ Products of the Week", per Sanjay): new picks land in Monday's
-# edition and stay featured all week. Display labels therefore say
-# "Product of the Week" even where a report draft said "of the day".
+# Parallel structure to FIN. The Product Spotlight refreshes every
+# WEEKDAY (per Sanjay): fresh picks Mon–Fri, weekends carry Friday's.
+# Display labels therefore say "Spotlight" even where a report draft
+# said "product of the day".
 TECH = {  # date -> (report glob, weekday label, archive one-liner)
  "2026-11-15": ("sharma-tech-news-2026-11-15-*", "Sunday, November 15, 2026",
-   "Construction input costs jumped 13.3% year-over-year — copper wire & cable up 25.5% — while contractors' selling prices rose only 5.5%. Inaugural Products of the Week: Leviton Lever Edge USB outlets ⚡ and Bosch YORK YD heat pumps ❄️."),
+   "Construction input costs jumped 13.3% year-over-year — copper wire & cable up 25.5% — while contractors' selling prices rose only 5.5%. Inaugural Product Spotlight: Leviton Lever Edge USB outlets ⚡ and Bosch YORK YD heat pumps ❄️."),
 }
 TECH_IMAGES = {  # photos pulled from the articles the report cites
  "2026-11-15": {
@@ -507,9 +507,9 @@ def render_spotlight(body, date, prefix):
         maker = re.search(r"Maker:\s*(.*?)(?=\s*Release date:)", text)
         rel = re.search(r"Release date:\s*(.*?)(?=\s*What it is:)", text)
         cool = re.search(r"Why it's cool for Sharma:\s*(.*?)(?=\s*Price:|\s*Source:|$)", text, re.S)
-        kick = ("⚡ Electrical — Product of the Week" if "⚡" in headline
-                else "❄️ HVAC — Product of the Week" if "❄" in headline
-                else "Product of the Week")
+        kick = ("⚡ Electrical Spotlight" if "⚡" in headline
+                else "❄️ HVAC Spotlight" if "❄" in headline
+                else "Product Spotlight")
         ml = ""
         if maker or rel:
             bits = []
@@ -518,11 +518,10 @@ def render_spotlight(body, date, prefix):
             ml = f'<p class="makerline">{" · ".join(bits)}</p>'
         deck = (f'<p class="deck"><b>Why it\'s cool:</b> {excerpt(cool.group(1), 340)}</p>'
                 if cool else "")
-        full = (block.replace("PRODUCT OF THE DAY", "PRODUCT OF THE WEEK")
-                     .replace("(the daily feature)", "(the weekly feature)"))
+        full = block.replace("PRODUCT OF THE DAY", "SPOTLIGHT")
         out.append(
             f'<div class="spotlight"><span class="kicker">{kick}</span>'
-            f'<h3 class="item-head">{headline.replace("PRODUCT OF THE DAY", "PRODUCT OF THE WEEK")}</h3>'
+            f'<h3 class="item-head">{headline.replace("PRODUCT OF THE DAY", "SPOTLIGHT")}</h3>'
             f'{photo_html(entry, prefix)}{ml}{deck}'
             f'<details class="full"><summary>Read the full story</summary>'
             f'<div class="fullbody">{full}</div></details></div>')
@@ -546,7 +545,7 @@ def render_tech_article(md_text, date, prefix):
                 intro_bits.append(f'<div class="sec-intro">{body}</div>')
         elif title.startswith("Summary"):
             lis = re.findall(r"<li>(.*?)</li>", body, flags=re.S)
-            lis = [re.sub(r"product of the day", "product of the week", li, flags=re.I)
+            lis = [re.sub(r"product of the day", "spotlight product", li, flags=re.I)
                    for li in lis]
             if lis:
                 glance = glance_html(lis)
@@ -558,7 +557,7 @@ def render_tech_article(md_text, date, prefix):
     if glance:
         nav_items.append('<a href="#glance">At a Glance</a>')
     if spotlight:
-        nav_items.append('<a href="#spotlight">⭐ Products of the Week</a>')
+        nav_items.append('<a href="#spotlight">⭐ Product Spotlight</a>')
     sec_no = 0
     for title, body in generic:
         sec_no += 1
@@ -574,10 +573,10 @@ def render_tech_article(md_text, date, prefix):
     nav = f'<nav class="jump">{"".join(nav_items)}</nav>' if nav_items else ""
     spot = ""
     if spotlight:
-        spot = ('<h2 id="spotlight">⭐ Products of the Week</h2>'
-                '<p class="sec-intro">One cool electrical product and one cool HVAC '
-                'product, picked weekly — new picks land in Monday\'s edition and '
-                'stay featured all week.</p>' + spotlight)
+        spot = ('<h2 id="spotlight">⭐ Product Spotlight</h2>'
+                '<p class="sec-intro">A cool new electrical product and a cool new '
+                'HVAC product every weekday — fresh picks Monday–Friday; weekends '
+                'carry Friday\'s picks.</p>' + spotlight)
     return ('<div class="secname">Construction · Engineering · Tech</div>' +
             preamble + "\n".join(intro_bits) + nav + glance + spot +
             "\n".join(rendered) +
@@ -640,7 +639,7 @@ body = f"""
 <div class="techfeature"><span class="kicker">Construction · Engineering · Tech</span>
 {photo_html(tech_lead, "")}
 <h2 class="headline">Construction input costs jump 13.3% in a year; copper wire &amp; cable up 25.5%</h2>
-<p class="spotline">⭐ Products of the Week — ⚡ <b>Leviton Lever Edge™ USB Outlets</b> · ❄️ <b>Bosch Home Comfort YORK® YD heat pumps</b></p>
+<p class="spotline">⭐ Product Spotlight — ⚡ <b>Leviton Lever Edge™ USB Outlets</b> · ❄️ <b>Bosch Home Comfort YORK® YD heat pumps</b></p>
 <p class="byline">Sharma Tech · Edition of Nov 15, 2026</p>
 <a class="cont" href="tech/index.html">Read today's tech briefing →</a></div>
 <h2 class="sec">Legal — Back Issues</h2><ul class="arch">{legal_arch}</ul>
