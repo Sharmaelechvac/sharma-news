@@ -13,8 +13,9 @@ articles you are citing").
 Layout: newspaper style. Every finance edition page opens with an
 "At a Glance" box + "Key Numbers" strip (both taken only from that
 report's own summary), then each story shows headline + deck + Sharma
-impact line with the FULL original text folded inside a native
-<details> ("Read the full story") — nothing is deleted."""
+impact line, and the FULL original text on the story's OWN page —
+clicking a headline or a photo opens that page (per Sanjay
+2026-11-15: a click must go to a new page to read more)."""
 import re, glob, html as ihtml, markdown, pathlib
 
 ROOT = pathlib.Path(__file__).parent
@@ -116,6 +117,11 @@ font-size:20px;line-height:1.3;margin:2px 0 6px}
 .item .deck{margin:0 0 6px;color:#222;font-size:15.5px}
 .item .impact{margin:0 0 4px;font-size:15.5px}
 .item .impact b{font-variant:small-caps;letter-spacing:.4px}
+.item-head a,.spotlight .item-head a,.headline a{color:inherit;text-decoration:none}
+.item-head a:hover,.spotlight .item-head a:hover,.headline a:hover{text-decoration:underline}
+a.photolink{display:block;text-decoration:none}
+.storyhead{font-family:'Playfair Display',Georgia,'Times New Roman',serif;
+font-size:31px;line-height:1.15;margin:6px 0 10px}
 details.full{margin-top:6px}
 details.full summary{cursor:pointer;font-variant:small-caps;font-size:16.5px;font-weight:700;
 color:var(--accent);padding:11px 0;min-height:24px}
@@ -336,9 +342,52 @@ def item_impact(block):
     m = re.search(r"(?:Why it matters to Sharma|Sharma impact):\s*(.*)", strip_tags(block), re.S)
     return excerpt(m.group(1), 260) if m else ""
 
+# ---------- story pages (per Sanjay 2026-11-15: clicking a headline or a
+# photo must open a new page to read the story) ----------
+STORY_PAGES = {}   # docs-relative path -> (title, body)
+_STORY_KEYS = {}   # (section, date, headline) -> path
+_USED_SLUGS = set()
+
+def slugify(text):
+    t = re.sub(r"[^a-z0-9]+", "-", text.lower()).strip("-")
+    return (t[:64].rstrip("-") or "story")
+
+def story_paths_for(section, date, kind=None):
+    out = []
+    for (sec, d, h), (p, kd) in _STORY_KEYS.items():
+        if sec == section and d == date and (kind is None or kd == kind):
+            out.append(p)
+    return out
+
+def story_page(ctx, headline, deck, impact, photo_entry, rest_html, deck_html="", kind="item"):
+    """Register a standalone story page; return its docs-relative path."""
+    k = (ctx["section"], ctx["date"], headline)
+    if k in _STORY_KEYS:
+        path = _STORY_KEYS[k][0]
+    else:
+        base = slugify(headline)
+        slug, n = base, 2
+        while (ctx["section"], ctx["date"], slug) in _USED_SLUGS:
+            slug = f"{base}-{n}"; n += 1
+        _USED_SLUGS.add((ctx["section"], ctx["date"], slug))
+        path = f'{ctx["section"]}/story/{ctx["date"]}-{slug}.html'
+        _STORY_KEYS[k] = (path, kind)
+    imp = f'<p class="impact"><b>Why it matters to Sharma:</b> {impact}</p>' if impact else ""
+    deck_h = deck_html or (f'<p class="deck">{deck}</p>' if deck else "")
+    body = (f'<p class="crumb"><a href="../../{ctx["sec_home"]}">&larr; {ctx["sec_label"]}</a> &middot; '
+            f'<a href="../../{ctx["section"]}/archive/{ctx["date"]}.html">Edition of {ctx["date"]}</a></p>'
+            f'<span class="kicker">{ctx["sec_label"]} &middot; {ctx["date_label"]}</span>'
+            f'<h1 class="storyhead">{headline}</h1>'
+            f'{photo_html(photo_entry, "../../")}{deck_h}{imp}'
+            f'<div class="fullbody">{rest_html}</div>'
+            f'<p class="totop"><a href="../../{ctx["sec_home"]}">&larr; Back to the {ctx["sec_label"]}</a></p>')
+    STORY_PAGES[path] = (headline, body)
+    return path
+
 ITEM_SPLIT = r'(<h3>.*?</h3>|<p><strong>Item\s+\d+[A-Z]?\s*—.*?</strong></p>)'
 
-def render_section_body(body):
+
+def render_section_body(body, ctx=None):
     parts = re.split(ITEM_SPLIT, body, flags=re.S)
     intro, items = parts[0], []
     for i in range(1, len(parts), 2):
@@ -348,6 +397,12 @@ def render_section_body(body):
     if not items:
         if len(strip_tags(body)) > 700:
             deck = excerpt(strip_tags(body), 230)
+            if ctx:
+                path = story_page(ctx, ctx.get("sec_title") or "Section in full",
+                                  deck, "", None, body, kind="section")
+                href = f'{ctx["prefix"]}{path}'
+                return (f'<div class="item"><p class="deck">{deck}</p>'
+                        f'<a class="cont" href="{href}">Read this section in full &rarr;</a></div>')
             return (f'<div class="item"><p class="deck">{deck}</p>'
                     f'<details class="full"><summary>Read this section in full</summary>'
                     f'<div class="fullbody">{body}</div></details></div>')
@@ -360,11 +415,20 @@ def render_section_body(body):
         deck = item_deck(block, headline)
         impact = item_impact(block)
         imp = f'<p class="impact"><b>Why it matters to Sharma:</b> {impact}</p>' if impact else ""
-        out.append(
-            f'<div class="item"><h3 class="item-head">{headline}</h3>'
-            f'<p class="deck">{deck}</p>{imp}'
-            f'<details class="full"><summary>Read the full story</summary>'
-            f'<div class="fullbody">{block}</div></details></div>')
+        if ctx:
+            rest = block[len(marker):]
+            path = story_page(ctx, headline, deck, impact, None, rest)
+            href = f'{ctx["prefix"]}{path}'
+            out.append(
+                f'<div class="item"><h3 class="item-head"><a href="{href}">{headline}</a></h3>'
+                f'<p class="deck">{deck}</p>{imp}'
+                f'<a class="cont" href="{href}">Read the full story &rarr;</a></div>')
+        else:
+            out.append(
+                f'<div class="item"><h3 class="item-head">{headline}</h3>'
+                f'<p class="deck">{deck}</p>{imp}'
+                f'<details class="full"><summary>Read the full story</summary>'
+                f'<div class="fullbody">{block}</div></details></div>')
     return "\n".join(out)
 
 def render_article(md_text, date, prefix):
@@ -386,9 +450,16 @@ def render_article(md_text, date, prefix):
         sec_no += 1
         sid = f"sec-{sec_no}"
         nav_items.append(f'<a href="#{sid}">{title}</a>')
-        rendered.append(f'<h2 id="{sid}">{title}</h2>' + render_section_body(body))
+        fctx = {"section": "finance", "date": date, "date_label": FIN[date][1],
+                "sec_label": "Finance Briefing", "sec_home": "finance/index.html",
+                "prefix": prefix, "sec_title": title}
+        rendered.append(f'<h2 id="{sid}">{title}</h2>' + render_section_body(body, fctx))
         if not inline_placed and imgs.get("inline"):
-            rendered.append(photo_html(imgs["inline"], prefix, "small"))
+            inl = photo_html(imgs["inline"], prefix, "small")
+            paths = story_paths_for("finance", date, "item") or story_paths_for("finance", date)
+            if inl and paths:
+                inl = f'<a class="photolink" href="{prefix}{paths[0]}">{inl}</a>'
+            rendered.append(inl)
             inline_placed = True
     nav = ""
     if nav_items:
@@ -399,7 +470,11 @@ def render_article(md_text, date, prefix):
     if FIN_NUMBERS.get(date):
         top += keynums_html(FIN_NUMBERS[date])
     if imgs.get("lead"):
-        top += photo_html(imgs["lead"], prefix)
+        lead = photo_html(imgs["lead"], prefix)
+        paths = story_paths_for("finance", date, "item") or story_paths_for("finance", date)
+        if lead and paths:
+            lead = f'<a class="photolink" href="{prefix}{paths[0]}">{lead}</a>'
+        top += lead
     return (preamble + nav + top + "\n".join(rendered) +
             '<p class="totop"><a href="#top">Back to top ↑</a></p>')
 
@@ -519,12 +594,22 @@ def render_spotlight(body, date, prefix):
         deck = (f'<p class="deck"><b>Why it\'s cool:</b> {excerpt(cool.group(1), 340)}</p>'
                 if cool else "")
         full = block.replace("PRODUCT OF THE DAY", "SPOTLIGHT")
+        head2 = headline.replace("PRODUCT OF THE DAY", "SPOTLIGHT")
+        rest = full[len(marker.replace("PRODUCT OF THE DAY", "SPOTLIGHT")):] \
+            if full.startswith(marker.replace("PRODUCT OF THE DAY", "SPOTLIGHT")) else full
+        tctx = {"section": "tech", "date": date, "date_label": TECH[date][1],
+                "sec_label": "Tech Briefing", "sec_home": "tech/index.html",
+                "prefix": prefix, "sec_title": "Product Spotlight"}
+        path = story_page(tctx, head2, "", "", entry, rest, deck_html=(ml + deck), kind="spotlight")
+        href = f'{prefix}{path}'
+        photo = photo_html(entry, prefix)
+        if photo:
+            photo = f'<a class="photolink" href="{href}">{photo}</a>'
         out.append(
             f'<div class="spotlight"><span class="kicker">{kick}</span>'
-            f'<h3 class="item-head">{headline.replace("PRODUCT OF THE DAY", "SPOTLIGHT")}</h3>'
-            f'{photo_html(entry, prefix)}{ml}{deck}'
-            f'<details class="full"><summary>Read the full story</summary>'
-            f'<div class="fullbody">{full}</div></details></div>')
+            f'<h3 class="item-head"><a href="{href}">{head2}</a></h3>'
+            f'{photo}{ml}{deck}'
+            f'<a class="cont" href="{href}">Read the full story &rarr;</a></div>')
     return "\n".join(out)
 
 def render_tech_article(md_text, date, prefix):
@@ -565,10 +650,19 @@ def render_tech_article(md_text, date, prefix):
         nav_items.append(f'<a href="#{sid}">{title}</a>')
         block = f'<h2 id="{sid}">{title}</h2>'
         if sec_no == 1 and imgs.get("lead"):
-            block += photo_html(imgs["lead"], prefix)
-        block += render_section_body(body)
+            block += (f'<a class="photolink" href="@@FIRSTSTORY@@">'
+                      f'{photo_html(imgs["lead"], prefix)}</a>')
+        tctx = {"section": "tech", "date": date, "date_label": TECH[date][1],
+                "sec_label": "Tech Briefing", "sec_home": "tech/index.html",
+                "prefix": prefix, "sec_title": title}
+        block += render_section_body(body, tctx)
         if sec_no == 1 and imgs.get("inline"):
-            block += photo_html(imgs["inline"], prefix, "small")
+            inl = photo_html(imgs["inline"], prefix, "small")
+            paths = story_paths_for("tech", date, "item") or story_paths_for("tech", date)
+            if inl and paths:
+                pick = paths[1] if len(paths) > 1 else paths[0]
+                inl = f'<a class="photolink" href="{prefix}{pick}">{inl}</a>'
+            block += inl
         rendered.append(block)
     nav = f'<nav class="jump">{"".join(nav_items)}</nav>' if nav_items else ""
     spot = ""
@@ -577,10 +671,12 @@ def render_tech_article(md_text, date, prefix):
                 '<p class="sec-intro">A cool new electrical product and a cool new '
                 'HVAC product every weekday — fresh picks Monday–Friday; weekends '
                 'carry Friday\'s picks.</p>' + spotlight)
-    return ('<div class="secname">Construction · Engineering · Tech</div>' +
+    out = ('<div class="secname">Construction · Engineering · Tech</div>' +
             preamble + "\n".join(intro_bits) + nav + glance + spot +
             "\n".join(rendered) +
             '<p class="totop"><a href="#top">Back to top ↑</a></p>')
+    paths = story_paths_for("tech", date, "item") or story_paths_for("tech", date)
+    return out.replace("@@FIRSTSTORY@@", f'{prefix}{paths[0]}' if paths else "#")
 
 # ---- tech archive pages + latest ----
 (DOCS / "tech" / "archive").mkdir(parents=True, exist_ok=True)
@@ -626,19 +722,19 @@ body = f"""
 {glance_html(HOME_GLANCE)}
 <div class="front">
 <div class="story"><span class="kicker">Legal Briefing</span>
-{photo_html(home_imgs.get("legal"), "")}
-<h2 class="headline">{LEGAL['2026-11-15'][1]}</h2>
+<a class="photolink" href="{LEGAL_BASE}/">{photo_html(home_imgs.get("legal"), "")}</a>
+<h2 class="headline"><a href="{LEGAL_BASE}/">{LEGAL['2026-11-15'][1]}</a></h2>
 <p class="byline">Legal Briefing — Harvey, Legal Advisor · Edition of Nov 15, 2026</p>
 <a class="cont" href="{LEGAL_BASE}/">Read today's legal briefing →</a></div>
 <div class="story"><span class="kicker">Finance Briefing</span>
-{photo_html(home_imgs.get("finance"), "")}
-<h2 class="headline">{FIN['2026-11-15'][2]}</h2>
+<a class="photolink" href="finance/index.html">{photo_html(home_imgs.get("finance"), "")}</a>
+<h2 class="headline"><a href="finance/index.html">{FIN['2026-11-15'][2]}</a></h2>
 <p class="byline">Finance Briefing — Warren Buffett, CFO · Edition of Nov 15, 2026</p>
 <a class="cont" href="finance/index.html">Read today's finance briefing →</a></div>
 </div>
 <div class="techfeature"><span class="kicker">Construction · Engineering · Tech</span>
-{photo_html(tech_lead, "")}
-<h2 class="headline">Construction input costs jump 13.3% in a year; copper wire &amp; cable up 25.5%</h2>
+<a class="photolink" href="tech/index.html">{photo_html(tech_lead, "")}</a>
+<h2 class="headline"><a href="tech/index.html">Construction input costs jump 13.3% in a year; copper wire &amp; cable up 25.5%</a></h2>
 <p class="spotline">⭐ Product Spotlight — ⚡ <b>Leviton Lever Edge™ USB Outlets</b> · ❄️ <b>Bosch Home Comfort YORK® YD heat pumps</b></p>
 <p class="byline">Sharma Tech · Edition of Nov 15, 2026</p>
 <a class="cont" href="tech/index.html">Read today's tech briefing →</a></div>
@@ -647,4 +743,9 @@ body = f"""
 <h2 class="sec">Tech — Back Issues</h2><ul class="arch">{tech_arch}</ul>
 """
 (DOCS / "index.html").write_text(shell("", "Home — Sunday, November 15, 2026", body), encoding="utf-8")
+for _path, (_title, _sbody) in STORY_PAGES.items():
+    _p = DOCS / _path
+    _p.parent.mkdir(parents=True, exist_ok=True)
+    _p.write_text(shell("../../", _title, _sbody), encoding="utf-8")
+print("story pages:", len(STORY_PAGES))
 print("built:", [str(p.relative_to(DOCS)) for p in sorted(DOCS.rglob('*.html'))])
