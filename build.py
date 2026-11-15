@@ -124,6 +124,18 @@ details.full .fullbody{border-top:1px dotted var(--hair);padding-top:4px}
 .sec-intro{color:#222}
 .totop{text-align:right;margin-top:26px}
 .totop a{font-variant:small-caps;font-weight:700;color:var(--ink);padding:10px 0;display:inline-block}
+.secname{font-size:14px;font-weight:700;letter-spacing:2.4px;text-transform:uppercase;color:var(--accent);
+border-top:2px solid var(--ink);border-bottom:1px solid var(--ink);padding:8px 0;text-align:center;margin:14px 0 4px}
+.spotlight{border:2px solid var(--ink);background:var(--paper2);padding:16px 20px 10px;margin:0 0 22px}
+.spotlight .item-head{font-family:'Playfair Display',Georgia,'Times New Roman',serif;font-size:23px;line-height:1.3;margin:2px 0 6px}
+.spotlight .makerline{font-variant:small-caps;font-size:15.5px;color:#333;border-bottom:1px solid var(--hair);padding-bottom:7px;margin:0 0 10px}
+.spotlight .photo{max-width:520px}
+.spotlight .deck{font-size:16px;color:#222;margin:0 0 6px}
+.techfeature{border-bottom:2px solid var(--ink);padding:22px 0 24px}
+.techfeature .photo{max-width:640px}
+.techfeature .headline{font-family:'Playfair Display',Georgia,'Times New Roman',serif;font-weight:700;
+font-size:26px;line-height:1.22;margin:8px 0 10px}
+.spotline{font-size:16.5px;margin:0 0 10px}
 .crumb{color:var(--mut);font-size:12.5px;text-transform:uppercase;letter-spacing:1.2px;margin:16px 0 8px}
 .crumb a{color:var(--ink);padding:6px 0;display:inline-block}
 footer{max-width:1020px;margin:0 auto;padding:0 18px 30px;text-align:center}
@@ -163,6 +175,8 @@ def shell(prefix, title, body, chip=""):
 <a href="{LEGAL_BASE}/">Legal Briefing</a>
 <a href="{prefix}finance/index.html">Finance Briefing</a>
 <a href="{prefix}finance/archive/index.html">Finance Archive</a>
+<a href="{prefix}tech/index.html">Tech Briefing</a>
+<a href="{prefix}tech/archive/index.html">Tech Archive</a>
 </nav></header>
 <div class="wrap">{body}</div>
 <footer><div class="fin">Sharma Electric &amp; HVAC — The Sharma News · Updated daily at 5:00 AM ET · General news summaries for the Sharma team — not legal or financial advice.</div></footer>
@@ -319,7 +333,7 @@ def item_deck(block, headline):
     return excerpt(text, 230)
 
 def item_impact(block):
-    m = re.search(r"Why it matters to Sharma:\s*(.*)", strip_tags(block), re.S)
+    m = re.search(r"(?:Why it matters to Sharma|Sharma impact):\s*(.*)", strip_tags(block), re.S)
     return excerpt(m.group(1), 260) if m else ""
 
 ITEM_SPLIT = r'(<h3>.*?</h3>|<p><strong>Item\s+\d+[A-Z]?\s*—.*?</strong></p>)'
@@ -444,6 +458,159 @@ body = f'<span class="kicker">Finance</span><h2 class="sec" style="margin-top:8p
 (DOCS / "finance" / "archive" / "index.html").write_text(
     shell("../../", "Finance Briefing Archive", body), encoding="utf-8")
 
+# ---------- TECH: construction / engineering / tech news ----------
+# Parallel structure to FIN. The Product Spotlight is a WEEKLY feature
+# ("⭐ Products of the Week", per Sanjay): new picks land in Monday's
+# edition and stay featured all week. Display labels therefore say
+# "Product of the Week" even where a report draft said "of the day".
+TECH = {  # date -> (report glob, weekday label, archive one-liner)
+ "2026-11-15": ("sharma-tech-news-2026-11-15-*", "Sunday, November 15, 2026",
+   "Construction input costs jumped 13.3% year-over-year — copper wire & cable up 25.5% — while contractors' selling prices rose only 5.5%. Inaugural Products of the Week: Leviton Lever Edge USB outlets ⚡ and Bosch YORK YD heat pumps ❄️."),
+}
+TECH_IMAGES = {  # photos pulled from the articles the report cites
+ "2026-11-15": {
+  "lead": ("tech-lead.webp", "Bundle of steel sections in a warehouse",
+    "A bundle of steel sections — steel mill products are up 32.9% year-over-year in an input-cost surge led by copper wire & cable, up 25.5%.",
+    "Photo: Image/Adobe via ENR"),
+  "inline": ("tech-collapse.jpg", "FDNY at the Brooklyn collapse site, November 12, 2026",
+    "FDNY crews at the Flatbush Avenue collapse site in Brooklyn, Nov 12, 2026 — eight people were killed when a building fell into an adjacent excavation.",
+    "Photo: Yuki Iwamura / AP Photo via FireRescue1"),
+ },
+}
+TECH_SPOT = {  # date -> report item no. -> photo entry (from the cited article/product page)
+ "2026-11-15": {
+  "2.1": ("tech-leviton.webp", "Leviton Lever Edge USB outlet (ECC15-W)",
+    "Leviton's Lever Edge duplex receptacle with built-in USB charging — lever termination rated up to 3.5× faster than screw terminals.",
+    "Photo: Leviton"),
+  "2.2": ("tech-york.jpg", "YORK YD heat pump outdoor unit",
+    "A YORK YD-series heat pump — Bosch Home Comfort's new portfolio puts a fully modulating inverter compressor at every efficiency tier.",
+    "Photo: YORK / Bosch Home Comfort"),
+ },
+}
+
+def tech_report(date):
+    pat = TECH[date][0]
+    p = sorted(NOTES.glob(pat + "/report.md"))[0]
+    return p.read_text(encoding="utf-8", errors="replace")
+
+def render_spotlight(body, date, prefix):
+    parts = re.split(ITEM_SPLIT, body, flags=re.S)
+    items = []
+    for i in range(1, len(parts), 2):
+        items.append((parts[i], parts[i] + (parts[i + 1] if i + 1 < len(parts) else "")))
+    out = []
+    for marker, block in items:
+        headline = strip_tags(marker)
+        num = re.match(r"\s*(\d+\.\d+)", headline)
+        entry = TECH_SPOT.get(date, {}).get(num.group(1)) if num else None
+        text = strip_tags(block)
+        maker = re.search(r"Maker:\s*(.*?)(?=\s*Release date:)", text)
+        rel = re.search(r"Release date:\s*(.*?)(?=\s*What it is:)", text)
+        cool = re.search(r"Why it's cool for Sharma:\s*(.*?)(?=\s*Price:|\s*Source:|$)", text, re.S)
+        kick = ("⚡ Electrical — Product of the Week" if "⚡" in headline
+                else "❄️ HVAC — Product of the Week" if "❄" in headline
+                else "Product of the Week")
+        ml = ""
+        if maker or rel:
+            bits = []
+            if maker: bits.append(f"Maker: {excerpt(maker.group(1), 90)}")
+            if rel: bits.append(f"Released: {excerpt(rel.group(1), 150)}")
+            ml = f'<p class="makerline">{" · ".join(bits)}</p>'
+        deck = (f'<p class="deck"><b>Why it\'s cool:</b> {excerpt(cool.group(1), 340)}</p>'
+                if cool else "")
+        full = (block.replace("PRODUCT OF THE DAY", "PRODUCT OF THE WEEK")
+                     .replace("(the daily feature)", "(the weekly feature)"))
+        out.append(
+            f'<div class="spotlight"><span class="kicker">{kick}</span>'
+            f'<h3 class="item-head">{headline.replace("PRODUCT OF THE DAY", "PRODUCT OF THE WEEK")}</h3>'
+            f'{photo_html(entry, prefix)}{ml}{deck}'
+            f'<details class="full"><summary>Read the full story</summary>'
+            f'<div class="fullbody">{full}</div></details></div>')
+    return "\n".join(out)
+
+def render_tech_article(md_text, date, prefix):
+    md_text = re.sub(r"^-?\s*PHOTO:.*$", "", md_text, flags=re.M)
+    raw = md_to_html(md_text)
+    chunks = re.split(r'(<h2>.*?</h2>)', raw, flags=re.S)
+    preamble = chunks[0]
+    sections = []
+    for i in range(1, len(chunks), 2):
+        sections.append((chunks[i], chunks[i + 1] if i + 1 < len(chunks) else ""))
+    imgs = TECH_IMAGES.get(date, {})
+    intro_bits, glance, spotlight, generic = [], "", "", []
+    for heading, body in sections:
+        title = strip_tags(heading)
+        if title.startswith("Edition No."):
+            intro_bits.append(f'<p class="windowline">{title}</p>')
+            if strip_tags(body):
+                intro_bits.append(f'<div class="sec-intro">{body}</div>')
+        elif title.startswith("Summary"):
+            lis = re.findall(r"<li>(.*?)</li>", body, flags=re.S)
+            lis = [re.sub(r"product of the day", "product of the week", li, flags=re.I)
+                   for li in lis]
+            if lis:
+                glance = glance_html(lis)
+        elif "PRODUCT SPOTLIGHT" in title:
+            spotlight = render_spotlight(body, date, prefix)
+        elif strip_tags(body):
+            generic.append((title, body))
+    nav_items, rendered = [], []
+    if glance:
+        nav_items.append('<a href="#glance">At a Glance</a>')
+    if spotlight:
+        nav_items.append('<a href="#spotlight">⭐ Products of the Week</a>')
+    sec_no = 0
+    for title, body in generic:
+        sec_no += 1
+        sid = f"sec-{sec_no}"
+        nav_items.append(f'<a href="#{sid}">{title}</a>')
+        block = f'<h2 id="{sid}">{title}</h2>'
+        if sec_no == 1 and imgs.get("lead"):
+            block += photo_html(imgs["lead"], prefix)
+        block += render_section_body(body)
+        if sec_no == 1 and imgs.get("inline"):
+            block += photo_html(imgs["inline"], prefix, "small")
+        rendered.append(block)
+    nav = f'<nav class="jump">{"".join(nav_items)}</nav>' if nav_items else ""
+    spot = ""
+    if spotlight:
+        spot = ('<h2 id="spotlight">⭐ Products of the Week</h2>'
+                '<p class="sec-intro">One cool electrical product and one cool HVAC '
+                'product, picked weekly — new picks land in Monday\'s edition and '
+                'stay featured all week.</p>' + spotlight)
+    return ('<div class="secname">Construction · Engineering · Tech</div>' +
+            preamble + "\n".join(intro_bits) + nav + glance + spot +
+            "\n".join(rendered) +
+            '<p class="totop"><a href="#top">Back to top ↑</a></p>')
+
+# ---- tech archive pages + latest ----
+(DOCS / "tech" / "archive").mkdir(parents=True, exist_ok=True)
+for date, (pat, label, one) in TECH.items():
+    body = (f'<p class="crumb"><a href="../index.html">Tech Briefing</a> · '
+            f'<a href="index.html">Archive</a></p><article>{render_tech_article(tech_report(date), date, "../../")}</article>')
+    (DOCS / "tech" / "archive" / f"{date}.html").write_text(
+        shell("../../", f"Sharma Tech — {label}", body), encoding="utf-8")
+
+tlatest = sorted(TECH)[-1]
+body = (f'<p class="crumb"><span class="kicker">Construction · Engineering · Tech · Latest Edition</span></p>'
+        f'<article>{render_tech_article(tech_report(tlatest), tlatest, "../")}</article>')
+(DOCS / "tech" / "index.html").write_text(
+    shell("../", f"Sharma Tech — {TECH[tlatest][1]}", body), encoding="utf-8")
+
+def tech_thumb_html(date, prefix):
+    entry = TECH_IMAGES.get(date, {}).get("lead")
+    if not entry or not (IMG / entry[0]).exists():
+        return ""
+    return f'<img class="thumb" src="{prefix}img/{entry[0]}" alt="" loading="lazy">'
+
+titems = "\n".join(
+    f'<li>{tech_thumb_html(d, "../../")}<span class="d">{TECH[d][1]}</span><br>'
+    f'<a href="{d}.html">Sharma Tech — {d}</a><p>{TECH[d][2]}</p></li>'
+    for d in sorted(TECH, reverse=True))
+body = f'<span class="kicker">Construction · Engineering · Tech</span><h2 class="sec" style="margin-top:8px">Sharma Tech — Back Issues</h2><ul class="arch">{titems}</ul>'
+(DOCS / "tech" / "archive" / "index.html").write_text(
+    shell("../../", "Sharma Tech Archive", body), encoding="utf-8")
+
 # ---- home ----
 legal_arch = "\n".join(
     f'<li><span class="d">{LEGAL[d][0]}</span><br><a href="{LEGAL_BASE}/archive/{d}.html">Legal Briefing — {d}</a><p>{LEGAL[d][1]}</p></li>'
@@ -451,6 +618,10 @@ legal_arch = "\n".join(
 fin_arch = "\n".join(
     f'<li>{thumb_html(d, "")}<span class="d">{FIN[d][1]}</span><br><a href="finance/archive/{d}.html">Finance Briefing — {d}</a><p>{FIN[d][2]}</p></li>'
     for d in sorted(FIN, reverse=True))
+tech_arch = "\n".join(
+    f'<li>{tech_thumb_html(d, "")}<span class="d">{TECH[d][1]}</span><br><a href="tech/archive/{d}.html">Sharma Tech — {d}</a><p>{TECH[d][2]}</p></li>'
+    for d in sorted(TECH, reverse=True))
+tech_lead = TECH_IMAGES.get(tlatest, {}).get("lead")
 home_imgs = IMAGES.get("home", {})
 body = f"""
 {glance_html(HOME_GLANCE)}
@@ -466,8 +637,15 @@ body = f"""
 <p class="byline">Finance Briefing — Warren Buffett, CFO · Edition of Nov 15, 2026</p>
 <a class="cont" href="finance/index.html">Read today's finance briefing →</a></div>
 </div>
+<div class="techfeature"><span class="kicker">Construction · Engineering · Tech</span>
+{photo_html(tech_lead, "")}
+<h2 class="headline">Construction input costs jump 13.3% in a year; copper wire &amp; cable up 25.5%</h2>
+<p class="spotline">⭐ Products of the Week — ⚡ <b>Leviton Lever Edge™ USB Outlets</b> · ❄️ <b>Bosch Home Comfort YORK® YD heat pumps</b></p>
+<p class="byline">Sharma Tech · Edition of Nov 15, 2026</p>
+<a class="cont" href="tech/index.html">Read today's tech briefing →</a></div>
 <h2 class="sec">Legal — Back Issues</h2><ul class="arch">{legal_arch}</ul>
 <h2 class="sec">Finance — Back Issues</h2><ul class="arch">{fin_arch}</ul>
+<h2 class="sec">Tech — Back Issues</h2><ul class="arch">{tech_arch}</ul>
 """
 (DOCS / "index.html").write_text(shell("", "Home — Sunday, November 15, 2026", body), encoding="utf-8")
 print("built:", [str(p.relative_to(DOCS)) for p in sorted(DOCS.rglob('*.html'))])
