@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Permit News — Sharma News</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@700&family=IBM+Plex+Mono:wght@500;600&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#264387;--navy-d:#1a2f61;--gold:#F0A846;--ink:#1d2433;--mute:#5b6478;
+--line:#dfe4ee;--tint:#f4f6fb;--paper:#ffffff}
+*{box-sizing:border-box}html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--tint);color:var(--ink);
+font-family:"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+font-size:18px;line-height:1.65}
+h1,h2,h3,.headline,.item-head,.kicker,.secname,h2.sec,.glance h2,nav.main a,.top .ttl b,
+.spotline,.cont{font-family:"Barlow Semi Condensed","Arial Narrow",Arial,sans-serif;font-weight:700}
+a{color:var(--navy);text-decoration:underline;text-decoration-color:#b9c4dc;text-underline-offset:2px}
+a:hover{color:var(--navy-d);text-decoration-color:var(--navy-d)}
+.num,.kn b,.dateline{font-family:"IBM Plex Mono",ui-monospace,"SFMono-Regular",Menlo,Consolas,monospace}
+/* ---------- header ---------- */
+.top{background:#fff;border-bottom:3px solid var(--gold)}
+.top .bar{max-width:1040px;margin:0 auto;padding:12px 16px;display:flex;align-items:center;
+justify-content:space-between;gap:12px}
+.top .brand{display:block;line-height:0}
+.top img.logo{height:54px;width:auto}
+.top .ttl{text-align:right;line-height:1.25}
+.top .ttl b{display:block;font-size:19px;color:var(--navy-d);font-weight:700}
+.top .ttl span{display:block;font-size:14px;color:var(--mute)}
+nav.main{background:var(--navy-d)}
+nav.main .in{max-width:1040px;margin:0 auto;padding:0 8px;display:flex;overflow-x:auto;
+-webkit-overflow-scrolling:touch;scrollbar-width:none}
+nav.main .in::-webkit-scrollbar{display:none}
+nav.main a{color:#fff;text-decoration:none;font-size:17px;font-weight:700;white-space:nowrap;
+padding:13px 12px;display:flex;align-items:center;min-height:48px}
+nav.main a:hover{color:var(--gold)}
+nav.main a.on{color:var(--gold);border-bottom:3px solid var(--gold);padding-bottom:10px}
+.wrap{max-width:1040px;margin:0 auto;padding:8px 16px 48px;background:#fff}
+/* ---------- photos ---------- */
+.photo{margin:10px 0 12px}
+.photo img{width:100%;height:auto;display:block;background:var(--tint);border:1px solid var(--line)}
+.photo figcaption{font-size:14px;color:var(--mute);margin-top:5px;line-height:1.45}
+.photo .credit{display:block;font-size:13px;color:var(--mute);margin-top:1px}
+.photo.small{max-width:430px}
+.story .photo img{max-height:260px;object-fit:cover;object-position:top}
+/* ---------- at a glance / key numbers ---------- */
+.glance{background:var(--tint);border-left:3px solid var(--gold);padding:12px 16px 6px;margin:16px 0 14px}
+.glance h2{font-size:14px;text-transform:uppercase;letter-spacing:.12em;color:var(--navy);
+margin:0 0 6px;border:none;padding:0;font-weight:700}
+.glance ul{margin:0 0 8px;padding-left:18px}
+.glance li{margin:4px 0;font-size:17px}
+.keynums{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));border:1px solid var(--line);
+margin:0 0 18px}
+.kn{padding:9px 12px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);margin:0 -1px -1px 0}
+.kn b{display:block;font-size:28px;line-height:1.15;color:var(--navy-d)}
+.kn span{font-size:14px;color:var(--mute)}
+/* ---------- front page ---------- */
+.front{display:grid;grid-template-columns:1fr 1fr;gap:0;margin-top:18px;
+border-bottom:1px solid var(--line);padding-bottom:18px}
+.story{padding:0 20px}
+.story:first-child{padding-left:0}
+.story + .story{border-left:1px solid var(--line);padding-right:0}
+.kicker{display:inline-block;font-size:14px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
+color:var(--navy);border-bottom:2px solid var(--gold);padding-bottom:2px}
+.story .headline,.techfeature .headline{font-weight:700;color:var(--navy-d);
+font-size:44px;line-height:1.12;margin:8px 0 10px}
+.byline{font-size:14px;color:var(--mute);margin:0 0 6px}
+.cont{font-size:17px;font-weight:700;color:var(--navy);display:inline-block;padding:10px 0}
+/* ---------- index / archive ---------- */
+h2.sec{font-size:30px;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:var(--navy);
+border-bottom:2px solid var(--navy);padding-bottom:6px;margin:34px 0 0}
+.arch{list-style:none;margin:0;padding:0}
+.arch li{border-bottom:1px solid var(--line);padding:12px 0;overflow:hidden}
+.arch li a{font-size:19px;font-weight:700;color:var(--navy-d);text-decoration:none}
+.arch li a:hover{text-decoration:underline}
+.arch .d{color:var(--mute);font-size:14px;letter-spacing:0;text-transform:none}
+.arch p{margin:2px 0 0;color:#3a4255;font-size:17px}
+.arch img.thumb{width:96px;height:64px;object-fit:cover;float:left;margin:3px 12px 4px 0;
+background:var(--tint);border:1px solid var(--line)}
+/* ---------- article pages ---------- */
+article{overflow-wrap:break-word;padding-top:4px;max-width:72ch}
+article h1{font-size:28px;line-height:1.2;color:var(--navy-d);margin:8px 0 10px}
+article h2{font-size:30px;line-height:1.2;color:var(--navy-d);margin-top:32px;border-bottom:2px solid var(--gold);padding-bottom:6px}
+article h3{font-size:22px;color:var(--ink);margin-top:24px}
+article a{word-break:break-word}
+article table{border-collapse:collapse;width:100%;display:block;overflow-x:auto;font-size:16px}
+article th,article td{border:1px solid var(--line);padding:8px 11px;text-align:left;vertical-align:top}
+article th{background:var(--tint);color:var(--navy-d)}
+article code{background:var(--tint);padding:1px 5px;font-family:ui-monospace,Menlo,Consolas,monospace;font-size:.88em}
+article blockquote{border-left:3px solid var(--gold);margin:14px 0;padding:2px 14px;color:#3a4255}
+.windowline{font-size:16px;color:var(--mute);border-bottom:1px solid var(--line);padding-bottom:8px}
+.jump{position:sticky;top:0;z-index:6;background:#fff;border-bottom:1px solid var(--line);
+display:flex;gap:0 16px;overflow-x:auto;white-space:nowrap;padding:0;margin:0 0 6px;scrollbar-width:none}
+.jump::-webkit-scrollbar{display:none}
+.jump a{color:var(--navy);text-decoration:none;font-size:15px;font-weight:600;padding:14px 0}
+.jump a:hover{color:var(--navy-d);text-decoration:underline}
+.item{border-bottom:1px solid var(--line);padding:12px 0 12px}
+.item .item-head{font-size:26px;line-height:1.25;color:var(--navy-d);margin:2px 0 6px}
+.item .deck{margin:0 0 6px;color:#3a4255;font-size:20px;line-height:1.5}
+.item .impact{margin:0 0 4px;font-size:17px;background:#fff8ec;border-left:3px solid var(--gold);padding:6px 12px}
+.item .impact b{color:var(--navy-d)}
+.item-head a,.spotlight .item-head a,.headline a{color:inherit;text-decoration:none}
+.item-head a:hover,.spotlight .item-head a:hover,.headline a:hover{text-decoration:underline}
+a.photolink{display:block;text-decoration:none}
+.storyhead{font-size:28px;line-height:1.2;color:var(--navy-d);margin:6px 0 10px}
+details.full{margin-top:6px}
+details.full summary{cursor:pointer;font-size:16px;font-weight:600;color:var(--navy);padding:12px 0}
+details.full .fullbody{border-top:1px solid var(--line);padding-top:4px}
+.sec-intro{color:#3a4255}
+.totop{text-align:right;margin-top:22px}
+.totop a{font-size:15px;font-weight:600;padding:10px 0;display:inline-block}
+.secname{font-size:14px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--navy);
+border-bottom:2px solid var(--navy);padding:6px 0;margin:12px 0 4px}
+.spotlight{border:1px solid var(--line);border-top:3px solid var(--gold);padding:14px 18px 10px;margin:0 0 22px;background:#fff}
+.spotlight .item-head{font-size:28px;line-height:1.25;color:var(--navy-d);margin:2px 0 6px}
+.spotlight .makerline{font-size:16px;color:var(--mute);border-bottom:1px solid var(--line);padding-bottom:7px;margin:0 0 10px}
+.spotlight .photo{max-width:560px}
+.spotlight .deck{font-size:20px;line-height:1.5;color:#3a4255;margin:0 0 6px}
+.techfeature{border-bottom:1px solid var(--line);padding:18px 0 18px;display:grid;
+grid-template-columns:300px 1fr;column-gap:20px;align-items:start}
+.techfeature .kicker{grid-column:1/-1;justify-self:start;margin-bottom:6px}
+.techfeature .photolink{grid-row:2/6}
+.techfeature.nophoto{grid-template-columns:1fr}
+.techfeature .photo{margin:4px 0 0}
+.techfeature .photo img{max-height:200px;object-fit:cover}
+.techfeature .photo figcaption{display:none}
+.spotline{font-size:17px;margin:0 0 6px}
+.crumb{color:var(--mute);font-size:14px;margin:14px 0 6px}
+.crumb a{padding:8px 0;display:inline-block}
+footer{background:var(--navy-d);color:#cfd8ee;border-top:3px solid var(--gold);font-size:14px}
+.pagehead{font-size:38px;line-height:1.15;color:var(--navy-d);margin:8px 0 10px}
+table.data{border-collapse:collapse;width:100%;font-size:17px;margin:6px 0 10px}
+table.data th,table.data td{border:1px solid var(--line);padding:10px 12px;text-align:left;vertical-align:top}
+table.data th{background:var(--tint);color:var(--navy-d);
+font-family:"Barlow Semi Condensed","Arial Narrow",sans-serif;font-weight:700;font-size:17px}
+table.data td.n,table.data th.n{text-align:right;font-family:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace}
+.tblwrap{overflow-x:auto}
+footer .fin{max-width:1040px;margin:0 auto;padding:14px 16px 18px}
+footer .fin b{color:#fff}
+@media(max-width:760px){
+body{font-size:17px}
+.top img.logo{height:44px}
+.top .ttl b{font-size:17px}
+.top .ttl span{font-size:14px}
+.front{grid-template-columns:1fr}
+.story{padding:0}
+.story + .story{border-left:none;border-top:1px solid var(--line);margin-top:16px;padding-top:14px}
+.techfeature{grid-template-columns:1fr}
+.techfeature .photolink{grid-row:auto}
+.story .headline,.techfeature .headline{font-size:34px}
+article h1,.storyhead{font-size:26px}
+article h2{font-size:26px}
+.item .item-head{font-size:24px}
+.item .deck,.spotlight .deck{font-size:19px}
+.spotlight .item-head{font-size:26px}
+h2.sec{font-size:26px}
+.pagehead{font-size:30px}
+.kn b{font-size:24px}
+table.data{font-size:16px}
+.photo.small{max-width:none}
+.story .photo img{max-height:200px}
+}
+</style></head>
+<body id="top">
+<header class="top">
+<div class="bar"><a class="brand" href="../index.html"><img class="logo" src="../logo.png" alt="Sharma Electric &amp; HVAC"></a>
+<div class="ttl"><b>Sharma News</b><span>Sunday, November 15, 2026 · Updated 5:00 AM ET</span></div></div>
+<nav class="main"><div class="in">
+<a href="../index.html">Home</a>
+<a href="https://sharmaelechvac.github.io/sharma-legal-briefing/">Legal</a>
+<a href="../finance/index.html">Finance</a>
+<a href="../finance/archive/index.html">Finance archive</a>
+<a href="../tech/index.html">Tech</a>
+<a href="../tech/archive/index.html">Tech archive</a>
+<a href="../permits/index.html" class="on">Permit News</a>
+</div></nav></header>
+<div class="wrap">
+<span class="kicker">Permit News</span>
+<h1 class="pagehead">Permit News</h1>
+<p class="windowline">Compiled from the Sharma Lead Finder board — data as of November 15, 2026 · <a href="https://sharmaelechvac.github.io/sharma-lead-finder/">Open the Lead Finder board</a></p>
+<div class="keynums"><div class="kn"><b>2,802</b><span>Visible permits</span></div><div class="kn"><b>507</b><span>Builders tracked</span></div><div class="kn"><b>20</b><span>Counties with records</span></div><div class="kn"><b>419</b><span>Permits in the last 7 days</span></div><div class="kn"><b>956</b><span>Permits in the last 30 days</span></div></div>
+<p class="sec-intro">The board's permits are concentrated: City of Orlando, Alachua and Charlotte together hold 1,914 of the 2,802 visible permits (68%). PULTE HOME COMPANY, LLC is the most active builder on the board with 374 permits. In Sharma's target counties, Marion (286), Hernando (85), Polk (38) lead; the 8 target counties with records hold 527 permits between them. Builder names are shown as the board lists them — the same company can appear under more than one name variant.</p>
+<h2 class="sec">Permits by county</h2>
+<div class="tblwrap"><table class="data"><tr><th>County</th><th class="n">Permits</th><th class="n">Share</th></tr>
+<tr><td>City of Orlando</td><td class="n">921</td><td class="n">32.9%</td></tr>
+<tr><td>Alachua</td><td class="n">500</td><td class="n">17.8%</td></tr>
+<tr><td>Charlotte</td><td class="n">493</td><td class="n">17.6%</td></tr>
+<tr><td>Marion</td><td class="n">286</td><td class="n">10.2%</td></tr>
+<tr><td>St. Johns</td><td class="n">98</td><td class="n">3.5%</td></tr>
+<tr><td>Hernando</td><td class="n">85</td><td class="n">3.0%</td></tr>
+<tr><td>Clay</td><td class="n">72</td><td class="n">2.6%</td></tr>
+<tr><td>Lee</td><td class="n">69</td><td class="n">2.5%</td></tr>
+<tr><td>Manatee</td><td class="n">67</td><td class="n">2.4%</td></tr>
+<tr><td>Polk</td><td class="n">38</td><td class="n">1.4%</td></tr>
+<tr><td>Lake</td><td class="n">32</td><td class="n">1.1%</td></tr>
+<tr><td>Brevard</td><td class="n">30</td><td class="n">1.1%</td></tr>
+<tr><td>Osceola</td><td class="n">25</td><td class="n">0.9%</td></tr>
+<tr><td>Pasco</td><td class="n">22</td><td class="n">0.8%</td></tr>
+<tr><td>Nassau</td><td class="n">20</td><td class="n">0.7%</td></tr>
+<tr><td>Martin</td><td class="n">17</td><td class="n">0.6%</td></tr>
+<tr><td>Citrus</td><td class="n">9</td><td class="n">0.3%</td></tr>
+<tr><td>Hillsborough</td><td class="n">9</td><td class="n">0.3%</td></tr>
+<tr><td>DeSoto</td><td class="n">7</td><td class="n">0.2%</td></tr>
+<tr><td>Pinellas</td><td class="n">2</td><td class="n">0.1%</td></tr></table></div>
+<h2 class="sec">Top builders by permits</h2>
+<div class="tblwrap"><table class="data"><tr><th>Builder</th><th class="n">Permits</th><th>Latest permit</th><th class="n">Counties</th></tr>
+<tr><td>PULTE HOME COMPANY, LLC</td><td class="n">374</td><td>November 12, 2026</td><td class="n">8</td></tr>
+<tr><td>LENNAR HOMES, LLC</td><td class="n">262</td><td>November 13, 2026</td><td class="n">11</td></tr>
+<tr><td>D. R. HORTON, INC.</td><td class="n">198</td><td>November 13, 2026</td><td class="n">6</td></tr>
+<tr><td>DR HORTON INC</td><td class="n">112</td><td>November 13, 2026</td><td class="n">4</td></tr>
+<tr><td>DREAM FINDERS HOMES LLC</td><td class="n">110</td><td>November 11, 2026</td><td class="n">4</td></tr>
+<tr><td>Jim Chapman Construction Group</td><td class="n">85</td><td>November 12, 2026</td><td class="n">1</td></tr>
+<tr><td>MATTAMY ORLANDO LLC (COMP)</td><td class="n">58</td><td>August 31, 2026</td><td class="n">1</td></tr>
+<tr><td>TOLL BROS INC</td><td class="n">57</td><td>November 12, 2026</td><td class="n">3</td></tr>
+<tr><td>CKF CONSTRUCTION SERVICES, LLC</td><td class="n">56</td><td>November 9, 2026</td><td class="n">3</td></tr>
+<tr><td>HOME ENERGY GROUP LLC ARCXIS</td><td class="n">50</td><td>November 11, 2026</td><td class="n">1</td></tr>
+<tr><td>MARONDA HOMES LLC OF FL</td><td class="n">33</td><td>November 11, 2026</td><td class="n">1</td></tr>
+<tr><td>ICI of Gainesville Residential, LLC</td><td class="n">32</td><td>November 4, 2026</td><td class="n">1</td></tr>
+<tr><td>Taylor Morrison of Florida, Inc</td><td class="n">31</td><td>November 11, 2026</td><td class="n">4</td></tr>
+<tr><td>BLACKWATER CONSTRUCTION SERVICES LLC</td><td class="n">30</td><td>September 10, 2026</td><td class="n">1</td></tr>
+<tr><td>JHS BUILDERS LLC DBA CHRISTOPHER ALAN HOMES</td><td class="n">30</td><td>November 11, 2026</td><td class="n">1</td></tr></table></div>
+<h2 class="sec">Latest permits</h2>
+<div class="tblwrap"><table class="data"><tr><th>Builder</th><th>Address</th><th>County</th><th>Date</th><th>Permit no.</th></tr>
+<tr><td>ORDONEZ ORDONEZ CONSTRUCTION, INC</td><td>59 BAHIA COURT TRAK OCALA</td><td>Marion</td><td>November 13, 2026</td><td class="num">BLDR-26-11-28706</td></tr>
+<tr><td>ORDONEZ ORDONEZ CONSTRUCTION, INC</td><td>41 PINE RUN OCALA</td><td>Marion</td><td>November 13, 2026</td><td class="num">BLDR-26-11-28700</td></tr>
+<tr><td>LENNAR HOMES, LLC</td><td>12936 SW 84TH TERRACE RD OCALA</td><td>Marion</td><td>November 13, 2026</td><td class="num">BLDR-26-11-28696</td></tr>
+<tr><td>LENNAR HOMES, LLC</td><td>12920 SW 84TH TERRACE RD OCALA</td><td>Marion</td><td>November 13, 2026</td><td class="num">BLDR-26-11-28692</td></tr>
+<tr><td>Thursby Construction Inc.</td><td>0 FORT MCCOY</td><td>Marion</td><td>November 13, 2026</td><td class="num">BLDR-26-11-28678</td></tr>
+<tr><td>D R HORTON INC</td><td>3 WATER TRACK TRCE OCALA</td><td>Marion</td><td>November 13, 2026</td><td class="num">BLDR-26-11-28656</td></tr>
+<tr><td>D R HORTON INC</td><td>28 LOCUST CIR OCALA</td><td>Marion</td><td>November 13, 2026</td><td class="num">BLDR-26-11-28654</td></tr>
+<tr><td>D R HORTON INC</td><td>126 PECAN DR OCALA</td><td>Marion</td><td>November 13, 2026</td><td class="num">BLDR-26-11-28653</td></tr>
+<tr><td>America&#x27;s Home Place</td><td>25606 NW 79TH PL</td><td>Alachua</td><td>November 13, 2026</td><td class="num">B26-001929</td></tr>
+<tr><td>SUMMERTIME DECK AND DOCK LLC</td><td>1406 ASBURY AVE</td><td>City of Orlando</td><td>November 13, 2026</td><td class="num">BLD2026-16895</td></tr>
+<tr><td>JEFF HAGEN CONSTRUCTION LLC</td><td>3472 FAIRWAY LN</td><td>City of Orlando</td><td>November 13, 2026</td><td class="num">BLD2026-11424</td></tr>
+<tr><td>Maronda Homes LLC of Florida</td><td>11240 Sandpiper Ave RD WEEKI WACHEE FL 34614</td><td>Hernando</td><td>November 13, 2026</td><td class="num">BLDR-006182-2026</td></tr>
+<tr><td>D. R. HORTON, INC.</td><td>1872 ARLINGTON WAY, DAVENPORT FL 33897</td><td>Polk</td><td>November 13, 2026</td><td class="num">BR-2026-8833</td></tr>
+<tr><td>Dr Horton Inc</td><td>11953 TEXOMA CT PARRISH 34219</td><td>Manatee</td><td>November 13, 2026</td><td class="num">BLD2611-1462</td></tr>
+<tr><td>Dr Horton Inc</td><td>11957 TEXOMA CT PARRISH 34219</td><td>Manatee</td><td>November 13, 2026</td><td class="num">BLD2611-1473</td></tr>
+<tr><td>Stanley Martin Homes Llc</td><td>10145 MORNING MEADOWLARK TRL PARRISH 34219</td><td>Manatee</td><td>November 13, 2026</td><td class="num">BLD2611-1404</td></tr>
+<tr><td>Mattamy Tampa/Sarasota Llc</td><td>1715 SOARING VIDA ST PALMETTO 34221</td><td>Manatee</td><td>November 13, 2026</td><td class="num">BLD2611-1447</td></tr>
+<tr><td>CENTRAL CONSTRUCTION GROUP, LLC</td><td></td><td>Marion</td><td>November 12, 2026</td><td class="num">BLDR-26-11-28645</td></tr>
+<tr><td>PARMA SUPPLIES LLC</td><td>16864 SW 29TH TERRACE RD OCALA</td><td>Marion</td><td>November 12, 2026</td><td class="num">BLDR-26-11-28628</td></tr>
+<tr><td>MARONDA HOMES, LLC OF FLORIDA</td><td>0 OCALA</td><td>Marion</td><td>November 12, 2026</td><td class="num">BLDR-26-11-28624</td></tr>
+<tr><td>MARONDA HOMES, LLC OF FLORIDA</td><td>0 SW 166TH LOOP OCALA</td><td>Marion</td><td>November 12, 2026</td><td class="num">BLDR-26-11-28614</td></tr>
+<tr><td>D R HORTON INC</td><td>2 GUAVA TRACK TRL OCKLAWAHA</td><td>Marion</td><td>November 12, 2026</td><td class="num">BLDR-26-11-28604</td></tr>
+<tr><td>D R HORTON INC</td><td>94 GUAVA PLACE DR OCKLAWAHA</td><td>Marion</td><td>November 12, 2026</td><td class="num">BLDR-26-11-28596</td></tr>
+<tr><td>D R HORTON INC</td><td>51 GUAVA PLACE DR OCKLAWAHA</td><td>Marion</td><td>November 12, 2026</td><td class="num">BLDR-26-11-28594</td></tr>
+<tr><td>D R HORTON INC</td><td>429 LOCUST RD OCALA</td><td>Marion</td><td>November 12, 2026</td><td class="num">BLDR-26-11-28589</td></tr></table></div>
+<p>Counting follows the board's own rules: a permit counts only when it belongs to a builder listed on the Lead Finder board. Permits with no builder named, and permits from do-not-contact builders, are left out — the board's file holds 2,832 records in total, of which 2,802 are visible on this basis.</p>
+<p class="totop"><a href="#top">Back to top ↑</a></p>
+</div>
+<footer><div class="fin"><b>Sharma Electric &amp; HVAC</b> · Sharma News, updated daily at 5:00 AM ET. News summaries for the Sharma team. Not legal or financial advice.</div></footer>
+</body></html>

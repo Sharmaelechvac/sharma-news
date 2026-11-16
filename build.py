@@ -10,12 +10,16 @@ slots with no IMAGES entry render with no <img> at all. Captions credit
 the source publication, as Sanjay directed ("pull photos from the
 articles you are citing").
 
-Layout: newspaper style. Every finance edition page opens with an
+Layout: the standing Sharma design system (~/workspace/DESIGN-RULES.md) —
+navy/gold, Barlow Semi Condensed headings, Inter body at 18px, IBM Plex
+Mono for numbers, flat white panels on #f4f6fb, full-color photos, no
+emoji, no newspaper costume. Every finance edition page opens with an
 "At a Glance" box + "Key Numbers" strip (both taken only from that
 report's own summary), then each story shows headline + deck + Sharma
 impact line, and the FULL original text on the story's OWN page —
 clicking a headline or a photo opens that page (per Sanjay
-2026-11-15: a click must go to a new page to read more)."""
+2026-11-15: a click must go to a new page to read more). The Permit
+News page is compiled from permits-source.json (see below)."""
 import re, glob, html as ihtml, markdown, pathlib
 
 ROOT = pathlib.Path(__file__).parent
@@ -28,133 +32,153 @@ CSS = """
 :root{--navy:#264387;--navy-d:#1a2f61;--gold:#F0A846;--ink:#1d2433;--mute:#5b6478;
 --line:#dfe4ee;--tint:#f4f6fb;--paper:#ffffff}
 *{box-sizing:border-box}html{-webkit-text-size-adjust:100%}
-body{margin:0;background:#fff;color:var(--ink);
-font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
-font-size:16px;line-height:1.5}
+body{margin:0;background:var(--tint);color:var(--ink);
+font-family:"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+font-size:18px;line-height:1.65}
+h1,h2,h3,.headline,.item-head,.kicker,.secname,h2.sec,.glance h2,nav.main a,.top .ttl b,
+.spotline,.cont{font-family:"Barlow Semi Condensed","Arial Narrow",Arial,sans-serif;font-weight:700}
 a{color:var(--navy);text-decoration:underline;text-decoration-color:#b9c4dc;text-underline-offset:2px}
 a:hover{color:var(--navy-d);text-decoration-color:var(--navy-d)}
-.num,.kn b,.arch .d,.dateline{font-family:ui-monospace,"SFMono-Regular",Menlo,Consolas,monospace}
+.num,.kn b,.dateline{font-family:"IBM Plex Mono",ui-monospace,"SFMono-Regular",Menlo,Consolas,monospace}
 /* ---------- header ---------- */
-.top{border-bottom:3px solid var(--gold)}
+.top{background:#fff;border-bottom:3px solid var(--gold)}
 .top .bar{max-width:1040px;margin:0 auto;padding:12px 16px;display:flex;align-items:center;
 justify-content:space-between;gap:12px}
 .top .brand{display:block;line-height:0}
 .top img.logo{height:54px;width:auto}
 .top .ttl{text-align:right;line-height:1.25}
-.top .ttl b{display:block;font-size:17px;color:var(--navy-d);font-weight:700}
-.top .ttl span{display:block;font-size:12.5px;color:var(--mute)}
+.top .ttl b{display:block;font-size:19px;color:var(--navy-d);font-weight:700}
+.top .ttl span{display:block;font-size:14px;color:var(--mute)}
 nav.main{background:var(--navy-d)}
 nav.main .in{max-width:1040px;margin:0 auto;padding:0 8px;display:flex;overflow-x:auto;
 -webkit-overflow-scrolling:touch;scrollbar-width:none}
 nav.main .in::-webkit-scrollbar{display:none}
-nav.main a{color:#fff;text-decoration:none;font-size:14px;font-weight:600;white-space:nowrap;
-padding:12px 10px}
+nav.main a{color:#fff;text-decoration:none;font-size:17px;font-weight:700;white-space:nowrap;
+padding:13px 12px;display:flex;align-items:center;min-height:48px}
 nav.main a:hover{color:var(--gold)}
-.wrap{max-width:1040px;margin:0 auto;padding:8px 16px 48px}
+nav.main a.on{color:var(--gold);border-bottom:3px solid var(--gold);padding-bottom:10px}
+.wrap{max-width:1040px;margin:0 auto;padding:8px 16px 48px;background:#fff}
 /* ---------- photos ---------- */
 .photo{margin:10px 0 12px}
 .photo img{width:100%;height:auto;display:block;background:var(--tint);border:1px solid var(--line)}
-.photo figcaption{font-size:13px;color:var(--mute);margin-top:5px;line-height:1.4}
-.photo .credit{display:block;font-size:12px;color:var(--mute);margin-top:1px}
+.photo figcaption{font-size:14px;color:var(--mute);margin-top:5px;line-height:1.45}
+.photo .credit{display:block;font-size:13px;color:var(--mute);margin-top:1px}
 .photo.small{max-width:430px}
 .story .photo img{max-height:260px;object-fit:cover;object-position:top}
 /* ---------- at a glance / key numbers ---------- */
 .glance{background:var(--tint);border-left:3px solid var(--gold);padding:12px 16px 6px;margin:16px 0 14px}
-.glance h2{font-size:12px;text-transform:uppercase;letter-spacing:.12em;color:var(--navy);
+.glance h2{font-size:14px;text-transform:uppercase;letter-spacing:.12em;color:var(--navy);
 margin:0 0 6px;border:none;padding:0;font-weight:700}
 .glance ul{margin:0 0 8px;padding-left:18px}
-.glance li{margin:4px 0;font-size:15px}
+.glance li{margin:4px 0;font-size:17px}
 .keynums{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));border:1px solid var(--line);
 margin:0 0 18px}
 .kn{padding:9px 12px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);margin:0 -1px -1px 0}
-.kn b{display:block;font-size:18px;line-height:1.2;color:var(--navy-d)}
-.kn span{font-size:12px;color:var(--mute)}
+.kn b{display:block;font-size:28px;line-height:1.15;color:var(--navy-d)}
+.kn span{font-size:14px;color:var(--mute)}
 /* ---------- front page ---------- */
 .front{display:grid;grid-template-columns:1fr 1fr;gap:0;margin-top:18px;
 border-bottom:1px solid var(--line);padding-bottom:18px}
 .story{padding:0 20px}
 .story:first-child{padding-left:0}
 .story + .story{border-left:1px solid var(--line);padding-right:0}
-.kicker{display:inline-block;font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
+.kicker{display:inline-block;font-size:14px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
 color:var(--navy);border-bottom:2px solid var(--gold);padding-bottom:2px}
 .story .headline,.techfeature .headline{font-weight:700;color:var(--navy-d);
-font-size:20px;line-height:1.3;margin:6px 0 8px}
-.byline{font-size:13px;color:var(--mute);margin:0 0 6px}
-.cont{font-size:14.5px;font-weight:600;color:var(--navy);display:inline-block;padding:8px 0}
+font-size:44px;line-height:1.12;margin:8px 0 10px}
+.byline{font-size:14px;color:var(--mute);margin:0 0 6px}
+.cont{font-size:17px;font-weight:700;color:var(--navy);display:inline-block;padding:10px 0}
 /* ---------- index / archive ---------- */
-h2.sec{font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:var(--navy);
-border-bottom:2px solid var(--navy);padding-bottom:6px;margin:30px 0 0}
+h2.sec{font-size:30px;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:var(--navy);
+border-bottom:2px solid var(--navy);padding-bottom:6px;margin:34px 0 0}
 .arch{list-style:none;margin:0;padding:0}
-.arch li{border-bottom:1px solid var(--line);padding:10px 0;overflow:hidden}
-.arch li a{font-size:16px;font-weight:700;color:var(--navy-d);text-decoration:none}
+.arch li{border-bottom:1px solid var(--line);padding:12px 0;overflow:hidden}
+.arch li a{font-size:19px;font-weight:700;color:var(--navy-d);text-decoration:none}
 .arch li a:hover{text-decoration:underline}
-.arch .d{color:var(--mute);font-size:12px;letter-spacing:0;text-transform:none}
-.arch p{margin:2px 0 0;color:#3a4255;font-size:14.5px}
+.arch .d{color:var(--mute);font-size:14px;letter-spacing:0;text-transform:none}
+.arch p{margin:2px 0 0;color:#3a4255;font-size:17px}
 .arch img.thumb{width:96px;height:64px;object-fit:cover;float:left;margin:3px 12px 4px 0;
 background:var(--tint);border:1px solid var(--line)}
 /* ---------- article pages ---------- */
 article{overflow-wrap:break-word;padding-top:4px;max-width:72ch}
-article h1{font-size:26px;line-height:1.2;color:var(--navy-d);margin:8px 0 10px}
-article h2{font-size:18px;color:var(--navy-d);margin-top:28px;border-bottom:1px solid var(--line);padding-bottom:5px}
-article h3{font-size:16.5px;color:var(--ink);margin-top:22px}
+article h1{font-size:28px;line-height:1.2;color:var(--navy-d);margin:8px 0 10px}
+article h2{font-size:30px;line-height:1.2;color:var(--navy-d);margin-top:32px;border-bottom:2px solid var(--gold);padding-bottom:6px}
+article h3{font-size:22px;color:var(--ink);margin-top:24px}
 article a{word-break:break-word}
-article table{border-collapse:collapse;width:100%;display:block;overflow-x:auto;font-size:14px}
-article th,article td{border:1px solid var(--line);padding:6px 9px;text-align:left;vertical-align:top}
+article table{border-collapse:collapse;width:100%;display:block;overflow-x:auto;font-size:16px}
+article th,article td{border:1px solid var(--line);padding:8px 11px;text-align:left;vertical-align:top}
 article th{background:var(--tint);color:var(--navy-d)}
 article code{background:var(--tint);padding:1px 5px;font-family:ui-monospace,Menlo,Consolas,monospace;font-size:.88em}
 article blockquote{border-left:3px solid var(--gold);margin:14px 0;padding:2px 14px;color:#3a4255}
-.windowline{font-size:14px;color:var(--mute);border-bottom:1px solid var(--line);padding-bottom:8px}
+.windowline{font-size:16px;color:var(--mute);border-bottom:1px solid var(--line);padding-bottom:8px}
 .jump{position:sticky;top:0;z-index:6;background:#fff;border-bottom:1px solid var(--line);
 display:flex;gap:0 16px;overflow-x:auto;white-space:nowrap;padding:0;margin:0 0 6px;scrollbar-width:none}
 .jump::-webkit-scrollbar{display:none}
-.jump a{color:var(--navy);text-decoration:none;font-size:13.5px;font-weight:600;padding:11px 0}
+.jump a{color:var(--navy);text-decoration:none;font-size:15px;font-weight:600;padding:14px 0}
 .jump a:hover{color:var(--navy-d);text-decoration:underline}
 .item{border-bottom:1px solid var(--line);padding:12px 0 12px}
-.item .item-head{font-size:17.5px;line-height:1.3;color:var(--navy-d);margin:2px 0 5px}
-.item .deck{margin:0 0 6px;color:#3a4255;font-size:15px}
-.item .impact{margin:0 0 4px;font-size:15px;background:#fff8ec;border-left:3px solid var(--gold);padding:5px 10px}
+.item .item-head{font-size:26px;line-height:1.25;color:var(--navy-d);margin:2px 0 6px}
+.item .deck{margin:0 0 6px;color:#3a4255;font-size:20px;line-height:1.5}
+.item .impact{margin:0 0 4px;font-size:17px;background:#fff8ec;border-left:3px solid var(--gold);padding:6px 12px}
 .item .impact b{color:var(--navy-d)}
 .item-head a,.spotlight .item-head a,.headline a{color:inherit;text-decoration:none}
 .item-head a:hover,.spotlight .item-head a:hover,.headline a:hover{text-decoration:underline}
 a.photolink{display:block;text-decoration:none}
-.storyhead{font-size:26px;line-height:1.2;color:var(--navy-d);margin:6px 0 10px}
+.storyhead{font-size:28px;line-height:1.2;color:var(--navy-d);margin:6px 0 10px}
 details.full{margin-top:6px}
-details.full summary{cursor:pointer;font-size:14.5px;font-weight:600;color:var(--navy);padding:9px 0}
+details.full summary{cursor:pointer;font-size:16px;font-weight:600;color:var(--navy);padding:12px 0}
 details.full .fullbody{border-top:1px solid var(--line);padding-top:4px}
 .sec-intro{color:#3a4255}
 .totop{text-align:right;margin-top:22px}
-.totop a{font-size:14px;font-weight:600;padding:8px 0;display:inline-block}
-.secname{font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--navy);
+.totop a{font-size:15px;font-weight:600;padding:10px 0;display:inline-block}
+.secname{font-size:14px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--navy);
 border-bottom:2px solid var(--navy);padding:6px 0;margin:12px 0 4px}
-.spotlight{border:1px solid var(--line);border-top:3px solid var(--gold);padding:12px 16px 8px;margin:0 0 20px}
-.spotlight .item-head{font-size:19px;line-height:1.3;color:var(--navy-d);margin:2px 0 6px}
-.spotlight .makerline{font-size:14px;color:var(--mute);border-bottom:1px solid var(--line);padding-bottom:7px;margin:0 0 10px}
-.spotlight .photo{max-width:480px}
-.spotlight .deck{font-size:15px;color:#3a4255;margin:0 0 6px}
+.spotlight{border:1px solid var(--line);border-top:3px solid var(--gold);padding:14px 18px 10px;margin:0 0 22px;background:#fff}
+.spotlight .item-head{font-size:28px;line-height:1.25;color:var(--navy-d);margin:2px 0 6px}
+.spotlight .makerline{font-size:16px;color:var(--mute);border-bottom:1px solid var(--line);padding-bottom:7px;margin:0 0 10px}
+.spotlight .photo{max-width:560px}
+.spotlight .deck{font-size:20px;line-height:1.5;color:#3a4255;margin:0 0 6px}
 .techfeature{border-bottom:1px solid var(--line);padding:18px 0 18px;display:grid;
 grid-template-columns:300px 1fr;column-gap:20px;align-items:start}
 .techfeature .kicker{grid-column:1/-1;justify-self:start;margin-bottom:6px}
 .techfeature .photolink{grid-row:2/6}
+.techfeature.nophoto{grid-template-columns:1fr}
 .techfeature .photo{margin:4px 0 0}
 .techfeature .photo img{max-height:200px;object-fit:cover}
 .techfeature .photo figcaption{display:none}
-.spotline{font-size:15px;margin:0 0 6px}
-.crumb{color:var(--mute);font-size:13px;margin:14px 0 6px}
-.crumb a{padding:6px 0;display:inline-block}
-footer{background:var(--navy-d);color:#cfd8ee;border-top:3px solid var(--gold);font-size:12.5px}
+.spotline{font-size:17px;margin:0 0 6px}
+.crumb{color:var(--mute);font-size:14px;margin:14px 0 6px}
+.crumb a{padding:8px 0;display:inline-block}
+footer{background:var(--navy-d);color:#cfd8ee;border-top:3px solid var(--gold);font-size:14px}
+.pagehead{font-size:38px;line-height:1.15;color:var(--navy-d);margin:8px 0 10px}
+table.data{border-collapse:collapse;width:100%;font-size:17px;margin:6px 0 10px}
+table.data th,table.data td{border:1px solid var(--line);padding:10px 12px;text-align:left;vertical-align:top}
+table.data th{background:var(--tint);color:var(--navy-d);
+font-family:"Barlow Semi Condensed","Arial Narrow",sans-serif;font-weight:700;font-size:17px}
+table.data td.n,table.data th.n{text-align:right;font-family:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace}
+.tblwrap{overflow-x:auto}
 footer .fin{max-width:1040px;margin:0 auto;padding:14px 16px 18px}
 footer .fin b{color:#fff}
 @media(max-width:760px){
-body{font-size:15.5px}
+body{font-size:17px}
 .top img.logo{height:44px}
-.top .ttl b{font-size:15px}
-.top .ttl span{font-size:11.5px}
+.top .ttl b{font-size:17px}
+.top .ttl span{font-size:14px}
 .front{grid-template-columns:1fr}
 .story{padding:0}
 .story + .story{border-left:none;border-top:1px solid var(--line);margin-top:16px;padding-top:14px}
 .techfeature{grid-template-columns:1fr}
 .techfeature .photolink{grid-row:auto}
-article h1,.storyhead{font-size:22px}
+.story .headline,.techfeature .headline{font-size:34px}
+article h1,.storyhead{font-size:26px}
+article h2{font-size:26px}
+.item .item-head{font-size:24px}
+.item .deck,.spotlight .deck{font-size:19px}
+.spotlight .item-head{font-size:26px}
+h2.sec{font-size:26px}
+.pagehead{font-size:30px}
+.kn b{font-size:24px}
+table.data{font-size:16px}
 .photo.small{max-width:none}
 .story .photo img{max-height:200px}
 }
@@ -165,25 +189,42 @@ def plain(s):
     """No emoji anywhere in the output (Sharma brand rule, 2026-11-15)."""
     return _EMOJI.sub("", s)
 
-def shell(prefix, title, body, chip=""):
+def plain_heading(title):
+    """Plain labels only on news pages (DESIGN-RULES): no 'quarantined' or
+    'honesty note' style section headings. The items under the heading and
+    their in-text flags stay exactly as written in the report."""
+    low = title.lower()
+    if "quarantin" in low or "unverified" in low:
+        return "Not confirmed — excluded from the confirmed items above"
+    if "honesty note" in low:
+        return "About the reporting window"
+    return title
+
+def shell(prefix, title, body, chip="", active=""):
     title, body = plain(title), plain(body)
+    def on(key):
+        return ' class="on"' if active == key else ""
     return f"""<!DOCTYPE html>
 <html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex">
 <title>{title} — Sharma News</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@700&family=IBM+Plex+Mono:wght@500;600&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 <style>{CSS}</style></head>
 <body id="top">
 <header class="top">
 <div class="bar"><a class="brand" href="{prefix}index.html"><img class="logo" src="{prefix}logo.png" alt="Sharma Electric &amp; HVAC"></a>
 <div class="ttl"><b>Sharma News</b><span>Sunday, November 15, 2026 · Updated 5:00 AM ET</span></div></div>
 <nav class="main"><div class="in">
-<a href="{prefix}index.html">Home</a>
+<a href="{prefix}index.html"{on("home")}>Home</a>
 <a href="{LEGAL_BASE}/">Legal</a>
-<a href="{prefix}finance/index.html">Finance</a>
+<a href="{prefix}finance/index.html"{on("finance")}>Finance</a>
 <a href="{prefix}finance/archive/index.html">Finance archive</a>
-<a href="{prefix}tech/index.html">Tech</a>
+<a href="{prefix}tech/index.html"{on("tech")}>Tech</a>
 <a href="{prefix}tech/archive/index.html">Tech archive</a>
+<a href="{prefix}permits/index.html"{on("permits")}>Permit News</a>
 </div></nav></header>
 <div class="wrap">{body}</div>
 <footer><div class="fin"><b>Sharma Electric &amp; HVAC</b> · Sharma News, updated daily at 5:00 AM ET. News summaries for the Sharma team. Not legal or financial advice.</div></footer>
@@ -382,7 +423,7 @@ def story_page(ctx, headline, deck, impact, photo_entry, rest_html, deck_html=""
             f'{photo_html(photo_entry, "../../")}{deck_h}{imp}'
             f'<div class="fullbody">{rest_html}</div>'
             f'<p class="totop"><a href="../../{ctx["sec_home"]}">&larr; Back to the {ctx["sec_label"]}</a></p>')
-    STORY_PAGES[path] = (headline, body)
+    STORY_PAGES[path] = (headline, body, ctx["section"])
     return path
 
 ITEM_SPLIT = r'(<h3>.*?</h3>|<p><strong>Item\s+\d+[A-Z]?\s*—.*?</strong></p>)'
@@ -444,7 +485,7 @@ def render_article(md_text, date, prefix):
     sec_no = 0
     inline_placed = False
     for idx, (heading, body) in enumerate(sections):
-        title = strip_tags(heading)
+        title = plain_heading(strip_tags(heading))
         if not strip_tags(body):
             rendered.append(f'<p class="windowline">{title}</p>')
             continue
@@ -512,13 +553,13 @@ for date, (pat, label, one) in FIN.items():
     body = (f'<p class="crumb"><a href="../index.html">Finance Briefing</a> · '
             f'<a href="index.html">Archive</a></p><article>{render_article(fin_report(date), date, "../../")}</article>')
     (DOCS / "finance" / "archive" / f"{date}.html").write_text(
-        shell("../../", f"Finance Briefing — {label}", body), encoding="utf-8")
+        shell("../../", f"Finance Briefing — {label}", body, active="finance"), encoding="utf-8")
 
 latest = "2026-11-15"
 body = (f'<p class="crumb"><span class="kicker">Finance Briefing · Latest Edition</span></p>'
         f'<article>{render_article(fin_report(latest), latest, "../")}</article>')
 (DOCS / "finance" / "index.html").write_text(
-    shell("../", f"Finance Briefing — {FIN[latest][1]}", body), encoding="utf-8")
+    shell("../", f"Finance Briefing — {FIN[latest][1]}", body, active="finance"), encoding="utf-8")
 
 def thumb_html(date, prefix):
     entry = IMAGES.get(date, {}).get("lead")
@@ -532,7 +573,7 @@ items = "\n".join(
     for d in sorted(FIN, reverse=True))
 body = f'<span class="kicker">Finance</span><h2 class="sec" style="margin-top:8px">Finance Briefing — Back Issues</h2><ul class="arch">{items}</ul>'
 (DOCS / "finance" / "archive" / "index.html").write_text(
-    shell("../../", "Finance Briefing Archive", body), encoding="utf-8")
+    shell("../../", "Finance Briefing Archive", body, active="finance"), encoding="utf-8")
 
 # ---------- TECH: construction / engineering / tech news ----------
 # Parallel structure to FIN. The Product Spotlight refreshes every
@@ -541,7 +582,7 @@ body = f'<span class="kicker">Finance</span><h2 class="sec" style="margin-top:8p
 # said "product of the day".
 TECH = {  # date -> (report glob, weekday label, archive one-liner)
  "2026-11-15": ("sharma-tech-news-2026-11-15-*", "Sunday, November 15, 2026",
-   "Construction input costs jumped 13.3% year-over-year — copper wire & cable up 25.5% — while contractors' selling prices rose only 5.5%. Inaugural Product Spotlight: Leviton Lever Edge USB outlets ⚡ and Bosch YORK YD heat pumps ❄️."),
+   "Construction input costs jumped 13.3% year-over-year — copper wire & cable up 25.5% — while contractors' selling prices rose only 5.5%. Inaugural Product Spotlight: Leviton Lever Edge USB outlets (electrical) and Bosch YORK YD heat pumps (HVAC)."),
 }
 TECH_IMAGES = {  # photos pulled from the articles the report cites
  "2026-11-15": {
@@ -583,8 +624,8 @@ def render_spotlight(body, date, prefix):
         maker = re.search(r"Maker:\s*(.*?)(?=\s*Release date:)", text)
         rel = re.search(r"Release date:\s*(.*?)(?=\s*What it is:)", text)
         cool = re.search(r"Why it's cool for Sharma:\s*(.*?)(?=\s*Price:|\s*Source:|$)", text, re.S)
-        kick = ("⚡ Electrical Spotlight" if "⚡" in headline
-                else "❄️ HVAC Spotlight" if "❄" in headline
+        kick = ("Electrical Spotlight" if "⚡" in headline
+                else "HVAC Spotlight" if "❄" in headline
                 else "Product Spotlight")
         ml = ""
         if maker or rel:
@@ -624,7 +665,7 @@ def render_tech_article(md_text, date, prefix):
     imgs = TECH_IMAGES.get(date, {})
     intro_bits, glance, spotlight, generic = [], "", "", []
     for heading, body in sections:
-        title = strip_tags(heading)
+        title = plain_heading(strip_tags(heading))
         if title.startswith("Edition No."):
             intro_bits.append(f'<p class="windowline">{title}</p>')
             if strip_tags(body):
@@ -643,7 +684,7 @@ def render_tech_article(md_text, date, prefix):
     if glance:
         nav_items.append('<a href="#glance">At a Glance</a>')
     if spotlight:
-        nav_items.append('<a href="#spotlight">⭐ Product Spotlight</a>')
+        nav_items.append('<a href="#spotlight">Product Spotlight</a>')
     sec_no = 0
     for title, body in generic:
         sec_no += 1
@@ -668,7 +709,7 @@ def render_tech_article(md_text, date, prefix):
     nav = f'<nav class="jump">{"".join(nav_items)}</nav>' if nav_items else ""
     spot = ""
     if spotlight:
-        spot = ('<h2 id="spotlight">⭐ Product Spotlight</h2>'
+        spot = ('<h2 id="spotlight">Product Spotlight</h2>'
                 '<p class="sec-intro">A cool new electrical product and a cool new '
                 'HVAC product every weekday — fresh picks Monday–Friday; weekends '
                 'carry Friday\'s picks.</p>' + spotlight)
@@ -685,13 +726,13 @@ for date, (pat, label, one) in TECH.items():
     body = (f'<p class="crumb"><a href="../index.html">Tech Briefing</a> · '
             f'<a href="index.html">Archive</a></p><article>{render_tech_article(tech_report(date), date, "../../")}</article>')
     (DOCS / "tech" / "archive" / f"{date}.html").write_text(
-        shell("../../", f"Sharma Tech — {label}", body), encoding="utf-8")
+        shell("../../", f"Sharma Tech — {label}", body, active="tech"), encoding="utf-8")
 
 tlatest = sorted(TECH)[-1]
 body = (f'<p class="crumb"><span class="kicker">Construction · Engineering · Tech · Latest Edition</span></p>'
         f'<article>{render_tech_article(tech_report(tlatest), tlatest, "../")}</article>')
 (DOCS / "tech" / "index.html").write_text(
-    shell("../", f"Sharma Tech — {TECH[tlatest][1]}", body), encoding="utf-8")
+    shell("../", f"Sharma Tech — {TECH[tlatest][1]}", body, active="tech"), encoding="utf-8")
 
 def tech_thumb_html(date, prefix):
     entry = TECH_IMAGES.get(date, {}).get("lead")
@@ -705,7 +746,157 @@ titems = "\n".join(
     for d in sorted(TECH, reverse=True))
 body = f'<span class="kicker">Construction · Engineering · Tech</span><h2 class="sec" style="margin-top:8px">Sharma Tech — Back Issues</h2><ul class="arch">{titems}</ul>'
 (DOCS / "tech" / "archive" / "index.html").write_text(
-    shell("../../", "Sharma Tech Archive", body), encoding="utf-8")
+    shell("../../", "Sharma Tech Archive", body, active="tech"), encoding="utf-8")
+
+# ---------- PERMIT NEWS: compiled from the Lead Finder permit board ----------
+# Source snapshot: permits-source.json in this repo root — a copy of the
+# board's live data file (repo Sharmaelechvac/sharma-lead-finder,
+# docs/data.json). Refresh = re-copy that file over permits-source.json
+# and re-run this build. Nothing here is estimated: every number is
+# counted from the snapshot with the board's own rules (its
+# docs/index.html) — a record counts only when its builder name
+# slug-matches a builder listed on the board, so records with no builder
+# and do-not-contact builders' records stay hidden, exactly as on the
+# board. Headline totals cross-check: stats.permits 2,832 in the file,
+# minus 8 skipped DNC and 22 skipped no-builder records = 2,802 visible.
+import json, collections, datetime
+
+def _lf_clean(raw):
+    if not raw:
+        return ""
+    s = re.sub(r"\s+", " ", str(raw))
+    s = re.sub(r",?\s*d/b/a\s+", " ", s, flags=re.I)
+    return s.strip()
+
+def _lf_norm(raw):
+    s = _lf_clean(raw).lower()
+    s = re.sub(r"[.,'\"()]", " ", s)
+    s = re.sub(r"\b(llc|l l c|inc|incorporated|corp|corporation|co|ltd|limited|company|companies|the)\b", " ", s)
+    return re.sub(r"\s+", " ", s).strip()
+
+def _lf_slug(raw):
+    n = _lf_norm(raw) or _lf_clean(raw).lower()
+    return re.sub(r"[^a-z0-9]+", "-", n).strip("-")[:80] or "unknown"
+
+def _fmt_day(d):
+    return f"{d.strftime('%B')} {d.day}, {d.year}"
+
+def _fmt_rec_date(s):
+    try:
+        return _fmt_day(datetime.date.fromisoformat(str(s)[:10]))
+    except Exception:
+        return ihtml.escape(str(s or ""))
+
+PERMITS = {"ok": False}
+permit_card = ""
+_psrc = ROOT / "permits-source.json"
+if _psrc.exists():
+    _pd = json.loads(_psrc.read_text(encoding="utf-8"))
+    _builders = _pd.get("builders", [])
+    _records = _pd.get("records", [])
+    _recs = collections.defaultdict(list)
+    for _r in _records:
+        _recs[_lf_slug(_r.get("builder"))].append(_r)
+    _vis_ids = {b["id"] for b in _builders}
+    _vis = [r for r in _records if _lf_slug(r.get("builder")) in _vis_ids]
+    _fetched = datetime.datetime.fromisoformat(
+        _pd["fetchedAt"].replace("Z", "+00:00")).date()
+    def _rdate(r):
+        try:
+            return datetime.date.fromisoformat(str(r.get("date"))[:10])
+        except Exception:
+            return None
+    _vdates = [d for d in (_rdate(r) for r in _vis) if d]
+    _county = {}
+    for _b in _builders:
+        for _c in (_b.get("counties") or []):
+            _county[_c] = _county.get(_c, 0) + sum(
+                1 for r in _recs.get(_b["id"], []) if r.get("county") == _c)
+    _county_rows = sorted(((c, n) for c, n in _county.items() if n > 0),
+                          key=lambda kv: (-kv[1], kv[0]))
+    _top_builders = sorted(_builders,
+                           key=lambda b: (-(b.get("permitCount") or 0), b["name"]))[:15]
+    _latest = sorted(_vis, key=lambda r: str(r.get("date") or ""), reverse=True)[:25]
+    PERMITS = {
+        "ok": True, "fetched": _fetched, "visible": len(_vis),
+        "builders_n": len(_builders), "counties_n": len(_county_rows),
+        "last7": sum(1 for d in _vdates if d >= _fetched - datetime.timedelta(days=6)),
+        "last30": sum(1 for d in _vdates if d >= _fetched - datetime.timedelta(days=29)),
+        "county_rows": _county_rows, "top_builders": _top_builders,
+        "latest": _latest,
+        "top_county": _county_rows[0] if _county_rows else ("", 0),
+        "top_builder": _top_builders[0] if _top_builders else {},
+    }
+
+if PERMITS["ok"]:
+    P = PERMITS
+    fetched_label = _fmt_day(P["fetched"])
+    stats = keynums_html([
+        ("Visible permits", f"{P['visible']:,}"),
+        ("Builders tracked", f"{P['builders_n']:,}"),
+        ("Counties with records", f"{P['counties_n']}"),
+        ("Permits in the last 7 days", f"{P['last7']:,}"),
+        ("Permits in the last 30 days", f"{P['last30']:,}")])
+    county_rows = "\n".join(
+        f'<tr><td>{ihtml.escape(c)}</td><td class="n">{n:,}</td>'
+        f'<td class="n">{n / P["visible"] * 100:.1f}%</td></tr>'
+        for c, n in P["county_rows"])
+    builder_rows = "\n".join(
+        f'<tr><td>{ihtml.escape(b["name"])}</td><td class="n">{b.get("permitCount") or 0:,}</td>'
+        f'<td>{_fmt_rec_date(b.get("latestDate"))}</td>'
+        f'<td class="n">{len(b.get("counties") or [])}</td></tr>'
+        for b in P["top_builders"])
+    latest_rows = "\n".join(
+        f'<tr><td>{ihtml.escape(str(r.get("builder") or ""))}</td>'
+        f'<td>{ihtml.escape(str(r.get("address") or ""))}</td>'
+        f'<td>{ihtml.escape(str(r.get("county") or ""))}</td>'
+        f'<td>{_fmt_rec_date(r.get("date"))}</td>'
+        f'<td class="num">{ihtml.escape(str(r.get("permitNo") or ""))}</td></tr>'
+        for r in P["latest"])
+    _top3 = P["county_rows"][:3]
+    _top3_sum = sum(n for _, n in _top3)
+    _targets = {"Orange", "Osceola", "Polk", "Seminole", "Lake", "Marion",
+                "Citrus", "Brevard", "Hernando", "Pasco", "Sumter"}
+    _trows = [(c, n) for c, n in P["county_rows"] if c in _targets]
+    _tsum = sum(n for _, n in _trows)
+    _t3 = ", ".join(f"{c} ({n:,})" for c, n in _trows[:3])
+    means = (
+        f"The board's permits are concentrated: {_top3[0][0]}, {_top3[1][0]} and "
+        f"{_top3[2][0]} together hold {_top3_sum:,} of the {P['visible']:,} visible "
+        f"permits ({_top3_sum / P['visible'] * 100:.0f}%). "
+        f"{ihtml.escape(str(P['top_builder'].get('name', '')))} is the most active "
+        f"builder on the board with {P['top_builder'].get('permitCount') or 0:,} permits. "
+        f"In Sharma's target counties, {_t3} lead; the {len(_trows)} target counties "
+        f"with records hold {_tsum:,} permits between them. Builder names are shown "
+        f"as the board lists them — the same company can appear under more than one "
+        f"name variant.")
+    pbody = f"""
+<span class="kicker">Permit News</span>
+<h1 class="pagehead">Permit News</h1>
+<p class="windowline">Compiled from the Sharma Lead Finder board — data as of {fetched_label} · <a href="https://sharmaelechvac.github.io/sharma-lead-finder/">Open the Lead Finder board</a></p>
+{stats}
+<p class="sec-intro">{means}</p>
+<h2 class="sec">Permits by county</h2>
+<div class="tblwrap"><table class="data"><tr><th>County</th><th class="n">Permits</th><th class="n">Share</th></tr>
+{county_rows}</table></div>
+<h2 class="sec">Top builders by permits</h2>
+<div class="tblwrap"><table class="data"><tr><th>Builder</th><th class="n">Permits</th><th>Latest permit</th><th class="n">Counties</th></tr>
+{builder_rows}</table></div>
+<h2 class="sec">Latest permits</h2>
+<div class="tblwrap"><table class="data"><tr><th>Builder</th><th>Address</th><th>County</th><th>Date</th><th>Permit no.</th></tr>
+{latest_rows}</table></div>
+<p>Counting follows the board's own rules: a permit counts only when it belongs to a builder listed on the Lead Finder board. Permits with no builder named, and permits from do-not-contact builders, are left out — the board's file holds {len(_records):,} records in total, of which {P['visible']:,} are visible on this basis.</p>
+<p class="totop"><a href="#top">Back to top ↑</a></p>
+"""
+    (DOCS / "permits").mkdir(parents=True, exist_ok=True)
+    (DOCS / "permits" / "index.html").write_text(
+        shell("../", "Permit News", pbody, active="permits"), encoding="utf-8")
+    permit_card = f"""
+<div class="techfeature nophoto"><span class="kicker">Permit News</span>
+<h2 class="headline"><a href="permits/index.html">{P['visible']:,} permits from {P['builders_n']:,} builders across {P['counties_n']} counties</a></h2>
+<p class="spotline">Top county: <b>{ihtml.escape(P['top_county'][0])}</b> ({P['top_county'][1]:,} permits) · Top builder: <b>{ihtml.escape(str(P['top_builder'].get('name', '')))}</b> ({P['top_builder'].get('permitCount') or 0:,} permits) · {P['last7']:,} permits in the last 7 days</p>
+<p class="byline">Compiled from the Sharma Lead Finder board · Data as of {fetched_label}</p>
+<a class="cont" href="permits/index.html">Read the permit news →</a></div>"""
 
 # ---- home ----
 legal_arch = "\n".join(
@@ -736,17 +927,18 @@ body = f"""
 <div class="techfeature"><span class="kicker">Construction · Engineering · Tech</span>
 <a class="photolink" href="tech/index.html">{photo_html(tech_lead, "")}</a>
 <h2 class="headline"><a href="tech/index.html">Construction input costs jump 13.3% in a year; copper wire &amp; cable up 25.5%</a></h2>
-<p class="spotline">⭐ Product Spotlight — ⚡ <b>Leviton Lever Edge™ USB Outlets</b> · ❄️ <b>Bosch Home Comfort YORK® YD heat pumps</b></p>
+<p class="spotline">Product Spotlight — Electrical: <b>Leviton Lever Edge™ USB Outlets</b> · HVAC: <b>Bosch Home Comfort YORK® YD heat pumps</b></p>
 <p class="byline">Sharma Tech · Edition of Nov 15, 2026</p>
 <a class="cont" href="tech/index.html">Read today's tech briefing →</a></div>
+{permit_card}
 <h2 class="sec">Legal — Back Issues</h2><ul class="arch">{legal_arch}</ul>
 <h2 class="sec">Finance — Back Issues</h2><ul class="arch">{fin_arch}</ul>
 <h2 class="sec">Tech — Back Issues</h2><ul class="arch">{tech_arch}</ul>
 """
-(DOCS / "index.html").write_text(shell("", "Home — Sunday, November 15, 2026", body), encoding="utf-8")
-for _path, (_title, _sbody) in STORY_PAGES.items():
+(DOCS / "index.html").write_text(shell("", "Home — Sunday, November 15, 2026", body, active="home"), encoding="utf-8")
+for _path, (_title, _sbody, _sec) in STORY_PAGES.items():
     _p = DOCS / _path
     _p.parent.mkdir(parents=True, exist_ok=True)
-    _p.write_text(shell("../../", _title, _sbody), encoding="utf-8")
+    _p.write_text(shell("../../", _title, _sbody, active=_sec), encoding="utf-8")
 print("story pages:", len(STORY_PAGES))
 print("built:", [str(p.relative_to(DOCS)) for p in sorted(DOCS.rglob('*.html'))])
