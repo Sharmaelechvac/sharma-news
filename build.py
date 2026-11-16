@@ -243,8 +243,8 @@ def md_to_html(md_text):
 # disk or the slot renders empty — never a broken <img>.
 IMAGES = {
  "home": {
-  "legal": ("home-legal.jpg", "Fencing at East Potomac Park, Washington, D.C.",
-    "Fencing at East Potomac Park in Washington, D.C. — the public golf course whose closure for redevelopment a federal judge halted on Saturday.",
+  "legal": ("home-legal.jpg", "Department of Justice headquarters sign, Washington, D.C.",
+    "The Department of Justice headquarters sign in Washington, D.C. — the Justice Department warned Sen. Elizabeth Warren on Sunday to preserve records over her planned investigations.",
     "Photo: Reuters"),
   "finance": ("2026-11-15-lead.jpg", "Copper market update graphic, November 14, 2026",
     "Copper eased to $6.05–6.08/lb at Friday's close, in the copper-market update the finance briefing cites.",
@@ -553,6 +553,8 @@ LEGAL = {  # date -> (weekday label, biggest-story one-liner for hub cards/lists
    "Biggest: the FAA nationwide ground stop (Fri Nov 13); the 11th Circuit upholds the CFPB PACE-loan rule; Johnson Controls pays $5M in an FCA cyber-compliance settlement."),
  "2026-11-15": ("Sunday, November 15, 2026",
    "Biggest story: Judge Ana Reyes's Saturday, Nov 14 TRO halting the East Potomac Park / golf-course closure and redevelopment in Washington, D.C. — the only major ruling actually issued in the core weekend window, with a same-weekend presidential promise to appeal."),
+ "2026-11-16": ("Monday, November 16, 2026",
+   "Biggest story: the Justice Department's Sunday, Nov 15 letter warning Sen. Elizabeth Warren to preserve records over her planned Trump investigations, citing \"significant legal consequences\" — plus the Florida Overton case reaching SCOTUS and an electrical contractor's Chapter 11 hearing today."),
 }
 
 def fin_report(date):
@@ -942,8 +944,8 @@ body = f"""
 <div class="front">
 <div class="story"><span class="kicker">Legal Briefing</span>
 <a class="photolink" href="{LEGAL_BASE}/">{photo_html(home_imgs.get("legal"), "")}</a>
-<h2 class="headline"><a href="{LEGAL_BASE}/">{LEGAL['2026-11-15'][1]}</a></h2>
-<p class="byline">Legal Briefing — Harvey, Legal Advisor · Edition of Nov 15, 2026</p>
+<h2 class="headline"><a href="{LEGAL_BASE}/">{LEGAL['2026-11-16'][1]}</a></h2>
+<p class="byline">Legal Briefing — Harvey, Legal Advisor · Edition of Nov 16, 2026</p>
 <a class="cont" href="{LEGAL_BASE}/">Read today's legal briefing →</a></div>
 <div class="story"><span class="kicker">Finance Briefing</span>
 <a class="photolink" href="finance/index.html">{photo_html(home_imgs.get("finance"), "")}</a>
