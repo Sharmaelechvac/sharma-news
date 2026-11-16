@@ -332,6 +332,13 @@ FIN_GLANCE = {
    "US–China talks on a “$30 billion-for-$30 billion” tariff-cut arrangement — no agreement announced.",
    "Boston Fed President Collins backed a “steady, gradual path” of rate hikes; a Dec 8–9 quarter-point hike is widely expected.",
    "No new housing-starts/permits/sales data, no builder operating announcements, and no HVAC or R-454B news in the window."],
+ "2026-11-16": [
+   "Kansas City Fed President Schmid said Sunday inflation is “uncomfortably above the 2% target, and moving in the wrong direction”; futures are fully priced for a 25 bp December hike (LSEG: 89% for 25 bp, 11% for 50 bp).",
+   "LME copper fell a third straight session, down 1% to $13,264.50/t — its lowest in more than four months; COMEX copper near $6.02/lb.",
+   "Oil eased on surplus expectations: Brent −0.49% to $95.37/bbl, WTI −0.26% to $88.33/bbl; the IEA sees a 1.7M bpd Q4 surplus.",
+   "Central Florida: 1,238 listings cut prices in the week to Nov 15, averaging −3.30%, with 59.37% on the market 60+ days.",
+   "UPDATE: China confirmed the first Xi–Trump–Putin trilateral for Thu Nov 19 in Shenzhen — no new tariff rates announced.",
+   "No new housing data, no builder operating announcements, no HVAC / R-454B news, and no Florida OIR final order on the NCCI −7.4% filing in the window."],
 }
 FIN_NUMBERS = {
  "2026-11-11": [("CPI (Oct, m/m)", "+0.4%"), ("Core CPI (m/m)", "+0.3%"),
@@ -347,13 +354,16 @@ FIN_NUMBERS = {
    ("2-yr Treasury", "4.88%"), ("COMEX copper", "$6.0795/lb")],
  "2026-11-15": [("Copper", "$6.08/lb"), ("LME copper", "~$13,430/t"),
    ("Tariff talks", "$30B-for-$30B"), ("Next Fed meeting", "Dec 8–9")],
+ "2026-11-16": [("Policy rate", "3.75%–4.00%"), ("Dec 25 bp odds (LSEG)", "89%"),
+   ("LME copper", "$13,264.50/t"), ("Brent crude", "$95.37/bbl"),
+   ("WTI crude", "$88.33/bbl"), ("FL price cuts (wk)", "1,238")],
 }
 HOME_GLANCE = [
  "Legal — biggest story: Judge Ana Reyes's Saturday, Nov 14 TRO halting the East Potomac Park / golf-course closure and redevelopment in Washington, D.C.",
  "Legal — most useful Florida item: Koppert v. Homeowners Choice (2d DCA, Nov 13) — an arbitration decision emailed as a QuickBooks invoice attachment was not “served,” so the 20-day trial clock never ran.",
- "Finance — copper at $6.08/lb, with LME copper breaking toward $13,430/t, its lowest since July.",
- "Finance — US–China talks on a “$30 billion-for-$30 billion” tariff-cut arrangement; no agreement announced.",
- "Finance — Boston Fed President Collins backed a “steady, gradual path” of rate hikes, with a December 8–9 quarter-point hike widely expected."]
+ "Finance — Kansas City Fed President Schmid said Sunday inflation is “uncomfortably above the 2% target, and moving in the wrong direction”; a December hike is fully priced (LSEG: 89% for 25 bp, 11% for 50 bp).",
+ "Finance — LME copper fell a third straight session to $13,264.50/t, its lowest in more than four months; oil eased on a forecast 1.7M bpd Q4 surplus (Brent $95.37, WTI $88.33).",
+ "Finance — Central Florida: 1,238 listings cut prices in the week to Nov 15 (average −3.30%); China confirmed the Xi–Trump–Putin trilateral for Thu Nov 19 — no new tariff rates."]
 
 def glance_html(bullets):
     lis = "\n".join(f"<li>{b}</li>" for b in bullets)
@@ -531,6 +541,8 @@ FIN = {  # date -> (report glob, weekday label, archive one-liner)
    "A rates-and-inflation day: the 30-year fixed jumped to 7.50%, October PPI rose 6.5% year-over-year, three Fed presidents spoke hawkishly, and copper fell to $6.0795/lb — a fifth straight down week."),
  "2026-11-15": ("sharma-daily-finance-news-2026-11-15-*", "Sunday, November 15, 2026",
    "A genuinely quiet weekend: copper at $6.08/lb with LME copper breaking toward $13,430/t, its lowest since July; US–China talks on a “$30 billion-for-$30 billion” tariff-cut arrangement — no agreement announced; Boston Fed President Collins backed a “steady, gradual path” of rate hikes, with a December 8–9 quarter-point hike widely expected."),
+ "2026-11-16": ("sharma-daily-finance-news-2026-11-16-*", "Monday, November 16, 2026",
+   "A Sunday window with three real moves: KC Fed President Schmid called inflation “uncomfortably above the 2% target, and moving in the wrong direction” with a December hike fully priced (89% for 25 bp, 11% for 50 bp); LME copper fell a third straight session to $13,264.50/t, its lowest in over four months; oil eased on a forecast 1.7M bpd Q4 surplus. Plus 1,238 Central Florida price cuts and China's confirmation of the Nov 19 Xi–Trump–Putin trilateral — no new tariff rates."),
 }
 LEGAL = {  # date -> (weekday label, biggest-story one-liner for hub cards/lists)
  "2026-11-12": ("Thursday, November 12, 2026",
@@ -555,7 +567,7 @@ for date, (pat, label, one) in FIN.items():
     (DOCS / "finance" / "archive" / f"{date}.html").write_text(
         shell("../../", f"Finance Briefing — {label}", body, active="finance"), encoding="utf-8")
 
-latest = "2026-11-15"
+latest = "2026-11-16"
 body = (f'<p class="crumb"><span class="kicker">Finance Briefing · Latest Edition</span></p>'
         f'<article>{render_article(fin_report(latest), latest, "../")}</article>')
 (DOCS / "finance" / "index.html").write_text(
@@ -935,8 +947,8 @@ body = f"""
 <a class="cont" href="{LEGAL_BASE}/">Read today's legal briefing →</a></div>
 <div class="story"><span class="kicker">Finance Briefing</span>
 <a class="photolink" href="finance/index.html">{photo_html(home_imgs.get("finance"), "")}</a>
-<h2 class="headline"><a href="finance/index.html">{FIN['2026-11-15'][2]}</a></h2>
-<p class="byline">Finance Briefing — Warren Buffett, CFO · Edition of Nov 15, 2026</p>
+<h2 class="headline"><a href="finance/index.html">{FIN['2026-11-16'][2]}</a></h2>
+<p class="byline">Finance Briefing — Warren Buffett, CFO · Edition of Nov 16, 2026</p>
 <a class="cont" href="finance/index.html">Read today's finance briefing →</a></div>
 </div>
 <div class="techfeature"><span class="kicker">Construction · Engineering · Tech</span>
