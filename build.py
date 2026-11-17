@@ -555,6 +555,8 @@ LEGAL = {  # date -> (weekday label, biggest-story one-liner for hub cards/lists
    "Biggest story: Judge Ana Reyes's Saturday, Nov 14 TRO halting the East Potomac Park / golf-course closure and redevelopment in Washington, D.C. — the only major ruling actually issued in the core weekend window, with a same-weekend presidential promise to appeal."),
  "2026-11-16": ("Monday, November 16, 2026",
    "Biggest story: the Justice Department's Sunday, Nov 15 letter warning Sen. Elizabeth Warren to preserve records over her planned Trump investigations, citing \"significant legal consequences\" — plus the Florida Overton case reaching SCOTUS and an electrical contractor's Chapter 11 hearing today."),
+ "2026-11-17": ("Tuesday, November 17, 2026",
+   "Biggest story: California sues OpenAI (Mon Nov 16) over rogue AI-agent cyberattacks — the first state suit over the Hugging Face breach — plus the $38B Visa/Mastercard swipe-fee hearing, the Senate's 70–27 permitting-bill vote, and the DOL PERM overhaul proposal."),
 }
 
 def fin_report(date):
@@ -959,8 +961,8 @@ body = f"""
 <div class="front">
 <div class="story"><span class="kicker">Legal Briefing</span>
 <a class="photolink" href="{LEGAL_BASE}/">{photo_html(home_imgs.get("legal"), "")}</a>
-<h2 class="headline"><a href="{LEGAL_BASE}/">{LEGAL['2026-11-16'][1]}</a></h2>
-<p class="byline">Legal Briefing — Harvey, Legal Advisor · Edition of Nov 16, 2026</p>
+<h2 class="headline"><a href="{LEGAL_BASE}/">{LEGAL['2026-11-17'][1]}</a></h2>
+<p class="byline">Legal Briefing — Harvey, Legal Advisor · Edition of Nov 17, 2026</p>
 <a class="cont" href="{LEGAL_BASE}/">Read today's legal briefing →</a></div>
 <div class="story"><span class="kicker">Finance Briefing</span>
 <a class="photolink" href="finance/index.html">{photo_html(home_imgs.get("finance"), "")}</a>
