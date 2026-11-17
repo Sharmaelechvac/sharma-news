@@ -339,6 +339,13 @@ FIN_GLANCE = {
    "Central Florida: 1,238 listings cut prices in the week to Nov 15, averaging −3.30%, with 59.37% on the market 60+ days.",
    "UPDATE: China confirmed the first Xi–Trump–Putin trilateral for Thu Nov 19 in Shenzhen — no new tariff rates announced.",
    "No new housing data, no builder operating announcements, no HVAC / R-454B news, and no Florida OIR final order on the NCCI −7.4% filing in the window."],
+ "2026-11-17": [
+   "Florida OIR APPROVED the NCCI workers' comp cut on Mon Nov 16: −7.4% average for new and renewal policies effective Jan 1, 2027 — now bookable, not proposed.",
+   "Stocks fell a third straight day and the Nasdaq entered correction: S&P 500 7,416.59 (−1.92%), Nasdaq 24,509.76 (−2.49%), Dow 51,608.17 (−1.41%); Nvidia −4.12% to $156.14.",
+   "COMEX copper settled below $6 at $5.9975/lb (−1.35%, lowest since June 24); LME official cash copper $13,375/t (−1.73%).",
+   "Mortgage News Daily 30-year at 7.51% on Monday; 10-year Treasury eased 3 bp to 5.12%. Warsh said nothing on rates; Hammack backed slow, steady hikes.",
+   "Florida Realtors October: single-family sales 19,049 (−10.1% YoY), pending sales −15.7%, median $420,000 (+2.2%); condo median $290,000 (−3.3%).",
+   "Oil settled down over 3% (Brent $92.44, WTI $85.72) and U.S. retail diesel fell below $6/gal for the first time since early September."],
 }
 FIN_NUMBERS = {
  "2026-11-11": [("CPI (Oct, m/m)", "+0.4%"), ("Core CPI (m/m)", "+0.3%"),
@@ -357,13 +364,16 @@ FIN_NUMBERS = {
  "2026-11-16": [("Policy rate", "3.75%–4.00%"), ("Dec 25 bp odds (LSEG)", "89%"),
    ("LME copper", "$13,264.50/t"), ("Brent crude", "$95.37/bbl"),
    ("WTI crude", "$88.33/bbl"), ("FL price cuts (wk)", "1,238")],
+ "2026-11-17": [("COMEX copper", "$5.9975/lb"), ("30-yr fixed (MND)", "7.51%"),
+   ("10-yr Treasury", "5.12%"), ("S&P 500", "7,416.59"),
+   ("Brent crude", "$92.44/bbl"), ("FL WC cut (2027)", "−7.4%")],
 }
 HOME_GLANCE = [
  "Legal — biggest story: Judge Ana Reyes's Saturday, Nov 14 TRO halting the East Potomac Park / golf-course closure and redevelopment in Washington, D.C.",
  "Legal — most useful Florida item: Koppert v. Homeowners Choice (2d DCA, Nov 13) — an arbitration decision emailed as a QuickBooks invoice attachment was not “served,” so the 20-day trial clock never ran.",
- "Finance — Kansas City Fed President Schmid said Sunday inflation is “uncomfortably above the 2% target, and moving in the wrong direction”; a December hike is fully priced (LSEG: 89% for 25 bp, 11% for 50 bp).",
- "Finance — LME copper fell a third straight session to $13,264.50/t, its lowest in more than four months; oil eased on a forecast 1.7M bpd Q4 surplus (Brent $95.37, WTI $88.33).",
- "Finance — Central Florida: 1,238 listings cut prices in the week to Nov 15 (average −3.30%); China confirmed the Xi–Trump–Putin trilateral for Thu Nov 19 — no new tariff rates."]
+ "Finance — Florida OIR approved the NCCI workers' comp cut on Mon Nov 16: −7.4% average for policies effective Jan 1, 2027.",
+ "Finance — Stocks fell a third straight day (S&P 500 −1.92% to 7,416.59; Nasdaq −2.49%, in correction) and COMEX copper settled below $6 at $5.9975/lb.",
+ "Finance — Florida Realtors October: single-family sales fell 10.1% YoY to 19,049 with pending sales down 15.7%; the daily 30-year mortgage rate was 7.51% on Monday."]
 
 def glance_html(bullets):
     lis = "\n".join(f"<li>{b}</li>" for b in bullets)
@@ -543,6 +553,8 @@ FIN = {  # date -> (report glob, weekday label, archive one-liner)
    "A genuinely quiet weekend: copper at $6.08/lb with LME copper breaking toward $13,430/t, its lowest since July; US–China talks on a “$30 billion-for-$30 billion” tariff-cut arrangement — no agreement announced; Boston Fed President Collins backed a “steady, gradual path” of rate hikes, with a December 8–9 quarter-point hike widely expected."),
  "2026-11-16": ("sharma-daily-finance-news-2026-11-16-*", "Monday, November 16, 2026",
    "A Sunday window with three real moves: KC Fed President Schmid called inflation “uncomfortably above the 2% target, and moving in the wrong direction” with a December hike fully priced (89% for 25 bp, 11% for 50 bp); LME copper fell a third straight session to $13,264.50/t, its lowest in over four months; oil eased on a forecast 1.7M bpd Q4 surplus. Plus 1,238 Central Florida price cuts and China's confirmation of the Nov 19 Xi–Trump–Putin trilateral — no new tariff rates."),
+ "2026-11-17": ("sharma-daily-finance-news-2026-11-17-*", "Tuesday, November 17, 2026",
+   "Florida OIR approved the NCCI workers' comp cut (−7.4% average, effective Jan 1, 2027) on Mon Nov 16. Stocks fell a third straight day — S&P 500 −1.92% to 7,416.59, Nasdaq −2.49% and in correction — and COMEX copper settled below $6 at $5.9975/lb, its lowest since June 24. Florida Realtors October: single-family sales −10.1% YoY to 19,049, pending sales −15.7%, median $420,000 (+2.2%). Oil settled down over 3% (Brent $92.44, WTI $85.72); the daily 30-year mortgage rate was 7.51%."),
 }
 LEGAL = {  # date -> (weekday label, biggest-story one-liner for hub cards/lists)
  "2026-11-12": ("Thursday, November 12, 2026",
@@ -571,7 +583,7 @@ for date, (pat, label, one) in FIN.items():
     (DOCS / "finance" / "archive" / f"{date}.html").write_text(
         shell("../../", f"Finance Briefing — {label}", body, active="finance"), encoding="utf-8")
 
-latest = "2026-11-16"
+latest = "2026-11-17"
 body = (f'<p class="crumb"><span class="kicker">Finance Briefing · Latest Edition</span></p>'
         f'<article>{render_article(fin_report(latest), latest, "../")}</article>')
 (DOCS / "finance" / "index.html").write_text(
@@ -966,8 +978,8 @@ body = f"""
 <a class="cont" href="{LEGAL_BASE}/">Read today's legal briefing →</a></div>
 <div class="story"><span class="kicker">Finance Briefing</span>
 <a class="photolink" href="finance/index.html">{photo_html(home_imgs.get("finance"), "")}</a>
-<h2 class="headline"><a href="finance/index.html">{FIN['2026-11-16'][2]}</a></h2>
-<p class="byline">Finance Briefing — Warren Buffett, CFO · Edition of Nov 16, 2026</p>
+<h2 class="headline"><a href="finance/index.html">{FIN['2026-11-17'][2]}</a></h2>
+<p class="byline">Finance Briefing — Warren Buffett, CFO · Edition of Nov 17, 2026</p>
 <a class="cont" href="finance/index.html">Read today's finance briefing →</a></div>
 </div>
 <div class="techfeature"><span class="kicker">Construction · Engineering · Tech</span>
