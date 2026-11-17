@@ -216,7 +216,7 @@ def shell(prefix, title, body, chip="", active=""):
 <body id="top">
 <header class="top">
 <div class="bar"><a class="brand" href="{prefix}index.html"><img class="logo" src="{prefix}logo.png" alt="Sharma Electric &amp; HVAC"></a>
-<div class="ttl"><b>Sharma News</b><span>Monday, November 16, 2026 · Updated 5:00 AM ET</span></div></div>
+<div class="ttl"><b>Sharma News</b><span>Tuesday, November 17, 2026 · Updated 5:00 AM ET</span></div></div>
 <nav class="main"><div class="in">
 <a href="{prefix}index.html"{on("home")}>Home</a>
 <a href="{LEGAL_BASE}/">Legal</a>
@@ -599,8 +599,18 @@ TECH = {  # date -> (report glob, weekday label, archive one-liner)
    "Construction input costs jumped 13.3% year-over-year — copper wire & cable up 25.5% — while contractors' selling prices rose only 5.5%. Inaugural Product Spotlight: Leviton Lever Edge USB outlets (electrical) and Bosch YORK YD heat pumps (HVAC)."),
  "2026-11-16": ("sharma-tech-news-2026-11-16-*", "Monday, November 16, 2026",
    "Update: after the Brooklyn collapse, cracks at a Chinatown senior complex spark a call to halt jail construction next door; in Florida, GL Homes turns two Palm Beach County golf courses into housing under the new Infill Redevelopment Act. Product Spotlight (new today): Soneil Spark Mobile BESS (electrical) and Rinnai REHPW heat pump water heaters (HVAC)."),
+ "2026-11-17": ("sharma-tech-news-2026-11-17-*", "Tuesday, November 17, 2026",
+   "Florida existing single-family sales fell 10.1% in October to 19,049 with new pending sales down 15.7% (Florida Realtors, Nov 16); Caterpillar makes collision warning and mitigation standard on most new machines in 2027. Product Spotlight (new today): CMP Products Fortra cable glands (electrical) and Carrier Smart Thermostat with InteliSense (HVAC)."),
 }
 TECH_IMAGES = {  # photos pulled from the articles the report cites
+ "2026-11-17": {
+  "lead": ("tech-2026-11-17-lead.jpg", "Florida home sales, October 2026",
+    "Florida single-family home sales fell 10.1% in October to 19,049, with new pending sales down 15.7% — Florida Realtors data released Nov 16.",
+    "Photo: RealtyWire"),
+  "inline": ("tech-2026-11-17-inline.png", "City-approved excavation plan beside 1321 Flatbush Ave, Brooklyn",
+    "The city-approved excavation plan for the lot beside 1321 Flatbush Ave — engineers say the collapsed building's side was the one place no added bracing was required.",
+    "Photo: Department of Buildings via Gothamist"),
+ },
  "2026-11-16": {
   "lead": ("tech-2026-11-16-lead.jpg", "Apple Home Collection accessories co-developed with LG and Schneider",
     "Apple Home Collection accessories, co-developed with LG and Schneider Electric — pre-orders opened Fri Nov 13, with the first products launching in December.",
@@ -616,6 +626,11 @@ TECH_IMAGES = {  # photos pulled from the articles the report cites
  },
 }
 TECH_SPOT = {  # date -> report item no. -> photo entry (from the cited article/product page)
+ "2026-11-17": {
+  "2.1": ("tech-fortra.jpg", "CMP Products Fortra cable gland",
+    "A CMP Fortra cable gland — the next-generation range is built for fast installation with secure, inspectable terminations.",
+    "Photo: CMP Products via Electrical Times"),
+ },
  "2026-11-16": {
   "2.1": ("tech-soneil.jpg", "Soneil Spark Mobile BESS trailer",
     "The Soneil Spark Mobile BESS — battery storage and controls in a towable trailer, ready to connect on site.",
@@ -955,16 +970,16 @@ body = f"""
 </div>
 <div class="techfeature"><span class="kicker">Construction · Engineering · Tech</span>
 <a class="photolink" href="tech/index.html">{photo_html(tech_lead, "")}</a>
-<h2 class="headline"><a href="tech/index.html">After the Brooklyn collapse, cracks at a Chinatown senior complex spark a call to halt construction next door</a></h2>
-<p class="spotline">Product Spotlight — Electrical: <b>Soneil Spark Mobile BESS</b> · HVAC: <b>Rinnai REHPW heat pump water heaters</b></p>
-<p class="byline">Sharma Tech · Edition of Nov 16, 2026</p>
+<h2 class="headline"><a href="tech/index.html">Florida home sales fall 10.1% in October; new contracts drop 15.7%</a></h2>
+<p class="spotline">Product Spotlight — Electrical: <b>CMP Products Fortra cable glands</b> · HVAC: <b>Carrier Smart Thermostat with InteliSense</b></p>
+<p class="byline">Sharma Tech · Edition of Nov 17, 2026</p>
 <a class="cont" href="tech/index.html">Read today's tech briefing →</a></div>
 {permit_card}
 <h2 class="sec">Legal — Back Issues</h2><ul class="arch">{legal_arch}</ul>
 <h2 class="sec">Finance — Back Issues</h2><ul class="arch">{fin_arch}</ul>
 <h2 class="sec">Tech — Back Issues</h2><ul class="arch">{tech_arch}</ul>
 """
-(DOCS / "index.html").write_text(shell("", "Home — Monday, November 16, 2026", body, active="home"), encoding="utf-8")
+(DOCS / "index.html").write_text(shell("", "Home — Tuesday, November 17, 2026", body, active="home"), encoding="utf-8")
 for _path, (_title, _sbody, _sec) in STORY_PAGES.items():
     _p = DOCS / _path
     _p.parent.mkdir(parents=True, exist_ok=True)
