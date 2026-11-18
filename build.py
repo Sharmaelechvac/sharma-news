@@ -346,6 +346,13 @@ FIN_GLANCE = {
    "Mortgage News Daily 30-year at 7.51% on Monday; 10-year Treasury eased 3 bp to 5.12%. Warsh said nothing on rates; Hammack backed slow, steady hikes.",
    "Florida Realtors October: single-family sales 19,049 (−10.1% YoY), pending sales −15.7%, median $420,000 (+2.2%); condo median $290,000 (−3.3%).",
    "Oil settled down over 3% (Brent $92.44, WTI $85.72) and U.S. retail diesel fell below $6/gal for the first time since early September."],
+ "2026-11-18": [
+   "Builder sentiment crashed to a 14-year low: NAHB HMI fell 4 points to 25 in November (South 27) — 46% of builders are cutting prices and 68% are offering incentives.",
+   "COMEX copper slid a fourth straight session to $5.9760/lb (−0.36%, lowest since June 24); LME official cash copper $13,226/t (−1.12%).",
+   "Mortgage News Daily 30-year at 7.48% on Tuesday; 10-year Treasury eased 2 bp to 5.10%. Musalem wants several hikes before spring; Williams rules out a 50 bp step — December +25 bp is priced at ~95–97%.",
+   "Stocks fell a fourth straight day: S&P 500 7,340.53 (−1.03%), Nasdaq 24,328.38 (−0.74%), Dow 50,759.42 (−1.64%). Nvidia beat after the close — revenue $115.8B (+103%), Q4 guidance $130B.",
+   "Retail sales rose 0.2% to $748.2B in October (ex-autos +0.6%); furniture fell 2.3%, building-material dealers rose 0.5%. Home Depot Q3 sales $43.4B (+4.9%), comps +2.2%.",
+   "Oil settled slightly higher (Brent $93.14, WTI $86.01); AAA diesel held under $6 at $5.98/gal. Central Florida October closings fell 4.0% YoY with the median at $390,000 (+1.3%)."],
 }
 FIN_NUMBERS = {
  "2026-11-11": [("CPI (Oct, m/m)", "+0.4%"), ("Core CPI (m/m)", "+0.3%"),
@@ -367,13 +374,16 @@ FIN_NUMBERS = {
  "2026-11-17": [("COMEX copper", "$5.9975/lb"), ("30-yr fixed (MND)", "7.51%"),
    ("10-yr Treasury", "5.12%"), ("S&P 500", "7,416.59"),
    ("Brent crude", "$92.44/bbl"), ("FL WC cut (2027)", "−7.4%")],
+ "2026-11-18": [("NAHB HMI (Nov)", "25"), ("COMEX copper", "$5.9760/lb"),
+   ("30-yr fixed (MND)", "7.48%"), ("10-yr Treasury", "5.10%"),
+   ("S&P 500", "7,340.53"), ("Brent crude", "$93.14/bbl")],
 }
 HOME_GLANCE = [
  "Legal — biggest story: Oregon sues OpenAI (Tue Nov 17) over ChatGPT child safety — AG Rayfield seeks at least $2.035 billion, alleging the chatbot was marketed as safe for kids.",
  "Legal — Florida: Boyd and Garrison take power at the Organization Session and decline to commit to DeSantis's pre-January Amendment 3 special session; a Miami-Dade voter sues DeSantis over the Senate seat vacant since Aug 25.",
- "Finance — Florida OIR approved the NCCI workers' comp cut on Mon Nov 16: −7.4% average for policies effective Jan 1, 2027.",
- "Finance — Stocks fell a third straight day (S&P 500 −1.92% to 7,416.59; Nasdaq −2.49%, in correction) and COMEX copper settled below $6 at $5.9975/lb.",
- "Finance — Florida Realtors October: single-family sales fell 10.1% YoY to 19,049 with pending sales down 15.7%; the daily 30-year mortgage rate was 7.51% on Monday."]
+ "Finance — Builder sentiment crashed to a 14-year low: NAHB HMI 25 in November (South 27), with 46% of builders cutting prices and 68% offering incentives.",
+ "Finance — Stocks fell a fourth straight day (S&P 500 −1.03% to 7,340.53) and COMEX copper slid to $5.9760/lb; Nvidia beat after the close (revenue $115.8B, +103%).",
+ "Finance — The daily 30-year mortgage rate eased to 7.48%; retail sales rose 0.2% in October and Home Depot posted $43.4B in Q3 sales (+4.9%)."]
 
 def glance_html(bullets):
     lis = "\n".join(f"<li>{b}</li>" for b in bullets)
@@ -555,6 +565,8 @@ FIN = {  # date -> (report glob, weekday label, archive one-liner)
    "A Sunday window with three real moves: KC Fed President Schmid called inflation “uncomfortably above the 2% target, and moving in the wrong direction” with a December hike fully priced (89% for 25 bp, 11% for 50 bp); LME copper fell a third straight session to $13,264.50/t, its lowest in over four months; oil eased on a forecast 1.7M bpd Q4 surplus. Plus 1,238 Central Florida price cuts and China's confirmation of the Nov 19 Xi–Trump–Putin trilateral — no new tariff rates."),
  "2026-11-17": ("sharma-daily-finance-news-2026-11-17-*", "Tuesday, November 17, 2026",
    "Florida OIR approved the NCCI workers' comp cut (−7.4% average, effective Jan 1, 2027) on Mon Nov 16. Stocks fell a third straight day — S&P 500 −1.92% to 7,416.59, Nasdaq −2.49% and in correction — and COMEX copper settled below $6 at $5.9975/lb, its lowest since June 24. Florida Realtors October: single-family sales −10.1% YoY to 19,049, pending sales −15.7%, median $420,000 (+2.2%). Oil settled down over 3% (Brent $92.44, WTI $85.72); the daily 30-year mortgage rate was 7.51%."),
+ "2026-11-18": ("sharma-daily-finance-news-2026-11-18-*", "Wednesday, November 18, 2026",
+   "Builder sentiment crashed to a 14-year low — NAHB HMI 25 in November (South 27), with 46% of builders cutting prices — as stocks fell a fourth straight day (S&P 500 −1.03% to 7,340.53, its lowest close since late July) and COMEX copper slid a fourth session to $5.9760/lb. The daily 30-year mortgage rate eased to 7.48% and the 10-year Treasury to 5.10%; October retail sales rose 0.2% to $748.2B. Nvidia beat after the close (revenue $115.8B, +103%; Q4 guidance $130B) and Home Depot posted Q3 sales of $43.4B (+4.9%). Oil settled slightly higher (Brent $93.14, WTI $86.01); AAA diesel held under $6 at $5.98/gal."),
 }
 LEGAL = {  # date -> (weekday label, biggest-story one-liner for hub cards/lists)
  "2026-11-12": ("Thursday, November 12, 2026",
@@ -585,7 +597,7 @@ for date, (pat, label, one) in FIN.items():
     (DOCS / "finance" / "archive" / f"{date}.html").write_text(
         shell("../../", f"Finance Briefing — {label}", body, active="finance"), encoding="utf-8")
 
-latest = "2026-11-17"
+latest = "2026-11-18"
 body = (f'<p class="crumb"><span class="kicker">Finance Briefing · Latest Edition</span></p>'
         f'<article>{render_article(fin_report(latest), latest, "../")}</article>')
 (DOCS / "finance" / "index.html").write_text(
@@ -998,8 +1010,8 @@ body = f"""
 <a class="cont" href="{LEGAL_BASE}/">Read today's legal briefing →</a></div>
 <div class="story"><span class="kicker">Finance Briefing</span>
 <a class="photolink" href="finance/index.html">{photo_html(home_imgs.get("finance"), "")}</a>
-<h2 class="headline"><a href="finance/index.html">{FIN['2026-11-17'][2]}</a></h2>
-<p class="byline">Finance Briefing — Warren Buffett, CFO · Edition of Nov 17, 2026</p>
+<h2 class="headline"><a href="finance/index.html">{FIN['2026-11-18'][2]}</a></h2>
+<p class="byline">Finance Briefing — Warren Buffett, CFO · Edition of Nov 18, 2026</p>
 <a class="cont" href="finance/index.html">Read today's finance briefing →</a></div>
 </div>
 <div class="techfeature"><span class="kicker">Construction · Engineering · Tech</span>
