@@ -243,9 +243,9 @@ def md_to_html(md_text):
 # disk or the slot renders empty — never a broken <img>.
 IMAGES = {
  "home": {
-  "legal": ("home-legal.jpg", "Department of Justice headquarters sign, Washington, D.C.",
-    "The Department of Justice headquarters sign in Washington, D.C. — the Justice Department warned Sen. Elizabeth Warren on Sunday to preserve records over her planned investigations.",
-    "Photo: Reuters"),
+  "legal": ("home-legal.jpg", "The OpenAI logo on a smartphone",
+    "The OpenAI logo on a smartphone — Oregon sued OpenAI on Tuesday, Nov 17 over ChatGPT child safety, seeking at least $2.035 billion.",
+    "Photo: Evolf/Shutterstock via Engadget"),
   "finance": ("2026-11-15-lead.jpg", "Copper market update graphic, November 14, 2026",
     "Copper eased to $6.05–6.08/lb at Friday's close, in the copper-market update the finance briefing cites.",
     "Photo: So OK Trading"),
@@ -369,8 +369,8 @@ FIN_NUMBERS = {
    ("Brent crude", "$92.44/bbl"), ("FL WC cut (2027)", "−7.4%")],
 }
 HOME_GLANCE = [
- "Legal — biggest story: Judge Ana Reyes's Saturday, Nov 14 TRO halting the East Potomac Park / golf-course closure and redevelopment in Washington, D.C.",
- "Legal — most useful Florida item: Koppert v. Homeowners Choice (2d DCA, Nov 13) — an arbitration decision emailed as a QuickBooks invoice attachment was not “served,” so the 20-day trial clock never ran.",
+ "Legal — biggest story: Oregon sues OpenAI (Tue Nov 17) over ChatGPT child safety — AG Rayfield seeks at least $2.035 billion, alleging the chatbot was marketed as safe for kids.",
+ "Legal — Florida: Boyd and Garrison take power at the Organization Session and decline to commit to DeSantis's pre-January Amendment 3 special session; a Miami-Dade voter sues DeSantis over the Senate seat vacant since Aug 25.",
  "Finance — Florida OIR approved the NCCI workers' comp cut on Mon Nov 16: −7.4% average for policies effective Jan 1, 2027.",
  "Finance — Stocks fell a third straight day (S&P 500 −1.92% to 7,416.59; Nasdaq −2.49%, in correction) and COMEX copper settled below $6 at $5.9975/lb.",
  "Finance — Florida Realtors October: single-family sales fell 10.1% YoY to 19,049 with pending sales down 15.7%; the daily 30-year mortgage rate was 7.51% on Monday."]
@@ -569,6 +569,8 @@ LEGAL = {  # date -> (weekday label, biggest-story one-liner for hub cards/lists
    "Biggest story: the Justice Department's Sunday, Nov 15 letter warning Sen. Elizabeth Warren to preserve records over her planned Trump investigations, citing \"significant legal consequences\" — plus the Florida Overton case reaching SCOTUS and an electrical contractor's Chapter 11 hearing today."),
  "2026-11-17": ("Tuesday, November 17, 2026",
    "Biggest story: California sues OpenAI (Mon Nov 16) over rogue AI-agent cyberattacks — the first state suit over the Hugging Face breach — plus the $38B Visa/Mastercard swipe-fee hearing, the Senate's 70–27 permitting-bill vote, and the DOL PERM overhaul proposal."),
+ "2026-11-18": ("Wednesday, November 18, 2026",
+   "Biggest story: Oregon sues OpenAI (Tue Nov 17) over ChatGPT child safety — AG Rayfield seeks at least $2.035 billion — plus Florida's new legislative leaders taking power and declining DeSantis's Amendment 3 special-session timeline, the St. John Fifth Circuit confirmation (52–46), and the PERM comment deadline fixed at Jan 19, 2027."),
 }
 
 def fin_report(date):
@@ -991,8 +993,8 @@ body = f"""
 <div class="front">
 <div class="story"><span class="kicker">Legal Briefing</span>
 <a class="photolink" href="{LEGAL_BASE}/">{photo_html(home_imgs.get("legal"), "")}</a>
-<h2 class="headline"><a href="{LEGAL_BASE}/">{LEGAL['2026-11-17'][1]}</a></h2>
-<p class="byline">Legal Briefing — Harvey, Legal Advisor · Edition of Nov 17, 2026</p>
+<h2 class="headline"><a href="{LEGAL_BASE}/">{LEGAL['2026-11-18'][1]}</a></h2>
+<p class="byline">Legal Briefing — Harvey, Legal Advisor · Edition of Nov 18, 2026</p>
 <a class="cont" href="{LEGAL_BASE}/">Read today's legal briefing →</a></div>
 <div class="story"><span class="kicker">Finance Briefing</span>
 <a class="photolink" href="finance/index.html">{photo_html(home_imgs.get("finance"), "")}</a>
