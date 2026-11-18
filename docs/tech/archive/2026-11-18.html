@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Sharma Tech — Wednesday, November 18, 2026 — Sharma News</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@700&family=IBM+Plex+Mono:wght@500;600&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#264387;--navy-d:#1a2f61;--gold:#F0A846;--ink:#1d2433;--mute:#5b6478;
+--line:#dfe4ee;--tint:#f4f6fb;--paper:#ffffff}
+*{box-sizing:border-box}html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--tint);color:var(--ink);
+font-family:"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+font-size:18px;line-height:1.65}
+h1,h2,h3,.headline,.item-head,.kicker,.secname,h2.sec,.glance h2,nav.main a,.top .ttl b,
+.spotline,.cont{font-family:"Barlow Semi Condensed","Arial Narrow",Arial,sans-serif;font-weight:700}
+a{color:var(--navy);text-decoration:underline;text-decoration-color:#b9c4dc;text-underline-offset:2px}
+a:hover{color:var(--navy-d);text-decoration-color:var(--navy-d)}
+.num,.kn b,.dateline{font-family:"IBM Plex Mono",ui-monospace,"SFMono-Regular",Menlo,Consolas,monospace}
+/* ---------- header ---------- */
+.top{background:#fff;border-bottom:3px solid var(--gold)}
+.top .bar{max-width:1040px;margin:0 auto;padding:12px 16px;display:flex;align-items:center;
+justify-content:space-between;gap:12px}
+.top .brand{display:block;line-height:0}
+.top img.logo{height:54px;width:auto}
+.top .ttl{text-align:right;line-height:1.25}
+.top .ttl b{display:block;font-size:19px;color:var(--navy-d);font-weight:700}
+.top .ttl span{display:block;font-size:14px;color:var(--mute)}
+nav.main{background:var(--navy-d)}
+nav.main .in{max-width:1040px;margin:0 auto;padding:0 8px;display:flex;overflow-x:auto;
+-webkit-overflow-scrolling:touch;scrollbar-width:none}
+nav.main .in::-webkit-scrollbar{display:none}
+nav.main a{color:#fff;text-decoration:none;font-size:17px;font-weight:700;white-space:nowrap;
+padding:13px 12px;display:flex;align-items:center;min-height:48px}
+nav.main a:hover{color:var(--gold)}
+nav.main a.on{color:var(--gold);border-bottom:3px solid var(--gold);padding-bottom:10px}
+.wrap{max-width:1040px;margin:0 auto;padding:8px 16px 48px;background:#fff}
+/* ---------- photos ---------- */
+.photo{margin:10px 0 12px}
+.photo img{width:100%;height:auto;display:block;background:var(--tint);border:1px solid var(--line)}
+.photo figcaption{font-size:14px;color:var(--mute);margin-top:5px;line-height:1.45}
+.photo .credit{display:block;font-size:13px;color:var(--mute);margin-top:1px}
+.photo.small{max-width:430px}
+.story .photo img{max-height:260px;object-fit:cover;object-position:top}
+/* ---------- at a glance / key numbers ---------- */
+.glance{background:var(--tint);border-left:3px solid var(--gold);padding:12px 16px 6px;margin:16px 0 14px}
+.glance h2{font-size:14px;text-transform:uppercase;letter-spacing:.12em;color:var(--navy);
+margin:0 0 6px;border:none;padding:0;font-weight:700}
+.glance ul{margin:0 0 8px;padding-left:18px}
+.glance li{margin:4px 0;font-size:17px}
+.keynums{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));border:1px solid var(--line);
+margin:0 0 18px}
+.kn{padding:9px 12px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);margin:0 -1px -1px 0}
+.kn b{display:block;font-size:28px;line-height:1.15;color:var(--navy-d)}
+.kn span{font-size:14px;color:var(--mute)}
+/* ---------- front page ---------- */
+.front{display:grid;grid-template-columns:1fr 1fr;gap:0;margin-top:18px;
+border-bottom:1px solid var(--line);padding-bottom:18px}
+.story{padding:0 20px}
+.story:first-child{padding-left:0}
+.story + .story{border-left:1px solid var(--line);padding-right:0}
+.kicker{display:inline-block;font-size:14px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
+color:var(--navy);border-bottom:2px solid var(--gold);padding-bottom:2px}
+.story .headline,.techfeature .headline{font-weight:700;color:var(--navy-d);
+font-size:44px;line-height:1.12;margin:8px 0 10px}
+.byline{font-size:14px;color:var(--mute);margin:0 0 6px}
+.cont{font-size:17px;font-weight:700;color:var(--navy);display:inline-block;padding:10px 0}
+/* ---------- index / archive ---------- */
+h2.sec{font-size:30px;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:var(--navy);
+border-bottom:2px solid var(--navy);padding-bottom:6px;margin:34px 0 0}
+.arch{list-style:none;margin:0;padding:0}
+.arch li{border-bottom:1px solid var(--line);padding:12px 0;overflow:hidden}
+.arch li a{font-size:19px;font-weight:700;color:var(--navy-d);text-decoration:none}
+.arch li a:hover{text-decoration:underline}
+.arch .d{color:var(--mute);font-size:14px;letter-spacing:0;text-transform:none}
+.arch p{margin:2px 0 0;color:#3a4255;font-size:17px}
+.arch img.thumb{width:96px;height:64px;object-fit:cover;float:left;margin:3px 12px 4px 0;
+background:var(--tint);border:1px solid var(--line)}
+/* ---------- article pages ---------- */
+article{overflow-wrap:break-word;padding-top:4px;max-width:72ch}
+article h1{font-size:28px;line-height:1.2;color:var(--navy-d);margin:8px 0 10px}
+article h2{font-size:30px;line-height:1.2;color:var(--navy-d);margin-top:32px;border-bottom:2px solid var(--gold);padding-bottom:6px}
+article h3{font-size:22px;color:var(--ink);margin-top:24px}
+article a{word-break:break-word}
+article table{border-collapse:collapse;width:100%;display:block;overflow-x:auto;font-size:16px}
+article th,article td{border:1px solid var(--line);padding:8px 11px;text-align:left;vertical-align:top}
+article th{background:var(--tint);color:var(--navy-d)}
+article code{background:var(--tint);padding:1px 5px;font-family:ui-monospace,Menlo,Consolas,monospace;font-size:.88em}
+article blockquote{border-left:3px solid var(--gold);margin:14px 0;padding:2px 14px;color:#3a4255}
+.windowline{font-size:16px;color:var(--mute);border-bottom:1px solid var(--line);padding-bottom:8px}
+.jump{position:sticky;top:0;z-index:6;background:#fff;border-bottom:1px solid var(--line);
+display:flex;gap:0 16px;overflow-x:auto;white-space:nowrap;padding:0;margin:0 0 6px;scrollbar-width:none}
+.jump::-webkit-scrollbar{display:none}
+.jump a{color:var(--navy);text-decoration:none;font-size:15px;font-weight:600;padding:14px 0}
+.jump a:hover{color:var(--navy-d);text-decoration:underline}
+.item{border-bottom:1px solid var(--line);padding:12px 0 12px}
+.item .item-head{font-size:26px;line-height:1.25;color:var(--navy-d);margin:2px 0 6px}
+.item .deck{margin:0 0 6px;color:#3a4255;font-size:20px;line-height:1.5}
+.item .impact{margin:0 0 4px;font-size:17px;background:#fff8ec;border-left:3px solid var(--gold);padding:6px 12px}
+.item .impact b{color:var(--navy-d)}
+.item-head a,.spotlight .item-head a,.headline a{color:inherit;text-decoration:none}
+.item-head a:hover,.spotlight .item-head a:hover,.headline a:hover{text-decoration:underline}
+a.photolink{display:block;text-decoration:none}
+.storyhead{font-size:28px;line-height:1.2;color:var(--navy-d);margin:6px 0 10px}
+details.full{margin-top:6px}
+details.full summary{cursor:pointer;font-size:16px;font-weight:600;color:var(--navy);padding:12px 0}
+details.full .fullbody{border-top:1px solid var(--line);padding-top:4px}
+.sec-intro{color:#3a4255}
+.totop{text-align:right;margin-top:22px}
+.totop a{font-size:15px;font-weight:600;padding:10px 0;display:inline-block}
+.secname{font-size:14px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--navy);
+border-bottom:2px solid var(--navy);padding:6px 0;margin:12px 0 4px}
+.spotlight{border:1px solid var(--line);border-top:3px solid var(--gold);padding:14px 18px 10px;margin:0 0 22px;background:#fff}
+.spotlight .item-head{font-size:28px;line-height:1.25;color:var(--navy-d);margin:2px 0 6px}
+.spotlight .makerline{font-size:16px;color:var(--mute);border-bottom:1px solid var(--line);padding-bottom:7px;margin:0 0 10px}
+.spotlight .photo{max-width:560px}
+.spotlight .deck{font-size:20px;line-height:1.5;color:#3a4255;margin:0 0 6px}
+.techfeature{border-bottom:1px solid var(--line);padding:18px 0 18px;display:grid;
+grid-template-columns:300px 1fr;column-gap:20px;align-items:start}
+.techfeature .kicker{grid-column:1/-1;justify-self:start;margin-bottom:6px}
+.techfeature .photolink{grid-row:2/6}
+.techfeature.nophoto{grid-template-columns:1fr}
+.techfeature .photo{margin:4px 0 0}
+.techfeature .photo img{max-height:200px;object-fit:cover}
+.techfeature .photo figcaption{display:none}
+.spotline{font-size:17px;margin:0 0 6px}
+.crumb{color:var(--mute);font-size:14px;margin:14px 0 6px}
+.crumb a{padding:8px 0;display:inline-block}
+footer{background:var(--navy-d);color:#cfd8ee;border-top:3px solid var(--gold);font-size:14px}
+.pagehead{font-size:38px;line-height:1.15;color:var(--navy-d);margin:8px 0 10px}
+table.data{border-collapse:collapse;width:100%;font-size:17px;margin:6px 0 10px}
+table.data th,table.data td{border:1px solid var(--line);padding:10px 12px;text-align:left;vertical-align:top}
+table.data th{background:var(--tint);color:var(--navy-d);
+font-family:"Barlow Semi Condensed","Arial Narrow",sans-serif;font-weight:700;font-size:17px}
+table.data td.n,table.data th.n{text-align:right;font-family:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace}
+.tblwrap{overflow-x:auto}
+footer .fin{max-width:1040px;margin:0 auto;padding:14px 16px 18px}
+footer .fin b{color:#fff}
+@media(max-width:760px){
+body{font-size:17px}
+.top img.logo{height:44px}
+.top .ttl b{font-size:17px}
+.top .ttl span{font-size:14px}
+.front{grid-template-columns:1fr}
+.story{padding:0}
+.story + .story{border-left:none;border-top:1px solid var(--line);margin-top:16px;padding-top:14px}
+.techfeature{grid-template-columns:1fr}
+.techfeature .photolink{grid-row:auto}
+.story .headline,.techfeature .headline{font-size:34px}
+article h1,.storyhead{font-size:26px}
+article h2{font-size:26px}
+.item .item-head{font-size:24px}
+.item .deck,.spotlight .deck{font-size:19px}
+.spotlight .item-head{font-size:26px}
+h2.sec{font-size:26px}
+.pagehead{font-size:30px}
+.kn b{font-size:24px}
+table.data{font-size:16px}
+.photo.small{max-width:none}
+.story .photo img{max-height:200px}
+}
+</style></head>
+<body id="top">
+<header class="top">
+<div class="bar"><a class="brand" href="../../index.html"><img class="logo" src="../../logo.png" alt="Sharma Electric &amp; HVAC"></a>
+<div class="ttl"><b>Sharma News</b><span>Wednesday, November 18, 2026 · Updated 5:00 AM ET</span></div></div>
+<nav class="main"><div class="in">
+<a href="../../index.html">Home</a>
+<a href="https://sharmaelechvac.github.io/sharma-legal-briefing/">Legal</a>
+<a href="../../finance/index.html">Finance</a>
+<a href="../../finance/archive/index.html">Finance archive</a>
+<a href="../../tech/index.html" class="on">Tech</a>
+<a href="../../tech/archive/index.html">Tech archive</a>
+<a href="../../permits/index.html">Permit News</a>
+</div></nav></header>
+<div class="wrap"><p class="crumb"><a href="../index.html">Tech Briefing</a> · <a href="index.html">Archive</a></p><article><div class="secname">Construction · Engineering · Tech</div><h1>Sharma Tech — Construction / Engineering / Tech News</h1>
+<p class="windowline">Edition No. 4 — Wednesday, November 18, 2026 (ET)</p>
+<div class="sec-intro">
+<p>Daily edition for Sharma Electric &amp; HVAC (Florida electrical + HVAC subcontractor). News window: Tue Nov 17, 5:00 AM ET – Wed Nov 18, 5:00 AM ET, widened to 72 hours only for items not in prior editions. Updates to earlier stories are labelled as updates. Prices are stated only where a source publishes one. Photos are pulled from the articles cited, and each PHOTO line names its source page.</p>
+<hr />
+</div><nav class="jump"><a href="#glance">At a Glance</a><a href="#spotlight">Product Spotlight</a><a href="#sec-1">Section 1 — Top construction / engineering / tech stories</a><a href="#sec-2">Not confirmed — excluded from the confirmed items above</a><a href="#sec-3">About the reporting window</a></nav><div class="glance" id="glance"><h2>At a Glance</h2><ul><li><strong>Builder confidence:</strong> the NAHB/Wells Fargo Housing Market Index fell four points to <strong>25 in November</strong> — the lowest reading since April 2012 — in data released Tue Nov 17. All three components fell; buyer traffic dropped to 16, its lowest in 15 years outside the start of the pandemic, and <strong>46% of builders cut prices</strong>, a post-Covid high, at an average cut of 6%.</li>
+<li><strong>Update — Brooklyn collapse:</strong> on Tue Nov 17 the city ordered portions of the excavation beside 1321 Flatbush Ave <strong>backfilled</strong>, paused debris removal for an independent forensic engineer, and ordered shoring at neighbouring 1325 Flatbush. ENR's records review says whether the collapsed building was actually underpinned is still unclear, and the required monitoring data is not in the public record.</li>
+<li><strong>Safety credentials:</strong> a New York safety-training provider, RedCode Inc., has been indicted for allegedly selling Site Safety Training and OSHA cards for <strong>$500 each with no training</strong>; its cards — held by about 2,000 workers — have been invalidated and the company is closed.</li>
+<li><strong>Florida:</strong> Lee County commissioners awarded Wright Construction Group a <strong>$47.1 million contract</strong> on Tue Nov 17 for Alico Road Phase 1A in southern Lee County, with construction expected to begin in early January 2027.</li>
+<li><strong>Electrical spotlight product (new today):</strong> <strong>GE Vernova HYpact-145g compact switchgear</strong> — a 145 kV, 40 kA SF6-free hybrid switchgear using g3 gas in place of SF6, at least 50% smaller than a conventional air-insulated substation, launched <strong>Tue Nov 17, 2026</strong> in Cologne and available to order now. (Held as not confirmed in Edition 3 because the announcement landed after that edition's 5:00 AM ET close; it sits inside today's window.)</li>
+<li><strong>HVAC spotlight product (new today):</strong> <strong>Carrier ClimaVision 3-MyStat Pro Pack</strong> — a packaged light-commercial solution combining Carrier rooftop equipment, connected controls, cloud technology and AI from Carrier's 75F acquisition, announced <strong>Tue Nov 17, 2026</strong>; orders open this year, shipments planned for early 2027.</li></ul></div><h2 id="spotlight">Product Spotlight</h2><p class="sec-intro">A cool new electrical product and a cool new HVAC product every weekday — fresh picks Monday–Friday; weekends carry Friday's picks.</p><div class="spotlight"><span class="kicker">Electrical Spotlight</span><h3 class="item-head"><a href="../../tech/story/2026-11-18-2-1-electrical-spotlight-ge-vernova-hypact-145g-sf6-free-compact.html">2.1 — ELECTRICAL SPOTLIGHT: GE Vernova HYpact-145g SF6-Free Compact Switchgear</a></h3><a class="photolink" href="../../tech/story/2026-11-18-2-1-electrical-spotlight-ge-vernova-hypact-145g-sf6-free-compact.html"><figure class="photo "><img src="../../img/tech-gevernova.jpg" alt="GE Vernova HYpact-145g compact hybrid switchgear" loading="lazy"><figcaption>A rendering of GE Vernova's HYpact-145g — a 145 kV, 40 kA SF6-free hybrid switchgear using g3 gas, at least 50% smaller than a conventional air-insulated substation.<span class="credit">Photo: GE Vernova</span></figcaption></figure></a><p class="makerline">Maker: GE Vernova Inc. (NYSE: GEV) — Electrification segment, Grid Solutions · Released: Tue Nov 17, 2026 — launched in Cologne, Germany, at the Power Transmission and Distribution Technology conference (Nov 17–19); available to order…</p><p class="deck"><b>Why it's cool:</b> Sharma does not buy 145 kV transmission gear — the value is what this signals about where switchgear is heading. SF6-free insulation, half the footprint, factory-sealed assemblies that install in days, and digital current/voltage sensing built in are the same design pressures now working down into the distribution gear Sharma's…</p><a class="cont" href="../../tech/story/2026-11-18-2-1-electrical-spotlight-ge-vernova-hypact-145g-sf6-free-compact.html">Read the full story &rarr;</a></div>
+<div class="spotlight"><span class="kicker">HVAC Spotlight</span><h3 class="item-head"><a href="../../tech/story/2026-11-18-2-2-hvac-spotlight-carrier-climavision-3-mystat-pro-pack.html">2.2 — HVAC SPOTLIGHT: Carrier ClimaVision 3-MyStat Pro Pack</a></h3><a class="photolink" href="../../tech/story/2026-11-18-2-2-hvac-spotlight-carrier-climavision-3-mystat-pro-pack.html"><figure class="photo "><img src="../../img/tech-climavision.png" alt="Carrier ClimaVision MyStat v2 IAQ sensor" loading="lazy"><figcaption>Carrier's ClimaVision MyStat v2 IAQ sensor — part of the ClimaVision 3-MyStat Pro Pack, which packages Carrier rooftop equipment with 75F controls, cloud technology and AI for light commercial buildings.<span class="credit">Photo: Carrier</span></figcaption></figure></a><p class="makerline">Maker: Carrier (Carrier Global Corporation, NYSE: CARR), incorporating technology from its 75F… · Released: Tue Nov 17, 2026 — announced via PR Newswire at 4:15 PM ET on Nov 17, 2026. Carrier expects to begin accepting orders this year, with shipments…</p><p class="deck"><b>Why it's cool:</b> This is the controls package as a single contractor-friendly product instead of a parts list: rooftop unit, controls, cloud and AI from one maker, designed for the light-commercial buildings — schools, offices, small retail — where Sharma's commercial HVAC side competes and where "no automation" is still the norm. A simpler install path…</p><a class="cont" href="../../tech/story/2026-11-18-2-2-hvac-spotlight-carrier-climavision-3-mystat-pro-pack.html">Read the full story &rarr;</a></div><h2 id="sec-1">Section 1 — Top construction / engineering / tech stories</h2><a class="photolink" href="../../tech/story/2026-11-18-1-1-builder-confidence-falls-to-25-a-14-year-low-nahb-november-h.html"><figure class="photo "><img src="../../img/tech-2026-11-18-lead.webp" alt="Port Authority stakeholders at a groundbreaking ceremony at Newark Liberty International Airport" loading="lazy"><figcaption>Port Authority stakeholders at the Oct 7, 2025 groundbreaking at Newark Liberty International Airport — the authority's proposed $10.3 billion 2027 budget, with $4 billion in capital spending, was reported Nov 17.<span class="credit">Photo: Port Authority of New York and New Jersey via Construction Dive</span></figcaption></figure></a><div class="item"><h3 class="item-head"><a href="../../tech/story/2026-11-18-1-1-builder-confidence-falls-to-25-a-14-year-low-nahb-november-h.html">1.1 — Builder confidence falls to 25, a 14-year low — NAHB November HMI released Tue Nov 17, 2026</a></h3><p class="deck">What happened: Builder confidence in the market for newly built single-family homes fell four points to 25 in November , according to the National Association of Home Builders (NAHB)/Wells Fargo Housing Market Index (HMI)…</p><p class="impact"><b>Why it matters to Sharma:</b> Expect continued price pressure on rough-in and trim bids and more incentive-driven negotiation from builders; the South region reading of 27 is the relevant one for Florida. No outreach on research alone — this is a market signal for bid posture, not a lead.…</p><a class="cont" href="../../tech/story/2026-11-18-1-1-builder-confidence-falls-to-25-a-14-year-low-nahb-november-h.html">Read the full story &rarr;</a></div>
+<div class="item"><h3 class="item-head"><a href="../../tech/story/2026-11-18-1-2-update-after-the-brooklyn-collapse-the-city-orders-backfill.html">1.2 — UPDATE: After the Brooklyn collapse, the city orders backfill and an independent forensic review; whether the building was underpinned is still unclear — ENR, updated Tue Nov 17, 2026</a></h3><p class="deck">What happened: Engineering News-Record's review of approved plans and city records (updated 10:04 PM ET, Tue Nov 17, 2026) reports that New York City is bringing in an independent engineering firm to investigate the Nov 11…</p><p class="impact"><b>Why it matters to Sharma:</b> Same discipline as Editions 1–3, sharpened again: on underground and TUG work next to existing structures, the contemporaneous record — pre-work photos, monitoring, inspection sign-offs as the work proceeds — is what protects the crew and the company if…</p><a class="cont" href="../../tech/story/2026-11-18-1-2-update-after-the-brooklyn-collapse-the-city-orders-backfill.html">Read the full story &rarr;</a></div>
+<div class="item"><h3 class="item-head"><a href="../../tech/story/2026-11-18-1-3-port-authority-proposes-a-10-3-billion-2027-budget-with-4-bi.html">1.3 — Port Authority proposes a $10.3 billion 2027 budget with $4 billion in capital spending — proposed Nov 12; reported Tue Nov 17, 2026</a></h3><p class="deck">What happened: Construction Dive reported Tue Nov 17, 2026 that the Port Authority of New York and New Jersey has proposed a $10.3 billion capital and operating budget for 2027 (proposed in the authority's Nov 12 news release),…</p><p class="impact"><b>Why it matters to Sharma:</b> No direct scope — Sharma does not work in the New York/New Jersey market. The value is the cost signal: a major public owner is budgeting around the same labour and materials inflation Sharma sees in Florida bids. Source: Construction Dive, Nov 17, 2026 —…</p><a class="cont" href="../../tech/story/2026-11-18-1-3-port-authority-proposes-a-10-3-billion-2027-budget-with-4-bi.html">Read the full story &rarr;</a></div>
+<div class="item"><h3 class="item-head"><a href="../../tech/story/2026-11-18-1-4-construction-training-provider-indicted-for-selling-fake-saf.html">1.4 — Construction training provider indicted for selling fake safety cards — reported Tue Nov 17, 2026</a></h3><p class="deck">What happened: Lutfur Rahman, owner of New York safety-training provider RedCode Inc., and associate Mohammed Tushar have been indicted by the Brooklyn District Attorney's Office and charged with making and selling safety cards…</p><p class="impact"><b>Why it matters to Sharma:</b> A credential-hygiene reminder for Sharma's own crews and any labour Sharma brings on: training records should come from verifiable providers and be checkable, because a GC or inspector who finds one fake card will question every card on the job. Source:…</p><a class="cont" href="../../tech/story/2026-11-18-1-4-construction-training-provider-indicted-for-selling-fake-saf.html">Read the full story &rarr;</a></div>
+<div class="item"><h3 class="item-head"><a href="../../tech/story/2026-11-18-1-5-florida-lee-county-awards-a-47-1-million-alico-road-contract.html">1.5 — FLORIDA: Lee County awards a $47.1 million Alico Road contract — Tue Nov 17, 2026</a></h3><p class="deck">What happened: Lee County commissioners awarded Wright Construction Group a $47.1 million contract on Tue Nov 17, 2026 for Alico Road Phase 1A in southern Lee County, SWFL Report reported that evening. The work includes two…</p><p class="impact"><b>Why it matters to Sharma:</b> Market signal only; no outreach on research alone. Road and utility programmes of this size support the broader Southwest Florida construction economy that Sharma's southern builders work in. Source: SWFL Report, Nov 17, 2026 —…</p><a class="cont" href="../../tech/story/2026-11-18-1-5-florida-lee-county-awards-a-47-1-million-alico-road-contract.html">Read the full story &rarr;</a></div>
+<div class="item"><h3 class="item-head"><a href="../../tech/story/2026-11-18-1-6-florida-brief-fdot-night-closures-in-broward-county-through.html">1.6 — FLORIDA brief: FDOT night closures in Broward County through Thu Nov 19 — checked Tue Nov 17, 2026</a></h3><p class="deck">What happened: Davie Today's FDOT summary (last checked Tue Nov 17, 2026, from FDOT's Nov 16–19 ramp-closure notice and District 4's Broward traffic report) lists a week of night work around Davie: the northbound State Road…</p><p class="impact"><b>Why it matters to Sharma:</b> Route-planning note only for any Broward County travel this week; the overhead-sign work is another reminder of how much public electrical scope sits inside FDOT projects. Source: Davie Today (from FDOT notices), checked Nov 17, 2026 —…</p><a class="cont" href="../../tech/story/2026-11-18-1-6-florida-brief-fdot-night-closures-in-broward-county-through.html">Read the full story &rarr;</a></div><a class="photolink" href="../../tech/story/2026-11-18-1-2-update-after-the-brooklyn-collapse-the-city-orders-backfill.html"><figure class="photo small"><img src="../../img/tech-2026-11-18-inline.png" alt="New York City" loading="lazy"><figcaption>New York City — a city safety-training provider has been indicted for allegedly selling Site Safety Training and OSHA cards with no training; about 2,000 of its cards have been invalidated.<span class="credit">Photo: NRCA</span></figcaption></figure></a>
+<h2 id="sec-2">Not confirmed — excluded from the confirmed items above</h2><div class="item"><p class="deck">Spelsberg Abox 040-L/S junction box "launched Nov 18, 2026" — a single Engineer News Network item dated Wed Nov 18, 2026 (09:00 UTC) describes a new Spelsberg junction-box design with a self-sealing membrane, threaded cable…</p><a class="cont" href="../../tech/story/2026-11-18-not-confirmed-excluded-from-the-confirmed-items-above.html">Read this section in full &rarr;</a></div>
+<h2 id="sec-3">About the reporting window</h2>
+<p>Confirmed in-window (Nov 17, 5:00 AM – Nov 18, 5:00 AM ET) items: 1.1, 1.2, 1.4, 1.5, and both spotlights (GE Vernova HYpact-145g and Carrier ClimaVision 3-MyStat Pro Pack, both launched/announced Nov 17). Item 1.3 (budget proposed Nov 12, reported by Construction Dive Nov 17) and item 1.6 (FDOT notices from Nov 13–16, summarised and checked Nov 17) sit inside the 72-hour widening, with their true dates stated wherever they appear. Nothing from Editions 1–3 is repeated as new; the Brooklyn collapse item is labelled as an update, and the HYpact-145g — held as not confirmed in Edition 3 — is reported here on its true Nov 17 launch date.</p><p class="totop"><a href="#top">Back to top ↑</a></p></article></div>
+<footer><div class="fin"><b>Sharma Electric &amp; HVAC</b> · Sharma News, updated daily at 5:00 AM ET. News summaries for the Sharma team. Not legal or financial advice.</div></footer>
+</body></html>

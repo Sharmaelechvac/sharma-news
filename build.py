@@ -216,7 +216,7 @@ def shell(prefix, title, body, chip="", active=""):
 <body id="top">
 <header class="top">
 <div class="bar"><a class="brand" href="{prefix}index.html"><img class="logo" src="{prefix}logo.png" alt="Sharma Electric &amp; HVAC"></a>
-<div class="ttl"><b>Sharma News</b><span>Tuesday, November 17, 2026 · Updated 5:00 AM ET</span></div></div>
+<div class="ttl"><b>Sharma News</b><span>Wednesday, November 18, 2026 · Updated 5:00 AM ET</span></div></div>
 <nav class="main"><div class="in">
 <a href="{prefix}index.html"{on("home")}>Home</a>
 <a href="{LEGAL_BASE}/">Legal</a>
@@ -615,8 +615,18 @@ TECH = {  # date -> (report glob, weekday label, archive one-liner)
    "Update: after the Brooklyn collapse, cracks at a Chinatown senior complex spark a call to halt jail construction next door; in Florida, GL Homes turns two Palm Beach County golf courses into housing under the new Infill Redevelopment Act. Product Spotlight (new today): Soneil Spark Mobile BESS (electrical) and Rinnai REHPW heat pump water heaters (HVAC)."),
  "2026-11-17": ("sharma-tech-news-2026-11-17-*", "Tuesday, November 17, 2026",
    "Florida existing single-family sales fell 10.1% in October to 19,049 with new pending sales down 15.7% (Florida Realtors, Nov 16); Caterpillar makes collision warning and mitigation standard on most new machines in 2027. Product Spotlight (new today): CMP Products Fortra cable glands (electrical) and Carrier Smart Thermostat with InteliSense (HVAC)."),
+ "2026-11-18": ("sharma-tech-news-2026-11-18-*", "Wednesday, November 18, 2026",
+   "Builder confidence fell four points to 25 in November — the lowest since April 2012 (NAHB, Nov 17) — with 46% of builders cutting prices; in Florida, Lee County awarded a $47.1M Alico Road contract. Product Spotlight (new today): GE Vernova HYpact-145g SF6-free switchgear (electrical) and Carrier ClimaVision 3-MyStat Pro Pack (HVAC)."),
 }
 TECH_IMAGES = {  # photos pulled from the articles the report cites
+ "2026-11-18": {
+  "lead": ("tech-2026-11-18-lead.webp", "Port Authority stakeholders at a groundbreaking ceremony at Newark Liberty International Airport",
+    "Port Authority stakeholders at the Oct 7, 2025 groundbreaking at Newark Liberty International Airport — the authority's proposed $10.3 billion 2027 budget, with $4 billion in capital spending, was reported Nov 17.",
+    "Photo: Port Authority of New York and New Jersey via Construction Dive"),
+  "inline": ("tech-2026-11-18-inline.png", "New York City",
+    "New York City — a city safety-training provider has been indicted for allegedly selling Site Safety Training and OSHA cards with no training; about 2,000 of its cards have been invalidated.",
+    "Photo: NRCA"),
+ },
  "2026-11-17": {
   "lead": ("tech-2026-11-17-lead.jpg", "Florida home sales, October 2026",
     "Florida single-family home sales fell 10.1% in October to 19,049, with new pending sales down 15.7% — Florida Realtors data released Nov 16.",
@@ -640,6 +650,14 @@ TECH_IMAGES = {  # photos pulled from the articles the report cites
  },
 }
 TECH_SPOT = {  # date -> report item no. -> photo entry (from the cited article/product page)
+ "2026-11-18": {
+  "2.1": ("tech-gevernova.jpg", "GE Vernova HYpact-145g compact hybrid switchgear",
+    "A rendering of GE Vernova's HYpact-145g — a 145 kV, 40 kA SF6-free hybrid switchgear using g3 gas, at least 50% smaller than a conventional air-insulated substation.",
+    "Photo: GE Vernova"),
+  "2.2": ("tech-climavision.png", "Carrier ClimaVision MyStat v2 IAQ sensor",
+    "Carrier's ClimaVision MyStat v2 IAQ sensor — part of the ClimaVision 3-MyStat Pro Pack, which packages Carrier rooftop equipment with 75F controls, cloud technology and AI for light commercial buildings.",
+    "Photo: Carrier"),
+ },
  "2026-11-17": {
   "2.1": ("tech-fortra.jpg", "CMP Products Fortra cable gland",
     "A CMP Fortra cable gland — the next-generation range is built for fast installation with secure, inspectable terminations.",
@@ -984,16 +1002,16 @@ body = f"""
 </div>
 <div class="techfeature"><span class="kicker">Construction · Engineering · Tech</span>
 <a class="photolink" href="tech/index.html">{photo_html(tech_lead, "")}</a>
-<h2 class="headline"><a href="tech/index.html">Florida home sales fall 10.1% in October; new contracts drop 15.7%</a></h2>
-<p class="spotline">Product Spotlight — Electrical: <b>CMP Products Fortra cable glands</b> · HVAC: <b>Carrier Smart Thermostat with InteliSense</b></p>
-<p class="byline">Sharma Tech · Edition of Nov 17, 2026</p>
+<h2 class="headline"><a href="tech/index.html">Builder confidence falls to 25, a 14-year low; 46% of builders cut prices</a></h2>
+<p class="spotline">Product Spotlight — Electrical: <b>GE Vernova HYpact-145g SF6-free switchgear</b> · HVAC: <b>Carrier ClimaVision 3-MyStat Pro Pack</b></p>
+<p class="byline">Sharma Tech · Edition of Nov 18, 2026</p>
 <a class="cont" href="tech/index.html">Read today's tech briefing →</a></div>
 {permit_card}
 <h2 class="sec">Legal — Back Issues</h2><ul class="arch">{legal_arch}</ul>
 <h2 class="sec">Finance — Back Issues</h2><ul class="arch">{fin_arch}</ul>
 <h2 class="sec">Tech — Back Issues</h2><ul class="arch">{tech_arch}</ul>
 """
-(DOCS / "index.html").write_text(shell("", "Home — Tuesday, November 17, 2026", body, active="home"), encoding="utf-8")
+(DOCS / "index.html").write_text(shell("", "Home — Wednesday, November 18, 2026", body, active="home"), encoding="utf-8")
 for _path, (_title, _sbody, _sec) in STORY_PAGES.items():
     _p = DOCS / _path
     _p.parent.mkdir(parents=True, exist_ok=True)
