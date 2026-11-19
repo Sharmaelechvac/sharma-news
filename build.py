@@ -216,7 +216,7 @@ def shell(prefix, title, body, chip="", active=""):
 <body id="top">
 <header class="top">
 <div class="bar"><a class="brand" href="{prefix}index.html"><img class="logo" src="{prefix}logo.png" alt="Sharma Electric &amp; HVAC"></a>
-<div class="ttl"><b>Sharma News</b><span>Wednesday, November 18, 2026 · Updated 5:00 AM ET</span></div></div>
+<div class="ttl"><b>Sharma News</b><span>Thursday, November 19, 2026 · Updated 5:00 AM ET</span></div></div>
 <nav class="main"><div class="in">
 <a href="{prefix}index.html"{on("home")}>Home</a>
 <a href="{LEGAL_BASE}/">Legal</a>
@@ -631,8 +631,18 @@ TECH = {  # date -> (report glob, weekday label, archive one-liner)
    "Florida existing single-family sales fell 10.1% in October to 19,049 with new pending sales down 15.7% (Florida Realtors, Nov 16); Caterpillar makes collision warning and mitigation standard on most new machines in 2027. Product Spotlight (new today): CMP Products Fortra cable glands (electrical) and Carrier Smart Thermostat with InteliSense (HVAC)."),
  "2026-11-18": ("sharma-tech-news-2026-11-18-*", "Wednesday, November 18, 2026",
    "Builder confidence fell four points to 25 in November — the lowest since April 2012 (NAHB, Nov 17) — with 46% of builders cutting prices; in Florida, Lee County awarded a $47.1M Alico Road contract. Product Spotlight (new today): GE Vernova HYpact-145g SF6-free switchgear (electrical) and Carrier ClimaVision 3-MyStat Pro Pack (HVAC)."),
+ "2026-11-19": ("sharma-tech-news-2026-11-19-*", "Thursday, November 19, 2026",
+   "October starts rose 9.9% to 1.309M but permits fell 7.4% to 1.295M — single-family permits down 8.7% to 772,000, the lowest since January 2023 (Census/HUD, Nov 18); Suffolk completed Gilead's research center on a four-tool contech stack, and WWE proposed a $100M Performance Center in downtown Orlando. Product Spotlight (new today): Enphase IQ Bidirectional EV Charger (electrical) and Bosch GoTemp Home + GoTemp Pro Remote Support (HVAC)."),
 }
 TECH_IMAGES = {  # photos pulled from the articles the report cites
+ "2026-11-19": {
+  "lead": ("tech-2026-11-19-lead.webp", "Gilead Sciences' new research center in Foster City, California",
+    "Gilead Sciences' new research center in Foster City, California — Suffolk completed the build leaning on OpenSpace, Dusty Robotics, Kaya AI and Alice Technologies.",
+    "Photo: Suffolk Construction via Construction Dive"),
+  "inline": ("tech-2026-11-19-inline.webp", "Construction crews work on the Portal North Bridge over the Hackensack River",
+    "Construction crews work on the Portal North Bridge — the Skanska–Traylor Bros JV has delivered the $1.6 billion, 2.4-mile fixed span, replacing a 116-year-old swing bridge.",
+    "Photo: Skanska via Construction Dive"),
+ },
  "2026-11-18": {
   "lead": ("tech-2026-11-18-lead.webp", "Port Authority stakeholders at a groundbreaking ceremony at Newark Liberty International Airport",
     "Port Authority stakeholders at the Oct 7, 2025 groundbreaking at Newark Liberty International Airport — the authority's proposed $10.3 billion 2027 budget, with $4 billion in capital spending, was reported Nov 17.",
@@ -664,6 +674,11 @@ TECH_IMAGES = {  # photos pulled from the articles the report cites
  },
 }
 TECH_SPOT = {  # date -> report item no. -> photo entry (from the cited article/product page)
+ "2026-11-19": {
+  "2.2": ("tech-gotemp.webp", "Bosch GoTemp Pro app on a phone",
+    "The GoTemp Pro contractor app — its new Remote Support feature lets an on-site tech share live system data by Bluetooth with remote support for troubleshooting. The GoTemp Home homeowner app launched alongside it.",
+    "Photo: Bosch Home Comfort Group via ACHR News"),
+ },
  "2026-11-18": {
   "2.1": ("tech-gevernova.jpg", "GE Vernova HYpact-145g compact hybrid switchgear",
     "A rendering of GE Vernova's HYpact-145g — a 145 kV, 40 kA SF6-free hybrid switchgear using g3 gas, at least 50% smaller than a conventional air-insulated substation.",
@@ -1016,16 +1031,16 @@ body = f"""
 </div>
 <div class="techfeature"><span class="kicker">Construction · Engineering · Tech</span>
 <a class="photolink" href="tech/index.html">{photo_html(tech_lead, "")}</a>
-<h2 class="headline"><a href="tech/index.html">Builder confidence falls to 25, a 14-year low; 46% of builders cut prices</a></h2>
-<p class="spotline">Product Spotlight — Electrical: <b>GE Vernova HYpact-145g SF6-free switchgear</b> · HVAC: <b>Carrier ClimaVision 3-MyStat Pro Pack</b></p>
-<p class="byline">Sharma Tech · Edition of Nov 18, 2026</p>
+<h2 class="headline"><a href="tech/index.html">October starts rebound, but permits fall to their lowest since January 2023</a></h2>
+<p class="spotline">Product Spotlight — Electrical: <b>Enphase IQ Bidirectional EV Charger</b> · HVAC: <b>Bosch GoTemp Home app + GoTemp Pro Remote Support</b></p>
+<p class="byline">Sharma Tech · Edition of Nov 19, 2026</p>
 <a class="cont" href="tech/index.html">Read today's tech briefing →</a></div>
 {permit_card}
 <h2 class="sec">Legal — Back Issues</h2><ul class="arch">{legal_arch}</ul>
 <h2 class="sec">Finance — Back Issues</h2><ul class="arch">{fin_arch}</ul>
 <h2 class="sec">Tech — Back Issues</h2><ul class="arch">{tech_arch}</ul>
 """
-(DOCS / "index.html").write_text(shell("", "Home — Wednesday, November 18, 2026", body, active="home"), encoding="utf-8")
+(DOCS / "index.html").write_text(shell("", "Home — Thursday, November 19, 2026", body, active="home"), encoding="utf-8")
 for _path, (_title, _sbody, _sec) in STORY_PAGES.items():
     _p = DOCS / _path
     _p.parent.mkdir(parents=True, exist_ok=True)
