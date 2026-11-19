@@ -205,7 +205,7 @@ def shell(prefix, title, body, chip="", active=""):
     def on(key):
         return ' class="on"' if active == key else ""
     return f"""<!DOCTYPE html>
-<html lang="en" class="sk"><head><meta charset="utf-8">
+<html lang="en" class="sk" data-scheme="light"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="robots" content="noindex">
 <meta name="theme-color" content="#264387">
