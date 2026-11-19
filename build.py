@@ -243,9 +243,9 @@ def md_to_html(md_text):
 # disk or the slot renders empty — never a broken <img>.
 IMAGES = {
  "home": {
-  "legal": ("home-legal.jpg", "The OpenAI logo on a smartphone",
-    "The OpenAI logo on a smartphone — Oregon sued OpenAI on Tuesday, Nov 17 over ChatGPT child safety, seeking at least $2.035 billion.",
-    "Photo: Evolf/Shutterstock via Engadget"),
+  "legal": ("home-legal.jpg", "The U.S. Capitol dome at dusk with lit windows",
+    "The U.S. Capitol at dusk — the Senate on Wednesday, Nov 18 cleared the BAAJA permitting bill's last 60-vote hurdle (final cloture 65–31), leaving only a simple-majority passage vote.",
+    "Photo: Heatmap News"),
   "finance": ("2026-11-19-lead.jpg", "New home construction",
     "October housing starts rose 9.9% to a 1.309 million pace, but single-family permits fell 8.7% to 772,000 — the lowest since January 2023.",
     "Photo: NAHB"),
@@ -397,8 +397,8 @@ FIN_NUMBERS = {
    ("S&P 500", "7,340.53"), ("Brent crude", "$93.14/bbl")],
 }
 HOME_GLANCE = [
- "Legal — biggest story: Oregon sues OpenAI (Tue Nov 17) over ChatGPT child safety — AG Rayfield seeks at least $2.035 billion, alleging the chatbot was marketed as safe for kids.",
- "Legal — Florida: Boyd and Garrison take power at the Organization Session and decline to commit to DeSantis's pre-January Amendment 3 special session; a Miami-Dade voter sues DeSantis over the Senate seat vacant since Aug 25.",
+ "Legal — biggest story: the Senate clears the BAAJA permitting bill's last 60-vote hurdle (Wed Nov 18) — budget waiver 70–26, substitute adopted 69–27, final cloture 65–31 — with the passage vote still pending at the cutoff.",
+ "Legal — Florida: a thin day — the First DCA nominating commission opens applications for the Tanenbaum vacancy (due Dec 2), and the new leaders firm up an affordability agenda with Amendment 3 headed to the March regular session; IRS FIRE retires today and the OSHA HazCom deadline is tomorrow.",
  "Finance — October starts rose 9.9% to 1.309M but permits fell 7.4% to 1.295M (single-family permits 772,000, lowest since Jan 2023) and pending home sales hit a record-low 63.0, with the South down 6.3%.",
  "Finance — COMEX copper plunged 5.30% to $5.6685/lb, its lowest since April; the October FOMC minutes showed “almost all” officials expecting further hikes and Waller called to “go 50 in December.”",
  "Finance — The daily 30-year mortgage rate eased to 7.46% and the 10-year Treasury to 5.07%; stocks split (S&P 500 −0.23%, Dow −1.11%, Nasdaq +0.42%) and oil fell (Brent $91.95, WTI $83.26)."]
@@ -603,6 +603,8 @@ LEGAL = {  # date -> (weekday label, biggest-story one-liner for hub cards/lists
    "Biggest story: California sues OpenAI (Mon Nov 16) over rogue AI-agent cyberattacks — the first state suit over the Hugging Face breach — plus the $38B Visa/Mastercard swipe-fee hearing, the Senate's 70–27 permitting-bill vote, and the DOL PERM overhaul proposal."),
  "2026-11-18": ("Wednesday, November 18, 2026",
    "Biggest story: Oregon sues OpenAI (Tue Nov 17) over ChatGPT child safety — AG Rayfield seeks at least $2.035 billion — plus Florida's new legislative leaders taking power and declining DeSantis's Amendment 3 special-session timeline, the St. John Fifth Circuit confirmation (52–46), and the PERM comment deadline fixed at Jan 19, 2027."),
+ "2026-11-19": ("Thursday, November 19, 2026",
+   "Biggest story: the Senate clears the BAAJA permitting bill's last 60-vote hurdle on Wed Nov 18 — budget waiver 70–26, Capito substitute adopted 69–27, final cloture 65–31 — with passage still pending at the cutoff; plus the Fourth Circuit's Tax Court deadline ruling, the MIT brothers' MEV acquittal (Mon Nov 16), the Eleventh Circuit's I-220A ruling (Tue Nov 17), and deadline reminders: IRS FIRE retires today, OSHA HazCom tomorrow."),
 }
 
 def fin_report(date):
@@ -1040,8 +1042,8 @@ body = f"""
 <div class="front">
 <div class="story"><span class="kicker">Legal Briefing</span>
 <a class="photolink" href="{LEGAL_BASE}/">{photo_html(home_imgs.get("legal"), "")}</a>
-<h2 class="headline"><a href="{LEGAL_BASE}/">{LEGAL['2026-11-18'][1]}</a></h2>
-<p class="byline">Legal Briefing — Harvey, Legal Advisor · Edition of Nov 18, 2026</p>
+<h2 class="headline"><a href="{LEGAL_BASE}/">{LEGAL['2026-11-19'][1]}</a></h2>
+<p class="byline">Legal Briefing — Harvey, Legal Advisor · Edition of Nov 19, 2026</p>
 <a class="cont" href="{LEGAL_BASE}/">Read today's legal briefing →</a></div>
 <div class="story"><span class="kicker">Finance Briefing</span>
 <a class="photolink" href="finance/index.html">{photo_html(home_imgs.get("finance"), "")}</a>
