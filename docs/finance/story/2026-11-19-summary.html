@@ -1,23 +1,30 @@
 <!DOCTYPE html>
-<html lang="en"><head><meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<html lang="en" class="sk"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="robots" content="noindex">
+<meta name="theme-color" content="#264387">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="News">
 <title>Summary — Sharma News</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@700&family=IBM+Plex+Mono:wght@500;600&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="manifest" href="../../manifest.webmanifest">
+<link rel="apple-touch-icon" href="https://sharma-kit.sharma-crew.workers.dev/assets/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://sharma-kit.sharma-crew.workers.dev/assets/favicon-32.png">
+<link rel="stylesheet" href="https://sharma-kit.sharma-crew.workers.dev/sharma-kit.css">
+<script src="https://sharma-kit.sharma-crew.workers.dev/sharma-kit.js" defer></script>
 <style>
 :root{--navy:#264387;--navy-d:#1a2f61;--gold:#F0A846;--ink:#1d2433;--mute:#5b6478;
 --line:#dfe4ee;--tint:#f4f6fb;--paper:#ffffff}
 *{box-sizing:border-box}html{-webkit-text-size-adjust:100%}
 body{margin:0;background:var(--tint);color:var(--ink);
-font-family:"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+font-family:-apple-system,"SF Pro Text",Inter,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
 font-size:18px;line-height:1.65}
 h1,h2,h3,.headline,.item-head,.kicker,.secname,h2.sec,.glance h2,nav.main a,.top .ttl b,
-.spotline,.cont{font-family:"Barlow Semi Condensed","Arial Narrow",Arial,sans-serif;font-weight:700}
+.spotline,.cont{font-family:-apple-system,"SF Pro Display",Inter,"Segoe UI",Arial,sans-serif;font-weight:700}
 a{color:var(--navy);text-decoration:underline;text-decoration-color:#b9c4dc;text-underline-offset:2px}
 a:hover{color:var(--navy-d);text-decoration-color:var(--navy-d)}
-.num,.kn b,.dateline{font-family:"IBM Plex Mono",ui-monospace,"SFMono-Regular",Menlo,Consolas,monospace}
+.num,.kn b,.dateline{font-family:ui-monospace,"SF Mono",Menlo,Consolas,monospace;font-variant-numeric:tabular-nums}
 /* ---------- header ---------- */
 .top{background:#fff;border-bottom:3px solid var(--gold)}
 .top .bar{max-width:1040px;margin:0 auto;padding:12px 16px;display:flex;align-items:center;
@@ -27,14 +34,14 @@ justify-content:space-between;gap:12px}
 .top .ttl{text-align:right;line-height:1.25}
 .top .ttl b{display:block;font-size:19px;color:var(--navy-d);font-weight:700}
 .top .ttl span{display:block;font-size:14px;color:var(--mute)}
-nav.main{background:var(--navy-d)}
+nav.main{background:#fff;border-bottom:1px solid var(--line)}
 nav.main .in{max-width:1040px;margin:0 auto;padding:0 8px;display:flex;overflow-x:auto;
 -webkit-overflow-scrolling:touch;scrollbar-width:none}
 nav.main .in::-webkit-scrollbar{display:none}
-nav.main a{color:#fff;text-decoration:none;font-size:17px;font-weight:700;white-space:nowrap;
+nav.main a{color:var(--navy);text-decoration:none;font-size:17px;font-weight:700;white-space:nowrap;
 padding:13px 12px;display:flex;align-items:center;min-height:48px}
-nav.main a:hover{color:var(--gold)}
-nav.main a.on{color:var(--gold);border-bottom:3px solid var(--gold);padding-bottom:10px}
+nav.main a:hover{color:var(--navy-d)}
+nav.main a.on{color:var(--navy-d);border-bottom:3px solid var(--gold);padding-bottom:10px}
 .wrap{max-width:1040px;margin:0 auto;padding:8px 16px 48px;background:#fff}
 /* ---------- photos ---------- */
 .photo{margin:10px 0 12px}
@@ -161,10 +168,13 @@ table.data{font-size:16px}
 .story .photo img{max-height:200px}
 }
 </style></head>
-<body id="top">
-<header class="top">
-<div class="bar"><a class="brand" href="../../index.html"><img class="logo" src="../../logo.png" alt="Sharma Electric &amp; HVAC"></a>
-<div class="ttl"><b>Sharma News</b><span>Thursday, November 19, 2026 · Updated 5:00 AM ET</span></div></div>
+<body id="top" class="sk">
+<header class="sk-header"><div class="sk-header__bar">
+<div class="sk-header__lead"><a class="sk-header__logo" href="../../index.html"><img src="https://sharma-kit.sharma-crew.workers.dev/assets/logo-white-header.png" alt="Sharma Electric &amp; HVAC" width="103" height="20"></a></div>
+<div class="sk-header__title">Sharma News</div>
+<div class="sk-header__trail"></div>
+</div></header>
+<div class="sk-offline"></div>
 <nav class="main"><div class="in">
 <a href="../../index.html">Home</a>
 <a href="https://sharmaelechvac.github.io/sharma-legal-briefing/">Legal</a>
@@ -173,9 +183,10 @@ table.data{font-size:16px}
 <a href="../../tech/index.html">Tech</a>
 <a href="../../tech/archive/index.html">Tech archive</a>
 <a href="../../permits/index.html">Permit News</a>
-</div></nav></header>
+</div></nav>
 <div class="wrap"><p class="crumb"><a href="../../finance/index.html">&larr; Finance Briefing</a> &middot; <a href="../../finance/archive/2026-11-19.html">Edition of 2026-11-19</a></p><span class="kicker">Finance Briefing &middot; Thursday, November 19, 2026</span><h1 class="storyhead">Summary</h1><p class="deck">Numbers first. Wednesday, November 18, 2026 was a full trading day dominated by two housing releases and a copper rout. (1) October housing starts rose 9.9% to a 1.309 million SAAR (Census/HUD, Wednesday 8:30 AM ET; consensus…</p><div class="fullbody">
 <p>Numbers first. Wednesday, November 18, 2026 was a full trading day dominated by two housing releases and a copper rout. (1) <strong>October housing starts rose 9.9% to a 1.309 million SAAR</strong> (Census/HUD, Wednesday 8:30 AM ET; consensus 1.25M) — single-family starts <strong>864,000 (+4.0%)</strong>, multifamily <strong>445,000 (+23.6%)</strong> — but <strong>building permits fell 7.4% to 1.295 million</strong>, and <strong>single-family permits fell 8.7% to 772,000, the lowest since January 2023 (−12.9% YoY)</strong>; Census itself flags the starts gain as not statistically significant (±16.8 points). (2) <strong>Pending home sales hit a record low: the NAR index fell 4.7% to 63.0 in October (−16.7% YoY)</strong>, the lowest since the series began in 2001 and a second straight record low, against a −1.5% consensus; the <strong>South fell 6.3% month-over-month (−18.7% YoY)</strong>. (3) <strong>COMEX copper plunged: December settled −5.30% at $5.6685/lb</strong>, after trading as low as <strong>$5.5835 (−6.7%)</strong> — the lowest since April; <strong>LME three-month copper closed −5.7% at $12,471/t</strong>, also its lowest since April, even as China's Yangshan import premium hit a record ~$350/t. (4) <strong>The October FOMC minutes (Wednesday 2:00 PM ET) showed "almost all" officials expect further rate hikes</strong>, a 10–2 hold vote at <strong>3.75%–4.00%</strong> with Cook and Hammack dissenting for a hike, and "a couple" of participants open to a move <strong>larger than 25 bp in December</strong> if inflation disappoints; Governor <strong>Waller told CNBC Wednesday the Fed should "go 50 in December"</strong> unless it clearly signals a January hike. December +25 bp pricing ended the day at <strong>92.7% / 7.3% for +50 bp</strong> (CME FedWatch, late snapshot). (5) <strong>Mortgage rates eased 2 bp: Mortgage News Daily's daily 30-year was 7.46% on Wednesday</strong> (15-year 6.98%, FHA 7.04%); the <strong>10-year Treasury par yield eased 3 bp to 5.07%</strong> (2-year 4.80%, unchanged). But the MBA's weekly survey (week ended November 13) showed applications <strong>−2.3%</strong> with its 30-year contract rate up to <strong>7.35% from 7.21%</strong>, a three-week high. (6) <strong>Stocks split: S&amp;P 500 7,323.63 (−0.23%) — a fifth straight loss; Dow 50,198.17 (−1.11%, −561.25); Nasdaq Composite 24,429.88 (+0.42%)</strong>, snapping a four-day skid; Nvidia's beat faded — the stock closed <strong>$150.96 (−2.89%)</strong>. Builder shares rose against the tape: the PHLX Housing Index <strong>+0.99% to 627.71</strong>, D.R. Horton <strong>+0.6%</strong>, Lennar <strong>+0.6%</strong>, PulteGroup <strong>+0.4%</strong>. (7) <strong>Oil fell on a big inventory build: Brent $91.95/bbl (−1.28%), WTI $83.26/bbl (−3.20%, lowest since August 26)</strong>; EIA reported crude stocks <strong>+3.4 million barrels</strong> (expected +58,000), gasoline <strong>+5.2 million</strong>, distillates <strong>+1.6 million</strong> for the week ended November 13. <strong>AAA regular was $3.7502/gal and diesel $5.9594/gal</strong> on Wednesday — diesel still under $6. (8) <strong>Lowe's Q3 (Wednesday, before the open): sales $22.76 billion (+9.3%), comps +1.8%, adjusted EPS $3.10</strong> — but $0.34 of that EPS came from <strong>$250 million in IEEPA tariff refunds</strong>, gross margin fell 124 bp to 32.9%, and full-year margin guidance was trimmed even as the sales outlook rose to ~$92.5 billion. (9) <strong>UPDATE — the first Xi–Trump–Putin trilateral was held Thursday, November 19 in Shenzhen</strong> (overnight ET): Ukraine, Iran, nuclear arms, trade and AI were discussed; <strong>no breakthrough and no new tariff rates were announced</strong>. (10) <strong>Florida:</strong> the South's pending-sales drop (−6.3% MoM, −18.7% YoY) is the Florida read; a statewide MLS aggregation published Wednesday put October Florida closings at <strong>21,465</strong> with the median at <strong>$423,232 (+0.8% YoY)</strong> and sellers closing at a median <strong>94.8% of original asking</strong>. There was <strong>no</strong> new steel or PVC price print, <strong>no</strong> new R-454B news, and <strong>no</strong> CES news in the window. Today ahead, all after the 5:00 AM ET cutoff: weekly jobless claims at 8:30 AM ET and <strong>Freddie Mac's weekly mortgage survey at noon ET</strong>; the October PCE price index — the next big December-hike input — is due <strong>November 25</strong>.</p>
 </div><p class="totop"><a href="../../finance/index.html">&larr; Back to the Finance Briefing</a></p></div>
 <footer><div class="fin"><b>Sharma Electric &amp; HVAC</b> · Sharma News, updated daily at 5:00 AM ET. News summaries for the Sharma team. Not legal or financial advice.</div></footer>
+<script>if ("serviceWorker" in navigator && (location.protocol === "https:" || location.hostname === "localhost")) { addEventListener("load", function(){ navigator.serviceWorker.register("../../sw.js?kit=https://sharma-kit.sharma-crew.workers.dev").catch(function(){}); }); }</script>
 </body></html>

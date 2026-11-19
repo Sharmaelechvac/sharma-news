@@ -33,13 +33,13 @@ CSS = """
 --line:#dfe4ee;--tint:#f4f6fb;--paper:#ffffff}
 *{box-sizing:border-box}html{-webkit-text-size-adjust:100%}
 body{margin:0;background:var(--tint);color:var(--ink);
-font-family:"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+font-family:-apple-system,"SF Pro Text",Inter,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
 font-size:18px;line-height:1.65}
 h1,h2,h3,.headline,.item-head,.kicker,.secname,h2.sec,.glance h2,nav.main a,.top .ttl b,
-.spotline,.cont{font-family:"Barlow Semi Condensed","Arial Narrow",Arial,sans-serif;font-weight:700}
+.spotline,.cont{font-family:-apple-system,"SF Pro Display",Inter,"Segoe UI",Arial,sans-serif;font-weight:700}
 a{color:var(--navy);text-decoration:underline;text-decoration-color:#b9c4dc;text-underline-offset:2px}
 a:hover{color:var(--navy-d);text-decoration-color:var(--navy-d)}
-.num,.kn b,.dateline{font-family:"IBM Plex Mono",ui-monospace,"SFMono-Regular",Menlo,Consolas,monospace}
+.num,.kn b,.dateline{font-family:ui-monospace,"SF Mono",Menlo,Consolas,monospace;font-variant-numeric:tabular-nums}
 /* ---------- header ---------- */
 .top{background:#fff;border-bottom:3px solid var(--gold)}
 .top .bar{max-width:1040px;margin:0 auto;padding:12px 16px;display:flex;align-items:center;
@@ -49,14 +49,14 @@ justify-content:space-between;gap:12px}
 .top .ttl{text-align:right;line-height:1.25}
 .top .ttl b{display:block;font-size:19px;color:var(--navy-d);font-weight:700}
 .top .ttl span{display:block;font-size:14px;color:var(--mute)}
-nav.main{background:var(--navy-d)}
+nav.main{background:#fff;border-bottom:1px solid var(--line)}
 nav.main .in{max-width:1040px;margin:0 auto;padding:0 8px;display:flex;overflow-x:auto;
 -webkit-overflow-scrolling:touch;scrollbar-width:none}
 nav.main .in::-webkit-scrollbar{display:none}
-nav.main a{color:#fff;text-decoration:none;font-size:17px;font-weight:700;white-space:nowrap;
+nav.main a{color:var(--navy);text-decoration:none;font-size:17px;font-weight:700;white-space:nowrap;
 padding:13px 12px;display:flex;align-items:center;min-height:48px}
-nav.main a:hover{color:var(--gold)}
-nav.main a.on{color:var(--gold);border-bottom:3px solid var(--gold);padding-bottom:10px}
+nav.main a:hover{color:var(--navy-d)}
+nav.main a.on{color:var(--navy-d);border-bottom:3px solid var(--gold);padding-bottom:10px}
 .wrap{max-width:1040px;margin:0 auto;padding:8px 16px 48px;background:#fff}
 /* ---------- photos ---------- */
 .photo{margin:10px 0 12px}
@@ -205,18 +205,28 @@ def shell(prefix, title, body, chip="", active=""):
     def on(key):
         return ' class="on"' if active == key else ""
     return f"""<!DOCTYPE html>
-<html lang="en"><head><meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<html lang="en" class="sk"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="robots" content="noindex">
+<meta name="theme-color" content="#264387">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="News">
 <title>{title} — Sharma News</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@700&family=IBM+Plex+Mono:wght@500;600&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="manifest" href="{prefix}manifest.webmanifest">
+<link rel="apple-touch-icon" href="https://sharma-kit.sharma-crew.workers.dev/assets/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://sharma-kit.sharma-crew.workers.dev/assets/favicon-32.png">
+<link rel="stylesheet" href="https://sharma-kit.sharma-crew.workers.dev/sharma-kit.css">
+<script src="https://sharma-kit.sharma-crew.workers.dev/sharma-kit.js" defer></script>
 <style>{CSS}</style></head>
-<body id="top">
-<header class="top">
-<div class="bar"><a class="brand" href="{prefix}index.html"><img class="logo" src="{prefix}logo.png" alt="Sharma Electric &amp; HVAC"></a>
-<div class="ttl"><b>Sharma News</b><span>Thursday, November 19, 2026 · Updated 5:00 AM ET</span></div></div>
+<body id="top" class="sk">
+<header class="sk-header"><div class="sk-header__bar">
+<div class="sk-header__lead"><a class="sk-header__logo" href="{prefix}index.html"><img src="https://sharma-kit.sharma-crew.workers.dev/assets/logo-white-header.png" alt="Sharma Electric &amp; HVAC" width="103" height="20"></a></div>
+<div class="sk-header__title">Sharma News</div>
+<div class="sk-header__trail"></div>
+</div></header>
+<div class="sk-offline"></div>
 <nav class="main"><div class="in">
 <a href="{prefix}index.html"{on("home")}>Home</a>
 <a href="{LEGAL_BASE}/">Legal</a>
@@ -225,11 +235,11 @@ def shell(prefix, title, body, chip="", active=""):
 <a href="{prefix}tech/index.html"{on("tech")}>Tech</a>
 <a href="{prefix}tech/archive/index.html">Tech archive</a>
 <a href="{prefix}permits/index.html"{on("permits")}>Permit News</a>
-</div></nav></header>
+</div></nav>
 <div class="wrap">{body}</div>
 <footer><div class="fin"><b>Sharma Electric &amp; HVAC</b> · Sharma News, updated daily at 5:00 AM ET. News summaries for the Sharma team. Not legal or financial advice.</div></footer>
+<script>if ("serviceWorker" in navigator && (location.protocol === "https:" || location.hostname === "localhost")) {{ addEventListener("load", function(){{ navigator.serviceWorker.register("{prefix}sw.js?kit=https://sharma-kit.sharma-crew.workers.dev").catch(function(){{}}); }}); }}</script>
 </body></html>"""
-
 def md_to_html(md_text):
     html = markdown.markdown(md_text, extensions=["extra", "sane_lists"])
     def repl(m):

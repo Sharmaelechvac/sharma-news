@@ -1,23 +1,30 @@
 <!DOCTYPE html>
-<html lang="en"><head><meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<html lang="en" class="sk"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="robots" content="noindex">
+<meta name="theme-color" content="#264387">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="News">
 <title>4. Markets and fuel — Sharma News</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@700&family=IBM+Plex+Mono:wght@500;600&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="manifest" href="../../manifest.webmanifest">
+<link rel="apple-touch-icon" href="https://sharma-kit.sharma-crew.workers.dev/assets/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://sharma-kit.sharma-crew.workers.dev/assets/favicon-32.png">
+<link rel="stylesheet" href="https://sharma-kit.sharma-crew.workers.dev/sharma-kit.css">
+<script src="https://sharma-kit.sharma-crew.workers.dev/sharma-kit.js" defer></script>
 <style>
 :root{--navy:#264387;--navy-d:#1a2f61;--gold:#F0A846;--ink:#1d2433;--mute:#5b6478;
 --line:#dfe4ee;--tint:#f4f6fb;--paper:#ffffff}
 *{box-sizing:border-box}html{-webkit-text-size-adjust:100%}
 body{margin:0;background:var(--tint);color:var(--ink);
-font-family:"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+font-family:-apple-system,"SF Pro Text",Inter,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
 font-size:18px;line-height:1.65}
 h1,h2,h3,.headline,.item-head,.kicker,.secname,h2.sec,.glance h2,nav.main a,.top .ttl b,
-.spotline,.cont{font-family:"Barlow Semi Condensed","Arial Narrow",Arial,sans-serif;font-weight:700}
+.spotline,.cont{font-family:-apple-system,"SF Pro Display",Inter,"Segoe UI",Arial,sans-serif;font-weight:700}
 a{color:var(--navy);text-decoration:underline;text-decoration-color:#b9c4dc;text-underline-offset:2px}
 a:hover{color:var(--navy-d);text-decoration-color:var(--navy-d)}
-.num,.kn b,.dateline{font-family:"IBM Plex Mono",ui-monospace,"SFMono-Regular",Menlo,Consolas,monospace}
+.num,.kn b,.dateline{font-family:ui-monospace,"SF Mono",Menlo,Consolas,monospace;font-variant-numeric:tabular-nums}
 /* ---------- header ---------- */
 .top{background:#fff;border-bottom:3px solid var(--gold)}
 .top .bar{max-width:1040px;margin:0 auto;padding:12px 16px;display:flex;align-items:center;
@@ -27,14 +34,14 @@ justify-content:space-between;gap:12px}
 .top .ttl{text-align:right;line-height:1.25}
 .top .ttl b{display:block;font-size:19px;color:var(--navy-d);font-weight:700}
 .top .ttl span{display:block;font-size:14px;color:var(--mute)}
-nav.main{background:var(--navy-d)}
+nav.main{background:#fff;border-bottom:1px solid var(--line)}
 nav.main .in{max-width:1040px;margin:0 auto;padding:0 8px;display:flex;overflow-x:auto;
 -webkit-overflow-scrolling:touch;scrollbar-width:none}
 nav.main .in::-webkit-scrollbar{display:none}
-nav.main a{color:#fff;text-decoration:none;font-size:17px;font-weight:700;white-space:nowrap;
+nav.main a{color:var(--navy);text-decoration:none;font-size:17px;font-weight:700;white-space:nowrap;
 padding:13px 12px;display:flex;align-items:center;min-height:48px}
-nav.main a:hover{color:var(--gold)}
-nav.main a.on{color:var(--gold);border-bottom:3px solid var(--gold);padding-bottom:10px}
+nav.main a:hover{color:var(--navy-d)}
+nav.main a.on{color:var(--navy-d);border-bottom:3px solid var(--gold);padding-bottom:10px}
 .wrap{max-width:1040px;margin:0 auto;padding:8px 16px 48px;background:#fff}
 /* ---------- photos ---------- */
 .photo{margin:10px 0 12px}
@@ -161,10 +168,13 @@ table.data{font-size:16px}
 .story .photo img{max-height:200px}
 }
 </style></head>
-<body id="top">
-<header class="top">
-<div class="bar"><a class="brand" href="../../index.html"><img class="logo" src="../../logo.png" alt="Sharma Electric &amp; HVAC"></a>
-<div class="ttl"><b>Sharma News</b><span>Thursday, November 19, 2026 · Updated 5:00 AM ET</span></div></div>
+<body id="top" class="sk">
+<header class="sk-header"><div class="sk-header__bar">
+<div class="sk-header__lead"><a class="sk-header__logo" href="../../index.html"><img src="https://sharma-kit.sharma-crew.workers.dev/assets/logo-white-header.png" alt="Sharma Electric &amp; HVAC" width="103" height="20"></a></div>
+<div class="sk-header__title">Sharma News</div>
+<div class="sk-header__trail"></div>
+</div></header>
+<div class="sk-offline"></div>
 <nav class="main"><div class="in">
 <a href="../../index.html">Home</a>
 <a href="https://sharmaelechvac.github.io/sharma-legal-briefing/">Legal</a>
@@ -173,7 +183,7 @@ table.data{font-size:16px}
 <a href="../../tech/index.html">Tech</a>
 <a href="../../tech/archive/index.html">Tech archive</a>
 <a href="../../permits/index.html">Permit News</a>
-</div></nav></header>
+</div></nav>
 <div class="wrap"><p class="crumb"><a href="../../finance/index.html">&larr; Finance Briefing</a> &middot; <a href="../../finance/archive/2026-11-16.html">Edition of 2026-11-16</a></p><span class="kicker">Finance Briefing &middot; Monday, November 16, 2026</span><h1 class="storyhead">4. Markets and fuel</h1><p class="deck">Futures moved during the evening and sources disagree by timestamp — this is reported, not resolved. At 6:10 PM ET , Cedar/CNBC: S&P 500 futures +0.2% (near 7,600), Nasdaq 100 futures +0.6% , Dow futures little changed. CNBC's…</p><p class="impact"><b>Why it matters to Sharma:</b> Futures gave no clean direction into a week with Nvidia earnings Tuesday, the Fed minutes Wednesday, and the Shenzhen summit Thursday — expect rate and builder-stock volatility rather than a trend. Item 4B — "Oil prices fall on expectations of coming supply…</p><div class="fullbody">
 <p><strong>Item 4A — Sunday-night U.S. stock futures — conflicting reads, flagged</strong>
 - Sources / links: CNBC live updates, Nov 15, 2026 — <a href="https://www.cnbc.com/2026/11/15/stock-market-today-live-updates.html" target="_blank" rel="noopener">https://www.cnbc.com/2026/11/15/stock-market-today-live-updates.html</a> (as summarised by Longbridge, Nov 15, 11:12 PM ET — <a href="https://longbridge.com/en/news/305585342" target="_blank" rel="noopener">https://longbridge.com/en/news/305585342</a>); Cedar Global Markets, Nov 15, 2026 — <a href="https://cedarglobalmarkets.com/2026/11/15/market-glance-2026-11-15-futures-open/" target="_blank" rel="noopener">https://cedarglobalmarkets.com/2026/11/15/market-glance-2026-11-15-futures-open/</a>; Stocktwits, Nov 16, 2026 02:04 UTC — <a href="https://stocktwits.com/news-articles/markets/equity/dow-s-and-p-500-nasdaq-futures-edge-lower-as-markets-brace-for-nvidia-earnings-anthropic-ipo-fed-minutes-smmt-nbis-help-mstr-in-focus/cNb7ePKR9Xb" target="_blank" rel="noopener">https://stocktwits.com/news-articles/markets/equity/dow-s-and-p-500-nasdaq-futures-edge-lower-as-markets-brace-for-nvidia-earnings-anthropic-ipo-fed-minutes-smmt-nbis-help-mstr-in-focus/cNb7ePKR9Xb</a>
@@ -186,4 +196,5 @@ table.data{font-size:16px}
 - Why it matters to Sharma: A surplus outlook with WTI in the high $80s caps near-term diesel and delivery-cost pressure, but prices remain far above pre-war levels — fuel surcharges in supplier quotes should be checked against the falling weekly trend, not the spike.</p>
 </div><p class="totop"><a href="../../finance/index.html">&larr; Back to the Finance Briefing</a></p></div>
 <footer><div class="fin"><b>Sharma Electric &amp; HVAC</b> · Sharma News, updated daily at 5:00 AM ET. News summaries for the Sharma team. Not legal or financial advice.</div></footer>
+<script>if ("serviceWorker" in navigator && (location.protocol === "https:" || location.hostname === "localhost")) { addEventListener("load", function(){ navigator.serviceWorker.register("../../sw.js?kit=https://sharma-kit.sharma-crew.workers.dev").catch(function(){}); }); }</script>
 </body></html>
