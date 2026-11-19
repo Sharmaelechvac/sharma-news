@@ -11,7 +11,7 @@ the source publication, as Sanjay directed ("pull photos from the
 articles you are citing").
 
 Layout: the standing Sharma design system (~/workspace/DESIGN-RULES.md) —
-navy/gold, Barlow Semi Condensed headings, Inter body at 18px, IBM Plex
+navy/gold, kit display headings, Inter body at 18px, IBM Plex
 Mono for numbers, flat white panels on #f4f6fb, full-color photos, no
 emoji, no newspaper costume. Every finance edition page opens with an
 "At a Glance" box + "Key Numbers" strip (both taken only from that
@@ -154,7 +154,7 @@ footer{background:var(--navy-d);color:#cfd8ee;border-top:3px solid var(--gold);f
 table.data{border-collapse:collapse;width:100%;font-size:17px;margin:6px 0 10px}
 table.data th,table.data td{border:1px solid var(--line);padding:10px 12px;text-align:left;vertical-align:top}
 table.data th{background:var(--tint);color:var(--navy-d);
-font-family:"Barlow Semi Condensed","Arial Narrow",sans-serif;font-weight:700;font-size:17px}
+font-family:"-apple-system","SF Pro Display",Inter,"Segoe UI",sans-serif;font-weight:700;font-size:17px}
 table.data td.n,table.data th.n{text-align:right;font-family:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace}
 .tblwrap{overflow-x:auto}
 footer .fin{max-width:1040px;margin:0 auto;padding:14px 16px 18px}
@@ -205,10 +205,10 @@ def shell(prefix, title, body, chip="", active=""):
     def on(key):
         return ' class="on"' if active == key else ""
     return f"""<!DOCTYPE html>
-<html lang="en" class="sk" data-scheme="light"><head><meta charset="utf-8">
+<html lang="en" class="sk"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="robots" content="noindex">
-<meta name="theme-color" content="#264387">
+<meta name="theme-color" content="#264387">\n<meta name="color-scheme" content="light">\n<script>(function(){{try{{if(localStorage.getItem("sk-scheme")==="dark"){{var d=document.documentElement;d.setAttribute("data-scheme","dark");var m=document.querySelector('meta[name="theme-color"]');if(m)m.content=d.getAttribute("data-theme")==="track"?"#1C1C1E":"#1a2f61"}}}}catch(e){{}}}})()</script>
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -224,7 +224,7 @@ def shell(prefix, title, body, chip="", active=""):
 <header class="sk-header"><div class="sk-header__bar">
 <div class="sk-header__lead"><a class="sk-header__logo" href="{prefix}index.html"><img src="https://sharma-kit.sharma-crew.workers.dev/assets/logo-white-header.png" alt="Sharma Electric &amp; HVAC" width="103" height="20"></a></div>
 <div class="sk-header__title">Sharma News</div>
-<div class="sk-header__trail"></div>
+<div class="sk-header__trail"><a class="sk-header__btn" href="{prefix}more/" aria-label="More"><svg class="sk-icon"><use href="#i-more"/></svg></a></div>
 </div></header>
 <div class="sk-offline"></div>
 <nav class="main"><div class="in">
@@ -238,7 +238,7 @@ def shell(prefix, title, body, chip="", active=""):
 </div></nav>
 <div class="wrap">{body}</div>
 <footer><div class="fin"><b>Sharma Electric &amp; HVAC</b> · Sharma News, updated daily at 5:00 AM ET. News summaries for the Sharma team. Not legal or financial advice.</div></footer>
-<script>if ("serviceWorker" in navigator && (location.protocol === "https:" || location.hostname === "localhost")) {{ addEventListener("load", function(){{ navigator.serviceWorker.register("{prefix}sw.js?kit=https://sharma-kit.sharma-crew.workers.dev").catch(function(){{}}); }}); }}</script>
+<script>if ("serviceWorker" in navigator && (location.protocol === "https:" || location.hostname === "localhost")) {{ addEventListener("load", function(){{ navigator.serviceWorker.register("{prefix}sw.js?kit=https://sharma-kit.sharma-crew.workers.dev", { scope: "/sharma-news/" }).catch(function(){{}}); }}); }}</script>
 </body></html>"""
 def md_to_html(md_text):
     html = markdown.markdown(md_text, extensions=["extra", "sane_lists"])
