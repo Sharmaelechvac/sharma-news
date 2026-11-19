@@ -246,9 +246,17 @@ IMAGES = {
   "legal": ("home-legal.jpg", "The OpenAI logo on a smartphone",
     "The OpenAI logo on a smartphone — Oregon sued OpenAI on Tuesday, Nov 17 over ChatGPT child safety, seeking at least $2.035 billion.",
     "Photo: Evolf/Shutterstock via Engadget"),
-  "finance": ("2026-11-15-lead.jpg", "Copper market update graphic, November 14, 2026",
-    "Copper eased to $6.05–6.08/lb at Friday's close, in the copper-market update the finance briefing cites.",
-    "Photo: So OK Trading"),
+  "finance": ("2026-11-19-lead.jpg", "New home construction",
+    "October housing starts rose 9.9% to a 1.309 million pace, but single-family permits fell 8.7% to 772,000 — the lowest since January 2023.",
+    "Photo: NAHB"),
+ },
+ "2026-11-19": {
+  "lead": ("2026-11-19-lead.jpg", "New home construction",
+    "October housing starts rose 9.9% to a 1.309 million pace, but single-family permits fell 8.7% to 772,000 — the lowest since January 2023.",
+    "Photo: NAHB"),
+  "inline": ("2026-11-19-inline.jpg", "A homeowner posting a for-sale sign in a front yard",
+    "Pending home sales fell 4.7% in October to a record-low index of 63.0; the South fell 6.3% on the month.",
+    "Photo: Getty Images via National Association of Realtors"),
  },
  "2026-11-11": {
   "lead": ("2026-11-11-lead.jpg", "Federal Reserve Governor Christopher Waller",
@@ -346,6 +354,13 @@ FIN_GLANCE = {
    "Mortgage News Daily 30-year at 7.51% on Monday; 10-year Treasury eased 3 bp to 5.12%. Warsh said nothing on rates; Hammack backed slow, steady hikes.",
    "Florida Realtors October: single-family sales 19,049 (−10.1% YoY), pending sales −15.7%, median $420,000 (+2.2%); condo median $290,000 (−3.3%).",
    "Oil settled down over 3% (Brent $92.44, WTI $85.72) and U.S. retail diesel fell below $6/gal for the first time since early September."],
+ "2026-11-19": [
+   "October starts rose 9.9% to 1.309M, but permits fell 7.4% to 1.295M and single-family permits fell 8.7% to 772,000 — the lowest since January 2023.",
+   "Pending home sales hit a record low: NAR index 63.0 in October (−4.7%, −16.7% YoY); the South fell 6.3% on the month (−18.7% YoY).",
+   "COMEX copper plunged −5.30% to $5.6685/lb (intraday low $5.5835), its lowest since April; LME three-month copper closed −5.7% at $12,471/t.",
+   "October FOMC minutes: “almost all” officials see further hikes likely; Waller told CNBC the Fed should “go 50 in December” without a clear January signal. December +25 bp ended the day at 92.7%.",
+   "Mortgage News Daily 30-year at 7.46% on Wednesday; 10-year Treasury eased 3 bp to 5.07%. MBA applications fell 2.3% with its 30-year contract rate at 7.35%.",
+   "Stocks split: S&P 500 7,323.63 (−0.23%, fifth straight loss), Dow 50,198.17 (−1.11%), Nasdaq 24,429.88 (+0.42%). Oil fell (Brent $91.95, WTI $83.26) on a +3.4M-barrel EIA crude build; AAA diesel $5.96/gal."],
  "2026-11-18": [
    "Builder sentiment crashed to a 14-year low: NAHB HMI fell 4 points to 25 in November (South 27) — 46% of builders are cutting prices and 68% are offering incentives.",
    "COMEX copper slid a fourth straight session to $5.9760/lb (−0.36%, lowest since June 24); LME official cash copper $13,226/t (−1.12%).",
@@ -374,6 +389,9 @@ FIN_NUMBERS = {
  "2026-11-17": [("COMEX copper", "$5.9975/lb"), ("30-yr fixed (MND)", "7.51%"),
    ("10-yr Treasury", "5.12%"), ("S&P 500", "7,416.59"),
    ("Brent crude", "$92.44/bbl"), ("FL WC cut (2027)", "−7.4%")],
+ "2026-11-19": [("Housing starts (Oct)", "1.309M"), ("SF permits (Oct)", "772,000"),
+   ("Pending sales idx", "63.0"), ("COMEX copper", "$5.6685/lb"),
+   ("30-yr fixed (MND)", "7.46%"), ("Brent crude", "$91.95/bbl")],
  "2026-11-18": [("NAHB HMI (Nov)", "25"), ("COMEX copper", "$5.9760/lb"),
    ("30-yr fixed (MND)", "7.48%"), ("10-yr Treasury", "5.10%"),
    ("S&P 500", "7,340.53"), ("Brent crude", "$93.14/bbl")],
@@ -381,9 +399,9 @@ FIN_NUMBERS = {
 HOME_GLANCE = [
  "Legal — biggest story: Oregon sues OpenAI (Tue Nov 17) over ChatGPT child safety — AG Rayfield seeks at least $2.035 billion, alleging the chatbot was marketed as safe for kids.",
  "Legal — Florida: Boyd and Garrison take power at the Organization Session and decline to commit to DeSantis's pre-January Amendment 3 special session; a Miami-Dade voter sues DeSantis over the Senate seat vacant since Aug 25.",
- "Finance — Builder sentiment crashed to a 14-year low: NAHB HMI 25 in November (South 27), with 46% of builders cutting prices and 68% offering incentives.",
- "Finance — Stocks fell a fourth straight day (S&P 500 −1.03% to 7,340.53) and COMEX copper slid to $5.9760/lb; Nvidia beat after the close (revenue $115.8B, +103%).",
- "Finance — The daily 30-year mortgage rate eased to 7.48%; retail sales rose 0.2% in October and Home Depot posted $43.4B in Q3 sales (+4.9%)."]
+ "Finance — October starts rose 9.9% to 1.309M but permits fell 7.4% to 1.295M (single-family permits 772,000, lowest since Jan 2023) and pending home sales hit a record-low 63.0, with the South down 6.3%.",
+ "Finance — COMEX copper plunged 5.30% to $5.6685/lb, its lowest since April; the October FOMC minutes showed “almost all” officials expecting further hikes and Waller called to “go 50 in December.”",
+ "Finance — The daily 30-year mortgage rate eased to 7.46% and the 10-year Treasury to 5.07%; stocks split (S&P 500 −0.23%, Dow −1.11%, Nasdaq +0.42%) and oil fell (Brent $91.95, WTI $83.26)."]
 
 def glance_html(bullets):
     lis = "\n".join(f"<li>{b}</li>" for b in bullets)
@@ -551,6 +569,8 @@ def render_article(md_text, date, prefix):
             '<p class="totop"><a href="#top">Back to top ↑</a></p>')
 
 FIN = {  # date -> (report glob, weekday label, archive one-liner)
+ "2026-11-19": ("sharma-daily-finance-news-2026-11-19-*", "Thursday, November 19, 2026",
+   "October starts rose 9.9% to 1.309M but permits fell 7.4% to 1.295M — single-family permits 772,000, the lowest since January 2023 — and pending home sales hit a record-low 63.0 (South −6.3%). COMEX copper plunged 5.30% to $5.6685/lb, its lowest since April, as the October FOMC minutes showed “almost all” officials expecting further hikes and Waller called to “go 50 in December.” The daily 30-year mortgage rate eased to 7.46% and the 10-year Treasury to 5.07%; stocks split (S&P 500 −0.23% to 7,323.63, Dow −1.11%, Nasdaq +0.42%). Oil fell on a +3.4M-barrel EIA build (Brent $91.95, WTI $83.26); AAA diesel $5.96/gal. Lowe's Q3 sales were $22.76B (+9.3%) with $0.34 of its $3.10 adjusted EPS from $250M in tariff refunds."),
  "2026-11-11": ("sharma-daily-finance-news-2026-11-11-*", "Wednesday, November 11, 2026",
    "Hot October CPI (+0.4% headline, +0.3% core) killed the four-week mortgage-rate slide, put a December Fed hike — possibly 50 bp — on the table, and pushed the 10-year Treasury to ~5%. Copper stayed historically high and physically tight."),
  "2026-11-12": ("sharma-daily-finance-news-2026-11-12-*", "Thursday, November 12, 2026",
@@ -597,7 +617,7 @@ for date, (pat, label, one) in FIN.items():
     (DOCS / "finance" / "archive" / f"{date}.html").write_text(
         shell("../../", f"Finance Briefing — {label}", body, active="finance"), encoding="utf-8")
 
-latest = "2026-11-18"
+latest = "2026-11-19"
 body = (f'<p class="crumb"><span class="kicker">Finance Briefing · Latest Edition</span></p>'
         f'<article>{render_article(fin_report(latest), latest, "../")}</article>')
 (DOCS / "finance" / "index.html").write_text(
@@ -1025,8 +1045,8 @@ body = f"""
 <a class="cont" href="{LEGAL_BASE}/">Read today's legal briefing →</a></div>
 <div class="story"><span class="kicker">Finance Briefing</span>
 <a class="photolink" href="finance/index.html">{photo_html(home_imgs.get("finance"), "")}</a>
-<h2 class="headline"><a href="finance/index.html">{FIN['2026-11-18'][2]}</a></h2>
-<p class="byline">Finance Briefing — Warren Buffett, CFO · Edition of Nov 18, 2026</p>
+<h2 class="headline"><a href="finance/index.html">{FIN['2026-11-19'][2]}</a></h2>
+<p class="byline">Finance Briefing — Warren Buffett, CFO · Edition of Nov 19, 2026</p>
 <a class="cont" href="finance/index.html">Read today's finance briefing →</a></div>
 </div>
 <div class="techfeature"><span class="kicker">Construction · Engineering · Tech</span>
