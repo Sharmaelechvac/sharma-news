@@ -170,6 +170,81 @@ table.data{font-size:16px}
 .photo.small{max-width:none}
 .story .photo img{max-height:200px}
 }
+</style><style>/* HOME-NEWS-V3 */
+/* ---------- HOME NEWS v3 LOOK (Sanjay 2026-11-20: "News apps need to look
+   like Sharma Home app News tab") — Apple News magazine feel: full-bleed
+   photos, large rounded photo cards with depth/shadow, gold kicker pills,
+   oversized headlines, editions as magazine covers. Overrides only;
+   all content, photos, captions and credits unchanged. ---------- */
+.wrap{background:transparent;padding-top:14px}
+nav.main{background:transparent;border-bottom:none}
+nav.main a{border-radius:999px}
+nav.main a.on{background:var(--navy);color:#fff;border-bottom:none;padding-bottom:13px;box-shadow:0 4px 12px rgba(26,47,97,.30)}
+.kicker{display:inline-flex;align-items:center;background:var(--gold);color:var(--navy-d);
+border-bottom:none;border-radius:999px;padding:5px 11px;font-size:12px;font-weight:800;
+letter-spacing:.08em;box-shadow:0 2px 8px rgba(240,168,70,.45)}
+.glance{background:#fff;border-left:none;border-radius:16px;
+box-shadow:0 10px 26px rgba(16,24,40,.10);padding:18px 20px 12px;margin:16px 0 18px}
+.glance h2{font-size:24px;text-transform:none;letter-spacing:-.015em;color:var(--navy-d)}
+.glance h2::after{content:"";display:block;width:32px;height:4px;border-radius:2px;background:var(--gold);margin-top:7px}
+.keynums{gap:10px;border:none}
+.kn{background:#fff;border:none;border-top:3px solid var(--gold);border-radius:14px;
+box-shadow:0 6px 18px rgba(16,24,40,.09);padding:12px 14px;margin:0}
+.front{grid-template-columns:1fr;gap:20px;border-bottom:none;padding-bottom:4px;margin-top:20px}
+@media(min-width:900px){.front{grid-template-columns:1fr 1fr}}
+.story,.story:first-child,.story + .story{background:#fff;border:none;border-left:none;
+border-radius:20px;box-shadow:0 10px 26px rgba(16,24,40,.13),0 1px 3px rgba(16,24,40,.08);
+padding:0 0 18px;overflow:hidden;display:flex;flex-direction:column;margin:0}
+.story .kicker,.techfeature .kicker{align-self:flex-start;margin:16px 18px 0}
+.story .photolink,.techfeature .photolink{order:-1;display:block}
+.photo{margin:0}
+.photo img,.story .photo img,.techfeature .photo img{border:none;width:100%;height:auto;
+aspect-ratio:16/9;max-height:none;object-fit:cover;object-position:center;background:#EDF0F5}
+.front .story:first-child .photo img{aspect-ratio:4/3}
+.photo figcaption{padding:10px 18px 0;font-size:13px;line-height:1.45}
+.story .headline,.techfeature .headline{font-size:27px;line-height:1.15;letter-spacing:-.01em;
+margin:10px 0 8px;padding:0 18px;display:-webkit-box;-webkit-line-clamp:4;-webkit-box-orient:vertical;overflow:hidden}
+.byline,.spotline{padding:0 18px}
+.cont{align-self:flex-start;margin:12px 18px 0;background:var(--navy);color:#fff;
+text-decoration:none;border-radius:999px;padding:11px 18px;font-size:16px;line-height:1.2;
+box-shadow:0 6px 16px rgba(26,47,97,.28)}
+.cont:hover{color:var(--gold)}
+.techfeature{background:#fff;border:none;border-radius:20px;
+box-shadow:0 10px 26px rgba(16,24,40,.13),0 1px 3px rgba(16,24,40,.08);
+padding:0 0 18px;overflow:hidden;display:flex;flex-direction:column;margin-top:20px}
+.techfeature .photo{margin:0;max-width:none}
+.techfeature .photo figcaption{display:block}
+.techfeature.nophoto{background:radial-gradient(110% 90% at 88% -10%,rgba(240,168,70,.50),rgba(240,168,70,0) 55%),linear-gradient(150deg,#2f529e,var(--navy-d) 72%);color:#fff}
+.techfeature.nophoto .headline,.techfeature.nophoto .headline a{color:#fff}
+.techfeature.nophoto .byline,.techfeature.nophoto .spotline{color:rgba(255,255,255,.88)}
+.techfeature.nophoto .cont{background:var(--gold);color:var(--navy-d);box-shadow:none}
+h2.sec,.pagehead{font-size:24px;font-weight:800;text-transform:none;letter-spacing:-.015em;
+color:var(--navy);border-bottom:none;padding-bottom:0}
+h2.sec::after,.pagehead::after{content:"";display:block;width:32px;height:4px;border-radius:2px;background:var(--gold);margin-top:7px}
+.arch li{background:#fff;border-bottom:none;border-radius:14px;
+box-shadow:0 6px 18px rgba(16,24,40,.09);padding:14px 16px;margin-bottom:12px}
+.arch img.thumb{width:96px;height:96px;border-radius:12px;border:none;margin:0 14px 0 0}
+article{background:#fff;border-radius:20px;box-shadow:0 10px 26px rgba(16,24,40,.10);
+padding:20px 22px 28px;margin-top:14px}
+article .photo img{border-radius:16px}
+.item{background:#fff;border-bottom:none;border-radius:20px;
+box-shadow:0 10px 26px rgba(16,24,40,.10);padding:18px 20px;margin-top:20px}
+.item .item-head{font-size:23px;line-height:1.2}
+.item .impact{background:#FFF8EC;border-left:none;border-radius:12px;padding:10px 14px}
+.spotlight{background:#fff;border:none;border-radius:20px;
+box-shadow:0 10px 26px rgba(16,24,40,.10);padding:18px 20px 14px}
+.jump{background:transparent;border-bottom:none}
+.jump a{background:#fff;border:1px solid #D8DCE6;border-radius:999px;padding:8px 14px;margin:6px 6px 6px 0;box-shadow:0 1px 4px rgba(16,24,40,.06)}
+.tblwrap{background:#fff;border-radius:16px;box-shadow:0 10px 26px rgba(16,24,40,.10);padding:6px 10px}
+.storyhead{font-size:29px;line-height:1.15}
+html[data-scheme="dark"] .story,html[data-scheme="dark"] .techfeature,
+html[data-scheme="dark"] .item,html[data-scheme="dark"] .spotlight,
+html[data-scheme="dark"] article,html[data-scheme="dark"] .glance,
+html[data-scheme="dark"] .arch li{background:#1C1C1E}
+html[data-scheme="dark"] .story .headline,html[data-scheme="dark"] .techfeature .headline,
+html[data-scheme="dark"] .item .item-head,html[data-scheme="dark"] .storyhead{color:#F2F2F7}
+html[data-scheme="dark"] .kn{background:#1C1C1E}
+@media(max-width:760px){.story .headline,.techfeature .headline{font-size:25px}}
 </style></head>
 <body class="sk">
 <header class="sk-header"><div class="sk-header__bar">
