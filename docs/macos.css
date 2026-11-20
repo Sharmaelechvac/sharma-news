@@ -1,0 +1,9 @@
+/* macOS wide-screen polish (Sanjay 2026-11-19) — reading pages: NO sidebar.
+   Presentation only, active at >=960px. Phone layout/behaviour unchanged. */
+::selection{background:rgba(38,67,135,.16)}
+@media (min-width:960px){
+  .wrap{max-width:1100px}
+  nav.main a:hover{color:var(--navy-d,#1a2f61)}
+  .story a:hover,.front a:hover{text-decoration-color:var(--gold,#F0A846)}
+  .sk-row:hover{background:var(--sk-fill-2)}
+}
