@@ -597,6 +597,8 @@ def render_article(md_text, date, prefix):
             '<p class="totop"><a href="#top">Back to top ↑</a></p>')
 
 FIN = {  # date -> (report glob, weekday label, archive one-liner)
+ "2026-11-20": ("sharma-daily-finance-news-2026-11-20-*", "Friday, November 20, 2026",
+   "Freddie Mac's weekly 30-year jumped 17 bp to 7.28%, ending four straight weekly declines, as stocks plunged a sixth straight day — S&P 500 −2.02% to 7,175.83, Dow −2.19% to 49,097.06 (first close below 50,000 since June), Nasdaq −2.25% — and Anthropic's record $81.3B IPO (closed $97.17, +17.07%) failed to stem the rout. Jobless claims edged up to 203,000 with continuing claims +70,000 to 1.763M; the Philadelphia Fed index plunged to 6.3 with prices paid at 58.2. COMEX copper steadied at $5.6335/lb (−0.62%), LME cash $12,570/t; the 10-year Treasury eased to 5.04% and oil was flat (Brent $91.98, WTI $83.21); AAA diesel $5.9298/gal."),
  "2026-11-19": ("sharma-daily-finance-news-2026-11-19-*", "Thursday, November 19, 2026",
    "October starts rose 9.9% to 1.309M but permits fell 7.4% to 1.295M — single-family permits 772,000, the lowest since January 2023 — and pending home sales hit a record-low 63.0 (South −6.3%). COMEX copper plunged 5.30% to $5.6685/lb, its lowest since April, as the October FOMC minutes showed “almost all” officials expecting further hikes and Waller called to “go 50 in December.” The daily 30-year mortgage rate eased to 7.46% and the 10-year Treasury to 5.07%; stocks split (S&P 500 −0.23% to 7,323.63, Dow −1.11%, Nasdaq +0.42%). Oil fell on a +3.4M-barrel EIA build (Brent $91.95, WTI $83.26); AAA diesel $5.96/gal. Lowe's Q3 sales were $22.76B (+9.3%) with $0.34 of its $3.10 adjusted EPS from $250M in tariff refunds."),
  "2026-11-11": ("sharma-daily-finance-news-2026-11-11-*", "Wednesday, November 11, 2026",
@@ -647,7 +649,7 @@ for date, (pat, label, one) in FIN.items():
     (DOCS / "finance" / "archive" / f"{date}.html").write_text(
         shell("../../", f"Finance Briefing — {label}", body, active="finance"), encoding="utf-8")
 
-latest = "2026-11-19"
+latest = "2026-11-20"
 body = (f'<p class="crumb"><span class="kicker">Finance Briefing · Latest Edition</span></p>'
         f'<article>{render_article(fin_report(latest), latest, "../")}</article>')
 (DOCS / "finance" / "index.html").write_text(
@@ -1090,8 +1092,8 @@ body = f"""
 <a class="cont" href="{LEGAL_BASE}/">Read today's legal briefing →</a></div>
 <div class="story"><span class="kicker">Finance Briefing</span>
 <a class="photolink" href="finance/index.html">{photo_html(home_imgs.get("finance"), "")}</a>
-<h2 class="headline"><a href="finance/index.html">{FIN['2026-11-19'][2]}</a></h2>
-<p class="byline">Finance Briefing — Warren Buffett, CFO · Edition of Nov 19, 2026</p>
+<h2 class="headline"><a href="finance/index.html">{FIN['2026-11-20'][2]}</a></h2>
+<p class="byline">Finance Briefing — Warren Buffett, CFO · Edition of Nov 20, 2026</p>
 <a class="cont" href="finance/index.html">Read today's finance briefing →</a></div>
 </div>
 <div class="techfeature"><span class="kicker">Construction · Engineering · Tech</span>
@@ -1105,7 +1107,7 @@ body = f"""
 <h2 class="sec">Finance — Back Issues</h2><ul class="arch">{fin_arch}</ul>
 <h2 class="sec">Tech — Back Issues</h2><ul class="arch">{tech_arch}</ul>
 """
-(DOCS / "index.html").write_text(shell("", "Home — Thursday, November 19, 2026", body, active="home"), encoding="utf-8")
+(DOCS / "index.html").write_text(shell("", "Home — Friday, November 20, 2026", body, active="home"), encoding="utf-8")
 for _path, (_title, _sbody, _sec) in STORY_PAGES.items():
     _p = DOCS / _path
     _p.parent.mkdir(parents=True, exist_ok=True)

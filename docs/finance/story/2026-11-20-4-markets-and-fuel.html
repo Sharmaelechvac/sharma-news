@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en" class="sk"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#264387">
+<meta name="color-scheme" content="light">
+<script>(function(){try{if(localStorage.getItem("sk-scheme")==="dark"){var d=document.documentElement;d.setAttribute("data-scheme","dark");var m=document.querySelector('meta[name="theme-color"]');if(m)m.content=d.getAttribute("data-theme")==="track"?"#1C1C1E":"#1a2f61"}}catch(e){}})()</script>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="News">
+<title>4. Markets and fuel — Sharma News</title>
+<link rel="manifest" href="../../manifest.webmanifest">
+<link rel="apple-touch-icon" href="https://sharma-kit.sharma-crew.workers.dev/assets/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://sharma-kit.sharma-crew.workers.dev/assets/favicon-32.png">
+<link rel="stylesheet" href="https://sharma-kit.sharma-crew.workers.dev/sharma-kit.css">
+<script src="https://sharma-kit.sharma-crew.workers.dev/sharma-kit.js" defer></script>
+<style>
+:root{--navy:#264387;--navy-d:#1a2f61;--gold:#F0A846;--ink:#1d2433;--mute:#5b6478;
+--line:#dfe4ee;--tint:#f4f6fb;--paper:#ffffff}
+*{box-sizing:border-box}html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--tint);color:var(--ink);
+font-family:-apple-system,"SF Pro Text",Inter,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+font-size:18px;line-height:1.65}
+h1,h2,h3,.headline,.item-head,.kicker,.secname,h2.sec,.glance h2,nav.main a,.top .ttl b,
+.spotline,.cont{font-family:-apple-system,"SF Pro Display",Inter,"Segoe UI",Arial,sans-serif;font-weight:700}
+a{color:var(--navy);text-decoration:underline;text-decoration-color:#b9c4dc;text-underline-offset:2px}
+a:hover{color:var(--navy-d);text-decoration-color:var(--navy-d)}
+.num,.kn b,.dateline{font-family:ui-monospace,"SF Mono",Menlo,Consolas,monospace;font-variant-numeric:tabular-nums}
+/* ---------- header ---------- */
+.top{background:#fff;border-bottom:3px solid var(--gold)}
+.top .bar{max-width:1040px;margin:0 auto;padding:12px 16px;display:flex;align-items:center;
+justify-content:space-between;gap:12px}
+.top .brand{display:block;line-height:0}
+.top img.logo{height:54px;width:auto}
+.top .ttl{text-align:right;line-height:1.25}
+.top .ttl b{display:block;font-size:19px;color:var(--navy-d);font-weight:700}
+.top .ttl span{display:block;font-size:14px;color:var(--mute)}
+nav.main{background:#fff;border-bottom:1px solid var(--line)}
+nav.main .in{max-width:1040px;margin:0 auto;padding:0 8px;display:flex;overflow-x:auto;
+-webkit-overflow-scrolling:touch;scrollbar-width:none}
+nav.main .in::-webkit-scrollbar{display:none}
+nav.main a{color:var(--navy);text-decoration:none;font-size:17px;font-weight:700;white-space:nowrap;
+padding:13px 12px;display:flex;align-items:center;min-height:48px}
+nav.main a:hover{color:var(--navy-d)}
+nav.main a.on{color:var(--navy-d);border-bottom:3px solid var(--gold);padding-bottom:10px}
+.wrap{max-width:1040px;margin:0 auto;padding:8px 16px 48px;background:#fff}
+/* ---------- photos ---------- */
+.photo{margin:10px 0 12px}
+.photo img{width:100%;height:auto;display:block;background:var(--tint);border:1px solid var(--line)}
+.photo figcaption{font-size:14px;color:var(--mute);margin-top:5px;line-height:1.45}
+.photo .credit{display:block;font-size:13px;color:var(--mute);margin-top:1px}
+.photo.small{max-width:430px}
+.story .photo img{max-height:260px;object-fit:cover;object-position:top}
+/* ---------- at a glance / key numbers ---------- */
+.glance{background:var(--tint);border-left:3px solid var(--gold);padding:12px 16px 6px;margin:16px 0 14px}
+.glance h2{font-size:14px;text-transform:uppercase;letter-spacing:.12em;color:var(--navy);
+margin:0 0 6px;border:none;padding:0;font-weight:700}
+.glance ul{margin:0 0 8px;padding-left:18px}
+.glance li{margin:4px 0;font-size:17px}
+.keynums{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));border:1px solid var(--line);
+margin:0 0 18px}
+.kn{padding:9px 12px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);margin:0 -1px -1px 0}
+.kn b{display:block;font-size:28px;line-height:1.15;color:var(--navy-d)}
+.kn span{font-size:14px;color:var(--mute)}
+/* ---------- front page ---------- */
+.front{display:grid;grid-template-columns:1fr 1fr;gap:0;margin-top:18px;
+border-bottom:1px solid var(--line);padding-bottom:18px}
+.story{padding:0 20px}
+.story:first-child{padding-left:0}
+.story + .story{border-left:1px solid var(--line);padding-right:0}
+.kicker{display:inline-block;font-size:14px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
+color:var(--navy);border-bottom:2px solid var(--gold);padding-bottom:2px}
+.story .headline,.techfeature .headline{font-weight:700;color:var(--navy-d);
+font-size:44px;line-height:1.12;margin:8px 0 10px}
+.byline{font-size:14px;color:var(--mute);margin:0 0 6px}
+.cont{font-size:17px;font-weight:700;color:var(--navy);display:inline-block;padding:10px 0}
+/* ---------- index / archive ---------- */
+h2.sec{font-size:30px;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:var(--navy);
+border-bottom:2px solid var(--navy);padding-bottom:6px;margin:34px 0 0}
+.arch{list-style:none;margin:0;padding:0}
+.arch li{border-bottom:1px solid var(--line);padding:12px 0;overflow:hidden}
+.arch li a{font-size:19px;font-weight:700;color:var(--navy-d);text-decoration:none}
+.arch li a:hover{text-decoration:underline}
+.arch .d{color:var(--mute);font-size:14px;letter-spacing:0;text-transform:none}
+.arch p{margin:2px 0 0;color:#3a4255;font-size:17px}
+.arch img.thumb{width:96px;height:64px;object-fit:cover;float:left;margin:3px 12px 4px 0;
+background:var(--tint);border:1px solid var(--line)}
+/* ---------- article pages ---------- */
+article{overflow-wrap:break-word;padding-top:4px;max-width:72ch}
+article h1{font-size:28px;line-height:1.2;color:var(--navy-d);margin:8px 0 10px}
+article h2{font-size:30px;line-height:1.2;color:var(--navy-d);margin-top:32px;border-bottom:2px solid var(--gold);padding-bottom:6px}
+article h3{font-size:22px;color:var(--ink);margin-top:24px}
+article a{word-break:break-word}
+article table{border-collapse:collapse;width:100%;display:block;overflow-x:auto;font-size:16px}
+article th,article td{border:1px solid var(--line);padding:8px 11px;text-align:left;vertical-align:top}
+article th{background:var(--tint);color:var(--navy-d)}
+article code{background:var(--tint);padding:1px 5px;font-family:ui-monospace,Menlo,Consolas,monospace;font-size:.88em}
+article blockquote{border-left:3px solid var(--gold);margin:14px 0;padding:2px 14px;color:#3a4255}
+.windowline{font-size:16px;color:var(--mute);border-bottom:1px solid var(--line);padding-bottom:8px}
+.jump{position:sticky;top:0;z-index:6;background:#fff;border-bottom:1px solid var(--line);
+display:flex;gap:0 16px;overflow-x:auto;white-space:nowrap;padding:0;margin:0 0 6px;scrollbar-width:none}
+.jump::-webkit-scrollbar{display:none}
+.jump a{color:var(--navy);text-decoration:none;font-size:15px;font-weight:600;padding:14px 0}
+.jump a:hover{color:var(--navy-d);text-decoration:underline}
+.item{border-bottom:1px solid var(--line);padding:12px 0 12px}
+.item .item-head{font-size:26px;line-height:1.25;color:var(--navy-d);margin:2px 0 6px}
+.item .deck{margin:0 0 6px;color:#3a4255;font-size:20px;line-height:1.5}
+.item .impact{margin:0 0 4px;font-size:17px;background:#fff8ec;border-left:3px solid var(--gold);padding:6px 12px}
+.item .impact b{color:var(--navy-d)}
+.item-head a,.spotlight .item-head a,.headline a{color:inherit;text-decoration:none}
+.item-head a:hover,.spotlight .item-head a:hover,.headline a:hover{text-decoration:underline}
+a.photolink{display:block;text-decoration:none}
+.storyhead{font-size:28px;line-height:1.2;color:var(--navy-d);margin:6px 0 10px}
+details.full{margin-top:6px}
+details.full summary{cursor:pointer;font-size:16px;font-weight:600;color:var(--navy);padding:12px 0}
+details.full .fullbody{border-top:1px solid var(--line);padding-top:4px}
+.sec-intro{color:#3a4255}
+.totop{text-align:right;margin-top:22px}
+.totop a{font-size:15px;font-weight:600;padding:10px 0;display:inline-block}
+.secname{font-size:14px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--navy);
+border-bottom:2px solid var(--navy);padding:6px 0;margin:12px 0 4px}
+.spotlight{border:1px solid var(--line);border-top:3px solid var(--gold);padding:14px 18px 10px;margin:0 0 22px;background:#fff}
+.spotlight .item-head{font-size:28px;line-height:1.25;color:var(--navy-d);margin:2px 0 6px}
+.spotlight .makerline{font-size:16px;color:var(--mute);border-bottom:1px solid var(--line);padding-bottom:7px;margin:0 0 10px}
+.spotlight .photo{max-width:560px}
+.spotlight .deck{font-size:20px;line-height:1.5;color:#3a4255;margin:0 0 6px}
+.techfeature{border-bottom:1px solid var(--line);padding:18px 0 18px;display:grid;
+grid-template-columns:300px 1fr;column-gap:20px;align-items:start}
+.techfeature .kicker{grid-column:1/-1;justify-self:start;margin-bottom:6px}
+.techfeature .photolink{grid-row:2/6}
+.techfeature.nophoto{grid-template-columns:1fr}
+.techfeature .photo{margin:4px 0 0}
+.techfeature .photo img{max-height:200px;object-fit:cover}
+.techfeature .photo figcaption{display:none}
+.spotline{font-size:17px;margin:0 0 6px}
+.crumb{color:var(--mute);font-size:14px;margin:14px 0 6px}
+.crumb a{padding:8px 0;display:inline-block}
+footer{background:var(--navy-d);color:#cfd8ee;border-top:3px solid var(--gold);font-size:14px}
+.pagehead{font-size:38px;line-height:1.15;color:var(--navy-d);margin:8px 0 10px}
+table.data{border-collapse:collapse;width:100%;font-size:17px;margin:6px 0 10px}
+table.data th,table.data td{border:1px solid var(--line);padding:10px 12px;text-align:left;vertical-align:top}
+table.data th{background:var(--tint);color:var(--navy-d);
+font-family:"-apple-system","SF Pro Display",Inter,"Segoe UI",sans-serif;font-weight:700;font-size:17px}
+table.data td.n,table.data th.n{text-align:right;font-family:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace}
+.tblwrap{overflow-x:auto}
+footer .fin{max-width:1040px;margin:0 auto;padding:14px 16px 18px}
+footer .fin b{color:#fff}
+@media(max-width:760px){
+body{font-size:17px}
+.top img.logo{height:44px}
+.top .ttl b{font-size:17px}
+.top .ttl span{font-size:14px}
+.front{grid-template-columns:1fr}
+.story{padding:0}
+.story + .story{border-left:none;border-top:1px solid var(--line);margin-top:16px;padding-top:14px}
+.techfeature{grid-template-columns:1fr}
+.techfeature .photolink{grid-row:auto}
+.story .headline,.techfeature .headline{font-size:34px}
+article h1,.storyhead{font-size:26px}
+article h2{font-size:26px}
+.item .item-head{font-size:24px}
+.item .deck,.spotlight .deck{font-size:19px}
+.spotlight .item-head{font-size:26px}
+h2.sec{font-size:26px}
+.pagehead{font-size:30px}
+.kn b{font-size:24px}
+table.data{font-size:16px}
+.photo.small{max-width:none}
+.story .photo img{max-height:200px}
+}
+</style></head>
+<body id="top" class="sk">
+<header class="sk-header"><div class="sk-header__bar">
+<div class="sk-header__lead"><a class="sk-header__logo" href="../../index.html"><img src="https://sharma-kit.sharma-crew.workers.dev/assets/logo-white-header.png" alt="Sharma Electric &amp; HVAC" width="103" height="20"></a></div>
+<div class="sk-header__title">Sharma News</div>
+<div class="sk-header__trail"><a class="sk-header__btn" href="../../more/" aria-label="More"><svg class="sk-icon"><use href="#i-more"/></svg></a></div>
+</div></header>
+<div class="sk-offline"></div>
+<nav class="main"><div class="in">
+<a href="../../index.html">Home</a>
+<a href="https://sharmaelechvac.github.io/sharma-legal-briefing/">Legal</a>
+<a href="../../finance/index.html" class="on">Finance</a>
+<a href="../../finance/archive/index.html">Finance archive</a>
+<a href="../../tech/index.html">Tech</a>
+<a href="../../tech/archive/index.html">Tech archive</a>
+<a href="../../permits/index.html">Permit News</a>
+</div></nav>
+<div class="wrap"><p class="crumb"><a href="../../finance/index.html">&larr; Finance Briefing</a> &middot; <a href="../../finance/archive/2026-11-20.html">Edition of 2026-11-20</a></p><span class="kicker">Finance Briefing &middot; Friday, November 20, 2026</span><h1 class="storyhead">4. Markets and fuel</h1><p class="deck">S&P 500 7,175.83 (−147.80, −2.02%) — a sixth straight loss , its longest losing streak since April 2024 , now 8.2% below last month's record , after trading as high as 7,415.64 intraday; Dow Jones Industrial Average 49,097.06…</p><p class="impact"><b>Why it matters to Sharma:</b> this stopped being a repricing and became a rout — six straight down days, the Dow through 50,000, and volatility at 28. Equity wealth effects and builder sentiment feed each other; a sustained slide from here is how the NAHB's "scaling back construction"…</p><div class="fullbody">
+<p><strong>Item 4A — Stocks plunge a sixth straight day: S&amp;P 500 −2.02% to 7,175.83, Dow −1,101 points to 49,097.06, Nasdaq −2.25%; VIX 28.44 — Thursday, November 19 close</strong>
+- Source / links: The Edge US Market Wrap 19 November, Nov 19, 2026 — <a href="https://edgeconsultancykw.com/us-market-wrap-19-november-2026/" target="_blank" rel="noopener">https://edgeconsultancykw.com/us-market-wrap-19-november-2026/</a> ; Investopedia, Markets News, Nov. 19, 2026: Dow Plunges 1,100 Points, S&amp;P 500 Falls for 6th Straight Day, Nov 19, 2026 — <a href="https://www.investopedia.com/stock-market-today-dow-jones-s-and-p-500-nasdaq-11192026-12263687" target="_blank" rel="noopener">https://www.investopedia.com/stock-market-today-dow-jones-s-and-p-500-nasdaq-11192026-12263687</a> ; HDFC Sky (AP/CNBC closes), Nov 20, 2026 — <a href="https://hdfcsky.com/news/dow-sinks-1101-points-as-anthropic-ipo-debut-triggers-broad-ai-led-selloff-november-20-2026" target="_blank" rel="noopener">https://hdfcsky.com/news/dow-sinks-1101-points-as-anthropic-ipo-debut-triggers-broad-ai-led-selloff-november-20-2026</a>
+- Key figures: <strong>S&amp;P 500 7,175.83 (−147.80, −2.02%)</strong> — a <strong>sixth straight loss</strong>, its longest losing streak since <strong>April 2024</strong>, now <strong>8.2% below last month's record</strong>, after trading as high as <strong>7,415.64</strong> intraday; <strong>Dow Jones Industrial Average 49,097.06 (−1,101.11, −2.19%)</strong> — its <strong>first close below 50,000 since June</strong>, and down ~2,500 points over three sessions; <strong>Nasdaq Composite 23,879.20 (−550.69, −2.25%)</strong>; <strong>Nasdaq 100 26,517.05 (−2.21%)</strong>; <strong>Russell 2000 2,655.11 (−2.18%)</strong>. <strong>All 11 S&amp;P 500 sectors fell</strong>, led by consumer discretionary and communication services at ~−3%. The <strong>VIX closed at 28.44, +15.8%</strong> from Wednesday's 24.56 — the highest of this sell-off leg. <strong>Nvidia fell more than 3%</strong> after rising nearly 5% early; <strong>AMD fell ~8%</strong> on a short-seller report; only one Dow stock (Chevron) rose. <strong>Walmart fell ~1%</strong> after reporting in-line quarterly results and raising its full-year outlook (Investopedia).
+- Why it matters to Sharma: this stopped being a repricing and became a rout — six straight down days, the Dow through 50,000, and volatility at 28. Equity wealth effects and builder sentiment feed each other; a sustained slide from here is how the NAHB's "scaling back construction" turns into cancelled starts. It does not change any Sharma invoice or bid today, but it raises the collections-risk premium on every builder exposure.</p>
+<p><strong>Item 4B — Anthropic's record IPO: priced $83, opened $111.50, closed $97.17 (+17.07%); $81.3 billion raised — the largest IPO in history — Thursday, November 19</strong>
+- Source / links: Reuters, Anthropic's IPO makes history, Nov 19, 2026 — <a href="https://www.reuters.com/business/anthropics-ipo-makes-history-2026-11-19/" target="_blank" rel="noopener">https://www.reuters.com/business/anthropics-ipo-makes-history-2026-11-19/</a> ; Motley Fool, Here's Why Anthropic's IPO Was a Historic Success, Nov 19, 2026, 8:42 PM ET — <a href="https://www.fool.com/investing/2026/11/19/why-anthropic-ipo-was-a-historic-success/" target="_blank" rel="noopener">https://www.fool.com/investing/2026/11/19/why-anthropic-ipo-was-a-historic-success/</a> ; New York Post, Anthropic closes first day of trading at $97.17, Nov 19, 2026 — <a href="https://nypost.com/2026/11/19/business/anthropic-to-begin-trading-at-about-110-per-share-in-record-setting-ipo/" target="_blank" rel="noopener">https://nypost.com/2026/11/19/business/anthropic-to-begin-trading-at-about-110-per-share-in-record-setting-ipo/</a>
+- Published: Thursday, November 19, 2026 (inside the window). Ticker: ANT (Nasdaq).
+- Key figures: Anthropic <strong>priced its IPO at $83/share</strong> (above the $70–$78 marketed range), <strong>upsized to 980 million shares and raised $81.3 billion</strong> — the <strong>largest IPO on record</strong>, surpassing SpaceX's earlier this year, with overallotment options that could take the raise to <strong>~$93.5 billion</strong>. Shares <strong>opened at $111.50 (+34%)</strong>, traded as high as <strong>$115.10</strong>, and <strong>closed at $97.17 (+17.07%)</strong>, for a fully diluted market value of <strong>~$1.77–1.8 trillion</strong>. The Claude maker's revenue for the <strong>first nine months of 2026 was ~$33 billion, up ~1,206%</strong> year-over-year; it also posted a <strong>net loss of $80.7 billion in the first half of 2026</strong> on its build-out spending (New York Post, from the prospectus). Roughly <strong>4,250 employees</strong> hold stock; co-founders are locked up for a year.
+- Why it matters to Sharma: indirectly, but really — the AI build-out is the demand engine behind data-center electrical work and behind the copper/AI-debt concerns the FOMC minutes flagged on Wednesday. A $81 billion raise says that engine is still funded even on a day the broader market fell 2%; the fact that even this debut could not hold the indexes up says the selling is about rates and valuations, not about AI demand collapsing.</p>
+<p><strong>Item 4C — Oil settles flat: Brent $91.98 (+0.03%), WTI $83.21 (−0.06%); ULSD diesel futures $3.9514/gal — Thursday, November 19</strong>
+- Source / links: DTN, WTI Stuck Beneath $85 as Glut Fears Offset Supply Risks, Nov 19, 2026, 2:43 PM CT — <a href="https://www.dtnpf.com/agriculture/web/ag/news/world-policy/article/2026/11/19/wti-stuck-beneath-85-glut-fears" target="_blank" rel="noopener">https://www.dtnpf.com/agriculture/web/ag/news/world-policy/article/2026/11/19/wti-stuck-beneath-85-glut-fears</a> ; Rigzone (Bloomberg), Oil Prices Swing on Middle East Uncertainty, Nov 19, 2026, 5:31 PM ET — <a href="https://www.rigzone.com/news/wire/oil_prices_swing_on_middle_east_uncertainty-19-nov-2026-185129-article/" target="_blank" rel="noopener">https://www.rigzone.com/news/wire/oil_prices_swing_on_middle_east_uncertainty-19-nov-2026-185129-article/</a>
+- Key figures: <strong>ICE Brent for January delivery settled at $91.98/bbl, +$0.03 (+0.03%)</strong>, after a morning peak of $93.50; <strong>NYMEX WTI for December delivery settled at $83.21/bbl, −$0.05 (−0.06%)</strong> — matching its lowest settlement since August 26 — ahead of Friday's contract expiration; the more active <strong>January WTI settled at $82.44 (+0.16%)</strong>. <strong>NYMEX ULSD (heating oil/diesel) for December slipped 0.53% to $3.9514/gal</strong>; RBOB gasoline rose 0.53% to $2.4951/gal. DTN tied the flat settle to Wednesday's large U.S. stockpile builds and forecasts of elevated Middle East supply offsetting an early rally on military headlines; Reuters' Friday-morning follow noted crude shipments through the Strait of Hormuz have recovered to roughly pre-war levels, with both benchmarks set for a third straight weekly decline.
+- Why it matters to Sharma: crude has stopped falling for a day, not turned up — the surplus story (Wednesday's +3.4M-barrel crude build, Hormuz flows near normal) still caps rallies. Diesel futures easing again keeps the pressure on pump prices and on any supplier fuel surcharge still priced off the September spike.</p>
+<p><strong>Item 4D — AAA pump prices: regular $3.7212/gal, diesel $5.9298/gal on Thursday — both down ~3 cents on the day</strong>
+- Source / link: AAA Fuel Prices, national averages as of Nov 19, 2026, via US Brief, Nov 19, 2026 — <a href="https://us-brief.com/article/fin-gas-falls-7th-day-election-record" target="_blank" rel="noopener">https://us-brief.com/article/fin-gas-falls-7th-day-election-record</a> ; AAA Gas Prices (yesterday-average row confirms Nov 19: regular $3.7212, diesel $5.9298) — <a href="https://gasprices.aaa.com/" target="_blank" rel="noopener">https://gasprices.aaa.com/</a>
+- Key figures: AAA's national average on <strong>Thursday, November 19</strong> was <strong>regular gasoline $3.7212/gal</strong> (down ~2.9 cents from Wednesday's $3.7502, ~19 cents below a week ago at $3.9081, ~57 cents below a month ago, still ~63 cents above a year ago at $3.0936) and <strong>diesel $5.9298/gal</strong> (down ~3.0 cents from Wednesday's $5.9594, ~17 cents below a week ago at $6.0977, still ~$2.15 above a year ago at $3.7833). Diesel has now held <strong>under $6 for four straight days</strong> (since Monday, November 16).
+- Why it matters to Sharma: pump diesel at $5.93, down 17 cents on the week, is continued real relief for crew-truck and delivery costs against the late-September peak above $6.50 — and continued evidence against surcharges priced off that peak.</p>
+</div><p class="totop"><a href="../../finance/index.html">&larr; Back to the Finance Briefing</a></p></div>
+<footer><div class="fin"><b>Sharma Electric &amp; HVAC</b> · Sharma News, updated daily at 5:00 AM ET. News summaries for the Sharma team. Not legal or financial advice.</div></footer>
+<script>if ("serviceWorker" in navigator && (location.protocol === "https:" || location.hostname === "localhost")) { addEventListener("load", function(){ navigator.serviceWorker.register("../../sw.js?kit=https://sharma-kit.sharma-crew.workers.dev", { scope: "/sharma-news/" }).catch(function(){}); }); }</script>
+</body></html>
