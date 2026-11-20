@@ -238,7 +238,7 @@ def shell(prefix, title, body, chip="", active=""):
 </div></nav>
 <div class="wrap">{body}</div>
 <footer><div class="fin"><b>Sharma Electric &amp; HVAC</b> · Sharma News, updated daily at 5:00 AM ET. News summaries for the Sharma team. Not legal or financial advice.</div></footer>
-<script>if ("serviceWorker" in navigator && (location.protocol === "https:" || location.hostname === "localhost")) {{ addEventListener("load", function(){{ navigator.serviceWorker.register("{prefix}sw.js?kit=https://sharma-kit.sharma-crew.workers.dev", { scope: "/sharma-news/" }).catch(function(){{}}); }}); }}</script>
+<script>if ("serviceWorker" in navigator && (location.protocol === "https:" || location.hostname === "localhost")) {{ addEventListener("load", function(){{ navigator.serviceWorker.register("{prefix}sw.js?kit=https://sharma-kit.sharma-crew.workers.dev", {{ scope: "/sharma-news/" }}).catch(function(){{}}); }}); }}</script>
 </body></html>"""
 def md_to_html(md_text):
     html = markdown.markdown(md_text, extensions=["extra", "sane_lists"])
@@ -256,9 +256,17 @@ IMAGES = {
   "legal": ("home-legal.jpg", "The U.S. Capitol dome at dusk with lit windows",
     "The U.S. Capitol at dusk — the Senate on Wednesday, Nov 18 cleared the BAAJA permitting bill's last 60-vote hurdle (final cloture 65–31), leaving only a simple-majority passage vote.",
     "Photo: Heatmap News"),
-  "finance": ("2026-11-19-lead.jpg", "New home construction",
-    "October housing starts rose 9.9% to a 1.309 million pace, but single-family permits fell 8.7% to 772,000 — the lowest since January 2023.",
-    "Photo: NAHB"),
+  "finance": ("2026-11-20-lead.jpg", "Anthropic CEO Dario Amodei and President Daniela Amodei celebrate the company's IPO at Nasdaq",
+    "Anthropic's record $81.3 billion IPO — priced at $83, opened at $111.50, closed at $97.17 (+17.07%) — could not stem Thursday's rout: the S&P 500 fell 2.02% for a sixth straight day.",
+    "Photo: Reuters via New York Post"),
+ },
+ "2026-11-20": {
+  "lead": ("2026-11-20-lead.jpg", "Anthropic CEO Dario Amodei and President Daniela Amodei celebrate the company's IPO at Nasdaq",
+    "Anthropic's record $81.3 billion IPO — priced at $83, opened at $111.50, closed at $97.17 (+17.07%) — could not stem Thursday's rout: the S&P 500 fell 2.02% for a sixth straight day.",
+    "Photo: Reuters via New York Post"),
+  "inline": ("2026-11-20-inline.jpg", "A home for sale with a mortgage-rate backdrop",
+    "Freddie Mac's weekly 30-year rate jumped 17 bp to 7.28% for the week ending November 19, ending four straight weekly declines.",
+    "Photo: Realtor.com"),
  },
  "2026-11-19": {
   "lead": ("2026-11-19-lead.jpg", "New home construction",
@@ -321,6 +329,13 @@ def photo_html(entry, prefix, cls=""):
 
 # ---------- at-a-glance + key numbers (from each report's own summary) ----------
 FIN_GLANCE = {
+ "2026-11-20": [
+   "Freddie Mac's weekly 30-year jumped 17 bp to 7.28% (15-year 6.66%), ending four straight weekly declines; Mortgage News Daily's daily 30-year was 7.45%.",
+   "Stocks plunged a sixth straight day: S&P 500 7,175.83 (−2.02%), Dow 49,097.06 (−2.19%, first close below 50,000 since June), Nasdaq 23,879.20 (−2.25%); VIX 28.44 (+15.8%). Anthropic's record $81.3B IPO closed +17.07% at $97.17 and could not stem the rout.",
+   "Initial jobless claims edged up to 203,000; continuing claims jumped 70,000 to 1.763M. The Philadelphia Fed index plunged to 6.3 (from 20.9) with prices paid at 58.2, the highest since April.",
+   "COMEX copper December settled at $5.6335/lb (−0.62%) after Wednesday's rout; LME official cash copper $12,570/t (−1.41%). UBS support: $5.50/lb / $12,000/t.",
+   "Treasury par yields eased on the rout (10-year 5.04%, 2-year 4.76%); December +25 bp stayed near-certain at 95.7% futures-implied, and J.P. Morgan now sees hikes at the next three meetings.",
+   "Oil was flat (Brent $91.98, WTI $83.21); AAA diesel held under $6 at $5.9298/gal. Builder shares fell: Lennar −3.57%, PulteGroup −2.0%, D.R. Horton −1.18%. The SBA size-standards comment period closes today, Friday, November 20."],
  "2026-11-11": [
    "October CPI came in hot: +0.4% headline, +0.3% core — a third straight +0.3% core print.",
    "A December Fed hike — possibly 50 bp — is on the table; the 10-year Treasury pushed to ~5%.",
@@ -380,6 +395,9 @@ FIN_GLANCE = {
    "Oil settled slightly higher (Brent $93.14, WTI $86.01); AAA diesel held under $6 at $5.98/gal. Central Florida October closings fell 4.0% YoY with the median at $390,000 (+1.3%)."],
 }
 FIN_NUMBERS = {
+ "2026-11-20": [("Freddie Mac 30-yr", "7.28%"), ("MND daily 30-yr", "7.45%"),
+   ("S&P 500", "7,175.83"), ("COMEX copper (Dec)", "$5.6335/lb"),
+   ("10-yr Treasury", "5.04%"), ("Brent crude", "$91.98/bbl")],
  "2026-11-11": [("CPI (Oct, m/m)", "+0.4%"), ("Core CPI (m/m)", "+0.3%"),
    ("Policy rate", "3.75%–4.00%"), ("30-yr fixed", "7.30%"),
    ("10-yr Treasury", "4.99%"), ("COMEX copper", "$6.2745/lb")],
@@ -409,9 +427,9 @@ FIN_NUMBERS = {
 HOME_GLANCE = [
  "Legal — biggest story: the Senate clears the BAAJA permitting bill's last 60-vote hurdle (Wed Nov 18) — budget waiver 70–26, substitute adopted 69–27, final cloture 65–31 — with the passage vote still pending at the cutoff.",
  "Legal — Florida: a thin day — the First DCA nominating commission opens applications for the Tanenbaum vacancy (due Dec 2), and the new leaders firm up an affordability agenda with Amendment 3 headed to the March regular session; IRS FIRE retires today and the OSHA HazCom deadline is tomorrow.",
- "Finance — October starts rose 9.9% to 1.309M but permits fell 7.4% to 1.295M (single-family permits 772,000, lowest since Jan 2023) and pending home sales hit a record-low 63.0, with the South down 6.3%.",
- "Finance — COMEX copper plunged 5.30% to $5.6685/lb, its lowest since April; the October FOMC minutes showed “almost all” officials expecting further hikes and Waller called to “go 50 in December.”",
- "Finance — The daily 30-year mortgage rate eased to 7.46% and the 10-year Treasury to 5.07%; stocks split (S&P 500 −0.23%, Dow −1.11%, Nasdaq +0.42%) and oil fell (Brent $91.95, WTI $83.26)."]
+ "Finance — Freddie Mac's weekly 30-year jumped 17 bp to 7.28%, ending four straight weekly declines, while the daily rate held at 7.45%; jobless claims edged up to 203,000 and the Philadelphia Fed index plunged to 6.3 with prices paid at a seven-month high of 58.2.",
+ "Finance — Stocks plunged a sixth straight day (S&P 500 −2.02% to 7,175.83, Dow −2.19% to 49,097.06, Nasdaq −2.25%) and the VIX jumped to 28.44, as Anthropic's record $81.3B IPO (closed $97.17, +17.07%) failed to stem the rout.",
+ "Finance — COMEX copper steadied at $5.6335/lb (−0.62%) with LME cash at $12,570/t; Treasury par yields eased (10-year 5.04%) and oil was flat (Brent $91.98, WTI $83.21) with AAA diesel under $6 at $5.9298/gal."]
 
 def glance_html(bullets):
     lis = "\n".join(f"<li>{b}</li>" for b in bullets)
@@ -665,8 +683,18 @@ TECH = {  # date -> (report glob, weekday label, archive one-liner)
    "Builder confidence fell four points to 25 in November — the lowest since April 2012 (NAHB, Nov 17) — with 46% of builders cutting prices; in Florida, Lee County awarded a $47.1M Alico Road contract. Product Spotlight (new today): GE Vernova HYpact-145g SF6-free switchgear (electrical) and Carrier ClimaVision 3-MyStat Pro Pack (HVAC)."),
  "2026-11-19": ("sharma-tech-news-2026-11-19-*", "Thursday, November 19, 2026",
    "October starts rose 9.9% to 1.309M but permits fell 7.4% to 1.295M — single-family permits down 8.7% to 772,000, the lowest since January 2023 (Census/HUD, Nov 18); Suffolk completed Gilead's research center on a four-tool contech stack, and WWE proposed a $100M Performance Center in downtown Orlando. Product Spotlight (new today): Enphase IQ Bidirectional EV Charger (electrical) and Bosch GoTemp Home + GoTemp Pro Remote Support (HVAC)."),
+ "2026-11-20": ("sharma-tech-news-2026-11-20-*", "Friday, November 20, 2026",
+   "Both tubes of the $16B Hudson Tunnel are now under construction (second TBM launched, GDC Nov 18); NYC orders the Flatbush-collapse-damaged 1323 Flatbush demolished, and EarthCam launches a 50+ app marketplace. In Florida, SECO Energy builds three Central Florida facilities with DPR and a jury convicts two men in an $8.9M VA contract fraud. Product Spotlight (new today): Resideo First Alert CX6T AI Camera + Resideo One (electrical) and Viessmann Vitocal 300-G intelligent energy (HVAC)."),
 }
 TECH_IMAGES = {  # photos pulled from the articles the report cites
+ "2026-11-20": {
+  "lead": ("tech-2026-11-20-lead.webp", "Tunnel boring machines assembling the Hudson Tunnel tubes in North Bergen, New Jersey",
+    "Tunnel boring machine assembly for the Hudson Tunnel Project in North Bergen, New Jersey — the second machine has launched into the southern tube, putting both $16 billion tubes under construction.",
+    "Photo: Gateway Development Commission via Construction Dive"),
+  "inline": ("tech-2026-11-20-inline.webp", "Luve ribbon-cutting at its expanded Jacksonville, Texas plant",
+    "Luve's ribbon-cutting at its Jacksonville, Texas plant — a roughly 215,000 sq. ft. expansion, to just over 320,000 sq. ft., mainly to build outdoor cooling products for data centers.",
+    "Photo: Luve via ACHR News"),
+ },
  "2026-11-19": {
   "lead": ("tech-2026-11-19-lead.webp", "Gilead Sciences' new research center in Foster City, California",
     "Gilead Sciences' new research center in Foster City, California — Suffolk completed the build leaning on OpenSpace, Dusty Robotics, Kaya AI and Alice Technologies.",
@@ -706,6 +734,11 @@ TECH_IMAGES = {  # photos pulled from the articles the report cites
  },
 }
 TECH_SPOT = {  # date -> report item no. -> photo entry (from the cited article/product page)
+ "2026-11-20": {
+  "2.2": ("tech-vitocal.jpg", "Viessmann Vitocal 300-G intelligent energy ground-source heat pump",
+    "The Viessmann Vitocal 300-G intelligent energy — an indoor ground-source heat pump on R290 (propane), 6–16 kW, SCOP up to 5.5, with the One Base Intelligence control platform. Announced Nov 2, 2026; deliveries begin Nov 30, 2026.",
+    "Photo: Viessmann via Cooling Post"),
+ },
  "2026-11-19": {
   "2.2": ("tech-gotemp.webp", "Bosch GoTemp Pro app on a phone",
     "The GoTemp Pro contractor app — its new Remote Support feature lets an on-site tech share live system data by Bluetooth with remote support for troubleshooting. The GoTemp Home homeowner app launched alongside it.",
@@ -1063,9 +1096,9 @@ body = f"""
 </div>
 <div class="techfeature"><span class="kicker">Construction · Engineering · Tech</span>
 <a class="photolink" href="tech/index.html">{photo_html(tech_lead, "")}</a>
-<h2 class="headline"><a href="tech/index.html">October starts rebound, but permits fall to their lowest since January 2023</a></h2>
-<p class="spotline">Product Spotlight — Electrical: <b>Enphase IQ Bidirectional EV Charger</b> · HVAC: <b>Bosch GoTemp Home app + GoTemp Pro Remote Support</b></p>
-<p class="byline">Sharma Tech · Edition of Nov 19, 2026</p>
+<h2 class="headline"><a href="tech/index.html">Both tubes of the $16B Hudson Tunnel are now under construction</a></h2>
+<p class="spotline">Product Spotlight — Electrical: <b>Resideo First Alert CX6T Advanced AI Camera + Resideo One portal</b> · HVAC: <b>Viessmann Vitocal 300-G intelligent energy (ie)</b></p>
+<p class="byline">Sharma Tech · Edition of Nov 20, 2026</p>
 <a class="cont" href="tech/index.html">Read today's tech briefing →</a></div>
 {permit_card}
 <h2 class="sec">Legal — Back Issues</h2><ul class="arch">{legal_arch}</ul>
