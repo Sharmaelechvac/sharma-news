@@ -272,6 +272,65 @@ html[data-scheme="dark"] article,html[data-scheme="dark"] .glance,
 html[data-scheme="dark"] .arch li,html[data-scheme="dark"] .kn{background:#fff}
 html[data-scheme="dark"] .story .headline,html[data-scheme="dark"] .techfeature .headline,
 html[data-scheme="dark"] .item .item-head,html[data-scheme="dark"] .storyhead{color:#121212}
+/* ---------- NYT FRONT PAGE STRUCTURE (Sanjay 2026-11-20: "Copy the real
+   NYT front page layout exactly") — blackletter masthead with double rule,
+   lead story centered in a wide middle column, secondary stories in ruled
+   side rails, glance and archives flowing in newspaper columns. Hub-only
+   grid uses :has(> .front) so edition/story pages keep the article layout. */
+.masthead{text-align:center;padding:20px 0 12px;border-bottom:4px double #121212;margin-bottom:6px}
+.mast-name{font-family:"UnifrakturMaguntia",Georgia,"Times New Roman",serif;
+font-size:68px;line-height:1;color:#121212}
+.mast-tag{font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#555;margin-top:8px}
+@media(max-width:760px){.mast-name{font-size:44px}}
+nav.main{border-top:1px solid #DFDFDD}
+nav.main .in{justify-content:center}
+.wrap:has(> .front){display:grid;grid-template-columns:1fr 2.1fr 1.15fr;
+grid-template-areas:"head head head" "left center right" "left center right2"
+"glance glance glance";column-gap:0}
+.wrap:has(> .front) > .masthead{grid-area:head}
+.wrap:has(> .front) > .front{display:contents}
+.wrap:has(> .front) > .glance{grid-area:glance}
+.wrap:has(> .front) > h2.sec,.wrap:has(> .front) > .arch{grid-column:1 / -1}
+.nyt-lead{grid-area:center;padding:2px 22px 0 !important;border:none !important;
+display:flex !important;flex-direction:column;text-align:center}
+.nyt-lead .kicker{align-self:center}
+.nyt-lead .headline{order:1;font-size:44px !important;line-height:1.08 !important;margin:12px 0 10px}
+.nyt-lead .byline{order:2}
+.nyt-lead .photolink{order:3;margin-top:12px}
+.nyt-lead .photo figcaption{text-align:left}
+.nyt-lead .cont{order:4;align-self:center}
+.wrap:has(> .front) > .front .story:not(.nyt-lead){grid-area:left;
+padding-right:18px !important;border-right:1px solid #DFDFDD}
+.wrap:has(> .front) > .front .story:not(.nyt-lead) .headline{font-size:23px;line-height:1.22}
+.wrap:has(> .front) > .techfeature{grid-area:right;display:block;
+padding-left:18px;border-left:1px solid #DFDFDD;border-bottom:none}
+.wrap:has(> .front) > .techfeature .headline{font-size:20px;line-height:1.25}
+.wrap:has(> .front) > .techfeature.nophoto{grid-area:right2}
+@media(max-width:860px){
+.wrap:has(> .front){grid-template-columns:1fr;
+grid-template-areas:"head" "center" "left" "right" "right2" "glance"}
+.nyt-lead{padding:0 !important}
+.nyt-lead .headline{font-size:33px !important}
+.wrap:has(> .front) > .front .story:not(.nyt-lead){padding-right:0 !important;
+border-right:none;border-top:1px solid #DFDFDD;padding-top:14px;margin-top:6px}
+.wrap:has(> .front) > .techfeature{padding-left:0;border-left:none;
+border-top:1px solid #DFDFDD;padding-top:14px}}
+.glance ul{columns:2;column-gap:36px}
+@media(max-width:760px){.glance ul{columns:1}}
+.arch{columns:3;column-gap:30px}
+.arch li{break-inside:avoid}
+@media(max-width:860px){.arch{columns:1}}
+article{max-width:840px;margin-left:auto;margin-right:auto}
+article h1{text-align:center;font-size:40px;line-height:1.12}
+.crumb{text-align:center}
+.jump{justify-content:center}
+.jump a{margin:0 8px}
+.sitehead .brand{justify-content:center;text-align:center;flex-direction:column;gap:8px}
+.sitetitle{font-size:44px}
+.pagenav{justify-content:center}
+.frontmatter{text-align:center}
+.frontmatter h1.headline{font-size:48px}
+.frontmatter .coverage{margin:0 auto}
 """
 
 _EMOJI = re.compile("[\u2600-\u27BF\u2B50\u2B55\U0001F000-\U0001FAFF]\uFE0F?[ \u00a0]?")
@@ -308,6 +367,7 @@ def shell(prefix, title, body, chip="", active=""):
 <link rel="apple-touch-icon" href="https://sharma-kit.sharma-crew.workers.dev/assets/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="https://sharma-kit.sharma-crew.workers.dev/assets/favicon-32.png">
 <link rel="stylesheet" href="https://sharma-kit.sharma-crew.workers.dev/sharma-kit.css">
+<link href="https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&display=swap" rel="stylesheet">
 <script src="https://sharma-kit.sharma-crew.workers.dev/sharma-kit.js" defer></script>
 <style>{CSS}</style></head>
 <body id="top" class="sk">
@@ -1175,9 +1235,10 @@ tech_arch = "\n".join(
 tech_lead = TECH_IMAGES.get(tlatest, {}).get("lead")
 home_imgs = IMAGES.get("home", {})
 body = f"""
+<div class="masthead"><div class="mast-name">Sharma News</div><div class="mast-tag">Legal \u00b7 Finance \u00b7 Construction, Engineering &amp; Tech \u00b7 Permits</div></div>
 {glance_html(HOME_GLANCE)}
 <div class="front">
-<div class="story"><span class="kicker">Legal Briefing</span>
+<div class="story nyt-lead"><span class="kicker">Legal Briefing</span>
 <a class="photolink" href="{LEGAL_BASE}/">{photo_html(home_imgs.get("legal"), "")}</a>
 <h2 class="headline"><a href="{LEGAL_BASE}/">{LEGAL['2026-11-20'][1]}</a></h2>
 <p class="byline">Legal Briefing — Harvey, Legal Advisor · Edition of Nov 20, 2026</p>

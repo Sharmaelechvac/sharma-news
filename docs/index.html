@@ -259,6 +259,66 @@ html[data-scheme="dark"] article,html[data-scheme="dark"] .glance,
 html[data-scheme="dark"] .arch li,html[data-scheme="dark"] .kn{background:#fff}
 html[data-scheme="dark"] .story .headline,html[data-scheme="dark"] .techfeature .headline,
 html[data-scheme="dark"] .item .item-head,html[data-scheme="dark"] .storyhead{color:#121212}
+</style><link href="https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&display=swap" rel="stylesheet"><style>/* NYT-FRONT-V5 */
+/* ---------- NYT FRONT PAGE STRUCTURE (Sanjay 2026-11-20: "Copy the real
+   NYT front page layout exactly") — blackletter masthead with double rule,
+   lead story centered in a wide middle column, secondary stories in ruled
+   side rails, glance and archives flowing in newspaper columns. Hub-only
+   grid uses :has(> .front) so edition/story pages keep the article layout. */
+.masthead{text-align:center;padding:20px 0 12px;border-bottom:4px double #121212;margin-bottom:6px}
+.mast-name{font-family:"UnifrakturMaguntia",Georgia,"Times New Roman",serif;
+font-size:68px;line-height:1;color:#121212}
+.mast-tag{font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#555;margin-top:8px}
+@media(max-width:760px){.mast-name{font-size:44px}}
+nav.main{border-top:1px solid #DFDFDD}
+nav.main .in{justify-content:center}
+.wrap:has(> .front){display:grid;grid-template-columns:1fr 2.1fr 1.15fr;
+grid-template-areas:"head head head" "left center right" "left center right2"
+"glance glance glance";column-gap:0}
+.wrap:has(> .front) > .masthead{grid-area:head}
+.wrap:has(> .front) > .front{display:contents}
+.wrap:has(> .front) > .glance{grid-area:glance}
+.wrap:has(> .front) > h2.sec,.wrap:has(> .front) > .arch{grid-column:1 / -1}
+.nyt-lead{grid-area:center;padding:2px 22px 0 !important;border:none !important;
+display:flex !important;flex-direction:column;text-align:center}
+.nyt-lead .kicker{align-self:center}
+.nyt-lead .headline{order:1;font-size:44px !important;line-height:1.08 !important;margin:12px 0 10px}
+.nyt-lead .byline{order:2}
+.nyt-lead .photolink{order:3;margin-top:12px}
+.nyt-lead .photo figcaption{text-align:left}
+.nyt-lead .cont{order:4;align-self:center}
+.wrap:has(> .front) > .front .story:not(.nyt-lead){grid-area:left;
+padding-right:18px !important;border-right:1px solid #DFDFDD}
+.wrap:has(> .front) > .front .story:not(.nyt-lead) .headline{font-size:23px;line-height:1.22}
+.wrap:has(> .front) > .techfeature{grid-area:right;display:block;
+padding-left:18px;border-left:1px solid #DFDFDD;border-bottom:none}
+.wrap:has(> .front) > .techfeature .headline{font-size:20px;line-height:1.25}
+.wrap:has(> .front) > .techfeature.nophoto{grid-area:right2}
+@media(max-width:860px){
+.wrap:has(> .front){grid-template-columns:1fr;
+grid-template-areas:"head" "center" "left" "right" "right2" "glance"}
+.nyt-lead{padding:0 !important}
+.nyt-lead .headline{font-size:33px !important}
+.wrap:has(> .front) > .front .story:not(.nyt-lead){padding-right:0 !important;
+border-right:none;border-top:1px solid #DFDFDD;padding-top:14px;margin-top:6px}
+.wrap:has(> .front) > .techfeature{padding-left:0;border-left:none;
+border-top:1px solid #DFDFDD;padding-top:14px}}
+.glance ul{columns:2;column-gap:36px}
+@media(max-width:760px){.glance ul{columns:1}}
+.arch{columns:3;column-gap:30px}
+.arch li{break-inside:avoid}
+@media(max-width:860px){.arch{columns:1}}
+article{max-width:840px;margin-left:auto;margin-right:auto}
+article h1{text-align:center;font-size:40px;line-height:1.12}
+.crumb{text-align:center}
+.jump{justify-content:center}
+.jump a{margin:0 8px}
+.sitehead .brand{justify-content:center;text-align:center;flex-direction:column;gap:8px}
+.sitetitle{font-size:44px}
+.pagenav{justify-content:center}
+.frontmatter{text-align:center}
+.frontmatter h1.headline{font-size:48px}
+.frontmatter .coverage{margin:0 auto}
 </style></head>
 <body id="top" class="sk">
 <header class="sk-header"><div class="sk-header__bar">
@@ -277,13 +337,14 @@ html[data-scheme="dark"] .item .item-head,html[data-scheme="dark"] .storyhead{co
 <a href="permits/index.html">Permit News</a>
 </div></nav>
 <div class="wrap">
+<div class="masthead"><div class="mast-name">Sharma News</div><div class="mast-tag">Legal · Finance · Construction, Engineering &amp; Tech · Permits</div></div>
 <div class="glance" id="glance"><h2>At a Glance</h2><ul><li>Legal — biggest story: the Senate clears the BAAJA permitting bill's last 60-vote hurdle (Wed Nov 18) — budget waiver 70–26, substitute adopted 69–27, final cloture 65–31 — with the passage vote still pending at the cutoff.</li>
 <li>Legal — Florida: a thin day — the First DCA nominating commission opens applications for the Tanenbaum vacancy (due Dec 2), and the new leaders firm up an affordability agenda with Amendment 3 headed to the March regular session; IRS FIRE retires today and the OSHA HazCom deadline is tomorrow.</li>
 <li>Finance — Freddie Mac's weekly 30-year jumped 17 bp to 7.28%, ending four straight weekly declines, while the daily rate held at 7.45%; jobless claims edged up to 203,000 and the Philadelphia Fed index plunged to 6.3 with prices paid at a seven-month high of 58.2.</li>
 <li>Finance — Stocks plunged a sixth straight day (S&P 500 −2.02% to 7,175.83, Dow −2.19% to 49,097.06, Nasdaq −2.25%) and the VIX jumped to 28.44, as Anthropic's record $81.3B IPO (closed $97.17, +17.07%) failed to stem the rout.</li>
 <li>Finance — COMEX copper steadied at $5.6335/lb (−0.62%) with LME cash at $12,570/t; Treasury par yields eased (10-year 5.04%) and oil was flat (Brent $91.98, WTI $83.21) with AAA diesel under $6 at $5.9298/gal.</li></ul></div>
 <div class="front">
-<div class="story"><span class="kicker">Legal Briefing</span>
+<div class="story nyt-lead"><span class="kicker">Legal Briefing</span>
 <a class="photolink" href="https://sharmaelechvac.github.io/sharma-legal-briefing/"><figure class="photo "><img src="img/home-legal.jpg" alt="The U.S. Capitol dome at dusk with lit windows" loading="lazy"><figcaption>The U.S. Capitol at dusk — the Senate on Wednesday, Nov 18 cleared the BAAJA permitting bill's last 60-vote hurdle (final cloture 65–31), leaving only a simple-majority passage vote.<span class="credit">Photo: Heatmap News</span></figcaption></figure></a>
 <h2 class="headline"><a href="https://sharmaelechvac.github.io/sharma-legal-briefing/">Biggest story: the Senate passes the BAAJA permitting bill 62–33 on Thu Nov 19 and sends it to the House; plus DOL's final independent-contractor rule (control + profit/loss test), the GSA/DHS E-Verify sweep of 1,579 federal contractors (proof due Dec 16), Florida's record 20th execution (Overton, after SCOTUS denied the stay), Judge Merryday letting Trump's $15B defamation case proceed in narrowed form, and the OSHA HazCom substances deadline today.</a></h2>
 <p class="byline">Legal Briefing — Harvey, Legal Advisor · Edition of Nov 20, 2026</p>
