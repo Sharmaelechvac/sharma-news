@@ -331,6 +331,26 @@ article h1{text-align:center;font-size:40px;line-height:1.12}
 .frontmatter{text-align:center}
 .frontmatter h1.headline{font-size:48px}
 .frontmatter .coverage{margin:0 auto}
+/* ---------- CONSISTENT THROUGHOUT (Sanjay 2026-11-20) — every page type
+   carries the same NYT system: mini nameplate on section/story/archive
+   pages, paper-white footer with double rule, black rules under section
+   heads, centered serif page/story heads. ---------- */
+.masthead--mini{padding:12px 0 8px;margin-bottom:4px}
+.masthead--mini .mast-name{font-size:36px}
+.masthead--mini .mast-tag{display:none}
+footer{background:#fff;color:#555;border-top:4px double #121212}
+footer .fin b{color:#121212}
+article h2{border-bottom:1px solid #121212}
+.storyhead{text-align:center;font-size:36px;line-height:1.12;color:#121212}
+.pagehead{font-family:Georgia,"Times New Roman",Times,serif;text-align:center;
+font-size:40px;text-transform:none;letter-spacing:0;color:#121212}
+.secname{font-family:-apple-system,"SF Pro Text",Inter,Arial,sans-serif;font-size:15px;
+font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#121212;
+border-bottom:1px solid #121212;padding:6px 0;text-align:center}
+.windowline{text-align:center;border-bottom:none;color:#727272}
+.totop{text-align:center}
+.totop a{color:#555;font-size:13px;text-transform:uppercase;letter-spacing:.06em}
+details.full summary{color:#121212}
 """
 
 _EMOJI = re.compile("[\u2600-\u27BF\u2B50\u2B55\U0001F000-\U0001FAFF]\uFE0F?[ \u00a0]?")
@@ -353,6 +373,7 @@ def shell(prefix, title, body, chip="", active=""):
     title, body = plain(title), plain(body)
     def on(key):
         return ' class="on"' if active == key else ""
+    mast = "" if active == "home" else '<div class="masthead masthead--mini"><div class="mast-name">Sharma News</div></div>'
     return f"""<!DOCTYPE html>
 <html lang="en" class="sk"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
@@ -386,7 +407,7 @@ def shell(prefix, title, body, chip="", active=""):
 <a href="{prefix}tech/archive/index.html">Tech archive</a>
 <a href="{prefix}permits/index.html"{on("permits")}>Permit News</a>
 </div></nav>
-<div class="wrap">{body}</div>
+<div class="wrap">{mast}{body}</div>
 <footer><div class="fin"><b>Sharma Electric &amp; HVAC</b> · Sharma News, updated daily at 5:00 AM ET. News summaries for the Sharma team. Not legal or financial advice.</div></footer>
 <script>if ("serviceWorker" in navigator && (location.protocol === "https:" || location.hostname === "localhost")) {{ addEventListener("load", function(){{ navigator.serviceWorker.register("{prefix}sw.js?kit=https://sharma-kit.sharma-crew.workers.dev", {{ scope: "/sharma-news/" }}).catch(function(){{}}); }}); }}</script>
 </body></html>"""
