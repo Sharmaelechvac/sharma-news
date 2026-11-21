@@ -455,7 +455,12 @@ IMAGES = {
     "The U.S. Capitol at dusk — the Senate on Wednesday, Nov 18 cleared the BAAJA permitting bill's last 60-vote hurdle (final cloture 65–31), leaving only a simple-majority passage vote.",
     "Photo: Heatmap News"),
   "finance": ("2026-11-20-lead.jpg", "Anthropic CEO Dario Amodei and President Daniela Amodei celebrate the company's IPO at Nasdaq",
-    "Anthropic's record $81.3 billion IPO — priced at $83, opened at $111.50, closed at $97.17 (+17.07%) — could not stem Thursday's rout: the S&P 500 fell 2.02% for a sixth straight day.",
+    "Anthropic fell 8.5% to $88.91 on its second trading day, Friday, Nov 20 — touching $83.05, five cents above its $83 IPO price — as the S&P 500 fell 3.70% into correction.",
+    "Photo: Reuters via New York Post"),
+ },
+ "2026-11-21": {
+  "lead": ("2026-11-20-lead.jpg", "Anthropic CEO Dario Amodei and President Daniela Amodei celebrate the company's IPO at Nasdaq",
+    "Anthropic fell 8.5% to $88.91 on its second trading day, Friday, Nov 20 — touching $83.05, five cents above its $83 IPO price — as the S&P 500 fell 3.70% into correction.",
     "Photo: Reuters via New York Post"),
  },
  "2026-11-20": {
@@ -527,6 +532,13 @@ def photo_html(entry, prefix, cls=""):
 
 # ---------- at-a-glance + key numbers (from each report's own summary) ----------
 FIN_GLANCE = {
+ "2026-11-21": [
+   "Stocks entered correction on Friday: S&P 500 6,910.39 (−3.70%, seventh straight loss), Dow 48,147.33 (−1.93%), Nasdaq 22,617.73 (−5.28%, now negative for 2026); VIX 35.89 (+26.2%), its highest in 19 months. Nvidia fell 14.01% to $125.53 on a reported SEC accounting examination; Anthropic fell 8.5% to $88.91 on day two.",
+   "Mortgage News Daily's daily 30-year fell 12 bp to 7.33% on Friday as Treasury par yields dropped (10-year 4.92%, −12 bp; 2-year 4.63%) — a panic bid, not a policy shift. Freddie Mac's weekly average remains 7.28%.",
+   "December +25 bp pricing firmed to nearly 98% (Barron's/CME FedWatch); Governor Cook renewed her hike case Friday and Goldman Sachs expects hikes in December and March. Michigan sentiment (final) rose to 51.5 with one-year inflation expectations down to 3.7%.",
+   "COMEX copper fell again: front month $5.4770/lb (−2.63%, week −9.91%, lowest settlement since March 30); December $5.496/lb, a bear market −20.2% from the September record. LME official cash copper $12,230.50/t (−2.70%).",
+   "Oil rose on the day but fell a third straight week (Brent $92.57, WTI $83.98); AAA diesel held under $6 at $5.898/gal (Florida $5.65). Builder shares rose against the rout (D.R. Horton +1.91%, PulteGroup +1.76%, Lennar +1.02%).",
+   "Florida unemployment fell to 4.3% in October (BLS, released Friday). An electrical contractor, All States Electric Services Corp (San Francisco), filed Chapter 7 on Friday. Markets are closed Saturday–Sunday; the October PCE index lands Wednesday, November 25."],
  "2026-11-20": [
    "Freddie Mac's weekly 30-year jumped 17 bp to 7.28% (15-year 6.66%), ending four straight weekly declines; Mortgage News Daily's daily 30-year was 7.45%.",
    "Stocks plunged a sixth straight day: S&P 500 7,175.83 (−2.02%), Dow 49,097.06 (−2.19%, first close below 50,000 since June), Nasdaq 23,879.20 (−2.25%); VIX 28.44 (+15.8%). Anthropic's record $81.3B IPO closed +17.07% at $97.17 and could not stem the rout.",
@@ -593,6 +605,9 @@ FIN_GLANCE = {
    "Oil settled slightly higher (Brent $93.14, WTI $86.01); AAA diesel held under $6 at $5.98/gal. Central Florida October closings fell 4.0% YoY with the median at $390,000 (+1.3%)."],
 }
 FIN_NUMBERS = {
+ "2026-11-21": [("MND daily 30-yr (Fri)", "7.33%"), ("S&P 500 (Fri)", "6,910.39"),
+   ("VIX (Fri)", "35.89"), ("COMEX copper (front)", "$5.4770/lb"),
+   ("10-yr Treasury (Fri)", "4.92%"), ("Brent crude (Fri)", "$92.57/bbl")],
  "2026-11-20": [("Freddie Mac 30-yr", "7.28%"), ("MND daily 30-yr", "7.45%"),
    ("S&P 500", "7,175.83"), ("COMEX copper (Dec)", "$5.6335/lb"),
    ("10-yr Treasury", "5.04%"), ("Brent crude", "$91.98/bbl")],
@@ -625,9 +640,9 @@ FIN_NUMBERS = {
 HOME_GLANCE = [
  "Legal — biggest story: the Senate clears the BAAJA permitting bill's last 60-vote hurdle (Wed Nov 18) — budget waiver 70–26, substitute adopted 69–27, final cloture 65–31 — with the passage vote still pending at the cutoff.",
  "Legal — Florida: a thin day — the First DCA nominating commission opens applications for the Tanenbaum vacancy (due Dec 2), and the new leaders firm up an affordability agenda with Amendment 3 headed to the March regular session; IRS FIRE retires today and the OSHA HazCom deadline is tomorrow.",
- "Finance — Freddie Mac's weekly 30-year jumped 17 bp to 7.28%, ending four straight weekly declines, while the daily rate held at 7.45%; jobless claims edged up to 203,000 and the Philadelphia Fed index plunged to 6.3 with prices paid at a seven-month high of 58.2.",
- "Finance — Stocks plunged a sixth straight day (S&P 500 −2.02% to 7,175.83, Dow −2.19% to 49,097.06, Nasdaq −2.25%) and the VIX jumped to 28.44, as Anthropic's record $81.3B IPO (closed $97.17, +17.07%) failed to stem the rout.",
- "Finance — COMEX copper steadied at $5.6335/lb (−0.62%) with LME cash at $12,570/t; Treasury par yields eased (10-year 5.04%) and oil was flat (Brent $91.98, WTI $83.21) with AAA diesel under $6 at $5.9298/gal."]
+ "Finance — Friday's rout put stocks in correction: S&P 500 −3.70% to 6,910.39 (seventh straight loss), Dow −1.93% to 48,147.33, Nasdaq −5.28% to 22,617.73 and negative for 2026; the VIX surged to 35.89. Nvidia fell 14.01% to $125.53 on a reported SEC accounting examination; Anthropic fell 8.5% to $88.91 on day two.",
+ "Finance — The daily 30-year mortgage rate fell 12 bp to 7.33% as the 10-year Treasury fell 12 bp to 4.92% — a panic bid, not a policy shift — while December +25 bp pricing firmed to nearly 98% and Governor Cook renewed her hike case.",
+ "Finance — COMEX copper fell to $5.4770/lb (week −9.91%, lowest settlement since March 30) with LME cash at $12,230.50/t; oil rose on the day but fell a third straight week (Brent $92.57, WTI $83.98) with AAA diesel under $6 at $5.898/gal. Florida unemployment fell to 4.3% in October."]
 
 def glance_html(bullets):
     lis = "\n".join(f"<li>{b}</li>" for b in bullets)
@@ -795,6 +810,8 @@ def render_article(md_text, date, prefix):
             '<p class="totop"><a href="#top">Back to top ↑</a></p>')
 
 FIN = {  # date -> (report glob, weekday label, archive one-liner)
+ "2026-11-21": ("sharma-daily-finance-news-2026-11-21-*", "Saturday, November 21, 2026",
+   "Friday's rout put stocks in correction: S&P 500 −3.70% to 6,910.39 (seventh straight loss, −8.6% on the week), Dow −1.93% to 48,147.33, Nasdaq −5.28% to 22,617.73 and negative for 2026; VIX 35.89 (+26.2%). Nvidia fell 14.01% to $125.53 on a reported SEC accounting examination and Anthropic fell 8.5% to $88.91 on day two. The daily 30-year mortgage rate fell 12 bp to 7.33% as the 10-year Treasury fell 12 bp to 4.92% — a panic bid, while December +25 bp pricing firmed to nearly 98%. COMEX copper fell to $5.4770/lb (week −9.91%), LME cash $12,230.50/t; oil rose on the day but fell a third straight week (Brent $92.57, WTI $83.98); AAA diesel $5.898/gal. Florida unemployment fell to 4.3% in October."),
  "2026-11-20": ("sharma-daily-finance-news-2026-11-20-*", "Friday, November 20, 2026",
    "Freddie Mac's weekly 30-year jumped 17 bp to 7.28%, ending four straight weekly declines, as stocks plunged a sixth straight day — S&P 500 −2.02% to 7,175.83, Dow −2.19% to 49,097.06 (first close below 50,000 since June), Nasdaq −2.25% — and Anthropic's record $81.3B IPO (closed $97.17, +17.07%) failed to stem the rout. Jobless claims edged up to 203,000 with continuing claims +70,000 to 1.763M; the Philadelphia Fed index plunged to 6.3 with prices paid at 58.2. COMEX copper steadied at $5.6335/lb (−0.62%), LME cash $12,570/t; the 10-year Treasury eased to 5.04% and oil was flat (Brent $91.98, WTI $83.21); AAA diesel $5.9298/gal."),
  "2026-11-19": ("sharma-daily-finance-news-2026-11-19-*", "Thursday, November 19, 2026",
@@ -849,7 +866,7 @@ for date, (pat, label, one) in FIN.items():
     (DOCS / "finance" / "archive" / f"{date}.html").write_text(
         shell("../../", f"Finance Briefing — {label}", body, active="finance"), encoding="utf-8")
 
-latest = "2026-11-20"
+latest = "2026-11-21"
 body = (f'<p class="crumb"><span class="kicker">Finance Briefing · Latest Edition</span></p>'
         f'<article>{render_article(fin_report(latest), latest, "../")}</article>')
 (DOCS / "finance" / "index.html").write_text(
@@ -1308,8 +1325,8 @@ body = f"""
 <a class="cont" href="{LEGAL_BASE}/">Read today's legal briefing →</a></div>
 <div class="story"><span class="kicker">Finance Briefing</span>
 <a class="photolink" href="finance/index.html">{photo_html(home_imgs.get("finance"), "")}</a>
-<h2 class="headline"><a href="finance/index.html">{FIN['2026-11-20'][2]}</a></h2>
-<p class="byline">Finance Briefing — Warren Buffett, CFO · Edition of Nov 20, 2026</p>
+<h2 class="headline"><a href="finance/index.html">{FIN['2026-11-21'][2]}</a></h2>
+<p class="byline">Finance Briefing — Warren Buffett, CFO · Edition of Nov 21, 2026</p>
 <a class="cont" href="finance/index.html">Read today's finance briefing →</a></div>
 </div>
 <div class="techfeature"><span class="kicker">Construction · Engineering · Tech</span>
