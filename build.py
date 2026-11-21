@@ -852,6 +852,8 @@ LEGAL = {  # date -> (weekday label, biggest-story one-liner for hub cards/lists
    "Biggest story: the Senate clears the BAAJA permitting bill's last 60-vote hurdle on Wed Nov 18 — budget waiver 70–26, Capito substitute adopted 69–27, final cloture 65–31 — with passage still pending at the cutoff; plus the Fourth Circuit's Tax Court deadline ruling, the MIT brothers' MEV acquittal (Mon Nov 16), the Eleventh Circuit's I-220A ruling (Tue Nov 17), and deadline reminders: IRS FIRE retires today, OSHA HazCom tomorrow."),
  "2026-11-20": ("Friday, November 20, 2026",
    "Biggest story: the Senate passes the BAAJA permitting bill 62–33 on Thu Nov 19 and sends it to the House; plus DOL's final independent-contractor rule (control + profit/loss test), the GSA/DHS E-Verify sweep of 1,579 federal contractors (proof due Dec 16), Florida's record 20th execution (Overton, after SCOTUS denied the stay), Judge Merryday letting Trump's $15B defamation case proceed in narrowed form, and the OSHA HazCom substances deadline today."),
+ "2026-11-21": ("Saturday, November 21, 2026",
+   "Biggest story: the Fifth Circuit rules 9–8 on Fri Nov 20 that the House unconstitutionally passed the 2022 $1.7T spending bill by proxy voting (Quorum Clause), upholding an injunction barring PWFA enforcement against Texas; plus a new executive order flowing congressional-request duties down to federal subcontractors, FTC + 30 states vs. Dollar General (Florida already a plaintiff), MasTec's $1.25B Murphy acquisition, the DOL contractor rule's fixed dates (publishes Nov 23, effective Jan 22, 2027), and the OSHA HazCom substances deadline passing on Nov 20."),
 }
 
 def fin_report(date):
@@ -1320,8 +1322,8 @@ body = f"""
 <div class="front">
 <div class="story nyt-lead"><span class="kicker">Legal Briefing</span>
 <a class="photolink" href="{LEGAL_BASE}/">{photo_html(home_imgs.get("legal"), "")}</a>
-<h2 class="headline"><a href="{LEGAL_BASE}/">{LEGAL['2026-11-20'][1]}</a></h2>
-<p class="byline">Legal Briefing — Harvey, Legal Advisor · Edition of Nov 20, 2026</p>
+<h2 class="headline"><a href="{LEGAL_BASE}/">{LEGAL['2026-11-21'][1]}</a></h2>
+<p class="byline">Legal Briefing — Harvey, Legal Advisor · Edition of Nov 21, 2026</p>
 <a class="cont" href="{LEGAL_BASE}/">Read today's legal briefing →</a></div>
 <div class="story"><span class="kicker">Finance Briefing</span>
 <a class="photolink" href="finance/index.html">{photo_html(home_imgs.get("finance"), "")}</a>
