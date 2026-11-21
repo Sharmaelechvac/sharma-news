@@ -887,8 +887,18 @@ TECH = {  # date -> (report glob, weekday label, archive one-liner)
    "October starts rose 9.9% to 1.309M but permits fell 7.4% to 1.295M — single-family permits down 8.7% to 772,000, the lowest since January 2023 (Census/HUD, Nov 18); Suffolk completed Gilead's research center on a four-tool contech stack, and WWE proposed a $100M Performance Center in downtown Orlando. Product Spotlight (new today): Enphase IQ Bidirectional EV Charger (electrical) and Bosch GoTemp Home + GoTemp Pro Remote Support (HVAC)."),
  "2026-11-20": ("sharma-tech-news-2026-11-20-*", "Friday, November 20, 2026",
    "Both tubes of the $16B Hudson Tunnel are now under construction (second TBM launched, GDC Nov 18); NYC orders the Flatbush-collapse-damaged 1323 Flatbush demolished, and EarthCam launches a 50+ app marketplace. In Florida, SECO Energy builds three Central Florida facilities with DPR and a jury convicts two men in an $8.9M VA contract fraud. Product Spotlight (new today): Resideo First Alert CX6T AI Camera + Resideo One (electrical) and Viessmann Vitocal 300-G intelligent energy (HVAC)."),
+ "2026-11-21": ("sharma-tech-news-2026-11-21-*", "Saturday, November 21, 2026",
+   "October construction starts rebounded 22.8% to $1.63T but excluding manufacturing they fell 1.1% (Dodge, Nov 20); the Senate passed the BAAJA permitting overhaul 62-33, and Coral Gables-based MasTec agreed to buy mechanical contractor Murphy for about $1.25B. In Florida, Fort Meade's 4.4M sq. ft. data center goes back for a fresh city vote and World Electric Supply leases 274,040 sq. ft. in Lakeland. Product Spotlight (carried from Friday): Resideo First Alert CX6T AI Camera + Resideo One (electrical) and Viessmann Vitocal 300-G intelligent energy (HVAC)."),
 }
 TECH_IMAGES = {  # photos pulled from the articles the report cites
+ "2026-11-21": {
+  "lead": ("tech-2026-11-21-lead.webp", "Groundbreaking ceremony for the Ohio River Tunnel project in Pittsburgh, October 22, 2026",
+    "Groundbreaking for the Ohio River Tunnel project in Pittsburgh on Oct 22, 2026 — at $1.1 billion, one of October's largest groundbreakings in a month when total starts rebounded 22.8% on Tesla's $16.8 billion Texas chip plant.",
+    "Photo: Lane Construction via Construction Dive"),
+  "inline": ("tech-2026-11-21-inline.webp", "MasTec to acquire Murphy Corporation",
+    "MasTec, headquartered in Coral Gables, Florida, has agreed to acquire St. Louis mechanical contractor Murphy Corporation for about $1.25 billion in cash, announced Nov 20, 2026.",
+    "Photo: MasTec, Yuttana Studio / Adobe Stock via ACHR News"),
+ },
  "2026-11-20": {
   "lead": ("tech-2026-11-20-lead.webp", "Tunnel boring machines assembling the Hudson Tunnel tubes in North Bergen, New Jersey",
     "Tunnel boring machine assembly for the Hudson Tunnel Project in North Bergen, New Jersey — the second machine has launched into the southern tube, putting both $16 billion tubes under construction.",
@@ -936,6 +946,11 @@ TECH_IMAGES = {  # photos pulled from the articles the report cites
  },
 }
 TECH_SPOT = {  # date -> report item no. -> photo entry (from the cited article/product page)
+ "2026-11-21": {  # weekend edition: Friday's pair carried forward unchanged
+  "2.2": ("tech-vitocal.jpg", "Viessmann Vitocal 300-G intelligent energy ground-source heat pump",
+    "The Viessmann Vitocal 300-G intelligent energy — an indoor ground-source heat pump on R290 (propane), 6–16 kW, SCOP up to 5.5, with the One Base Intelligence control platform. Announced Nov 2, 2026; deliveries begin Nov 30, 2026.",
+    "Photo: Viessmann via Cooling Post"),
+ },
  "2026-11-20": {
   "2.2": ("tech-vitocal.jpg", "Viessmann Vitocal 300-G intelligent energy ground-source heat pump",
     "The Viessmann Vitocal 300-G intelligent energy — an indoor ground-source heat pump on R290 (propane), 6–16 kW, SCOP up to 5.5, with the One Base Intelligence control platform. Announced Nov 2, 2026; deliveries begin Nov 30, 2026.",
@@ -1299,16 +1314,16 @@ body = f"""
 </div>
 <div class="techfeature"><span class="kicker">Construction · Engineering · Tech</span>
 <a class="photolink" href="tech/index.html">{photo_html(tech_lead, "")}</a>
-<h2 class="headline"><a href="tech/index.html">Both tubes of the $16B Hudson Tunnel are now under construction</a></h2>
+<h2 class="headline"><a href="tech/index.html">October construction starts rebound 22.8%, carried by Tesla's $16.8B Texas plant</a></h2>
 <p class="spotline">Product Spotlight — Electrical: <b>Resideo First Alert CX6T Advanced AI Camera + Resideo One portal</b> · HVAC: <b>Viessmann Vitocal 300-G intelligent energy (ie)</b></p>
-<p class="byline">Sharma Tech · Edition of Nov 20, 2026</p>
+<p class="byline">Sharma Tech · Edition of Nov 21, 2026</p>
 <a class="cont" href="tech/index.html">Read today's tech briefing →</a></div>
 {permit_card}
 <h2 class="sec">Legal — Back Issues</h2><ul class="arch">{legal_arch}</ul>
 <h2 class="sec">Finance — Back Issues</h2><ul class="arch">{fin_arch}</ul>
 <h2 class="sec">Tech — Back Issues</h2><ul class="arch">{tech_arch}</ul>
 """
-(DOCS / "index.html").write_text(shell("", "Home — Friday, November 20, 2026", body, active="home"), encoding="utf-8")
+(DOCS / "index.html").write_text(shell("", "Home — Saturday, November 21, 2026", body, active="home"), encoding="utf-8")
 for _path, (_title, _sbody, _sec) in STORY_PAGES.items():
     _p = DOCS / _path
     _p.parent.mkdir(parents=True, exist_ok=True)
