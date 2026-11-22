@@ -866,6 +866,8 @@ LEGAL = {  # date -> (weekday label, biggest-story one-liner for hub cards/lists
    "Biggest story: the Senate passes the BAAJA permitting bill 62–33 on Thu Nov 19 and sends it to the House; plus DOL's final independent-contractor rule (control + profit/loss test), the GSA/DHS E-Verify sweep of 1,579 federal contractors (proof due Dec 16), Florida's record 20th execution (Overton, after SCOTUS denied the stay), Judge Merryday letting Trump's $15B defamation case proceed in narrowed form, and the OSHA HazCom substances deadline today."),
  "2026-11-21": ("Saturday, November 21, 2026",
    "Biggest story: the Fifth Circuit rules 9–8 on Fri Nov 20 that the House unconstitutionally passed the 2022 $1.7T spending bill by proxy voting (Quorum Clause), upholding an injunction barring PWFA enforcement against Texas; plus a new executive order flowing congressional-request duties down to federal subcontractors, FTC + 30 states vs. Dollar General (Florida already a plaintiff), MasTec's $1.25B Murphy acquisition, the DOL contractor rule's fixed dates (publishes Nov 23, effective Jan 22, 2027), and the OSHA HazCom substances deadline passing on Nov 20."),
+ "2026-11-22": ("Sunday, November 22, 2026",
+   "Biggest story: a thin Saturday — a Missouri judge gives final approval on Fri Nov 20 to Bayer's $7.25B Roundup settlement (reported Sat Nov 21); plus Florida AG Uthmeier's FDUTPA suit against The Leapfrog Group over hospital safety grades, the flood emergency (EO 26-232) covering 21 counties including Brevard, Lake and Seminole through Jan 1, 2027, and a Saturday Chapter 11 filing by lender Oxygen Funding."),
 }
 
 def fin_report(date):
@@ -1349,7 +1351,7 @@ body = f"""
 <div class="front">
 <div class="story nyt-lead"><span class="kicker">Legal Briefing</span>
 <a class="photolink" href="{LEGAL_BASE}/">{photo_html(home_imgs.get("legal"), "")}</a>
-<h2 class="headline"><a href="{LEGAL_BASE}/">{LEGAL['2026-11-21'][1]}</a></h2>
+<h2 class="headline"><a href="{LEGAL_BASE}/">{LEGAL['2026-11-22'][1]}</a></h2>
 <p class="byline">Legal Briefing — Harvey, Legal Advisor · Edition of Nov 21, 2026</p>
 <a class="cont" href="{LEGAL_BASE}/">Read today's legal briefing →</a></div>
 <div class="story"><span class="kicker">Finance Briefing</span>
