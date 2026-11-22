@@ -908,8 +908,18 @@ TECH = {  # date -> (report glob, weekday label, archive one-liner)
    "Both tubes of the $16B Hudson Tunnel are now under construction (second TBM launched, GDC Nov 18); NYC orders the Flatbush-collapse-damaged 1323 Flatbush demolished, and EarthCam launches a 50+ app marketplace. In Florida, SECO Energy builds three Central Florida facilities with DPR and a jury convicts two men in an $8.9M VA contract fraud. Product Spotlight (new today): Resideo First Alert CX6T AI Camera + Resideo One (electrical) and Viessmann Vitocal 300-G intelligent energy (HVAC)."),
  "2026-11-21": ("sharma-tech-news-2026-11-21-*", "Saturday, November 21, 2026",
    "October construction starts rebounded 22.8% to $1.63T but excluding manufacturing they fell 1.1% (Dodge, Nov 20); the Senate passed the BAAJA permitting overhaul 62-33, and Coral Gables-based MasTec agreed to buy mechanical contractor Murphy for about $1.25B. In Florida, Fort Meade's 4.4M sq. ft. data center goes back for a fresh city vote and World Electric Supply leases 274,040 sq. ft. in Lakeland. Product Spotlight (carried from Friday): Resideo First Alert CX6T AI Camera + Resideo One (electrical) and Viessmann Vitocal 300-G intelligent energy (HVAC)."),
+ "2026-11-22": ("sharma-tech-news-2026-11-22-*", "Sunday, November 22, 2026",
+   "Ohio approved 2,150 MW of behind-the-meter gas plants built only for data centers (OPSB, Nov 19), and RMI research finds winter grid headroom could carry heat pumps into about 109 million homes. In Florida, Tampa's $1.528B Airside D moves toward MEP fit-out, Sarasota's 20-story 1000 Boulevard of the Arts is underway with Moss, and a 55-story Miami Edgewater tower won final approval. Product Spotlight (carried from Friday): Resideo First Alert CX6T AI Camera + Resideo One (electrical) and Viessmann Vitocal 300-G intelligent energy (HVAC)."),
 }
 TECH_IMAGES = {  # photos pulled from the articles the report cites
+ "2026-11-22": {
+  "lead": ("tech-2026-11-22-lead.png", "Residents at the August 17 public meeting in Millersport, Ohio, on the Vantage data center gas plant",
+    "Residents at the Aug 17 public meeting in Millersport, Ohio — the state Power Siting Board on Nov 19 approved the 1,350 MW behind-the-meter gas plant for Vantage's data center campus, plus an 800 MW plant for EdgeConneX.",
+    "Photo: Jake Zuckerman via Signal Ohio"),
+  "inline": ("tech-2026-11-22-inline.jpg", "An exterior heat pump installation",
+    "An exterior heat pump installation — RMI research estimates about 109 million U.S. homes could use heat pumps within existing winter grid headroom.",
+    "Photo: Nate Adams via ACHR News"),
+ },
  "2026-11-21": {
   "lead": ("tech-2026-11-21-lead.webp", "Groundbreaking ceremony for the Ohio River Tunnel project in Pittsburgh, October 22, 2026",
     "Groundbreaking for the Ohio River Tunnel project in Pittsburgh on Oct 22, 2026 — at $1.1 billion, one of October's largest groundbreakings in a month when total starts rebounded 22.8% on Tesla's $16.8 billion Texas chip plant.",
@@ -965,6 +975,11 @@ TECH_IMAGES = {  # photos pulled from the articles the report cites
  },
 }
 TECH_SPOT = {  # date -> report item no. -> photo entry (from the cited article/product page)
+ "2026-11-22": {  # weekend edition: Friday's pair carried forward unchanged
+  "2.2": ("tech-vitocal.jpg", "Viessmann Vitocal 300-G intelligent energy ground-source heat pump",
+    "The Viessmann Vitocal 300-G intelligent energy — an indoor ground-source heat pump on R290 (propane), 6–16 kW, SCOP up to 5.5, with the One Base Intelligence control platform. Announced Nov 2, 2026; deliveries begin Nov 30, 2026.",
+    "Photo: Viessmann via Cooling Post"),
+ },
  "2026-11-21": {  # weekend edition: Friday's pair carried forward unchanged
   "2.2": ("tech-vitocal.jpg", "Viessmann Vitocal 300-G intelligent energy ground-source heat pump",
     "The Viessmann Vitocal 300-G intelligent energy — an indoor ground-source heat pump on R290 (propane), 6–16 kW, SCOP up to 5.5, with the One Base Intelligence control platform. Announced Nov 2, 2026; deliveries begin Nov 30, 2026.",
