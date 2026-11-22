@@ -532,6 +532,13 @@ def photo_html(entry, prefix, cls=""):
 
 # ---------- at-a-glance + key numbers (from each report's own summary) ----------
 FIN_GLANCE = {
+ "2026-11-22": [
+   "Two more tankers were hit near Khasab in the Strait of Hormuz on Saturday (UKMTO via Reuters) — a second straight day of strikes, no casualties; Iran said a tanker hit a naval mine, which Reuters could not verify. Oil futures reopen Sunday 6:00 PM ET, so the strikes are unpriced gap risk over Friday's Brent $92.57 / WTI $83.98 settlements.",
+   "AAA pump prices fell again Saturday: regular $3.6594/gal, diesel $5.8649/gal (under $6 a sixth straight day); Florida regular $3.4771, diesel $5.6049. GasBuddy projects a $3.62 Thanksgiving Day average, above the 2022 record of $3.56.",
+   "Zillow's Saturday 30-year purchase average fell 15 bp to 7.18% (15-year 6.57%, refinance 7.49%) — lender-quote averages on a different basis from MND's Friday 7.33% and Freddie Mac's weekly 7.28%. No Saturday print exists for MND, Treasuries, or stocks; Friday's closes stand.",
+   "Treasury Secretary Bessent's Friday pushback against a 50 bp December hike was widely reported Saturday; CME FedWatch (Friday) still prices more than 98% for a standard 25 bp hike and Citi expects 25 bp. No Fed official spoke Saturday; the October PCE index lands Wednesday, November 25.",
+   "CFTC positioning (Nov 17, released Friday, analysed Saturday): managed-money copper net longs cut to 28,692 contracts from 80,000+ in late September, with $1.3B sold in the week ending November 10 — a paper washout against a still-record $495/t Yangshan physical premium.",
+   "Fannie Mae's November forecast (dated Nov 12, recirculated Saturday) sees the 30-year averaging 7.2% through 2028 but cuts 2027 sales to 3.989M and starts to 1.277M; its rate inputs are as of October 30, so the rate path reads stale-low. Two further Friday construction bankruptcies were indexed Saturday (Ken's Construction Ch. 7; Ryerson Brothers Excavating Ch. 11 Sub V)."],
  "2026-11-21": [
    "Stocks entered correction on Friday: S&P 500 6,910.39 (−3.70%, seventh straight loss), Dow 48,147.33 (−1.93%), Nasdaq 22,617.73 (−5.28%, now negative for 2026); VIX 35.89 (+26.2%), its highest in 19 months. Nvidia fell 14.01% to $125.53 on a reported SEC accounting examination; Anthropic fell 8.5% to $88.91 on day two.",
    "Mortgage News Daily's daily 30-year fell 12 bp to 7.33% on Friday as Treasury par yields dropped (10-year 4.92%, −12 bp; 2-year 4.63%) — a panic bid, not a policy shift. Freddie Mac's weekly average remains 7.28%.",
@@ -605,6 +612,9 @@ FIN_GLANCE = {
    "Oil settled slightly higher (Brent $93.14, WTI $86.01); AAA diesel held under $6 at $5.98/gal. Central Florida October closings fell 4.0% YoY with the median at $390,000 (+1.3%)."],
 }
 FIN_NUMBERS = {
+ "2026-11-22": [("Zillow 30-yr purch. (Sat)", "7.18%"), ("AAA diesel (Sat)", "$5.865/gal"),
+   ("AAA FL diesel (Sat)", "$5.605/gal"), ("CFTC copper net long", "28,692"),
+   ("Brent crude (Fri close)", "$92.57/bbl"), ("Next FOMC", "Dec 8–9")],
  "2026-11-21": [("MND daily 30-yr (Fri)", "7.33%"), ("S&P 500 (Fri)", "6,910.39"),
    ("VIX (Fri)", "35.89"), ("COMEX copper (front)", "$5.4770/lb"),
    ("10-yr Treasury (Fri)", "4.92%"), ("Brent crude (Fri)", "$92.57/bbl")],
@@ -810,6 +820,8 @@ def render_article(md_text, date, prefix):
             '<p class="totop"><a href="#top">Back to top ↑</a></p>')
 
 FIN = {  # date -> (report glob, weekday label, archive one-liner)
+ "2026-11-22": ("sharma-daily-finance-news-2026-11-22-*", "Sunday, November 22, 2026",
+   "A closed-market Saturday whose one hard news event was geopolitical: two more tankers were hit near Khasab in the Strait of Hormuz (UKMTO via Reuters) — a second straight day of strikes — putting Sunday's 6:00 PM ET futures reopen at gap risk after oil's third straight weekly loss (Brent $92.57 Fri). Zillow's Saturday 30-year purchase average fell 15 bp to 7.18% (a lender-quote average, not MND); AAA diesel fell to $5.865/gal (Florida $5.605). Treasury Secretary Bessent's Friday pushback against a 50 bp December hike was widely reported Saturday, and CFTC data showed managed-money copper net longs cut to 28,692 contracts (Nov 17) from 80,000+ in September. Friday's closes stand: S&P 500 6,910.39, COMEX copper $5.4770/lb."),
  "2026-11-21": ("sharma-daily-finance-news-2026-11-21-*", "Saturday, November 21, 2026",
    "Friday's rout put stocks in correction: S&P 500 −3.70% to 6,910.39 (seventh straight loss, −8.6% on the week), Dow −1.93% to 48,147.33, Nasdaq −5.28% to 22,617.73 and negative for 2026; VIX 35.89 (+26.2%). Nvidia fell 14.01% to $125.53 on a reported SEC accounting examination and Anthropic fell 8.5% to $88.91 on day two. The daily 30-year mortgage rate fell 12 bp to 7.33% as the 10-year Treasury fell 12 bp to 4.92% — a panic bid, while December +25 bp pricing firmed to nearly 98%. COMEX copper fell to $5.4770/lb (week −9.91%), LME cash $12,230.50/t; oil rose on the day but fell a third straight week (Brent $92.57, WTI $83.98); AAA diesel $5.898/gal. Florida unemployment fell to 4.3% in October."),
  "2026-11-20": ("sharma-daily-finance-news-2026-11-20-*", "Friday, November 20, 2026",
@@ -868,7 +880,7 @@ for date, (pat, label, one) in FIN.items():
     (DOCS / "finance" / "archive" / f"{date}.html").write_text(
         shell("../../", f"Finance Briefing — {label}", body, active="finance"), encoding="utf-8")
 
-latest = "2026-11-21"
+latest = "2026-11-22"
 body = (f'<p class="crumb"><span class="kicker">Finance Briefing · Latest Edition</span></p>'
         f'<article>{render_article(fin_report(latest), latest, "../")}</article>')
 (DOCS / "finance" / "index.html").write_text(
@@ -1342,8 +1354,8 @@ body = f"""
 <a class="cont" href="{LEGAL_BASE}/">Read today's legal briefing →</a></div>
 <div class="story"><span class="kicker">Finance Briefing</span>
 <a class="photolink" href="finance/index.html">{photo_html(home_imgs.get("finance"), "")}</a>
-<h2 class="headline"><a href="finance/index.html">{FIN['2026-11-21'][2]}</a></h2>
-<p class="byline">Finance Briefing — Warren Buffett, CFO · Edition of Nov 21, 2026</p>
+<h2 class="headline"><a href="finance/index.html">{FIN['2026-11-22'][2]}</a></h2>
+<p class="byline">Finance Briefing — Warren Buffett, CFO · Edition of Nov 22, 2026</p>
 <a class="cont" href="finance/index.html">Read today's finance briefing →</a></div>
 </div>
 <div class="techfeature"><span class="kicker">Construction · Engineering · Tech</span>
