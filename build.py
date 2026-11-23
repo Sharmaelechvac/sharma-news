@@ -885,6 +885,8 @@ LEGAL = {  # date -> (weekday label, biggest-story one-liner for hub cards/lists
    "Biggest story: the Fifth Circuit rules 9–8 on Fri Nov 20 that the House unconstitutionally passed the 2022 $1.7T spending bill by proxy voting (Quorum Clause), upholding an injunction barring PWFA enforcement against Texas; plus a new executive order flowing congressional-request duties down to federal subcontractors, FTC + 30 states vs. Dollar General (Florida already a plaintiff), MasTec's $1.25B Murphy acquisition, the DOL contractor rule's fixed dates (publishes Nov 23, effective Jan 22, 2027), and the OSHA HazCom substances deadline passing on Nov 20."),
  "2026-11-22": ("Sunday, November 22, 2026",
    "Biggest story: a thin Saturday — a Missouri judge gives final approval on Fri Nov 20 to Bayer's $7.25B Roundup settlement (reported Sat Nov 21); plus Florida AG Uthmeier's FDUTPA suit against The Leapfrog Group over hospital safety grades, the flood emergency (EO 26-232) covering 21 counties including Brevard, Lake and Seminole through Jan 1, 2027, and a Saturday Chapter 11 filing by lender Oxygen Funding."),
+ "2026-11-23": ("Monday, November 23, 2026",
+   "Biggest story: a thin Sunday — the Army says it will bypass a court order and detonate 68 barrels of toxic lead azide in Iowa by Tuesday, Nov 24, invoking emergency powers after the Eighth Circuit froze its permit; plus confirmation that Friday's federal-contractor order is Executive Order 14438, a federal judge blocking Connecticut's ICE mask ban (Fri Nov 20, late-located), and three watch items landing today: the DOL contractor rule's Federal Register publication, the Supreme Court's Monday orders list, and the Tasty Chick'n lease-rejection hearing."),
 }
 
 def fin_report(date):
