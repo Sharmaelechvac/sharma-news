@@ -454,9 +454,14 @@ IMAGES = {
   "legal": ("home-legal.jpg", "The U.S. Capitol dome at dusk with lit windows",
     "The U.S. Capitol at dusk — the Senate on Wednesday, Nov 18 cleared the BAAJA permitting bill's last 60-vote hurdle (final cloture 65–31), leaving only a simple-majority passage vote.",
     "Photo: Heatmap News"),
-  "finance": ("2026-11-20-lead.jpg", "Anthropic CEO Dario Amodei and President Daniela Amodei celebrate the company's IPO at Nasdaq",
-    "Anthropic fell 8.5% to $88.91 on its second trading day, Friday, Nov 20 — touching $83.05, five cents above its $83 IPO price — as the S&P 500 fell 3.70% into correction.",
-    "Photo: Reuters via New York Post"),
+  "finance": ("2026-11-23-lead.webp", "Mortgage rates chart, November 22, 2026",
+    "Zillow's Sunday 30-year purchase average held at 7.18%, unchanged from Saturday — quoted money goes into Monday where Friday's panic bid left it, with Wednesday's PCE print the next test.",
+    "Photo: Norada Real Estate (Zillow via Yahoo Finance)"),
+ },
+ "2026-11-23": {
+  "lead": ("2026-11-23-lead.webp", "Mortgage rates chart, November 22, 2026",
+    "Zillow's Sunday 30-year purchase average held at 7.18%, unchanged from Saturday — quoted money goes into Monday where Friday's panic bid left it, with Wednesday's PCE print the next test.",
+    "Photo: Norada Real Estate (Zillow via Yahoo Finance)"),
  },
  "2026-11-21": {
   "lead": ("2026-11-20-lead.jpg", "Anthropic CEO Dario Amodei and President Daniela Amodei celebrate the company's IPO at Nasdaq",
@@ -532,6 +537,13 @@ def photo_html(entry, prefix, cls=""):
 
 # ---------- at-a-glance + key numbers (from each report's own summary) ----------
 FIN_GLANCE = {
+ "2026-11-23": [
+   "Equity futures bounced on the Sunday reopen after the worst week since 2020: S&P 500 futures +1.3% just after 6:00 PM ET and about +2% later in the evening, Nasdaq-100 futures nearly +3% — against Friday's closes of S&P 500 6,910.39 (−3.70%, week −8.6%), Dow 48,147.33, Nasdaq 22,617.73. Oracle's secured OpenAI funding and Asian stabilization measures were credited; futures are not Monday's open.",
+   "Oil fell on the reopen — no Hormuz premium: Sunday-evening WTI about $82.84/bbl (−0.7%) and Brent about $91.85 (−0.8%) against Friday settlements of $83.98 / $92.57, even as Hormuz transits ran 42% below prewar levels (Kpler) and 14+ tankers staged at Kharg Island with no departure confirmed.",
+   "Bessent told CBS's Face the Nation the Fed 'may be making a policy mistake if they over-tighten,' and Ackman called a December hike 'another mistake' and proposed a 3% target. Sunday-evening pricing trimmed to 88.6% for a 25 bp hike, 11.4% for no change, 50 bp no longer priced. Wednesday's PCE print is the week's test; the FOMC meets Dec 8–9.",
+   "AAA pump prices fell a seventh straight day: regular $3.645/gal, diesel $5.845/gal (seventh day under $6); Florida regular about $3.47, diesel about $5.59. Zillow's Sunday 30-year purchase average was unchanged from Saturday at 7.18% — the source itself notes a weekend table is not a new daily change; the refinance average was 7.44%.",
+   "Bahrain said Sunday two people were injured in Saturday's facility attack (one critical) and called for UN Security Council action; the IRGC claimed Patriot targets at Al-Riffa and Awali. Central Florida price cuts eased to 1,148 in the week ending Nov 21 (average cut 3.34%, 56.79% at 60+ days), with Lake County the exception at 308, up 62.",
+   "Trump said Saturday he would work with the incoming Democratic Congress on a 10% credit-card rate cap (median card rate about 22.2%; balances a record $1.29T) — a January 2027 story at the earliest, with no bill yet. Two real-estate LLCs filed Chapter 11 on Sunday; no construction-trade filing dated Sunday was found, and there was no new copper, lumber, steel, PVC or R-454B print."],
  "2026-11-22": [
    "Two more tankers were hit near Khasab in the Strait of Hormuz on Saturday (UKMTO via Reuters) — a second straight day of strikes, no casualties; Iran said a tanker hit a naval mine, which Reuters could not verify. Oil futures reopen Sunday 6:00 PM ET, so the strikes are unpriced gap risk over Friday's Brent $92.57 / WTI $83.98 settlements.",
    "AAA pump prices fell again Saturday: regular $3.6594/gal, diesel $5.8649/gal (under $6 a sixth straight day); Florida regular $3.4771, diesel $5.6049. GasBuddy projects a $3.62 Thanksgiving Day average, above the 2022 record of $3.56.",
@@ -612,6 +624,9 @@ FIN_GLANCE = {
    "Oil settled slightly higher (Brent $93.14, WTI $86.01); AAA diesel held under $6 at $5.98/gal. Central Florida October closings fell 4.0% YoY with the median at $390,000 (+1.3%)."],
 }
 FIN_NUMBERS = {
+ "2026-11-23": [("S&P 500 futures (Sun eve)", "~+2%"), ("WTI crude (Sun eve)", "~$82.84/bbl"),
+   ("AAA diesel (Sun)", "$5.845/gal"), ("AAA FL diesel (Sun)", "~$5.59/gal"),
+   ("Zillow 30-yr purch. (Sun)", "7.18%"), ("Dec +25 bp odds (Sun eve)", "88.6%")],
  "2026-11-22": [("Zillow 30-yr purch. (Sat)", "7.18%"), ("AAA diesel (Sat)", "$5.865/gal"),
    ("AAA FL diesel (Sat)", "$5.605/gal"), ("CFTC copper net long", "28,692"),
    ("Brent crude (Fri close)", "$92.57/bbl"), ("Next FOMC", "Dec 8–9")],
@@ -650,9 +665,9 @@ FIN_NUMBERS = {
 HOME_GLANCE = [
  "Legal — biggest story: the Senate clears the BAAJA permitting bill's last 60-vote hurdle (Wed Nov 18) — budget waiver 70–26, substitute adopted 69–27, final cloture 65–31 — with the passage vote still pending at the cutoff.",
  "Legal — Florida: a thin day — the First DCA nominating commission opens applications for the Tanenbaum vacancy (due Dec 2), and the new leaders firm up an affordability agenda with Amendment 3 headed to the March regular session; IRS FIRE retires today and the OSHA HazCom deadline is tomorrow.",
- "Finance — Friday's rout put stocks in correction: S&P 500 −3.70% to 6,910.39 (seventh straight loss), Dow −1.93% to 48,147.33, Nasdaq −5.28% to 22,617.73 and negative for 2026; the VIX surged to 35.89. Nvidia fell 14.01% to $125.53 on a reported SEC accounting examination; Anthropic fell 8.5% to $88.91 on day two.",
- "Finance — The daily 30-year mortgage rate fell 12 bp to 7.33% as the 10-year Treasury fell 12 bp to 4.92% — a panic bid, not a policy shift — while December +25 bp pricing firmed to nearly 98% and Governor Cook renewed her hike case.",
- "Finance — COMEX copper fell to $5.4770/lb (week −9.91%, lowest settlement since March 30) with LME cash at $12,230.50/t; oil rose on the day but fell a third straight week (Brent $92.57, WTI $83.98) with AAA diesel under $6 at $5.898/gal. Florida unemployment fell to 4.3% in October."]
+ "Finance — Equity futures bounced on the Sunday reopen after the worst week since 2020: S&P 500 futures about +2% Sunday evening and Nasdaq-100 futures nearly +3%, against Friday's closes of S&P 500 6,910.39 (−3.70%, week −8.6%), Dow 48,147.33 and Nasdaq 22,617.73; oil fell on the reopen (WTI about $82.84) with no Hormuz premium.",
+ "Finance — Bessent told CBS the Fed 'may be making a policy mistake if they over-tighten' and Ackman called a December hike 'another mistake'; Sunday-evening pricing trimmed to 88.6% for a 25 bp hike with 50 bp no longer priced. Wednesday's October PCE print is the week's test before the Dec 8–9 FOMC.",
+ "Finance — AAA diesel fell to $5.845/gal (Florida about $5.59), a seventh straight day under $6, and Zillow's Sunday 30-year purchase average held at 7.18%, unchanged from Saturday. Bahrain reported two injured in Saturday's facility attack; Central Florida price cuts eased to 1,148 in the week ending Nov 21."]
 
 def glance_html(bullets):
     lis = "\n".join(f"<li>{b}</li>" for b in bullets)
@@ -820,6 +835,8 @@ def render_article(md_text, date, prefix):
             '<p class="totop"><a href="#top">Back to top ↑</a></p>')
 
 FIN = {  # date -> (report glob, weekday label, archive one-liner)
+ "2026-11-23": ("sharma-daily-finance-news-2026-11-23-*", "Monday, November 23, 2026",
+   "A closed-market Sunday with a live futures reopen: S&P 500 futures rose about 2% Sunday evening (Nasdaq-100 nearly +3%) after the worst week since 2020 (S&P 500 −8.6% to 6,910.39), while oil fell on the reopen — WTI about $82.84, Brent about $91.85 — pricing no Hormuz premium despite two days of tanker strikes, Bahrain reporting two injured in Saturday's facility attack, and 14+ tankers staged at Kharg with no departure confirmed. Bessent (CBS) warned the Fed 'may be making a policy mistake if they over-tighten' and Ackman called a December hike 'another mistake'; Sunday-evening pricing trimmed to 88.6% for +25 bp with 50 bp off the board. AAA diesel fell to $5.845/gal (Florida about $5.59), a seventh day under $6; Zillow's Sunday 30-year purchase average was unchanged at 7.18%. Trump revived a 10% credit-card cap with the incoming Democratic Congress; Central Florida price cuts eased to 1,148. Wednesday's PCE print is the week's test."),
  "2026-11-22": ("sharma-daily-finance-news-2026-11-22-*", "Sunday, November 22, 2026",
    "A closed-market Saturday whose one hard news event was geopolitical: two more tankers were hit near Khasab in the Strait of Hormuz (UKMTO via Reuters) — a second straight day of strikes — putting Sunday's 6:00 PM ET futures reopen at gap risk after oil's third straight weekly loss (Brent $92.57 Fri). Zillow's Saturday 30-year purchase average fell 15 bp to 7.18% (a lender-quote average, not MND); AAA diesel fell to $5.865/gal (Florida $5.605). Treasury Secretary Bessent's Friday pushback against a 50 bp December hike was widely reported Saturday, and CFTC data showed managed-money copper net longs cut to 28,692 contracts (Nov 17) from 80,000+ in September. Friday's closes stand: S&P 500 6,910.39, COMEX copper $5.4770/lb."),
  "2026-11-21": ("sharma-daily-finance-news-2026-11-21-*", "Saturday, November 21, 2026",
@@ -882,7 +899,7 @@ for date, (pat, label, one) in FIN.items():
     (DOCS / "finance" / "archive" / f"{date}.html").write_text(
         shell("../../", f"Finance Briefing — {label}", body, active="finance"), encoding="utf-8")
 
-latest = "2026-11-22"
+latest = "2026-11-23"
 body = (f'<p class="crumb"><span class="kicker">Finance Briefing · Latest Edition</span></p>'
         f'<article>{render_article(fin_report(latest), latest, "../")}</article>')
 (DOCS / "finance" / "index.html").write_text(
@@ -1374,8 +1391,8 @@ body = f"""
 <a class="cont" href="{LEGAL_BASE}/">Read today's legal briefing →</a></div>
 <div class="story"><span class="kicker">Finance Briefing</span>
 <a class="photolink" href="finance/index.html">{photo_html(home_imgs.get("finance"), "")}</a>
-<h2 class="headline"><a href="finance/index.html">{FIN['2026-11-22'][2]}</a></h2>
-<p class="byline">Finance Briefing — Warren Buffett, CFO · Edition of Nov 22, 2026</p>
+<h2 class="headline"><a href="finance/index.html">{FIN['2026-11-23'][2]}</a></h2>
+<p class="byline">Finance Briefing — Warren Buffett, CFO · Edition of Nov 23, 2026</p>
 <a class="cont" href="finance/index.html">Read today's finance briefing →</a></div>
 </div>
 <div class="techfeature"><span class="kicker">Construction · Engineering · Tech</span>
@@ -1389,7 +1406,7 @@ body = f"""
 <h2 class="sec">Finance — Back Issues</h2><ul class="arch">{fin_arch}</ul>
 <h2 class="sec">Tech — Back Issues</h2><ul class="arch">{tech_arch}</ul>
 """
-(DOCS / "index.html").write_text(shell("", "Home — Saturday, November 21, 2026", body, active="home"), encoding="utf-8")
+(DOCS / "index.html").write_text(shell("", "Home — Monday, November 23, 2026", body, active="home"), encoding="utf-8")
 for _path, (_title, _sbody, _sec) in STORY_PAGES.items():
     _p = DOCS / _path
     _p.parent.mkdir(parents=True, exist_ok=True)
