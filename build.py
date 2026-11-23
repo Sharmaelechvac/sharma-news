@@ -924,8 +924,18 @@ TECH = {  # date -> (report glob, weekday label, archive one-liner)
    "October construction starts rebounded 22.8% to $1.63T but excluding manufacturing they fell 1.1% (Dodge, Nov 20); the Senate passed the BAAJA permitting overhaul 62-33, and Coral Gables-based MasTec agreed to buy mechanical contractor Murphy for about $1.25B. In Florida, Fort Meade's 4.4M sq. ft. data center goes back for a fresh city vote and World Electric Supply leases 274,040 sq. ft. in Lakeland. Product Spotlight (carried from Friday): Resideo First Alert CX6T AI Camera + Resideo One (electrical) and Viessmann Vitocal 300-G intelligent energy (HVAC)."),
  "2026-11-22": ("sharma-tech-news-2026-11-22-*", "Sunday, November 22, 2026",
    "Ohio approved 2,150 MW of behind-the-meter gas plants built only for data centers (OPSB, Nov 19), and RMI research finds winter grid headroom could carry heat pumps into about 109 million homes. In Florida, Tampa's $1.528B Airside D moves toward MEP fit-out, Sarasota's 20-story 1000 Boulevard of the Arts is underway with Moss, and a 55-story Miami Edgewater tower won final approval. Product Spotlight (carried from Friday): Resideo First Alert CX6T AI Camera + Resideo One (electrical) and Viessmann Vitocal 300-G intelligent energy (HVAC)."),
+ "2026-11-23": ("sharma-tech-news-2026-11-23-*", "Monday, November 23, 2026",
+   "A Nov 20 executive order requires federal contractors and subcontractors to notify the White House of congressional inquiries, with termination or debarment among the penalties (ENR, Nov 22); ACHR News reports HVAC acquisition multiples have fallen from their 2021–2023 highs. In Florida, a 25-story Live Local Act tower is planned in West Palm Beach and Gateway Jax opened the 205-unit Vandeveer in Jacksonville. Product Spotlight (new today): Voltage Energy Microgrid System + LBD/CBX (electrical) and Moovair Mistral heat pump line via VAD (HVAC)."),
 }
 TECH_IMAGES = {  # photos pulled from the articles the report cites
+ "2026-11-23": {
+  "lead": ("tech-2026-11-23-lead.webp", "Collage of White House construction, the Reflecting Pool, the Kennedy Center and a proposed arch",
+    "Collage of White House construction, the Reflecting Pool and the Kennedy Center — a Nov 20 executive order requires federal contractors and subcontractors to notify the White House of congressional inquiries about their government work.",
+    "Photo: ENR"),
+  "inline": ("tech-2026-11-23-inline.jpg", "Rendering of the proposed 25-story tower at 215 5th Street, West Palm Beach",
+    "The proposed 25-story, 91-residence tower at 215 5th Street in West Palm Beach, planned under Florida's Live Local Act.",
+    "Photo: Florida YIMBY"),
+ },
  "2026-11-22": {
   "lead": ("tech-2026-11-22-lead.png", "Residents at the August 17 public meeting in Millersport, Ohio, on the Vantage data center gas plant",
     "Residents at the Aug 17 public meeting in Millersport, Ohio — the state Power Siting Board on Nov 19 approved the 1,350 MW behind-the-meter gas plant for Vantage's data center campus, plus an 800 MW plant for EdgeConneX.",
@@ -989,6 +999,14 @@ TECH_IMAGES = {  # photos pulled from the articles the report cites
  },
 }
 TECH_SPOT = {  # date -> report item no. -> photo entry (from the cited article/product page)
+ "2026-11-23": {
+  "2.1": ("tech-voltage.jpg", "Voltage Energy Group products",
+    "Voltage Energy Group — its Microgrid System (MGS) combines solar and battery storage in a pre-wired modular skid, unveiled Nov 17, 2026 at RE+ alongside the new LBD disconnect box and CBX combiner box.",
+    "Photo: Voltage Energy Group via PR Newswire"),
+  "2.2": ("tech-mistral.jpg", "Moovair Mistral heat pump outdoor unit",
+    "The Moovair Mistral outdoor unit — a ductless heat pump line launched in the U.S. by VAD on Nov 17, 2026, rated up to 25.8 SEER2 with heating down to -13 °F.",
+    "Photo: AC Pro Site"),
+ },
  "2026-11-22": {  # weekend edition: Friday's pair carried forward unchanged
   "2.2": ("tech-vitocal.jpg", "Viessmann Vitocal 300-G intelligent energy ground-source heat pump",
     "The Viessmann Vitocal 300-G intelligent energy — an indoor ground-source heat pump on R290 (propane), 6–16 kW, SCOP up to 5.5, with the One Base Intelligence control platform. Announced Nov 2, 2026; deliveries begin Nov 30, 2026.",
