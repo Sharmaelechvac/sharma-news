@@ -454,9 +454,14 @@ IMAGES = {
   "legal": ("home-legal.jpg", "The U.S. Capitol dome at dusk with lit windows",
     "The U.S. Capitol at dusk — the Senate on Wednesday, Nov 18 cleared the BAAJA permitting bill's last 60-vote hurdle (final cloture 65–31), leaving only a simple-majority passage vote.",
     "Photo: Heatmap News"),
-  "finance": ("2026-11-23-lead.webp", "Mortgage rates chart, November 22, 2026",
-    "Zillow's Sunday 30-year purchase average held at 7.18%, unchanged from Saturday — quoted money goes into Monday where Friday's panic bid left it, with Wednesday's PCE print the next test.",
-    "Photo: Norada Real Estate (Zillow via Yahoo Finance)"),
+  "finance": ("2026-11-24-lead.jpg", "Nvidia CEO Jensen Huang",
+    "Nvidia reinstated Jensen Huang as CEO on Monday, November 23 and the stock closed +31.48% at $165.05 — its best day since 2003 — snapping a seven-session losing streak as the S&P 500 rose 4.73% to 7,237.17.",
+    "Photo: Reuters via CNN"),
+ },
+ "2026-11-24": {
+  "lead": ("2026-11-24-lead.jpg", "Nvidia CEO Jensen Huang",
+    "Nvidia reinstated Jensen Huang as CEO on Monday, November 23 and the stock closed +31.48% at $165.05 — its best day since 2003 — snapping a seven-session losing streak as the S&P 500 rose 4.73% to 7,237.17.",
+    "Photo: Reuters via CNN"),
  },
  "2026-11-23": {
   "lead": ("2026-11-23-lead.webp", "Mortgage rates chart, November 22, 2026",
@@ -537,6 +542,13 @@ def photo_html(entry, prefix, cls=""):
 
 # ---------- at-a-glance + key numbers (from each report's own summary) ----------
 FIN_GLANCE = {
+ "2026-11-24": [
+   "Nvidia reinstated Jensen Huang as CEO, president and director — unanimously, effective immediately, 12 days after his November 11 resignation — and Nvidia closed at $165.05 (+31.48%, best day since 2003, about +$952B of market value). The indexes snapped a seven-session losing streak and exited correction: S&P 500 7,237.17 (+4.73%), Nasdaq 24,089.56 (+6.51%), Dow 49,595.31 (+3.01%); VIX 26.62 (−25.8%). Both indexes remain below their October 6 peaks (S&P −7.4%, Nasdaq −12.7%).",
+   "Bonds did not confirm it: Treasury par yields for November 23 were 2-year 4.63% and 10-year 4.92%, both unchanged vs November 20 (30-year 5.29%). NY Fed President Williams said inflation is 'simply too high,' 2% is '100 percent essential,' and the Fed must act 'over time' — PCE inflation about 3.5% at end-2026 on his path, target not reached until 2028. December +25 bp pricing firmed to 91.2%–95.1% across Monday's snapshots, with 50 bp back at 4.9%. Blackout begins midnight Saturday, November 28; FOMC December 8–9.",
+   "Mortgage money stayed put: MND daily 30-year 7.34% (+1 bp), Zillow purchase 7.18% for a third straight day (refinance 7.46%), Bankrate 7.40%; Freddie Mac's weekly stands at 7.28%. Builders rose only about 1.3% in a +4.73% market (DHI $147.24, LEN $81.90, PHM $126.35) — the rate trade did not recover with the AI trade.",
+   "Copper split: COMEX front month settled +2.74% at $5.6270/lb with the risk rally while LME three-month copper fell 2.33% to $12,162.50/t. CME lumber (January 2027) settled at $541.00 per 1,000 bd ft (+$4.00). No new steel, PVC or R-454B print.",
+   "Oil fell to three-month lows despite Hormuz — Brent (January) $89.37 (−3.46%), WTI (January) $80.17 (−3.88%) — as Libya's Sharara pipeline restarted and Gulf barrels kept flowing. AAA fell an eighth straight day: regular $3.6366/gal, diesel $5.8182/gal (eighth day under $6); Florida regular $3.4604, diesel $5.5687. The IRGC's claim that three tankers hit naval mines in Hormuz on Monday is UNVERIFIED — CENTCOM had not responded and no UKMTO confirmation was located.",
+   "Bankruptcy: Florida's Otero Repair, LLC filed Chapter 11 Subchapter V on Monday (S.D. Fla., case 26-25587; auto repair, not construction), and Monday coverage detailed lighting agency R.L. Mlazgar's November 19 Chapter 11 — a disputed $9,246,030 HLI Solutions claim dominates about $10.44M of unsecured claims. No electrical or HVAC contractor filing dated Monday was found. Ahead today after the cutoff: Case-Shiller and FHFA at 9:00 AM ET, consumer confidence at 10:00 AM; Wednesday brings PCE, GDP, new-home sales and the Beige Book."],
  "2026-11-23": [
    "Equity futures bounced on the Sunday reopen after the worst week since 2020: S&P 500 futures +1.3% just after 6:00 PM ET and about +2% later in the evening, Nasdaq-100 futures nearly +3% — against Friday's closes of S&P 500 6,910.39 (−3.70%, week −8.6%), Dow 48,147.33, Nasdaq 22,617.73. Oracle's secured OpenAI funding and Asian stabilization measures were credited; futures are not Monday's open.",
    "Oil fell on the reopen — no Hormuz premium: Sunday-evening WTI about $82.84/bbl (−0.7%) and Brent about $91.85 (−0.8%) against Friday settlements of $83.98 / $92.57, even as Hormuz transits ran 42% below prewar levels (Kpler) and 14+ tankers staged at Kharg Island with no departure confirmed.",
@@ -624,6 +636,10 @@ FIN_GLANCE = {
    "Oil settled slightly higher (Brent $93.14, WTI $86.01); AAA diesel held under $6 at $5.98/gal. Central Florida October closings fell 4.0% YoY with the median at $390,000 (+1.3%)."],
 }
 FIN_NUMBERS = {
+ "2026-11-24": [("S&P 500 (Mon)", "7,237.17"), ("Nasdaq (Mon)", "24,089.56"),
+   ("Nvidia (Mon)", "$165.05 +31.48%"), ("MND daily 30-yr (Mon)", "7.34%"),
+   ("10-yr Treasury (Mon)", "4.92%"), ("COMEX copper (Mon)", "$5.6270/lb"),
+   ("Brent crude (Mon)", "$89.37/bbl"), ("AAA diesel (Mon)", "$5.8182/gal")],
  "2026-11-23": [("S&P 500 futures (Sun eve)", "~+2%"), ("WTI crude (Sun eve)", "~$82.84/bbl"),
    ("AAA diesel (Sun)", "$5.845/gal"), ("AAA FL diesel (Sun)", "~$5.59/gal"),
    ("Zillow 30-yr purch. (Sun)", "7.18%"), ("Dec +25 bp odds (Sun eve)", "88.6%")],
@@ -665,9 +681,9 @@ FIN_NUMBERS = {
 HOME_GLANCE = [
  "Legal — biggest story: the Senate clears the BAAJA permitting bill's last 60-vote hurdle (Wed Nov 18) — budget waiver 70–26, substitute adopted 69–27, final cloture 65–31 — with the passage vote still pending at the cutoff.",
  "Legal — Florida: a thin day — the First DCA nominating commission opens applications for the Tanenbaum vacancy (due Dec 2), and the new leaders firm up an affordability agenda with Amendment 3 headed to the March regular session; IRS FIRE retires today and the OSHA HazCom deadline is tomorrow.",
- "Finance — Equity futures bounced on the Sunday reopen after the worst week since 2020: S&P 500 futures about +2% Sunday evening and Nasdaq-100 futures nearly +3%, against Friday's closes of S&P 500 6,910.39 (−3.70%, week −8.6%), Dow 48,147.33 and Nasdaq 22,617.73; oil fell on the reopen (WTI about $82.84) with no Hormuz premium.",
- "Finance — Bessent told CBS the Fed 'may be making a policy mistake if they over-tighten' and Ackman called a December hike 'another mistake'; Sunday-evening pricing trimmed to 88.6% for a 25 bp hike with 50 bp no longer priced. Wednesday's October PCE print is the week's test before the Dec 8–9 FOMC.",
- "Finance — AAA diesel fell to $5.845/gal (Florida about $5.59), a seventh straight day under $6, and Zillow's Sunday 30-year purchase average held at 7.18%, unchanged from Saturday. Bahrain reported two injured in Saturday's facility attack; Central Florida price cuts eased to 1,148 in the week ending Nov 21."]
+ "Finance — A historic reversal: Nvidia reinstated Jensen Huang as CEO on Monday, November 23 and closed +31.48% at $165.05 (about +$952B in a day), snapping a seven-session losing streak — S&P 500 +4.73% to 7,237.17, Nasdaq +6.51% to 24,089.56, Dow +3.01% to 49,595.31, VIX −25.8% to 26.62 — while Treasury yields did not move (10-year 4.92%) and mortgage money stayed put (MND 30-year 7.34%).",
+ "Finance — NY Fed President Williams said inflation is 'simply too high' and 2% is '100 percent essential'; December +25 bp pricing firmed to 91.2%–95.1% with 50 bp back at 4.9%. Wednesday's October PCE print is the week's test before the Dec 8–9 FOMC; the blackout begins midnight Saturday, November 28.",
+ "Finance — Oil fell to three-month lows (Brent $89.37, WTI $80.17) as Libya's Sharara pipeline restarted, and AAA diesel fell an eighth straight day to $5.8182/gal (Florida $5.5687). COMEX copper bounced +2.74% to $5.6270/lb while LME three-month fell 2.33% to $12,162.50/t; the IRGC's claim of three tankers hitting mines in Hormuz is UNVERIFIED."]
 
 def glance_html(bullets):
     lis = "\n".join(f"<li>{b}</li>" for b in bullets)
@@ -835,6 +851,8 @@ def render_article(md_text, date, prefix):
             '<p class="totop"><a href="#top">Back to top ↑</a></p>')
 
 FIN = {  # date -> (report glob, weekday label, archive one-liner)
+ "2026-11-24": ("sharma-daily-finance-news-2026-11-24-*", "Tuesday, November 24, 2026",
+   "A historic reversal driven by one company: Nvidia reinstated Jensen Huang as CEO 12 days after his resignation and the stock closed +31.48% at $165.05 (about +$952B in a day), snapping a seven-session losing streak — S&P 500 +4.73% to 7,237.17, Nasdaq +6.51% to 24,089.56, Dow +3.01% to 49,595.31, VIX −25.8% to 26.62 — while Treasury par yields did not move (10-year 4.92%, 2-year 4.63%) and mortgage money stayed put (MND 30-year 7.34%, Zillow purchase 7.18%). Williams (NY Fed) said inflation is 'simply too high' and 2% is '100 percent essential'; December +25 bp pricing firmed to 91.2%–95.1% with 50 bp back at 4.9%. COMEX copper bounced +2.74% to $5.6270/lb while LME three-month fell 2.33% to $12,162.50/t; lumber settled at $541.00. Oil fell to three-month lows (Brent $89.37, WTI $80.17) as Libya's Sharara restarted; AAA diesel fell an eighth day to $5.8182/gal (Florida $5.5687). IRGC's claim of three tankers hitting mines in Hormuz is UNVERIFIED. Builders rose only ~1.3% (DHI $147.24, LEN $81.90, PHM $126.35)."),
  "2026-11-23": ("sharma-daily-finance-news-2026-11-23-*", "Monday, November 23, 2026",
    "A closed-market Sunday with a live futures reopen: S&P 500 futures rose about 2% Sunday evening (Nasdaq-100 nearly +3%) after the worst week since 2020 (S&P 500 −8.6% to 6,910.39), while oil fell on the reopen — WTI about $82.84, Brent about $91.85 — pricing no Hormuz premium despite two days of tanker strikes, Bahrain reporting two injured in Saturday's facility attack, and 14+ tankers staged at Kharg with no departure confirmed. Bessent (CBS) warned the Fed 'may be making a policy mistake if they over-tighten' and Ackman called a December hike 'another mistake'; Sunday-evening pricing trimmed to 88.6% for +25 bp with 50 bp off the board. AAA diesel fell to $5.845/gal (Florida about $5.59), a seventh day under $6; Zillow's Sunday 30-year purchase average was unchanged at 7.18%. Trump revived a 10% credit-card cap with the incoming Democratic Congress; Central Florida price cuts eased to 1,148. Wednesday's PCE print is the week's test."),
  "2026-11-22": ("sharma-daily-finance-news-2026-11-22-*", "Sunday, November 22, 2026",
@@ -901,7 +919,7 @@ for date, (pat, label, one) in FIN.items():
     (DOCS / "finance" / "archive" / f"{date}.html").write_text(
         shell("../../", f"Finance Briefing — {label}", body, active="finance"), encoding="utf-8")
 
-latest = "2026-11-23"
+latest = "2026-11-24"
 body = (f'<p class="crumb"><span class="kicker">Finance Briefing · Latest Edition</span></p>'
         f'<article>{render_article(fin_report(latest), latest, "../")}</article>')
 (DOCS / "finance" / "index.html").write_text(
