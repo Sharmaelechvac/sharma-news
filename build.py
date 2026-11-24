@@ -945,8 +945,18 @@ TECH = {  # date -> (report glob, weekday label, archive one-liner)
    "Ohio approved 2,150 MW of behind-the-meter gas plants built only for data centers (OPSB, Nov 19), and RMI research finds winter grid headroom could carry heat pumps into about 109 million homes. In Florida, Tampa's $1.528B Airside D moves toward MEP fit-out, Sarasota's 20-story 1000 Boulevard of the Arts is underway with Moss, and a 55-story Miami Edgewater tower won final approval. Product Spotlight (carried from Friday): Resideo First Alert CX6T AI Camera + Resideo One (electrical) and Viessmann Vitocal 300-G intelligent energy (HVAC)."),
  "2026-11-23": ("sharma-tech-news-2026-11-23-*", "Monday, November 23, 2026",
    "A Nov 20 executive order requires federal contractors and subcontractors to notify the White House of congressional inquiries, with termination or debarment among the penalties (ENR, Nov 22); ACHR News reports HVAC acquisition multiples have fallen from their 2021–2023 highs. In Florida, a 25-story Live Local Act tower is planned in West Palm Beach and Gateway Jax opened the 205-unit Vandeveer in Jacksonville. Product Spotlight (new today): Voltage Energy Microgrid System + LBD/CBX (electrical) and Moovair Mistral heat pump line via VAD (HVAC)."),
+ "2026-11-24": ("sharma-tech-news-2026-11-24-*", "Tuesday, November 24, 2026",
+   "Data center cancellations in Q3 more than doubled — 16 projects stopped, about $64 billion in planned investment, 11 of them stopped by local governments (Relae via Construction Dive, Nov 23); OSHA proposed $1.59M in penalties after a crane load contacted a 34.5-kV line, and heat pump adoption in new homes climbed to about 48% (Ekotrope via ACHR News). In Florida, Florida Polytechnic's 601-bed Lakeland residence hall was approved and a $150M permit was issued for Miami's 42-story 1775 Biscayne. Product Spotlight (new today): Briggs & Stratton SimpliPHI 16 battery (electrical) and ECO2 Systems Sanco 40kW heat pump (HVAC)."),
 }
 TECH_IMAGES = {  # photos pulled from the articles the report cites
+ "2026-11-24": {
+  "lead": ("tech-2026-11-24-lead.webp", "People protesting AI data centers at City Hall Park, New York City, October 5, 2026",
+    "People protest AI data centers at City Hall Park in New York City on Oct 5, 2026 — U.S. data center cancellations more than doubled in Q3 2026, with 16 projects stopped and 11 of them stopped directly by local governments.",
+    "Photo: Michael M. Santiago via Getty Images via Construction Dive"),
+  "inline": ("tech-2026-11-24-inline.jpg", "Rendering of 1775 Biscayne, a 42-story tower in Miami",
+    "Rendering of 1775 Biscayne in Miami — a $150 million construction permit was issued Nov 19 for the 42-story, 544-unit tower.",
+    "Photo: AIMIR CG via Florida YIMBY"),
+ },
  "2026-11-23": {
   "lead": ("tech-2026-11-23-lead.webp", "Collage of White House construction, the Reflecting Pool, the Kennedy Center and a proposed arch",
     "Collage of White House construction, the Reflecting Pool and the Kennedy Center — a Nov 20 executive order requires federal contractors and subcontractors to notify the White House of congressional inquiries about their government work.",
@@ -1018,6 +1028,14 @@ TECH_IMAGES = {  # photos pulled from the articles the report cites
  },
 }
 TECH_SPOT = {  # date -> report item no. -> photo entry (from the cited article/product page)
+ "2026-11-24": {
+  "2.1": ("tech-simpliphi.jpg", "Briggs & Stratton SimpliPHI 16 energy storage battery",
+    "The Briggs & Stratton SimpliPHI 16 — a 16 kWh LFP battery that scales to 512 kWh, with an integrated BMS, built-in Wi-Fi gateway and automatic inverter detection. Introduced Nov 20, 2026; available for pre-order, price not disclosed.",
+    "Photo: Briggs & Stratton via pv magazine USA"),
+  "2.2": ("tech-sanco.webp", "ECO2 Systems Sanco 40kW heat pump for commercial hot water",
+    "The ECO2 Systems Sanco 40kW — a 40 kW air-to-water heat pump for commercial hot water using natural CO2 (R744) refrigerant, at a COP of 5.0. Unveiled Nov 24, 2026; approaching launch, no price or availability date specified.",
+    "Photo: ECO2 Systems via pv magazine"),
+ },
  "2026-11-23": {
   "2.1": ("tech-voltage.jpg", "Voltage Energy Group products",
     "Voltage Energy Group — its Microgrid System (MGS) combines solar and battery storage in a pre-wired modular skid, unveiled Nov 17, 2026 at RE+ alongside the new LBD disconnect box and CBX combiner box.",
@@ -1399,9 +1417,9 @@ body = f"""
 </div>
 <div class="techfeature"><span class="kicker">Construction · Engineering · Tech</span>
 <a class="photolink" href="tech/index.html">{photo_html(tech_lead, "")}</a>
-<h2 class="headline"><a href="tech/index.html">October construction starts rebound 22.8%, carried by Tesla's $16.8B Texas plant</a></h2>
-<p class="spotline">Product Spotlight — Electrical: <b>Resideo First Alert CX6T Advanced AI Camera + Resideo One portal</b> · HVAC: <b>Viessmann Vitocal 300-G intelligent energy (ie)</b></p>
-<p class="byline">Sharma Tech · Edition of Nov 21, 2026</p>
+<h2 class="headline"><a href="tech/index.html">Data center cancellations doubled in Q3 — 16 projects stopped, $64 billion in planned investment</a></h2>
+<p class="spotline">Product Spotlight — Electrical: <b>Briggs &amp; Stratton SimpliPHI 16 energy storage battery</b> · HVAC: <b>ECO2 Systems Sanco 40kW heat pump</b></p>
+<p class="byline">Sharma Tech · Edition of Nov 24, 2026</p>
 <a class="cont" href="tech/index.html">Read today's tech briefing →</a></div>
 {permit_card}
 <h2 class="sec">Legal — Back Issues</h2><ul class="arch">{legal_arch}</ul>
