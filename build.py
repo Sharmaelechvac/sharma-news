@@ -455,7 +455,7 @@ IMAGES = {
     "The U.S. Capitol at dusk — the Senate on Wednesday, Nov 18 cleared the BAAJA permitting bill's last 60-vote hurdle (final cloture 65–31), leaving only a simple-majority passage vote.",
     "Photo: Heatmap News"),
   "finance": ("2026-11-24-lead.jpg", "Nvidia CEO Jensen Huang",
-    "Nvidia reinstated Jensen Huang as CEO on Monday, November 23 and the stock closed +31.48% at $165.05 — its best day since 2003 — snapping a seven-session losing streak as the S&P 500 rose 4.73% to 7,237.17.",
+    "Nvidia fell 5.86% to $155.38 on Tuesday, November 24, a day after its +31.48% reinstatement rally, and Anthropic closed below its $83 IPO price — while the Dow rose 0.85% back above 50,000 and consumer confidence surged to 103.3.",
     "Photo: Reuters via CNN"),
  },
  "2026-11-24": {
@@ -542,6 +542,13 @@ def photo_html(entry, prefix, cls=""):
 
 # ---------- at-a-glance + key numbers (from each report's own summary) ----------
 FIN_GLANCE = {
+ "2026-11-25": [
+   "Tech gave back part of Monday's historic rally while everything else rose: Nvidia −5.86% to $155.38, Anthropic −6.5% to $81.90 (below its $83 IPO price for the first time), the semiconductor index −7.88% — Nasdaq 23,733.54 (−1.48%), S&P 500 7,201.09 (−0.50%, eighth loss in nine sessions) — while the Dow closed back above 50,000 at 50,018.70 (+0.85%), the Russell 2000 rose 0.57% and the VIX eased to 26.36. Huang apologised to staff Tuesday and denied Trump secured his return; Trump floated a U.S. government stake in Nvidia.",
+   "Treasuries sat still a second day: par yields for November 24 were 2-year 4.63% (unchanged), 10-year 4.91% (−1 bp), 30-year 5.30%; 2s10s +28 bp. December +25 bp is priced as a near-certainty to a certainty across Tuesday's FedWatch snapshots, with January +25 bp at about 65% and the 50 bp tail at roughly 0%–5%. No Fed official spoke Tuesday; the blackout begins midnight Saturday, November 28, and Wednesday's October PCE (consensus core +0.3% m/m, 3.2% y/y) is the last print that can move December's size.",
+   "Consumer confidence surged 11.4 points to 103.3 in November — highest since January 2025, against a 92.5 consensus — with Present Situation 132.8, Expectations 83.6 (back above 80), the labour differential +12.4%, 12-month inflation expectations down to a still-elevated 5.7%, and home-buying plans slightly improved. Case-Shiller national prices rose 2.1% y/y in September (a 16th straight real decline at 3.7% inflation); FHFA was flat m/m and +2.5% y/y in Q3. Florida split: Miami +4.6% y/y, Tampa −0.2%.",
+   "Mortgage money eased a touch: MND daily 30-year 7.32% (−2 bp), Zillow purchase 7.14% (−25 bp on the week, refinance 7.46%), Bankrate 7.42%; Freddie Mac's weekly stands at 7.28%, with the next survey due Wednesday. Builders led the rotation: DHI $152.42 (+3.65%), LEN $85.08 (+4.0%), PHM $130.27 (+3.10%), Home Depot $354.07 (+2.3%). After the close Dell posted record revenue of $54.9B (+103%) with a record $132.3B AI backlog and raised full-year guidance to $202B.",
+   "Copper erased Monday's bounce: COMEX front month settled −4.70% at $5.3625/lb — 21% below the September 9 record, down 16% in November — while LME three-month was −3.5% at $12,054/t in official trading (late prints lower; see the edition's unconfirmed section). Physical stayed tight (Yangshan premium near $500/t) as traders booked 30,000–100,000 t of U.S. cathode for China on a bet Washington drops refined-copper duties. CME lumber (January 2027) was last $545.00 (+$4.00). No new steel, PVC or R-454B print.",
+   "Oil rebounded +2.3% off three-month lows (Brent $91.40, WTI $82.05) with the Hormuz risk premium capping the downside; no new confirmed attack landed in the window and the IRGC mine claims remain unconfirmed. AAA fell again: regular $3.6149/gal, diesel $5.798/gal; Florida regular $3.4286, diesel $5.5609. Credit watch: America's Car-Mart filed Chapter 11 (S.D. Tex. 26-90834), Dycom reserved $22.7M after a customer's Chapter 11, and West Palm Beach lessor 1115 Stallion filed Chapter 11 in S.D. Fla. (26-25650). No electrical or HVAC contractor filing dated Tuesday was found."],
  "2026-11-24": [
    "Nvidia reinstated Jensen Huang as CEO, president and director — unanimously, effective immediately, 12 days after his November 11 resignation — and Nvidia closed at $165.05 (+31.48%, best day since 2003, about +$952B of market value). The indexes snapped a seven-session losing streak and exited correction: S&P 500 7,237.17 (+4.73%), Nasdaq 24,089.56 (+6.51%), Dow 49,595.31 (+3.01%); VIX 26.62 (−25.8%). Both indexes remain below their October 6 peaks (S&P −7.4%, Nasdaq −12.7%).",
    "Bonds did not confirm it: Treasury par yields for November 23 were 2-year 4.63% and 10-year 4.92%, both unchanged vs November 20 (30-year 5.29%). NY Fed President Williams said inflation is 'simply too high,' 2% is '100 percent essential,' and the Fed must act 'over time' — PCE inflation about 3.5% at end-2026 on his path, target not reached until 2028. December +25 bp pricing firmed to 91.2%–95.1% across Monday's snapshots, with 50 bp back at 4.9%. Blackout begins midnight Saturday, November 28; FOMC December 8–9.",
@@ -636,6 +643,10 @@ FIN_GLANCE = {
    "Oil settled slightly higher (Brent $93.14, WTI $86.01); AAA diesel held under $6 at $5.98/gal. Central Florida October closings fell 4.0% YoY with the median at $390,000 (+1.3%)."],
 }
 FIN_NUMBERS = {
+ "2026-11-25": [("Dow (Tue)", "50,018.70"), ("Nasdaq (Tue)", "23,733.54"),
+   ("Consumer confidence (Nov)", "103.3"), ("MND daily 30-yr (Tue)", "7.32%"),
+   ("10-yr Treasury (Tue)", "4.91%"), ("COMEX copper (Tue)", "$5.3625/lb"),
+   ("Brent crude (Tue)", "$91.40/bbl"), ("AAA FL diesel (Tue)", "$5.5609/gal")],
  "2026-11-24": [("S&P 500 (Mon)", "7,237.17"), ("Nasdaq (Mon)", "24,089.56"),
    ("Nvidia (Mon)", "$165.05 +31.48%"), ("MND daily 30-yr (Mon)", "7.34%"),
    ("10-yr Treasury (Mon)", "4.92%"), ("COMEX copper (Mon)", "$5.6270/lb"),
@@ -681,9 +692,9 @@ FIN_NUMBERS = {
 HOME_GLANCE = [
  "Legal — biggest story: the Senate clears the BAAJA permitting bill's last 60-vote hurdle (Wed Nov 18) — budget waiver 70–26, substitute adopted 69–27, final cloture 65–31 — with the passage vote still pending at the cutoff.",
  "Legal — Florida: a thin day — the First DCA nominating commission opens applications for the Tanenbaum vacancy (due Dec 2), and the new leaders firm up an affordability agenda with Amendment 3 headed to the March regular session; IRS FIRE retires today and the OSHA HazCom deadline is tomorrow.",
- "Finance — A historic reversal: Nvidia reinstated Jensen Huang as CEO on Monday, November 23 and closed +31.48% at $165.05 (about +$952B in a day), snapping a seven-session losing streak — S&P 500 +4.73% to 7,237.17, Nasdaq +6.51% to 24,089.56, Dow +3.01% to 49,595.31, VIX −25.8% to 26.62 — while Treasury yields did not move (10-year 4.92%) and mortgage money stayed put (MND 30-year 7.34%).",
- "Finance — NY Fed President Williams said inflation is 'simply too high' and 2% is '100 percent essential'; December +25 bp pricing firmed to 91.2%–95.1% with 50 bp back at 4.9%. Wednesday's October PCE print is the week's test before the Dec 8–9 FOMC; the blackout begins midnight Saturday, November 28.",
- "Finance — Oil fell to three-month lows (Brent $89.37, WTI $80.17) as Libya's Sharara pipeline restarted, and AAA diesel fell an eighth straight day to $5.8182/gal (Florida $5.5687). COMEX copper bounced +2.74% to $5.6270/lb while LME three-month fell 2.33% to $12,162.50/t; the IRGC's claim of three tankers hitting mines in Hormuz is UNVERIFIED."]
+ "Finance — Monday's rally unwound in tech only: Nvidia −5.86% to $155.38 and Anthropic below its $83 IPO price at $81.90 dragged the Nasdaq −1.48% to 23,733.54 and the S&P 500 −0.50% to 7,201.09, while the Dow rose 0.85% back above 50,000 to 50,018.70. Treasuries sat still again (10-year 4.91%, 2-year 4.63%) and December +25 bp is priced as a near-certainty to a certainty.",
+ "Finance — Consumer confidence surged 11.4 points to 103.3 in November, the highest since January 2025; Case-Shiller national prices rose 2.1% y/y in September with Miami +4.6% and Tampa −0.2%, and MND's daily 30-year eased to 7.32%. Wednesday's October PCE print (consensus core 3.2% y/y) is the last test before the Dec 8–9 FOMC; the blackout begins midnight Saturday, November 28.",
+ "Finance — COMEX copper settled −4.70% at $5.3625/lb, 21% below its September record, while oil rebounded +2.3% (Brent $91.40, WTI $82.05) and AAA diesel fell to $5.798/gal (Florida $5.5609). Builders led the rotation (DHI +3.65%, LEN +4.0%, PHM +3.10%) and Dell posted a record $54.9B quarter with a $132.3B AI backlog after the close."]
 
 def glance_html(bullets):
     lis = "\n".join(f"<li>{b}</li>" for b in bullets)
@@ -851,6 +862,8 @@ def render_article(md_text, date, prefix):
             '<p class="totop"><a href="#top">Back to top ↑</a></p>')
 
 FIN = {  # date -> (report glob, weekday label, archive one-liner)
+ "2026-11-25": ("sharma-daily-finance-news-2026-11-25-*", "Wednesday, November 25, 2026",
+   "Monday's rally unwound in tech only: Nvidia fell 5.86% to $155.38 and Anthropic closed below its $83 IPO price at $81.90, dragging the Nasdaq −1.48% to 23,733.54 and the S&P 500 −0.50% to 7,201.09, while the Dow rose 0.85% back above 50,000 to 50,018.70 on a value rotation. Treasuries sat still again (2-year 4.63%, 10-year 4.91%) and December +25 bp is priced as a near-certainty to a certainty, with January +25 bp at about 65%. Consumer confidence surged 11.4 points to 103.3 (highest since January 2025, consensus 92.5); Case-Shiller national prices rose 2.1% y/y in September (16th straight real decline) with Miami +4.6% and Tampa −0.2%; FHFA was flat m/m, +2.5% y/y in Q3. MND's daily 30-year eased to 7.32% and Zillow's purchase average to 7.14%. COMEX copper settled −4.70% at $5.3625/lb (21% below its September record) and LME three-month was −3.5% at $12,054/t in official trading; lumber was last $545.00. Oil rebounded +2.3% (Brent $91.40, WTI $82.05); AAA diesel fell to $5.798/gal (Florida $5.5609). Builders led the rotation (DHI $152.42 +3.65%, LEN $85.08 +4.0%, PHM $130.27 +3.10%); Dell posted a record $54.9B quarter with a $132.3B AI backlog after the close. Subprime lender America's Car-Mart filed Chapter 11, Dycom reserved $22.7M after a customer filing, and West Palm Beach lessor 1115 Stallion filed in S.D. Fla."),
  "2026-11-24": ("sharma-daily-finance-news-2026-11-24-*", "Tuesday, November 24, 2026",
    "A historic reversal driven by one company: Nvidia reinstated Jensen Huang as CEO 12 days after his resignation and the stock closed +31.48% at $165.05 (about +$952B in a day), snapping a seven-session losing streak — S&P 500 +4.73% to 7,237.17, Nasdaq +6.51% to 24,089.56, Dow +3.01% to 49,595.31, VIX −25.8% to 26.62 — while Treasury par yields did not move (10-year 4.92%, 2-year 4.63%) and mortgage money stayed put (MND 30-year 7.34%, Zillow purchase 7.18%). Williams (NY Fed) said inflation is 'simply too high' and 2% is '100 percent essential'; December +25 bp pricing firmed to 91.2%–95.1% with 50 bp back at 4.9%. COMEX copper bounced +2.74% to $5.6270/lb while LME three-month fell 2.33% to $12,162.50/t; lumber settled at $541.00. Oil fell to three-month lows (Brent $89.37, WTI $80.17) as Libya's Sharara restarted; AAA diesel fell an eighth day to $5.8182/gal (Florida $5.5687). IRGC's claim of three tankers hitting mines in Hormuz is UNVERIFIED. Builders rose only ~1.3% (DHI $147.24, LEN $81.90, PHM $126.35)."),
  "2026-11-23": ("sharma-daily-finance-news-2026-11-23-*", "Monday, November 23, 2026",
@@ -921,7 +934,7 @@ for date, (pat, label, one) in FIN.items():
     (DOCS / "finance" / "archive" / f"{date}.html").write_text(
         shell("../../", f"Finance Briefing — {label}", body, active="finance"), encoding="utf-8")
 
-latest = "2026-11-24"
+latest = "2026-11-25"
 body = (f'<p class="crumb"><span class="kicker">Finance Briefing · Latest Edition</span></p>'
         f'<article>{render_article(fin_report(latest), latest, "../")}</article>')
 (DOCS / "finance" / "index.html").write_text(
@@ -1449,8 +1462,8 @@ body = f"""
 <a class="cont" href="{LEGAL_BASE}/">Read today's legal briefing →</a></div>
 <div class="story"><span class="kicker">Finance Briefing</span>
 <a class="photolink" href="finance/index.html">{photo_html(home_imgs.get("finance"), "")}</a>
-<h2 class="headline"><a href="finance/index.html">{FIN['2026-11-23'][2]}</a></h2>
-<p class="byline">Finance Briefing — Warren Buffett, CFO · Edition of Nov 23, 2026</p>
+<h2 class="headline"><a href="finance/index.html">{FIN['2026-11-25'][2]}</a></h2>
+<p class="byline">Finance Briefing — Warren Buffett, CFO · Edition of Nov 25, 2026</p>
 <a class="cont" href="finance/index.html">Read today's finance briefing →</a></div>
 </div>
 <div class="techfeature"><span class="kicker">Construction · Engineering · Tech</span>
@@ -1464,7 +1477,7 @@ body = f"""
 <h2 class="sec">Finance — Back Issues</h2><ul class="arch">{fin_arch}</ul>
 <h2 class="sec">Tech — Back Issues</h2><ul class="arch">{tech_arch}</ul>
 """
-(DOCS / "index.html").write_text(shell("", "Home — Monday, November 23, 2026", body, active="home"), encoding="utf-8")
+(DOCS / "index.html").write_text(shell("", "Home — Wednesday, November 25, 2026", body, active="home"), encoding="utf-8")
 for _path, (_title, _sbody, _sec) in STORY_PAGES.items():
     _p = DOCS / _path
     _p.parent.mkdir(parents=True, exist_ok=True)
