@@ -388,7 +388,7 @@ html{scroll-behavior:smooth}
   </div>
   <footer>Sharma Electric &amp; HVAC · Lic. EC13013924 · CAC1823596</footer>
 </main>
-<script>if (window.SK && SK.scheme) SK.scheme.mountToggle(document.getElementById("appearance"));</script>
+<script>document.addEventListener("DOMContentLoaded", function(){ if (window.SK && SK.scheme) SK.scheme.mountToggle(document.getElementById("appearance")); });</script>
 <script>if ("serviceWorker" in navigator && (location.protocol === "https:" || location.hostname === "localhost")) { addEventListener("load", function(){ navigator.serviceWorker.register("sw.js?kit=https://sharma-kit.sharma-crew.workers.dev", { scope: "/sharma-news/" }).catch(function(){}); }); }</script>
 </body>
 </html>
