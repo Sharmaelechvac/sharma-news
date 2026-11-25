@@ -905,6 +905,8 @@ LEGAL = {  # date -> (weekday label, biggest-story one-liner for hub cards/lists
    "Biggest story: a thin Saturday — a Missouri judge gives final approval on Fri Nov 20 to Bayer's $7.25B Roundup settlement (reported Sat Nov 21); plus Florida AG Uthmeier's FDUTPA suit against The Leapfrog Group over hospital safety grades, the flood emergency (EO 26-232) covering 21 counties including Brevard, Lake and Seminole through Jan 1, 2027, and a Saturday Chapter 11 filing by lender Oxygen Funding."),
  "2026-11-23": ("Monday, November 23, 2026",
    "Biggest story: a thin Sunday — the Army says it will bypass a court order and detonate 68 barrels of toxic lead azide in Iowa by Tuesday, Nov 24, invoking emergency powers after the Eighth Circuit froze its permit; plus confirmation that Friday's federal-contractor order is Executive Order 14438, a federal judge blocking Connecticut's ICE mask ban (Fri Nov 20, late-located), and three watch items landing today: the DOL contractor rule's Federal Register publication, the Supreme Court's Monday orders list, and the Tasty Chick'n lease-rejection hearing."),
+ "2026-11-24": ("Tuesday, November 24, 2026",
+   "Biggest story: a full Monday — the Eighth Circuit lifts its stay Monday evening and clears the Army's Iowa lead-azide detonation for Wednesday morning, Nov 25, hours after the President ordered a pause; plus the DOL independent-contractor rule published in the Federal Register (91 FR 75646, effective Fri Jan 22, 2027), no Supreme Court orders list on Monday, the Eleventh Circuit's first published opinions since Nov 19, and Florida AG Uthmeier's Orlando slaughterhouse arrests."),
 }
 
 def fin_report(date):
@@ -965,8 +967,18 @@ TECH = {  # date -> (report glob, weekday label, archive one-liner)
    "A Nov 20 executive order requires federal contractors and subcontractors to notify the White House of congressional inquiries, with termination or debarment among the penalties (ENR, Nov 22); ACHR News reports HVAC acquisition multiples have fallen from their 2021–2023 highs. In Florida, a 25-story Live Local Act tower is planned in West Palm Beach and Gateway Jax opened the 205-unit Vandeveer in Jacksonville. Product Spotlight (new today): Voltage Energy Microgrid System + LBD/CBX (electrical) and Moovair Mistral heat pump line via VAD (HVAC)."),
  "2026-11-24": ("sharma-tech-news-2026-11-24-*", "Tuesday, November 24, 2026",
    "Data center cancellations in Q3 more than doubled — 16 projects stopped, about $64 billion in planned investment, 11 of them stopped by local governments (Relae via Construction Dive, Nov 23); OSHA proposed $1.59M in penalties after a crane load contacted a 34.5-kV line, and heat pump adoption in new homes climbed to about 48% (Ekotrope via ACHR News). In Florida, Florida Polytechnic's 601-bed Lakeland residence hall was approved and a $150M permit was issued for Miami's 42-story 1775 Biscayne. Product Spotlight (new today): Briggs & Stratton SimpliPHI 16 battery (electrical) and ECO2 Systems Sanco 40kW heat pump (HVAC)."),
+ "2026-11-25": ("sharma-tech-news-2026-11-25-*", "Wednesday, November 25, 2026",
+   "Gilbane broke ground on the $74.5M Empire AI supercomputing center at the University at Buffalo — exempt from New York's data center moratorium, with its computing heat reused to warm the campus; a GC executive names the four contract provisions he will never sign, and ACHR News profiles Vayu's group-buy model for filling contractors' slow seasons. In Florida, $96M in financing for the 404-unit Lutea at Mainstreet in Coconut Creek, a $345M loan for Brickell's 42-story, 1,008-unit tower, and ground broken on The Palm office building in Palm Beach Gardens. Product Spotlight (new today): ABB Intelleqt smart motor (electrical) and Differ Power D Series 9-in-1 heat pump (HVAC)."),
 }
 TECH_IMAGES = {  # photos pulled from the articles the report cites
+ "2026-11-25": {
+  "lead": ("tech-2026-11-25-lead.webp", "Project stakeholders at the groundbreaking ceremony for the Empire AI supercomputing center at the University at Buffalo, November 19, 2026",
+    "Project stakeholders at the Nov 19, 2026 groundbreaking for the Empire AI supercomputing center at the University at Buffalo — Gilbane is building the $74.5 million facility, which is exempt from New York's data center moratorium and will reuse its computing heat to warm campus buildings.",
+    "Photo: Office of Gov. Kathy Hochul via Construction Dive"),
+  "inline": ("tech-2026-11-25-inline.png", "Rendering of the 42-story tower at 250 SW 7th Street, Brickell, Miami",
+    "Rendering of the 42-story, 1,008-unit tower at 250 SW 7th Street in Brickell, Miami — Namdar Group has closed a $345 million construction loan for the project.",
+    "Photo: Behar Font & Partners via Florida YIMBY"),
+ },
  "2026-11-24": {
   "lead": ("tech-2026-11-24-lead.webp", "People protesting AI data centers at City Hall Park, New York City, October 5, 2026",
     "People protest AI data centers at City Hall Park in New York City on Oct 5, 2026 — U.S. data center cancellations more than doubled in Q3 2026, with 16 projects stopped and 11 of them stopped directly by local governments.",
@@ -1046,6 +1058,14 @@ TECH_IMAGES = {  # photos pulled from the articles the report cites
  },
 }
 TECH_SPOT = {  # date -> report item no. -> photo entry (from the cited article/product page)
+ "2026-11-25": {
+  "2.1": ("tech-intelleqt.jpg", "ABB Intelleqt smart low-voltage motor",
+    "The ABB Intelleqt — described by ABB as the world's first low-voltage motor with intelligence integrated at the factory, delivering real-time operating data from its first rotation. Launched Nov 24, 2026; in customer co-creation, broader rollout planned for 2027, price not published.",
+    "Photo: ABB via PR Newswire"),
+  "2.2": ("tech-differ.jpg", "Differ Power D Series 9-in-1 solar-storage heat pump",
+    "The Differ Power D Series — a residential air-to-water heat pump with a 6 kW hybrid inverter built in, combining heating, cooling and hot water with PV inversion, battery management and backup power. Unveiled Nov 24, 2026 for the European market; no U.S. availability or pricing announced.",
+    "Photo: pv magazine"),
+ },
  "2026-11-24": {
   "2.1": ("tech-simpliphi.jpg", "Briggs & Stratton SimpliPHI 16 energy storage battery",
     "The Briggs & Stratton SimpliPHI 16 — a 16 kWh LFP battery that scales to 512 kWh, with an integrated BMS, built-in Wi-Fi gateway and automatic inverter detection. Introduced Nov 20, 2026; available for pre-order, price not disclosed.",
@@ -1435,9 +1455,9 @@ body = f"""
 </div>
 <div class="techfeature"><span class="kicker">Construction · Engineering · Tech</span>
 <a class="photolink" href="tech/index.html">{photo_html(tech_lead, "")}</a>
-<h2 class="headline"><a href="tech/index.html">Data center cancellations doubled in Q3 — 16 projects stopped, $64 billion in planned investment</a></h2>
-<p class="spotline">Product Spotlight — Electrical: <b>Briggs &amp; Stratton SimpliPHI 16 energy storage battery</b> · HVAC: <b>ECO2 Systems Sanco 40kW heat pump</b></p>
-<p class="byline">Sharma Tech · Edition of Nov 24, 2026</p>
+<h2 class="headline"><a href="tech/index.html">Gilbane breaks ground on $74.5M Empire AI data center — exempt from New York's moratorium, heat reused for the campus</a></h2>
+<p class="spotline">Product Spotlight — Electrical: <b>ABB Intelleqt smart low-voltage motor</b> · HVAC: <b>Differ Power D Series 9-in-1 solar-storage heat pump</b></p>
+<p class="byline">Sharma Tech · Edition of Nov 25, 2026</p>
 <a class="cont" href="tech/index.html">Read today's tech briefing →</a></div>
 {permit_card}
 <h2 class="sec">Legal — Back Issues</h2><ul class="arch">{legal_arch}</ul>
