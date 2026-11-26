@@ -920,6 +920,10 @@ LEGAL = {  # date -> (weekday label, biggest-story one-liner for hub cards/lists
    "Biggest story: a thin Sunday — the Army says it will bypass a court order and detonate 68 barrels of toxic lead azide in Iowa by Tuesday, Nov 24, invoking emergency powers after the Eighth Circuit froze its permit; plus confirmation that Friday's federal-contractor order is Executive Order 14438, a federal judge blocking Connecticut's ICE mask ban (Fri Nov 20, late-located), and three watch items landing today: the DOL contractor rule's Federal Register publication, the Supreme Court's Monday orders list, and the Tasty Chick'n lease-rejection hearing."),
  "2026-11-24": ("Tuesday, November 24, 2026",
    "Biggest story: a full Monday — the Eighth Circuit lifts its stay Monday evening and clears the Army's Iowa lead-azide detonation for Wednesday morning, Nov 25, hours after the President ordered a pause; plus the DOL independent-contractor rule published in the Federal Register (91 FR 75646, effective Fri Jan 22, 2027), no Supreme Court orders list on Monday, the Eleventh Circuit's first published opinions since Nov 19, and Florida AG Uthmeier's Orlando slaughterhouse arrests."),
+ "2026-11-25": ("Wednesday, November 25, 2026",
+   "Biggest story: the Iowa detonation happened \u2014 at about 9:00 AM CST on Wed Nov 25 the Army detonated 68 barrels of degraded lead azide at the Iowa Army Ammunition Plant, reported a complete success with zero airborne lead detected in early EPA readings; plus a federal judge blocking the second birthright-citizenship executive order (Nathan v. Trump), FTC v. SHEIN ($100 million), and America's Car-Mart's Chapter 11 filing."),
+ "2026-11-26": ("Thursday, November 26, 2026",
+   "Biggest story: a thin Thanksgiving window \u2014 a federal judge blocks the FCC's early review of ABC's eight station licences as likely First Amendment retaliation ('This is not a close case,' Wed Nov 25); plus the same judge declining to extend the ban on the $20M administration ad campaign (DNC v. Trump), FEMA's major disaster declaration for the Florida flooding (Tue Nov 24, late-located), corroboration of the AG's DraftKings intervention, and the 42-state fight over Character.AI's bankruptcy data sale (auction Dec 1)."),
 }
 
 def fin_report(date):
@@ -1467,8 +1471,8 @@ body = f"""
 <div class="front">
 <div class="story nyt-lead"><span class="kicker">Legal Briefing</span>
 <a class="photolink" href="{LEGAL_BASE}/">{photo_html(home_imgs.get("legal"), "")}</a>
-<h2 class="headline"><a href="{LEGAL_BASE}/">{LEGAL['2026-11-22'][1]}</a></h2>
-<p class="byline">Legal Briefing — Harvey, Legal Advisor · Edition of Nov 21, 2026</p>
+<h2 class="headline"><a href="{LEGAL_BASE}/">{LEGAL['2026-11-26'][1]}</a></h2>
+<p class="byline">Legal Briefing — Harvey, Legal Advisor · Edition of Nov 26, 2026</p>
 <a class="cont" href="{LEGAL_BASE}/">Read today's legal briefing →</a></div>
 <div class="story"><span class="kicker">Finance Briefing</span>
 <a class="photolink" href="finance/index.html">{photo_html(home_imgs.get("finance"), "")}</a>
