@@ -454,9 +454,17 @@ IMAGES = {
   "legal": ("home-legal.jpg", "The U.S. Capitol dome at dusk with lit windows",
     "The U.S. Capitol at dusk — the Senate on Wednesday, Nov 18 cleared the BAAJA permitting bill's last 60-vote hurdle (final cloture 65–31), leaving only a simple-majority passage vote.",
     "Photo: Heatmap News"),
-  "finance": ("2026-11-24-lead.jpg", "Nvidia CEO Jensen Huang",
-    "Nvidia fell 5.86% to $155.38 on Tuesday, November 24, a day after its +31.48% reinstatement rally, and Anthropic closed below its $83 IPO price — while the Dow rose 0.85% back above 50,000 and consumer confidence surged to 103.3.",
-    "Photo: Reuters via CNN"),
+  "finance": ("2026-11-26-lead.jpg", "Wall Street trading floor",
+    "Wednesday's data deluge — core PCE 3.3%, GDP +4.3%, new-home sales 701,000 — landed as stocks round-tripped: the Dow erased a 1,100-point plunge to close at 50,182.95 and Freddie Mac's weekly 30-year fell to 7.21%.",
+    "Photo: Motley Fool"),
+ },
+ "2026-11-26": {
+  "lead": ("2026-11-26-lead.jpg", "Wall Street trading floor",
+    "The Dow erased a 1,100-point intraday plunge on Wednesday, November 25 to close up 0.33% at 50,182.95, while the S&P 500 and Nasdaq closed lower after hot core PCE data.",
+    "Photo: Motley Fool"),
+  "inline": ("2026-11-26-inline.jpg", "New homes for sale",
+    "New-home sales jumped 14.2% in October to a 701,000 annual rate — the highest of the year — as builders cut prices; the median fell 3.2% year-over-year to $391,300.",
+    "Photo: Realtor.com"),
  },
  "2026-11-24": {
   "lead": ("2026-11-24-lead.jpg", "Nvidia CEO Jensen Huang",
@@ -542,6 +550,13 @@ def photo_html(entry, prefix, cls=""):
 
 # ---------- at-a-glance + key numbers (from each report's own summary) ----------
 FIN_GLANCE = {
+ "2026-11-26": [
+   "Wednesday's data deluge landed hot and strong at once: October core PCE rose 0.3% m/m to 3.3% y/y — a three-year high, above the 3.2% consensus — with headline PCE at 3.8% y/y; Q3 GDP was revised up to +4.3% annualised (advance 3.4%); jobless claims fell 13,000 to 189,000, matching the lowest since 1969. December +25 bp firmed to 94.4%–98.1% across Wednesday's FedWatch snapshots (to 4.00%–4.25%), with January at roughly 56%–60%; the blackout begins midnight Saturday, November 28, and the next PCE (Dec 23) lands after the Dec 8–9 FOMC.",
+   "Treasuries rallied on the morning equity plunge, not on the data: par yields for November 25 were 2-year 4.61% (−2 bp), 10-year 4.85% (−6 bp), 30-year 5.24% (−6 bp); 2s10s +24 bp. Stocks round-tripped — the Dow erased a 1,100-point plunge to close +0.33% at 50,182.95, the S&P 500 fell 0.25% to 7,182.78 (ninth loss in ten), the Nasdaq fell 0.62% to 23,585.80 after −4.7% intraday, and the VIX rose 7.32% to 28.29. Nvidia fell 3.91% to $149.30; Anthropic rose 1.07% to $82.79 — a second straight close below its $83 IPO price.",
+   "Housing surprised up: new single-family sales jumped 14.2% in October to 701,000 SAAR — highest since December 2025 — after September was revised down to 614,000; the South rose 36.2% to 515,000 (+24.7% y/y), the median price fell 3.2% y/y to $391,300, and inventory eased to 470,000 (8.0 months). Census cautions the monthly change carries a ±22.6-point margin of error. The Beige Book said construction activity declined nationally amid higher borrowing and construction costs, and Sixth District (incl. Florida) residential real estate declined moderately.",
+   "Mortgage money eased on every gauge: Freddie Mac's weekly 30-year fell 7 bp to 7.21% (15-year 6.54%), released a day early for Thanksgiving; MND's daily top-tier fell 6 bp to 7.26%, a two-week low; Zillow's purchase average was 7.18% and Bankrate's 7.34%. The MBA (week ended Nov 20) showed applications +6.1% with purchases +10% — strongest since September — even as its contract rate hit a five-week high of 7.38% and the ARM share jumped to 11.5%, the highest in over a year.",
+   "Copper kept sliding, gently on COMEX: front-month settled −0.56% at $5.3325/lb (CME's own file confirms 5.3325), about 23% below the September 9 record; LME three-month traded down to an $11,760/t low with late prints near $11,790/t — the official LME settlement is UNVERIFIED and quarantined in the edition. The COMEX premium over the LME has flipped to a ~$150/t discount. CME lumber (January 2027) settled at $550.00 (+$3.00). No new steel, PVC or R-454B print.",
+   "Oil jumped on Hormuz risk despite a third straight U.S. build: January Brent settled +3.51% at $94.61 and WTI +1.99% at $83.68; EIA (week ended Nov 20) showed crude +1.1M bbl to 418.9M, gasoline +1.7M, distillate +0.7M, SPR −2.9M to 273.5M, refinery utilisation 97.5%. AAA fell again: U.S. regular $3.5866/gal, diesel $5.764; Florida regular $3.4002, diesel $5.5414. Builders rallied (DHI $157.07 +3.2%, LEN $86.85 +2.2%, PHM $134.88 +3.6%). No electrical or HVAC contractor filing dated Wednesday was found. U.S. markets are closed Thursday for Thanksgiving; Friday closes early."],
  "2026-11-25": [
    "Tech gave back part of Monday's historic rally while everything else rose: Nvidia −5.86% to $155.38, Anthropic −6.5% to $81.90 (below its $83 IPO price for the first time), the semiconductor index −7.88% — Nasdaq 23,733.54 (−1.48%), S&P 500 7,201.09 (−0.50%, eighth loss in nine sessions) — while the Dow closed back above 50,000 at 50,018.70 (+0.85%), the Russell 2000 rose 0.57% and the VIX eased to 26.36. Huang apologised to staff Tuesday and denied Trump secured his return; Trump floated a U.S. government stake in Nvidia.",
    "Treasuries sat still a second day: par yields for November 24 were 2-year 4.63% (unchanged), 10-year 4.91% (−1 bp), 30-year 5.30%; 2s10s +28 bp. December +25 bp is priced as a near-certainty to a certainty across Tuesday's FedWatch snapshots, with January +25 bp at about 65% and the 50 bp tail at roughly 0%–5%. No Fed official spoke Tuesday; the blackout begins midnight Saturday, November 28, and Wednesday's October PCE (consensus core +0.3% m/m, 3.2% y/y) is the last print that can move December's size.",
@@ -643,6 +658,10 @@ FIN_GLANCE = {
    "Oil settled slightly higher (Brent $93.14, WTI $86.01); AAA diesel held under $6 at $5.98/gal. Central Florida October closings fell 4.0% YoY with the median at $390,000 (+1.3%)."],
 }
 FIN_NUMBERS = {
+ "2026-11-26": [("Core PCE (Oct, y/y)", "3.3%"), ("Q3 GDP (2nd est.)", "+4.3%"),
+   ("New-home sales (Oct)", "701,000"), ("Freddie Mac 30-yr", "7.21%"),
+   ("10-yr Treasury (Wed)", "4.85%"), ("COMEX copper (Wed)", "$5.3325/lb"),
+   ("Brent crude (Wed)", "$94.61/bbl"), ("AAA FL diesel (Wed)", "$5.5414/gal")],
  "2026-11-25": [("Dow (Tue)", "50,018.70"), ("Nasdaq (Tue)", "23,733.54"),
    ("Consumer confidence (Nov)", "103.3"), ("MND daily 30-yr (Tue)", "7.32%"),
    ("10-yr Treasury (Tue)", "4.91%"), ("COMEX copper (Tue)", "$5.3625/lb"),
@@ -692,9 +711,9 @@ FIN_NUMBERS = {
 HOME_GLANCE = [
  "Legal — biggest story: the Senate clears the BAAJA permitting bill's last 60-vote hurdle (Wed Nov 18) — budget waiver 70–26, substitute adopted 69–27, final cloture 65–31 — with the passage vote still pending at the cutoff.",
  "Legal — Florida: a thin day — the First DCA nominating commission opens applications for the Tanenbaum vacancy (due Dec 2), and the new leaders firm up an affordability agenda with Amendment 3 headed to the March regular session; IRS FIRE retires today and the OSHA HazCom deadline is tomorrow.",
- "Finance — Monday's rally unwound in tech only: Nvidia −5.86% to $155.38 and Anthropic below its $83 IPO price at $81.90 dragged the Nasdaq −1.48% to 23,733.54 and the S&P 500 −0.50% to 7,201.09, while the Dow rose 0.85% back above 50,000 to 50,018.70. Treasuries sat still again (10-year 4.91%, 2-year 4.63%) and December +25 bp is priced as a near-certainty to a certainty.",
- "Finance — Consumer confidence surged 11.4 points to 103.3 in November, the highest since January 2025; Case-Shiller national prices rose 2.1% y/y in September with Miami +4.6% and Tampa −0.2%, and MND's daily 30-year eased to 7.32%. Wednesday's October PCE print (consensus core 3.2% y/y) is the last test before the Dec 8–9 FOMC; the blackout begins midnight Saturday, November 28.",
- "Finance — COMEX copper settled −4.70% at $5.3625/lb, 21% below its September record, while oil rebounded +2.3% (Brent $91.40, WTI $82.05) and AAA diesel fell to $5.798/gal (Florida $5.5609). Builders led the rotation (DHI +3.65%, LEN +4.0%, PHM +3.10%) and Dell posted a record $54.9B quarter with a $132.3B AI backlog after the close."]
+ "Finance — Wednesday's data deluge landed hot and strong: October core PCE rose to 3.3% y/y (three-year high) with headline at 3.8%, Q3 GDP was revised up to +4.3%, and jobless claims fell to 189,000 — December +25 bp is priced at 94.4%–98.1% ahead of the Dec 8–9 FOMC; the blackout begins midnight Saturday, November 28.",
+ "Finance — New-home sales jumped 14.2% to 701,000 in October (South +36.2% to 515,000; median $391,300, −3.2% y/y) and mortgage money eased: Freddie Mac's weekly 30-year fell to 7.21% and MND's daily top-tier to 7.26%. Stocks round-tripped — the Dow erased a 1,100-point plunge to close +0.33% at 50,182.95 while the Nasdaq fell 0.62% to 23,585.80; Treasuries rallied (10-year 4.85%).",
+ "Finance — COMEX copper settled −0.56% at $5.3325/lb and lumber at $550.00, while oil jumped (Brent $94.61, WTI $83.68) despite a third straight EIA crude build; AAA diesel fell to $5.764/gal (Florida $5.5414). Builders rallied (DHI +3.2%, PHM +3.6%, LEN +2.2%). U.S. markets are closed Thursday for Thanksgiving, with an early close Friday."]
 
 def glance_html(bullets):
     lis = "\n".join(f"<li>{b}</li>" for b in bullets)
@@ -862,6 +881,8 @@ def render_article(md_text, date, prefix):
             '<p class="totop"><a href="#top">Back to top ↑</a></p>')
 
 FIN = {  # date -> (report glob, weekday label, archive one-liner)
+ "2026-11-26": ("sharma-daily-finance-news-2026-11-26-*", "Thursday, November 26, 2026",
+   "Wednesday's data deluge landed hot and strong at once: October core PCE rose to 3.3% y/y (three-year high, consensus 3.2%) with headline at 3.8%, Q3 GDP was revised up to +4.3%, jobless claims fell to 189,000, and December +25 bp firmed to 94.4%–98.1% — yet Treasuries rallied (10-year 4.85%, −6 bp) as stocks round-tripped: the Dow erased a 1,100-point plunge to close +0.33% at 50,182.95, the S&P 500 fell 0.25% to 7,182.78 (ninth loss in ten) and the Nasdaq fell 0.62% to 23,585.80; Nvidia fell 3.91% to $149.30 and Anthropic closed below its $83 IPO price for a second day at $82.79. New-home sales jumped 14.2% to 701,000 in October (South +36.2% to 515,000, median $391,300, −3.2% y/y) and Freddie Mac's weekly 30-year fell to 7.21%; MND's daily top-tier eased to 7.26%. COMEX copper settled −0.56% at $5.3325/lb and lumber settled at $550.00; LME copper's official settlement is UNVERIFIED (late prints near $11,790/t). Oil jumped (Brent $94.61, WTI $83.68) despite a third straight EIA crude build; AAA diesel fell to $5.764/gal (Florida $5.5414). Builders rallied (DHI $157.07 +3.2%, LEN $86.85 +2.2%, PHM $134.88 +3.6%). Markets are closed Thursday for Thanksgiving."),
  "2026-11-25": ("sharma-daily-finance-news-2026-11-25-*", "Wednesday, November 25, 2026",
    "Monday's rally unwound in tech only: Nvidia fell 5.86% to $155.38 and Anthropic closed below its $83 IPO price at $81.90, dragging the Nasdaq −1.48% to 23,733.54 and the S&P 500 −0.50% to 7,201.09, while the Dow rose 0.85% back above 50,000 to 50,018.70 on a value rotation. Treasuries sat still again (2-year 4.63%, 10-year 4.91%) and December +25 bp is priced as a near-certainty to a certainty, with January +25 bp at about 65%. Consumer confidence surged 11.4 points to 103.3 (highest since January 2025, consensus 92.5); Case-Shiller national prices rose 2.1% y/y in September (16th straight real decline) with Miami +4.6% and Tampa −0.2%; FHFA was flat m/m, +2.5% y/y in Q3. MND's daily 30-year eased to 7.32% and Zillow's purchase average to 7.14%. COMEX copper settled −4.70% at $5.3625/lb (21% below its September record) and LME three-month was −3.5% at $12,054/t in official trading; lumber was last $545.00. Oil rebounded +2.3% (Brent $91.40, WTI $82.05); AAA diesel fell to $5.798/gal (Florida $5.5609). Builders led the rotation (DHI $152.42 +3.65%, LEN $85.08 +4.0%, PHM $130.27 +3.10%); Dell posted a record $54.9B quarter with a $132.3B AI backlog after the close. Subprime lender America's Car-Mart filed Chapter 11, Dycom reserved $22.7M after a customer filing, and West Palm Beach lessor 1115 Stallion filed in S.D. Fla."),
  "2026-11-24": ("sharma-daily-finance-news-2026-11-24-*", "Tuesday, November 24, 2026",
@@ -938,7 +959,7 @@ for date, (pat, label, one) in FIN.items():
     (DOCS / "finance" / "archive" / f"{date}.html").write_text(
         shell("../../", f"Finance Briefing — {label}", body, active="finance"), encoding="utf-8")
 
-latest = "2026-11-25"
+latest = "2026-11-26"
 body = (f'<p class="crumb"><span class="kicker">Finance Briefing · Latest Edition</span></p>'
         f'<article>{render_article(fin_report(latest), latest, "../")}</article>')
 (DOCS / "finance" / "index.html").write_text(
