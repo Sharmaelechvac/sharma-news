@@ -454,8 +454,13 @@ IMAGES = {
   "legal": ("home-legal.jpg", "The U.S. Capitol dome at dusk with lit windows",
     "The U.S. Capitol at dusk — the Senate on Wednesday, Nov 18 cleared the BAAJA permitting bill's last 60-vote hurdle (final cloture 65–31), leaving only a simple-majority passage vote.",
     "Photo: Heatmap News"),
-  "finance": ("2026-11-26-lead.jpg", "Wall Street trading floor",
-    "Wednesday's data deluge — core PCE 3.3%, GDP +4.3%, new-home sales 701,000 — landed as stocks round-tripped: the Dow erased a 1,100-point plunge to close at 50,182.95 and Freddie Mac's weekly 30-year fell to 7.21%.",
+  "finance": ("2026-11-27-lead.jpg", "Wall Street trading floor",
+    "U.S. markets were closed Thursday, November 26 for Thanksgiving — Wednesday's closes stand (Dow 50,182.95, Freddie Mac 30-year 7.21%) — while global stocks rallied, Brent settled near $96.57 and AAA diesel fell to $5.7246/gal (Florida $5.5143).",
+    "Photo: Motley Fool"),
+ },
+ "2026-11-27": {
+  "lead": ("2026-11-27-lead.jpg", "Wall Street trading floor",
+    "U.S. markets were closed on Thursday, November 26 for Thanksgiving, leaving Wednesday's closes as the standing prints while futures firmed and global stocks rallied on the AI rebound.",
     "Photo: Motley Fool"),
  },
  "2026-11-26": {
@@ -1009,8 +1014,18 @@ TECH = {  # date -> (report glob, weekday label, archive one-liner)
    "Gilbane broke ground on the $74.5M Empire AI supercomputing center at the University at Buffalo — exempt from New York's data center moratorium, with its computing heat reused to warm the campus; a GC executive names the four contract provisions he will never sign, and ACHR News profiles Vayu's group-buy model for filling contractors' slow seasons. In Florida, $96M in financing for the 404-unit Lutea at Mainstreet in Coconut Creek, a $345M loan for Brickell's 42-story, 1,008-unit tower, and ground broken on The Palm office building in Palm Beach Gardens. Product Spotlight (new today): ABB Intelleqt smart motor (electrical) and Differ Power D Series 9-in-1 heat pump (HVAC)."),
  "2026-11-26": ("sharma-tech-news-2026-11-26-*", "Thursday, November 26, 2026",
    "Texas authorized VoltaGrid's gas plant for Vantage's $25B Frontier AI campus to expand from 709 MW to 2,582 MW — 620 engines in 10 power blocks (ENR, Nov 25); ACHR News adds the contractor case for the Senate-passed BAAJA permitting bill as it heads to an uncertain House, and Bring Back the Trades expands to four Skills Expos in 2027. In Florida, glass installation advances on Miami's 748,975 sq. ft. Administration Building at Miami Freedom Park and the $73M construction loan on North Miami Beach's Nexo Residences is fully repaid. Product Spotlight (new today): EVE Energy AIDC energy storage portfolio (electrical) and Afore R290 heat pump series (HVAC)."),
+ "2026-11-27": ("sharma-tech-news-2026-11-27-*", "Friday, November 27, 2026",
+   "Thanksgiving Day edition: NYC retains LERA for the independent forensic probe of the Brooklyn Flatbush collapse — what was actually installed vs. what the plans showed (ENR, Nov 26); Skanska books an additional $275M award for a 48 MW Georgia data center, and ACHR News breaks down KnowHow's 737-review analysis of why homeowners fault HVAC contractors. In Florida, Spoke Aventura (363 units, Live Local) is planned for 2028, MGM is selected as GC for the $90M SQUARE Hallandale, and 2200 Brickell receives its final certificate of occupancy. Product Spotlight (new today): Innomotics GEN C generator (electrical) and A. O. Smith CAE Series tankless instant water heater (HVAC)."),
 }
 TECH_IMAGES = {  # photos pulled from the articles the report cites
+ "2026-11-27": {
+  "lead": ("tech-2026-11-27-lead.jpg", "Approved support-of-excavation monitoring plan drawing for 2625 Bedford Ave., Brooklyn",
+    "The approved support-of-excavation monitoring plan for 2625 Bedford Ave. — vibration-monitor and optical-survey locations on adjoining structures. NYC has retained LERA Consulting Structural Engineers for the independent forensic investigation of the Nov 11 Flatbush collapse; what was actually installed and functioning remains unresolved.",
+    "Photo: NYC Dept. of Buildings / LMW Engineering Group via ENR"),
+  "inline": ("tech-2026-11-27-inline.jpg", "Rendering of SQUARE Hallandale, Hallandale Beach",
+    "Rendering of SQUARE Hallandale — the 8-story, nearly 360,000 sq. ft., $90 million office condominium at 400 West Hallandale Beach Boulevard. MGM Construction Group has been selected as general contractor; completion is anticipated in 2028.",
+    "Photo: SQUARE Hallandale via Florida YIMBY"),
+ },
  "2026-11-26": {
   "lead": ("tech-2026-11-26-lead.jpg", "INNIO Jenbacher Type 6 gas engine-generator",
     "An INNIO Jenbacher Type 6 gas engine-generator of the type specified for VoltaGrid's ABI-1 plant — Texas has authorized the plant serving Vantage's $25 billion Frontier AI campus to expand from 709 MW to 2,582 MW, with 620 engines in 10 power blocks.",
@@ -1106,6 +1121,14 @@ TECH_IMAGES = {  # photos pulled from the articles the report cites
  },
 }
 TECH_SPOT = {  # date -> report item no. -> photo entry (from the cited article/product page)
+ "2026-11-27": {
+  "2.1": ("tech-genc.jpg", "Innomotics GEN C generator at SPS 2026",
+    "The Innomotics GEN C — a compact three-phase synchronous generator with brushless excitation, designed specifically for data center power supply, with Class H stator insulation and an unlimited operating-hours design for backup and continuous duty. Introduced Nov 26, 2026 at SPS 2026 in Nuremberg; price not published.",
+    "Photo: Innomotics GmbH via Media OutReach Newswire"),
+  "2.2": ("tech-cae.png", "A. O. Smith CAE Series tankless instant water heater at its launch",
+    "The A. O. Smith CAE Series — a tankless instant electric water heater positioned as the smallest in its class, in 3.5 kW and 5.5 kW variants, with a next-generation heat exchanger engineered for hard-water resistance. Unveiled Nov 26, 2026 in Makati for the Philippine market; no U.S. availability or pricing announced.",
+    "Photo: Philippines Graphic"),
+ },
  "2026-11-25": {
   "2.1": ("tech-intelleqt.jpg", "ABB Intelleqt smart low-voltage motor",
     "The ABB Intelleqt — described by ABB as the world's first low-voltage motor with intelligence integrated at the factory, delivering real-time operating data from its first rotation. Launched Nov 24, 2026; in customer co-creation, broader rollout planned for 2027, price not published.",
@@ -1503,16 +1526,16 @@ body = f"""
 </div>
 <div class="techfeature"><span class="kicker">Construction · Engineering · Tech</span>
 <a class="photolink" href="tech/index.html">{photo_html(tech_lead, "")}</a>
-<h2 class="headline"><a href="tech/index.html">Texas authorizes a 2.58-GW gas plant for Vantage's $25B Frontier AI campus — 620 engines in 10 power blocks</a></h2>
-<p class="spotline">Product Spotlight — Electrical: <b>EVE Energy AIDC full-scenario energy storage portfolio</b> · HVAC: <b>Afore R290 heat pump series</b></p>
-<p class="byline">Sharma Tech · Edition of Nov 26, 2026</p>
+<h2 class="headline"><a href="tech/index.html">Brooklyn collapse probe turns to what was actually built at the excavation site — forensic engineers retained</a></h2>
+<p class="spotline">Product Spotlight — Electrical: <b>Innomotics GEN C generator</b> · HVAC: <b>A. O. Smith CAE Series tankless instant water heater</b></p>
+<p class="byline">Sharma Tech · Edition of Nov 27, 2026</p>
 <a class="cont" href="tech/index.html">Read today's tech briefing →</a></div>
 {permit_card}
 <h2 class="sec">Legal — Back Issues</h2><ul class="arch">{legal_arch}</ul>
 <h2 class="sec">Finance — Back Issues</h2><ul class="arch">{fin_arch}</ul>
 <h2 class="sec">Tech — Back Issues</h2><ul class="arch">{tech_arch}</ul>
 """
-(DOCS / "index.html").write_text(shell("", "Home — Thursday, November 26, 2026", body, active="home"), encoding="utf-8")
+(DOCS / "index.html").write_text(shell("", "Home — Friday, November 27, 2026", body, active="home"), encoding="utf-8")
 for _path, (_title, _sbody, _sec) in STORY_PAGES.items():
     _p = DOCS / _path
     _p.parent.mkdir(parents=True, exist_ok=True)
