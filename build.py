@@ -963,6 +963,8 @@ LEGAL = {  # date -> (weekday label, biggest-story one-liner for hub cards/lists
    "Biggest story: the Iowa detonation happened \u2014 at about 9:00 AM CST on Wed Nov 25 the Army detonated 68 barrels of degraded lead azide at the Iowa Army Ammunition Plant, reported a complete success with zero airborne lead detected in early EPA readings; plus a federal judge blocking the second birthright-citizenship executive order (Nathan v. Trump), FTC v. SHEIN ($100 million), and America's Car-Mart's Chapter 11 filing."),
  "2026-11-26": ("Thursday, November 26, 2026",
    "Biggest story: a thin Thanksgiving window \u2014 a federal judge blocks the FCC's early review of ABC's eight station licences as likely First Amendment retaliation ('This is not a close case,' Wed Nov 25); plus the same judge declining to extend the ban on the $20M administration ad campaign (DNC v. Trump), FEMA's major disaster declaration for the Florida flooding (Tue Nov 24, late-located), corroboration of the AG's DraftKings intervention, and the 42-state fight over Character.AI's bankruptcy data sale (auction Dec 1)."),
+ "2026-11-27": ("Friday, November 27, 2026",
+   "Biggest story: the thinnest window of the run \u2014 no ruling dated Thanksgiving Day itself was confirmed; the AP wire confirms the Second Circuit's Mon Nov 23 ruling reviving the bid to move the New York hush-money case to federal court (yesterday's UNVERIFIED item, at its true date); plus Florida's Sixth DCA sending a failed $2.775M custom-home dispute to arbitration and wiping out a $126,624.63 judgment (Zimmerman v. Diez-Arguelles, Wed Nov 25), the Florida Supreme Court's disbarment in The Florida Bar v. Whitco (Wed Nov 25, opinion now available), the First DCA throwing out the fraud findings in a $34.7M tobacco verdict, and Virginia's Ginevan felon-in-possession ruling."),
 }
 
 def fin_report(date):
@@ -1528,8 +1530,8 @@ body = f"""
 <div class="front">
 <div class="story nyt-lead"><span class="kicker">Legal Briefing</span>
 <a class="photolink" href="{LEGAL_BASE}/">{photo_html(home_imgs.get("legal"), "")}</a>
-<h2 class="headline"><a href="{LEGAL_BASE}/">{LEGAL['2026-11-26'][1]}</a></h2>
-<p class="byline">Legal Briefing — Harvey, Legal Advisor · Edition of Nov 26, 2026</p>
+<h2 class="headline"><a href="{LEGAL_BASE}/">{LEGAL['2026-11-27'][1]}</a></h2>
+<p class="byline">Legal Briefing — Harvey, Legal Advisor · Edition of Nov 27, 2026</p>
 <a class="cont" href="{LEGAL_BASE}/">Read today's legal briefing →</a></div>
 <div class="story"><span class="kicker">Finance Briefing</span>
 <a class="photolink" href="finance/index.html">{photo_html(home_imgs.get("finance"), "")}</a>
