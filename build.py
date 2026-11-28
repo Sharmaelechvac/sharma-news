@@ -455,7 +455,12 @@ IMAGES = {
     "The U.S. Capitol at dusk — the Senate on Wednesday, Nov 18 cleared the BAAJA permitting bill's last 60-vote hurdle (final cloture 65–31), leaving only a simple-majority passage vote.",
     "Photo: Heatmap News"),
   "finance": ("2026-11-27-lead.jpg", "Wall Street trading floor",
-    "U.S. markets were closed Thursday, November 26 for Thanksgiving — Wednesday's closes stand (Dow 50,182.95, Freddie Mac 30-year 7.21%) — while global stocks rallied, Brent settled near $96.57 and AAA diesel fell to $5.7246/gal (Florida $5.5143).",
+    "Stocks posted their best week since April 2025 in Friday's half session (Dow 50,774.94, +1.18%; Nasdaq +2.31%) while the 10-year Treasury rose 9 bp to 4.94%, COMEX copper snapped back +3.38% to $5.5170/lb and Brent eased to $95.44 ahead of Sunday's OPEC+ meeting.",
+    "Photo: Motley Fool"),
+ },
+ "2026-11-28": {
+  "lead": ("2026-11-27-lead.jpg", "Wall Street trading floor",
+    "Wall Street rallied in Friday's shortened session — Dow +1.18% to 50,774.94, S&P 500 +1.60%, Nasdaq +2.31% — capping the best week since April 2025, while Treasury yields rose and builders sat the rally out.",
     "Photo: Motley Fool"),
  },
  "2026-11-27": {
@@ -555,6 +560,13 @@ def photo_html(entry, prefix, cls=""):
 
 # ---------- at-a-glance + key numbers (from each report's own summary) ----------
 FIN_GLANCE = {
+ "2026-11-28": [
+   "Friday's shortened session rallied hard: Dow 50,774.94 (+1.18%), S&P 500 7,297.49 (+1.60%), Nasdaq 24,129.50 (+2.31%), Russell 2000 2,750.30 (+1.71%), VIX 23.81 — for the week the S&P 500 rose 5.6%, the Dow 5.5% and the Nasdaq 6.7%, the best week since April 2025. Chips led (semiconductor index +4.69%; Micron +7.34%; Anthropic +10.98% to $91.88, back above its $83 IPO price) while Nvidia lagged at $150.49 (+0.80%).",
+   "Bonds sold off into the rally: Treasury par yields rose across the curve — 2-year 4.69% (+8 bp), 10-year 4.94% (+9 bp), 30-year 5.33% (+9 bp), 2s10s +25 bp. No Fed official spoke on the last speaking day; December +25 bp held at 97.4%–99% for the December 8–9 FOMC (to 4.00%–4.25%), the blackout begins midnight Saturday, November 28, and the November jobs report on December 4 is the last print that can move the meeting.",
+   "Mortgage money ticked up with yields: MND's daily top-tier 30-year rose 3 bp to 7.29% (15-year 6.93%, FHA 6.97%, jumbo 7.40%), still 4 bp below last Friday; Freddie Mac's weekly 7.21% stands, next survey December 3. No housing release Friday; starts/permits land December 17 and Florida Realtors December 16.",
+   "Copper snapped back on short-covering: COMEX front-month (December) settled at $5.5170/lb (+3.38%, largest one-day percentage gain since April 8), snapping a six-week losing streak with a +0.58% week — still down 14.58% in November and 18.91% below the September 9 record. LME three-month spiked +6.5% intraday above $12,600/t; official settlement $12,330/t (+3.09%), late close near $12,260/t; LME stocks 337,925 t. CME lumber (January 2027) rose a fourth session to $554.00. Steel: Nucor's HRC spot price rose an 18th straight week to $1,330/short ton. No new PVC or R-454B print.",
+   "Oil eased ahead of Sunday's OPEC+ meeting: Brent settled $95.44/bbl (−1.2%) but posted its first weekly gain of November (+3.1%); WTI settled $83.08 (−0.7% vs Wednesday). Three Reuters sources say OPEC+ has agreed in principle to hold Q1 2027 output targets, with Iraq pressing for a higher quota. AAA fell a ninth straight day: U.S. regular $3.5476/gal, diesel $5.7048; Florida regular $3.3619, diesel $5.4997 — and Saturday's early print fell further to $3.5305 / $5.6664 nationally.",
+   "Black Friday online beat the forecast pace: Adobe counted $9.7B through 6:30 PM ET (+12.8% y/y), final expected $13.0–13.4B vs its $12.9B forecast; Thanksgiving Day online was $7.1B (+10.4%). Builders sat out the rally (DHI $156.80 −0.04%, LEN $86.09 −0.81%, PHM $134.49 −0.26%). Bankruptcy: Maho Construction filed Chapter 7 Friday in Delaware (26-11888); Jolly Heating & Air (AL) filed Chapter 11 Subchapter V Wednesday, reported Friday, liabilities $1–10M vs assets $0.5–1M. U.S. markets are closed today, Saturday; next session Monday, November 30."],
  "2026-11-27": [
    "Thanksgiving closure: U.S. stock and bond markets were closed Thursday, November 26, no economic data was released, no Fed official spoke, and CME published no settlement prices — Wednesday's closes stand as the last U.S. cash prints: Dow 50,182.95, S&P 500 7,182.78, Nasdaq 23,585.80; Treasury par yields 2-year 4.61%, 10-year 4.85%, 30-year 5.24%; Freddie Mac weekly 30-year 7.21%; MND daily top-tier 7.26%; COMEX copper $5.3325/lb; lumber $550.00. Friday's session closes early (stocks 1:00 PM ET).",
    "Futures firmed in thin holiday trade (S&P 500 futures +0.5% to +0.7%, Nasdaq +0.5% to +0.65%) and the 10-year yield dipped as much as 10 bp overnight to 4.80% — no cash close exists. December +25 bp held at 97.9% (LSEG) and roughly 97%–98% (CME FedWatch) for the December 8–9 FOMC, to 4.00%–4.25%; the blackout begins midnight Saturday, November 28, making Friday the last speaking day.",
@@ -670,6 +682,10 @@ FIN_GLANCE = {
    "Oil settled slightly higher (Brent $93.14, WTI $86.01); AAA diesel held under $6 at $5.98/gal. Central Florida October closings fell 4.0% YoY with the median at $390,000 (+1.3%)."],
 }
 FIN_NUMBERS = {
+ "2026-11-28": [("Dow (Fri)", "50,774.94 +1.18%"), ("S&P 500 (Fri)", "7,297.49 +1.60%"),
+   ("10-yr Treasury (Fri)", "4.94% +9 bp"), ("Dec +25 bp odds (Fri)", "97.4%–99%"),
+   ("MND daily 30-yr (Fri)", "7.29%"), ("COMEX copper (Fri)", "$5.5170/lb +3.38%"),
+   ("Brent crude (Fri)", "$95.44/bbl"), ("AAA FL diesel (Fri)", "$5.4997/gal")],
  "2026-11-27": [("U.S. markets (Thu)", "Closed — Thanksgiving"), ("Last Dow close (Wed)", "50,182.95"),
    ("Dec +25 bp odds (Thu)", "97.9% LSEG"), ("10-yr Treasury (Wed)", "4.85%"),
    ("Freddie Mac 30-yr (Wed)", "7.21%"), ("LME copper low (Thu)", "$11,650/t"),
@@ -727,9 +743,9 @@ FIN_NUMBERS = {
 HOME_GLANCE = [
  "Legal — biggest story: the Senate clears the BAAJA permitting bill's last 60-vote hurdle (Wed Nov 18) — budget waiver 70–26, substitute adopted 69–27, final cloture 65–31 — with the passage vote still pending at the cutoff.",
  "Legal — Florida: a thin day — the First DCA nominating commission opens applications for the Tanenbaum vacancy (due Dec 2), and the new leaders firm up an affordability agenda with Amendment 3 headed to the March regular session; IRS FIRE retires today and the OSHA HazCom deadline is tomorrow.",
- "Finance — Thanksgiving closure: U.S. markets were closed Thursday, November 26 — no data, no Fed speakers, no CME settlements — so Wednesday's closes stand (Dow 50,182.95, 10-year Treasury 4.85%, Freddie Mac 30-year 7.21%, COMEX copper $5.3325/lb). Futures firmed (S&P 500 +0.5% to +0.7%) and December +25 bp held at 97.9% (LSEG) ahead of the Dec 8–9 FOMC; the blackout begins midnight Saturday, November 28.",
- "Finance — Global stocks rallied on the AI rebound (DAX +1.9%, Nikkei +0.9%, Hang Seng +1.2%) and LME copper slipped to a fresh eight-month low of $11,650/t intraday; Wednesday's LME official prices are now confirmed — cash $11,703/t, three-month $11,758/t, the lowest of 2026. No new mortgage, lumber, steel, PVC or R-454B print on the holiday.",
- "Finance — Oil rose a third straight session: Brent settled near $96.57/bbl (fifth straight gain) as Ras Tanura loadings were reported suspended after Wednesday's Houthi-claimed attack and a Jazan refinery was struck Thursday; OPEC+ meets Sunday, November 29. AAA fell again — U.S. diesel $5.7246/gal, Florida $5.5143 — and AAA projects 4.62 million Floridians travelling, with Orlando the No. 1 destination. Friday's session closes early at 1:00 PM ET."]
+ "Finance — Best week since April 2025: Friday's half session rallied — Dow 50,774.94 (+1.18%), S&P 500 7,297.49 (+1.60%), Nasdaq 24,129.50 (+2.31%) — capping weekly gains of 5.6% / 5.5% / 6.7%, while Treasuries sold off (10-year 4.94%, +9 bp) and MND's daily 30-year ticked up to 7.29%. December +25 bp held at 97.4%–99% ahead of the Dec 8–9 FOMC; the blackout begins midnight Saturday, November 28, and the December 4 jobs report is the last print that can move the meeting.",
+ "Finance — Copper snapped back on short-covering: COMEX front-month settled $5.5170/lb (+3.38%) and LME three-month's official settlement was $12,330/t after a +6.5% intraday spike above $12,600/t; lumber rose a fourth session to $554.00 and Nucor's HRC spot price rose an 18th straight week to $1,330/short ton. No new PVC or R-454B print.",
+ "Finance — Oil eased into Sunday's OPEC+ meeting (Brent $95.44, −1.2%, first weekly gain of November; WTI $83.08) with Q1 2027 targets agreed in principle to hold; AAA fell a ninth straight day — Florida diesel $5.4997/gal. Black Friday online hit $9.7B through 6:30 PM ET (+12.8%), builders sat out the rally (DHI −0.04%, LEN −0.81%, PHM −0.26%), and Maho Construction filed Chapter 7. Markets are closed today, Saturday."]
 
 def glance_html(bullets):
     lis = "\n".join(f"<li>{b}</li>" for b in bullets)
@@ -897,6 +913,8 @@ def render_article(md_text, date, prefix):
             '<p class="totop"><a href="#top">Back to top ↑</a></p>')
 
 FIN = {  # date -> (report glob, weekday label, archive one-liner)
+ "2026-11-28": ("sharma-daily-finance-news-2026-11-28-*", "Saturday, November 28, 2026",
+   "Friday's shortened session posted the best week since April 2025: Dow 50,774.94 (+1.18%), S&P 500 7,297.49 (+1.60%), Nasdaq 24,129.50 (+2.31%), VIX 23.81 — week +5.6% / +5.5% / +6.7% — led by chips (semiconductor index +4.69%, Micron +7.34%, Anthropic +10.98% to $91.88) while Nvidia lagged at $150.49 (+0.80%). Treasuries sold off (2-year 4.69%, 10-year 4.94%, 30-year 5.33%, all +8–9 bp); no Fed official spoke on the last speaking day, December +25 bp held at 97.4%–99% for the Dec 8–9 FOMC, the blackout begins midnight Saturday, November 28, and the December 4 jobs report is the last pre-meeting print. MND's daily 30-year ticked up to 7.29%; Freddie Mac's 7.21% stands. Copper snapped back: COMEX front-month $5.5170/lb (+3.38%), LME official three-month $12,330/t after a +6.5% spike above $12,600/t; lumber $554.00; Nucor HRC +$20 to $1,330/short ton, an 18th straight weekly rise. Oil eased (Brent $95.44, WTI $83.08) ahead of Sunday's OPEC+ meeting; AAA Florida diesel fell to $5.4997. Black Friday online reached $9.7B through 6:30 PM ET (+12.8%); builders sat out the rally (DHI $156.80, LEN $86.09, PHM $134.49). Maho Construction filed Chapter 7 Friday; Jolly Heating & Air's Wednesday Subchapter V filing was reported Friday. Markets closed today, Saturday."),
  "2026-11-27": ("sharma-daily-finance-news-2026-11-27-*", "Friday, November 27, 2026",
    "A Thanksgiving edition with no U.S. session to report: NYSE, Nasdaq and the bond market were closed Thursday, November 26, no data was released, no Fed official spoke and CME published no settlements — Wednesday's closes stand (Dow 50,182.95, S&P 500 7,182.78, Nasdaq 23,585.80; 10-year 4.85%; Freddie Mac 30-year 7.21%; COMEX copper $5.3325/lb; lumber $550.00). Futures firmed (S&P 500 +0.5% to +0.7%) and the 10-year dipped to 4.80% overnight in thin trade; December +25 bp held at 97.9% (LSEG) / ~97%–98% (CME) ahead of the Dec 8–9 FOMC, with the blackout beginning midnight Saturday, November 28. Global stocks rallied (DAX +1.9% to 25,180.12, Nikkei +0.9% to 57,499.16, Hang Seng +1.2%); LME copper slipped to a fresh eight-month low of $11,650/t intraday with closes near $11,850–$11,872/t, and Wednesday's LME officials are now confirmed at cash $11,703/t / three-month $11,758/t — the lowest of 2026. Oil rose a third session (Brent ~$96.57, +2.07%, fifth straight gain; WTI no settlement) as Ras Tanura loadings were reported suspended and a Jazan refinery was struck Thursday; OPEC+ meets Sunday, November 29. AAA: U.S. regular $3.5554, diesel $5.7246; Florida regular $3.3721, diesel $5.5143. Friday's session closes early (stocks 1:00 PM ET)."),
  "2026-11-26": ("sharma-daily-finance-news-2026-11-26-*", "Thursday, November 26, 2026",
@@ -979,7 +997,7 @@ for date, (pat, label, one) in FIN.items():
     (DOCS / "finance" / "archive" / f"{date}.html").write_text(
         shell("../../", f"Finance Briefing — {label}", body, active="finance"), encoding="utf-8")
 
-latest = "2026-11-27"
+latest = "2026-11-28"
 body = (f'<p class="crumb"><span class="kicker">Finance Briefing · Latest Edition</span></p>'
         f'<article>{render_article(fin_report(latest), latest, "../")}</article>')
 (DOCS / "finance" / "index.html").write_text(
@@ -1553,8 +1571,8 @@ body = f"""
 <a class="cont" href="{LEGAL_BASE}/">Read today's legal briefing →</a></div>
 <div class="story"><span class="kicker">Finance Briefing</span>
 <a class="photolink" href="finance/index.html">{photo_html(home_imgs.get("finance"), "")}</a>
-<h2 class="headline"><a href="finance/index.html">{FIN['2026-11-25'][2]}</a></h2>
-<p class="byline">Finance Briefing — Warren Buffett, CFO · Edition of Nov 25, 2026</p>
+<h2 class="headline"><a href="finance/index.html">{FIN['2026-11-28'][2]}</a></h2>
+<p class="byline">Finance Briefing — Warren Buffett, CFO · Edition of Nov 28, 2026</p>
 <a class="cont" href="finance/index.html">Read today's finance briefing →</a></div>
 </div>
 <div class="techfeature"><span class="kicker">Construction · Engineering · Tech</span>
