@@ -983,6 +983,8 @@ LEGAL = {  # date -> (weekday label, biggest-story one-liner for hub cards/lists
    "Biggest story: a thin Thanksgiving window \u2014 a federal judge blocks the FCC's early review of ABC's eight station licences as likely First Amendment retaliation ('This is not a close case,' Wed Nov 25); plus the same judge declining to extend the ban on the $20M administration ad campaign (DNC v. Trump), FEMA's major disaster declaration for the Florida flooding (Tue Nov 24, late-located), corroboration of the AG's DraftKings intervention, and the 42-state fight over Character.AI's bankruptcy data sale (auction Dec 1)."),
  "2026-11-27": ("Friday, November 27, 2026",
    "Biggest story: the thinnest window of the run \u2014 no ruling dated Thanksgiving Day itself was confirmed; the AP wire confirms the Second Circuit's Mon Nov 23 ruling reviving the bid to move the New York hush-money case to federal court (yesterday's UNVERIFIED item, at its true date); plus Florida's Sixth DCA sending a failed $2.775M custom-home dispute to arbitration and wiping out a $126,624.63 judgment (Zimmerman v. Diez-Arguelles, Wed Nov 25), the Florida Supreme Court's disbarment in The Florida Bar v. Whitco (Wed Nov 25, opinion now available), the First DCA throwing out the fraud findings in a $34.7M tobacco verdict, and Virginia's Ginevan felon-in-possession ruling."),
+ "2026-11-28": ("Saturday, November 28, 2026",
+   "Biggest story: another thin Thanksgiving-week window \u2014 no Florida ruling dated Fri Nov 27 was confirmed; a Philadelphia jury's $264M verdict against Home Depot's roofing supplier SRS Distribution over a roofer's fatal fall (Mon Nov 23, reported in full Nov 24\u201327); plus the Eleventh Circuit's Figg debarment-by-affiliation ruling and Florida's A.C. culpable-negligence decision (both Wed Nov 25), the ACLU 'Investigation 18' unsealing (Fri Nov 27), the Topgolf overtime-arbitration ruling, and Norse Atlantic's bankruptcy filing (Fri Nov 27)."),
 }
 
 def fin_report(date):
@@ -1566,7 +1568,7 @@ body = f"""
 <div class="front">
 <div class="story nyt-lead"><span class="kicker">Legal Briefing</span>
 <a class="photolink" href="{LEGAL_BASE}/">{photo_html(home_imgs.get("legal"), "")}</a>
-<h2 class="headline"><a href="{LEGAL_BASE}/">{LEGAL['2026-11-27'][1]}</a></h2>
+<h2 class="headline"><a href="{LEGAL_BASE}/">{LEGAL['2026-11-28'][1]}</a></h2>
 <p class="byline">Legal Briefing — Harvey, Legal Advisor · Edition of Nov 27, 2026</p>
 <a class="cont" href="{LEGAL_BASE}/">Read today's legal briefing →</a></div>
 <div class="story"><span class="kicker">Finance Briefing</span>
